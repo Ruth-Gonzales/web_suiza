@@ -6,15 +6,29 @@ import Home from './pages/Home';
 import Careers from './pages/Careers';
 import Admission from './pages/Admission';
 import AboutUs from './pages/AboutUs';
+import Presentacion from './pages/about/Presentacion';
+import PalabrasDirector from './pages/about/PalabrasDirector';
+import VisionMision from './pages/about/VisionMision';
+import Historia from './pages/about/Historia';
+import GestionAcademica from './pages/about/GestionAcademica';
+import GestionAdministrativa from './pages/about/GestionAdministrativa';
+import Organigrama from './pages/about/Organigrama';
+import PlanaDocente from './pages/about/PlanaDocente';
 import NewsPage from './pages/NewsPage';
-import ContactForm from './components/ContactForm';
+import ContactPage from './pages/ContactPage';
 import { translations } from './translations';
+import CursorBubbles from './components/CursorBubbles';
 
 function App() {
-  const [lang, setLang] = useState('es');
-  const [darkMode, setDarkMode] = useState(false);
+  const [lang, setLang] = useState(() => localStorage.getItem('lang') || 'es');
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem('darkMode');
+    if (saved !== null) return saved === 'true';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
+  const [themeReady, setThemeReady] = useState(false);
 
-  // Sync theme class with html element
+  // Sync theme class with html element + persistence
   useEffect(() => {
     const root = window.document.documentElement;
     if (darkMode) {
@@ -22,7 +36,21 @@ function App() {
     } else {
       root.classList.remove('dark');
     }
+    localStorage.setItem('darkMode', darkMode);
   }, [darkMode]);
+
+  // Persist language
+  useEffect(() => {
+    localStorage.setItem('lang', lang);
+  }, [lang]);
+
+  // Enable transitions after first paint to avoid flash
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      document.body.classList.add('theme-transition');
+      setThemeReady(true);
+    });
+  }, []);
 
   const t = translations[lang] || translations['es'];
 
@@ -41,18 +69,24 @@ function App() {
           <Routes>
             <Route path="/" element={<Home t={t} />} />
             <Route path="/careers" element={<Careers t={t} />} />
+            <Route path="/careers/:careerId" element={<Careers t={t} />} />
             <Route path="/admission" element={<Admission t={t} />} />
             <Route path="/about" element={<AboutUs t={t} />} />
+            <Route path="/about/presentacion" element={<Presentacion t={t} />} />
+            <Route path="/about/director" element={<PalabrasDirector t={t} />} />
+            <Route path="/about/vision-mision" element={<VisionMision t={t} />} />
+            <Route path="/about/historia" element={<Historia t={t} />} />
+            <Route path="/about/gestion-academica" element={<GestionAcademica t={t} />} />
+            <Route path="/about/gestion-administrativa" element={<GestionAdministrativa t={t} />} />
+            <Route path="/about/organigrama" element={<Organigrama t={t} />} />
+            <Route path="/about/docentes" element={<PlanaDocente t={t} />} />
             <Route path="/news" element={<NewsPage t={t} />} />
-            <Route path="/contact" element={
-              <div className="py-12 px-4 flex justify-center items-center">
-                <ContactForm t={t} />
-              </div>
-            } />
+            <Route path="/contact" element={<ContactPage t={t} />} />
           </Routes>
         </main>
 
         <Footer t={t} />
+        <CursorBubbles />
       </div>
     </Router>
   );

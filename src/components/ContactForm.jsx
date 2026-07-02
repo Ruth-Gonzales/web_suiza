@@ -20,7 +20,7 @@ export default function ContactForm({ t }) {
   };
 
   return (
-    <div className="w-full max-w-lg mx-auto rounded-3xl bg-white dark:bg-dark-card border border-primary/10 dark:border-dark-border p-6 md:p-8 shadow-[0_20px_50px_rgba(75,122,244,0.05)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-300">
+    <div className="w-full max-w-lg mx-auto rounded-3xl bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 p-6 md:p-8 shadow-[0_20px_50px_rgba(75,122,244,0.05)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-300">
       <div className="text-center mb-6">
         <h3 className="text-xl md:text-2xl font-bold text-slate-text dark:text-white">
           {t.contact.title}
@@ -60,7 +60,7 @@ export default function ContactForm({ t }) {
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               placeholder={t.contact.placeholderName}
-              className="w-full px-4 py-3 rounded-xl bg-slate-light/60 dark:bg-dark-border/30 border border-primary/5 dark:border-dark-border focus:border-primary dark:focus:border-primary/50 text-slate-text dark:text-white placeholder-slate-text/40 dark:placeholder-dark-text/30 outline-none text-sm transition-all"
+              className="w-full px-4 py-3 rounded-xl bg-slate-light/60 dark:bg-dark-border/30 border border-primary/5 dark:border-white/8 focus:border-primary dark:focus:border-primary/50 text-slate-text dark:text-white placeholder-slate-text/40 dark:placeholder-dark-text/30 outline-none text-sm transition-all"
             />
           </div>
 
@@ -74,7 +74,7 @@ export default function ContactForm({ t }) {
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               placeholder={t.contact.placeholderEmail}
-              className="w-full px-4 py-3 rounded-xl bg-slate-light/60 dark:bg-dark-border/30 border border-primary/5 dark:border-dark-border focus:border-primary dark:focus:border-primary/50 text-slate-text dark:text-white placeholder-slate-text/40 dark:placeholder-dark-text/30 outline-none text-sm transition-all"
+              className="w-full px-4 py-3 rounded-xl bg-slate-light/60 dark:bg-dark-border/30 border border-primary/5 dark:border-white/8 focus:border-primary dark:focus:border-primary/50 text-slate-text dark:text-white placeholder-slate-text/40 dark:placeholder-dark-text/30 outline-none text-sm transition-all"
             />
           </div>
 
@@ -88,7 +88,7 @@ export default function ContactForm({ t }) {
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               placeholder={t.contact.placeholderMsg}
-              className="w-full px-4 py-3 rounded-xl bg-slate-light/60 dark:bg-dark-border/30 border border-primary/5 dark:border-dark-border focus:border-primary dark:focus:border-primary/50 text-slate-text dark:text-white placeholder-slate-text/40 dark:placeholder-dark-text/30 outline-none text-sm transition-all resize-none"
+              className="w-full px-4 py-3 rounded-xl bg-slate-light/60 dark:bg-dark-border/30 border border-primary/5 dark:border-white/8 focus:border-primary dark:focus:border-primary/50 text-slate-text dark:text-white placeholder-slate-text/40 dark:placeholder-dark-text/30 outline-none text-sm transition-all resize-none"
             />
           </div>
 

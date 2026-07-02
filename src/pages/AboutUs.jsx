@@ -27,7 +27,7 @@ export default function AboutUs({ t }) {
       {/* Mission & Vision grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         {/* Mission card */}
-        <div className="p-6 md:p-8 rounded-[2rem] bg-white dark:bg-dark-card border border-primary/10 dark:border-dark-border/40 text-left shadow-sm hover:scale-[1.01] transition-transform">
+        <div className="p-6 md:p-8 rounded-[2rem] bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 text-left shadow-sm hover:scale-[1.01] transition-transform">
           <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary dark:bg-primary/20 dark:text-secondary flex items-center justify-center mb-5">
             <Target className="w-6 h-6" />
           </div>
@@ -38,7 +38,7 @@ export default function AboutUs({ t }) {
         </div>
 
         {/* Vision card */}
-        <div className="p-6 md:p-8 rounded-[2rem] bg-white dark:bg-dark-card border border-primary/10 dark:border-dark-border/40 text-left shadow-sm hover:scale-[1.01] transition-transform">
+        <div className="p-6 md:p-8 rounded-[2rem] bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 text-left shadow-sm hover:scale-[1.01] transition-transform">
           <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary dark:bg-primary/20 dark:text-secondary flex items-center justify-center mb-5">
             <Eye className="w-6 h-6" />
           </div>
@@ -50,7 +50,7 @@ export default function AboutUs({ t }) {
       </div>
 
       {/* Values Grid */}
-      <div className="bg-white/40 dark:bg-dark-card/25 border border-primary/5 dark:border-dark-border/30 rounded-[2.5rem] p-8 md:p-12 mb-16 text-left backdrop-blur-sm shadow-sm">
+      <div className="bg-white/40 dark:bg-dark-card/25 border border-primary/5 dark:border-white/5 rounded-[2.5rem] p-8 md:p-12 mb-16 text-left backdrop-blur-sm shadow-sm">
         <h3 className="text-2xl font-bold text-slate-text dark:text-white mb-8 border-b border-primary/5 pb-3">Nuestros Valores</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {values.map((v, idx) => (
@@ -66,14 +66,14 @@ export default function AboutUs({ t }) {
       </div>
 
       {/* History timeline */}
-      <div className="text-left bg-white dark:bg-dark-card border border-primary/10 dark:border-dark-border/40 p-8 md:p-10 rounded-[2.5rem] shadow-sm">
+      <div className="text-left bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 p-8 md:p-10 rounded-[2.5rem] shadow-sm">
         <h3 className="text-2xl font-bold text-slate-text dark:text-white mb-8 flex items-center gap-2.5 border-b border-primary/5 pb-3">
           <Landmark className="w-6 h-6 text-primary" />
           <span>Reseña Histórica</span>
         </h3>
         
         {/* Timeline representation */}
-        <div className="flex flex-col gap-8 relative border-l border-primary/10 dark:border-dark-border pl-6 ml-4">
+        <div className="flex flex-col gap-8 relative border-l border-primary/10 dark:border-white/8 pl-6 ml-4">
           {[
             {
               year: "1976",

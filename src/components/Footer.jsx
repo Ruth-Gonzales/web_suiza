@@ -4,8 +4,14 @@ import { GraduationCap, Globe, MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Footer({ t }) {
   return (
-    <footer className="w-full bg-slate-light/60 dark:bg-dark-card/50 border-t border-primary/10 dark:border-dark-border mt-20 transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-6 py-12 md:py-16">
+    <footer className="relative w-full mt-20 transition-all duration-300 bg-gradient-to-b from-slate-light/80 via-slate-light/60 to-primary/[0.03] dark:from-dark-card/60 dark:via-dark-card/50 dark:to-primary/[0.04] border-t border-primary/10 dark:border-white/8">
+
+      {/* Premium glowing top separator */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+      <div className="absolute top-0 left-[15%] right-[15%] h-[3px] bg-gradient-to-r from-transparent via-primary/25 to-transparent blur-md" />
+      <div className="absolute top-0 left-[30%] right-[30%] h-[6px] bg-gradient-to-r from-transparent via-primary/10 to-transparent blur-xl animate-soft-pulse" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           
           {/* Section 1: Logo & Vision */}
@@ -27,18 +33,21 @@ export default function Footer({ t }) {
               {t.hero.subtitle}
             </p>
             <div className="flex items-center gap-3 mt-2">
-              <a href="#" className="p-2 rounded-lg bg-white dark:bg-dark-border/40 hover:bg-primary hover:text-white dark:hover:bg-primary text-slate-text/70 dark:text-dark-text transition-all duration-300 shadow-sm" aria-label="Facebook">
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <a href="#" className="group relative p-2.5 rounded-xl bg-white dark:bg-dark-border/40 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:scale-110 hover:bg-primary hover:text-white dark:hover:bg-primary text-slate-text/70 dark:text-dark-text transition-all duration-300" aria-label="Facebook">
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-primary/0 via-white/0 to-white/40 dark:to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <svg className="relative w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
                 </svg>
               </a>
-              <a href="#" className="p-2 rounded-lg bg-white dark:bg-dark-border/40 hover:bg-primary hover:text-white dark:hover:bg-primary text-slate-text/70 dark:text-dark-text transition-all duration-300 shadow-sm" aria-label="Youtube">
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <a href="#" className="group relative p-2.5 rounded-xl bg-white dark:bg-dark-border/40 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:scale-110 hover:bg-primary hover:text-white dark:hover:bg-primary text-slate-text/70 dark:text-dark-text transition-all duration-300" aria-label="Youtube">
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-primary/0 via-white/0 to-white/40 dark:to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <svg className="relative w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M23.498 6.163c-.272-.98-1.071-1.762-2.075-2.02C19.57 3.545 12 3.545 12 3.545s-7.57 0-9.423.598c-1.004.258-1.803 1.04-2.075 2.02C0 7.978 0 12.01 0 12.01s0 4.032.502 6.008c.272.98 1.071 1.762 2.075 2.02 1.853.598 9.423.598 9.423.598s7.57 0 9.423-.598c1.004-.258 1.803-1.04 2.075-2.02.502-1.976.502-6.008.502-6.008s0-4.032-.502-6.008zM9.545 15.568V8.452L15.818 12l-6.273 3.568z"/>
                 </svg>
               </a>
-              <a href="#" className="p-2 rounded-lg bg-white dark:bg-dark-border/40 hover:bg-primary hover:text-white dark:hover:bg-primary text-slate-text/70 dark:text-dark-text transition-all duration-300 shadow-sm">
-                <Globe className="w-4 h-4" />
+              <a href="#" className="group relative p-2.5 rounded-xl bg-white dark:bg-dark-border/40 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:scale-110 hover:bg-primary hover:text-white dark:hover:bg-primary text-slate-text/70 dark:text-dark-text transition-all duration-300">
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-primary/0 via-white/0 to-white/40 dark:to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Globe className="relative w-4 h-4" />
               </a>
             </div>
           </div>
@@ -124,7 +133,7 @@ export default function Footer({ t }) {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-primary/10 dark:border-dark-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-text/60 dark:text-dark-text/60">
+        <div className="border-t border-primary/10 dark:border-white/8 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-text/60 dark:text-dark-text/60">
           <div>
             © {new Date().getFullYear()} IESTP SUIZA Pucallpa. Todos los derechos reservados. Licenciado por MINEDU.
           </div>
