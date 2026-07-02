@@ -1,16 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { GraduationCap, Globe, MapPin, Phone, Mail } from 'lucide-react';
+import FooterParticles from './FooterParticles';
 
 export default function Footer({ t }) {
   return (
     <footer className="relative w-full mt-20 transition-all duration-300 bg-gradient-to-b from-slate-light/80 via-slate-light/60 to-primary/[0.03] dark:from-dark-card/60 dark:via-dark-card/50 dark:to-primary/[0.04] border-t border-primary/10 dark:border-white/8">
 
-      {/* Premium glowing top separator */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
       <div className="absolute top-0 left-[15%] right-[15%] h-[3px] bg-gradient-to-r from-transparent via-primary/25 to-transparent blur-md" />
       <div className="absolute top-0 left-[30%] right-[30%] h-[6px] bg-gradient-to-r from-transparent via-primary/10 to-transparent blur-xl animate-soft-pulse" />
-
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           
@@ -143,6 +142,11 @@ export default function Footer({ t }) {
             <a href="#" className="hover:text-primary transition-colors">Aula Virtual</a>
           </div>
         </div>
+      </div>
+      
+      {/* Background Animated Particles at the Bottom */}
+      <div className="absolute inset-x-0 bottom-0 h-44 pointer-events-none z-0 overflow-hidden">
+        <FooterParticles />
       </div>
     </footer>
   );
