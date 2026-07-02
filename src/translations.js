@@ -7,7 +7,10 @@ export const translations = {
       about: "Nosotros",
       news: "Noticias",
       contact: "Escríbenos",
-      institute: "Instituto"
+      institute: "Instituto",
+      research: "Investigación",
+      library: "Biblioteca",
+      transparency: "Transparencia"
     },
     instituteMenu: {
       title: "Nuestro Instituto",
@@ -185,7 +188,10 @@ export const translations = {
       about: "About Us",
       news: "News",
       contact: "Contact Us",
-      institute: "Institute"
+      institute: "Institute",
+      research: "Research",
+      library: "Library",
+      transparency: "Transparency"
     },
     instituteMenu: {
       title: "Our Institute",
@@ -363,7 +369,10 @@ export const translations = {
       about: "Noa",
       news: "Joibo",
       contact: "Wishati",
-      institute: "Instituto"
+      institute: "Instituto",
+      research: "Investigación",
+      library: "Biblioteca",
+      transparency: "Transparencia"
     },
     instituteMenu: {
       title: "Non Instituto",
