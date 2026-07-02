@@ -43,7 +43,7 @@ export default function Home({ t }) {
                 <div className="flex flex-wrap gap-4 mt-2">
                   <Link
                     to="/careers"
-                    className="px-6 py-3.5 rounded-2xl bg-white hover:bg-slate-light text-primary font-bold text-sm tracking-wider shadow-lg shadow-black/20 hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2 transition-all cursor-pointer"
+                    className="px-6 py-3.5 rounded-2xl bg-white dark:bg-dark-surface hover:bg-slate-light dark:hover:bg-dark-hover text-primary dark:text-white font-bold text-sm tracking-wider shadow-lg shadow-black/20 hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2 transition-all cursor-pointer"
                   >
                     <span>{t.hero.explore}</span>
                     <ArrowRight className="w-4 h-4" />
@@ -124,7 +124,7 @@ export default function Home({ t }) {
                               className="bg-white/10 border border-white/25 rounded-xl px-3 py-2 text-xs text-white placeholder-white/40 focus:outline-none focus:bg-white/15"
                             />
                           </div>
-                          <button type="submit" className="w-full mt-2 py-2.5 rounded-xl bg-white hover:bg-slate-light text-primary font-bold text-xs shadow-md transition-all cursor-pointer">
+                          <button type="submit" className="w-full mt-2 py-2.5 rounded-xl bg-white dark:bg-dark-surface hover:bg-slate-light dark:hover:bg-dark-hover text-primary dark:text-white font-bold text-xs shadow-md transition-all cursor-pointer">
                             LOGIN
                           </button>
                           <span className="text-[9px] text-white/60 hover:text-white text-center mt-1 cursor-pointer">¿Olvidaste tu contraseña?</span>
@@ -296,7 +296,7 @@ export default function Home({ t }) {
           ].map((item, idx) => (
             <div
               key={idx}
-              className="group p-6 rounded-3xl bg-white dark:bg-dark-card border border-primary/10 dark:border-dark-border/40 hover:border-primary/30 hover:shadow-[0_15px_35px_rgba(75,122,244,0.06)] dark:hover:shadow-[0_15px_35px_rgba(0,0,0,0.25)] transition-all duration-300 flex flex-col justify-between text-left"
+              className="group p-6 rounded-3xl bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 hover:border-primary/30 hover:shadow-[0_15px_35px_rgba(75,122,244,0.06)] dark:hover:shadow-[0_15px_35px_rgba(0,0,0,0.25)] transition-all duration-300 flex flex-col justify-between text-left"
             >
               <div className="flex flex-col gap-2">
                 <span className="text-[10px] font-bold text-primary dark:text-secondary tracking-widest uppercase">

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import LogoSuiza from '../assets/img/logo_suiza_n.png';
+import './SplashScreen.css';
 
 function CombinedBackground({ active }) {
   const canvasRef = useRef(null);

@@ -309,7 +309,6 @@ export default function Careers() {
 
       <section className="w-full overflow-hidden">
         <div className="flex pt-12">
-          {/* Lista de carreras */}
           <div className="pl-4 md:px-8 lg:pl-16 lg:pr-12 shrink-0">
             <h2 className="text-2xl md:text-3xl font-bold text-slate-text dark:text-white mb-8">
               CARRERAS
@@ -332,13 +331,9 @@ export default function Careers() {
             </div>
           </div>
 
-          {/* Panel de vista previa - borde derecho */}
           <div className="hidden lg:block flex-1 relative min-h-[500px]">
             {activePreview && (
-              <div
-                key={activePreview.id}
-                className="absolute inset-0 animate-fade-in"
-              >
+              <div key={activePreview.id} className="absolute inset-0 animate-fade-in">
                 <img
                   src={`/careers/${activePreview.id}.jpg`}
                   alt={activePreview.name}
@@ -365,7 +360,6 @@ export default function Careers() {
         </div>
       </section>
 
-      {/* Backdrop blur */}
       {selected && (
         <div
           className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm transition-all duration-500"
@@ -373,7 +367,6 @@ export default function Careers() {
         />
       )}
 
-      {/* Side panel */}
       <div
         className={`fixed top-0 right-0 z-50 h-full w-full md:w-[75vw] lg:w-[70vw] xl:w-[65vw] bg-white dark:bg-dark-card shadow-2xl transition-transform duration-500 ease-out overflow-y-auto ${
           selected ? 'translate-x-0' : 'translate-x-full'
@@ -381,7 +374,6 @@ export default function Careers() {
       >
         {selected && (
           <div className="min-h-full flex flex-col">
-            {/* Image header */}
             <div className="relative h-80 md:h-96 shrink-0">
               <img
                 src={`/careers/${selected.id}.jpg`}
@@ -410,10 +402,7 @@ export default function Careers() {
               </div>
             </div>
 
-            {/* Content */}
             <div className="flex-1 p-6 md:p-8 space-y-8">
-
-              {/* Info badges */}
               <div className="flex flex-wrap gap-3">
                 <div className="flex items-center gap-1.5 text-sm font-semibold text-primary bg-primary/10 px-4 py-2 rounded-full">
                   <Clock className="w-4 h-4" />
@@ -425,12 +414,10 @@ export default function Careers() {
                 </div>
               </div>
 
-              {/* Description */}
               <p className="text-base md:text-lg text-slate-text/80 dark:text-dark-text/80 leading-relaxed">
                 {selected.desc}
               </p>
 
-              {/* Plan de estudios */}
               <div>
                 <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-4">
                   <BookOpen className="w-5 h-5 text-primary" />
@@ -450,7 +437,6 @@ export default function Careers() {
                 </div>
               </div>
 
-              {/* Habilidades */}
               <div>
                 <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-4">
                   <Award className="w-5 h-5 text-primary" />
@@ -468,7 +454,6 @@ export default function Careers() {
                 </div>
               </div>
 
-              {/* Oportunidades laborales */}
               <div>
                 <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-4">
                   <Briefcase className="w-5 h-5 text-primary" />
@@ -486,7 +471,6 @@ export default function Careers() {
                 </div>
               </div>
 
-              {/* Por qué esta carrera es para ti */}
               <div className="bg-gradient-to-r from-primary/5 to-transparent p-6 rounded-2xl border border-primary/10">
                 <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-3">
                   <Target className="w-5 h-5 text-primary" />
@@ -497,7 +481,6 @@ export default function Careers() {
                 </p>
               </div>
 
-              {/* Por qué elegir esta carrera */}
               <div className="bg-gradient-to-r from-amber-500/5 to-transparent p-6 rounded-2xl border border-amber-500/10">
                 <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-3">
                   <Sparkles className="w-5 h-5 text-amber-500" />
@@ -507,7 +490,6 @@ export default function Careers() {
                   {selected.whyChoose}
                 </p>
               </div>
-
             </div>
           </div>
         )}
