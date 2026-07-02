@@ -10,6 +10,7 @@ import NewsPage from './pages/NewsPage';
 import ContactForm from './components/ContactForm';
 import SplashScreen from './components/SplashScreen';
 import './components/SplashScreen.css';
+import VirtualAssistant from './components/VirtualAssistant';
 import { translations } from './translations';
 
 function App() {
@@ -97,6 +98,7 @@ function App() {
           </main>
 
           <Footer t={t} />
+          <VirtualAssistant />
         </div>
       )}
     </Router>

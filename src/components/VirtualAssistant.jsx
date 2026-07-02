@@ -304,7 +304,7 @@ REGLAS CRÍTICAS DE COMPORTAMIENTO:
       const text = "¡Perfecto! Te estoy conectando con nuestro asesor de admisión humano de guardia vía WhatsApp. Por favor, haz clic en el botón de abajo para iniciar el chat en tiempo real.";
       const action = {
         label: "Iniciar Chat de WhatsApp",
-        link: "https://wa.me/51961280665?text=Hola,%20necesito%20ayuda%20con%20el%20proceso%20de%20admisi%C3%B3n%20del%20IESTP%20Suiza"
+        link: "https://wa.me/51988452394?text=Hola,%20necesito%20ayuda%20con%20el%20proceso%20de%20admisi%C3%B3n%20del%20IESTP%20Suiza"
       };
       streamAIResponse(text, action);
     } else {
