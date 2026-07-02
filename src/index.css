@@ -5,35 +5,183 @@
 
 @theme {
   --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
-  
+
   --color-primary: #4B7AF4;
   --color-secondary: #A0C1F7;
   --color-bg-general: #E5EEFE;
   --color-slate-text: #3A4B74;
   --color-slate-light: #F0F4FD;
   --color-dark-accent: #1A1D20;
-  
+
   --color-primary-dark: #3b62c9;
-  --color-dark-bg: #0d1117;
-  --color-dark-card: #161b22;
-  --color-dark-text: #c9d1d9;
-  --color-dark-border: #30363d;
+  --color-dark-bg: #020617;
+  --color-dark-card: #111827;
+  --color-dark-surface: #0F172A;
+  --color-dark-hover: #1E293B;
+  --color-dark-text: #FFFFFF;
+  --color-dark-text-secondary: #CBD5E1;
+  --color-dark-border: #1E293B;
+}
+
+/* ===== CSS Custom Properties for themeable glassmorphism ===== */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.35);
+  --glass-shadow: 0 8px 32px 0 rgba(75, 122, 244, 0.08);
+  --glass-blur: 16px;
+
+  --dropdown-bg: rgba(255, 255, 255, 0.97);
+  --dropdown-border: rgba(75, 122, 244, 0.08);
+  --dropdown-shadow: 0 20px 60px -12px rgba(0, 0, 0, 0.12);
+
+  --nav-text: #3A4B74;
+  --nav-text-muted: rgba(58, 75, 116, 0.6);
+
+  /* === Premium Navbar Border System === */
+  --navbar-border-gradient: linear-gradient(
+    135deg,
+    rgba(75, 122, 244, 0.35) 0%,
+    rgba(255, 255, 255, 0.55) 35%,
+    rgba(160, 193, 247, 0.25) 65%,
+    rgba(75, 122, 244, 0.15) 100%
+  );
+  --navbar-glow-opacity: 0.6;
+  --navbar-top-shine: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(75, 122, 244, 0.15) 15%,
+    rgba(255, 255, 255, 0.30) 40%,
+    rgba(160, 193, 247, 0.20) 60%,
+    rgba(75, 122, 244, 0.10) 85%,
+    transparent 100%
+  );
+  --navbar-hover-glow: 0 0 30px -6px rgba(75, 122, 244, 0.12);
+}
+
+.dark {
+  --glass-bg: rgba(2, 6, 23, 0.88);
+  --glass-border: rgba(255, 255, 255, 0.07);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+  --glass-blur: 20px;
+
+  --dropdown-bg: rgba(15, 23, 42, 0.96);
+  --dropdown-border: rgba(255, 255, 255, 0.07);
+  --dropdown-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+
+  --nav-text: #F1F5F9;
+  --nav-text-muted: rgba(203, 213, 225, 0.6);
+
+  /* === Premium Navbar Border System (Dark) === */
+  --navbar-border-gradient: linear-gradient(
+    135deg,
+    rgba(75, 122, 244, 0.25) 0%,
+    rgba(255, 255, 255, 0.08) 35%,
+    rgba(160, 193, 247, 0.12) 65%,
+    rgba(75, 122, 244, 0.10) 100%
+  );
+  --navbar-glow-opacity: 0.4;
+  --navbar-top-shine: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(75, 122, 244, 0.08) 15%,
+    rgba(255, 255, 255, 0.12) 40%,
+    rgba(160, 193, 247, 0.08) 60%,
+    rgba(75, 122, 244, 0.06) 85%,
+    transparent 100%
+  );
+  --navbar-hover-glow: 0 0 35px -8px rgba(75, 122, 244, 0.15);
+}
+
+/* ===== Theme Transition Utility ===== */
+.theme-transition,
+.theme-transition *,
+.theme-transition ::before,
+.theme-transition ::after {
+  transition-property: color, background-color, border-color, box-shadow, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
 }
 
 /* Custom Utilities and Animations */
 @layer utilities {
   .glassmorphism {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
   }
 
-  .glassmorphism-dark {
-    background: rgba(22, 27, 34, 0.8);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+  .glassmorphism-nav-dark {
+    background: rgba(2, 6, 23, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+
+  .dropdown-theme {
+    background: var(--dropdown-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--dropdown-border);
+    border-radius: 24px;
+    box-shadow: var(--dropdown-shadow);
+  }
+
+  /* === Premium Navbar Border Class === */
+  .navbar-premium {
+    position: relative;
+    isolation: isolate;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .navbar-premium::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: var(--navbar-border-gradient);
+    z-index: -1;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .navbar-premium::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 8%;
+    right: 8%;
+    height: 2px;
+    background: var(--navbar-top-shine);
+    opacity: var(--navbar-glow-opacity);
+    border-radius: 1px;
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+  }
+
+  .navbar-premium:hover {
+    box-shadow: var(--navbar-hover-glow);
+  }
+
+  .navbar-premium:hover::after {
+    opacity: calc(var(--navbar-glow-opacity) + 0.2);
+  }
+
+  .card-dark {
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+  }
+
+  .card-dark-hover {
+    background: #1E293B;
+    transform: translateY(-2px);
+    transition: all 250ms ease;
   }
 
   .text-glow {
@@ -42,6 +190,36 @@
 
   .text-glow-dark {
     text-shadow: 0 0 15px rgba(160, 193, 247, 0.4);
+  }
+
+  .dropdown-enter {
+    animation: dropdownIn 0.25s ease-out forwards;
+  }
+
+  @keyframes dropdownIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px) scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes fadeSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-slide-in {
+    animation: fadeSlideIn 0.2s ease-out forwards;
   }
 }
 
@@ -64,7 +242,7 @@ body {
 .dark body {
   background-color: var(--color-dark-bg);
   color: var(--color-dark-text);
-  background-image: radial-gradient(rgba(160, 193, 247, 0.04) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(59, 130, 246, 0.04) 1px, transparent 1px);
 }
 
 /* Custom Scrollbar */
@@ -76,13 +254,26 @@ body {
   background: transparent;
 }
 
+.dark ::-webkit-scrollbar-track {
+  background: #0F172A;
+}
+
 ::-webkit-scrollbar-thumb {
   background: var(--color-secondary);
   border-radius: 4px;
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 999px;
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
 }
 
 /* Glowing circles in background */
@@ -109,11 +300,11 @@ body {
 }
 
 .dark .bg-circle-1 {
-  background: radial-gradient(circle, rgba(75, 122, 244, 0.08) 0%, rgba(13, 17, 23, 0) 70%);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(2, 6, 23, 0) 70%);
 }
 
 .dark .bg-circle-2 {
-  background: radial-gradient(circle, rgba(160, 193, 247, 0.08) 0%, rgba(13, 17, 23, 0) 70%);
+  background: radial-gradient(circle, rgba(160, 193, 247, 0.08) 0%, rgba(2, 6, 23, 0) 70%);
 }
 
 /* Dot pattern background texture */
@@ -216,6 +407,98 @@ body {
   100% { background-position: 200% 0; }
 }
 
+/* Careers accordion styles */
+.career-accordion details {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid rgba(75,122,244,0.06);
+  box-shadow: 0 8px 20px rgba(59,98,201,0.06);
+  padding: 0.6rem 0.8rem;
+}
+
+.dark .career-accordion details {
+  background: var(--color-dark-card);
+  border-color: rgba(255,255,255,0.06);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.dark .career-accordion .detail-body {
+  color: var(--color-dark-text);
+  opacity: 0.75;
+}
+
+.career-accordion summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.4rem 0.6rem;
+}
+
+.career-accordion summary::-webkit-details-marker { display: none; }
+
+.career-accordion summary .chev {
+  transition: transform 200ms ease;
+}
+
+.career-accordion details[open] summary .chev {
+  transform: rotate(180deg);
+}
+
+.career-accordion .detail-body {
+  padding: 0.75rem 0.6rem 0.6rem 3rem;
+  color: var(--color-slate-text);
+  font-size: 0.95rem;
+}
+
+.career-accordion .learn-wrapper {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.career-accordion .learn-cta {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  background: var(--color-primary);
+  color: white;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+/* Megamenu styles for admission */
+.megamenu {
+  --mm-bg: rgba(255,255,255,0.96);
+}
+.dark .megamenu {
+  --mm-bg: rgba(15,23,42,0.97);
+}
+.megamenu .col-title {
+  font-weight: 700;
+  color: var(--color-slate-text);
+}
+.dark .megamenu .col-title {
+  color: var(--color-dark-text);
+}
+.megamenu a {
+  text-decoration: none;
+}
+.megamenu .cta-primary {
+  background: var(--color-primary);
+  color: white;
+  border-radius: 10px;
+}
+.megamenu .cta-outline {
+  border: 1px solid rgba(75,122,244,0.12);
+  color: var(--color-primary);
+  border-radius: 10px;
+}
+.dark .megamenu .cta-outline {
+  border-color: rgba(255,255,255,0.08);
+  color: var(--color-secondary);
+}
+
 /* App transition after splash screen */
 
 /* 1. Fade-in suave */
@@ -248,41 +531,12 @@ body {
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* Navbar Dropdown Animations */
-@keyframes dropdown-enter {
-  from {
-    opacity: 0;
-    transform: scale(0.95) translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+/* Fade in used by career preview panel */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@keyframes dropdown-item-stair {
-  from {
-    opacity: 0;
-    transform: translateY(16px) translateX(-12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) translateX(0);
-  }
-}
-
-.submenu-slide {
-  animation: submenu-slide-down 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  transform-origin: top;
-}
-
-@keyframes submenu-slide-down {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
 }
