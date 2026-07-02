@@ -1,4 +1,3 @@
-import React from 'react';
 import { Calendar, CheckCircle, FileText, ClipboardCheck, CreditCard, UserCheck } from 'lucide-react';
 
 const events = [

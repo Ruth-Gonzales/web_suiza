@@ -1,4 +1,3 @@
-import React from 'react';
 import { Monitor, Cog, Heart, Leaf, Beaker } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 
@@ -7,7 +6,7 @@ const labs = [
   { name: 'Taller de Mecatrónica', icon: Cog, desc: 'Equipos de diagnóstico automotriz, scanners y maquinaria para prácticas mecánicas.', color: 'from-amber-500 to-orange-500' },
   { name: 'Lab. de Enfermería', icon: Heart, desc: 'Simuladores, maniquíes y equipos médicos para prácticas de atención clínica.', color: 'from-rose-500 to-pink-500' },
   { name: 'Taller de Electricidad', icon: Monitor, desc: 'Tableros eléctricos, PLC, motores y sistemas de automatización industrial.', color: 'from-yellow-500 to-amber-500' },
-  { name: 'Lab. de Cómputo', icon: Monitor, desc: 'Software contable, tributario y de gestión empresarial para simulaciones financieras.', color: 'from-emerald-500 to-teal-500' },
+  { name: 'Lab. de Gestión Empresarial', icon: Monitor, desc: 'Software contable, tributario y de gestión empresarial para simulaciones financieras.', color: 'from-emerald-500 to-teal-500' },
   { name: 'Taller Agropecuario', icon: Leaf, desc: 'Invernaderos, parcelas demostrativas y área de crianza para prácticas de campo.', color: 'from-green-500 to-lime-500' }
 ];
 
@@ -19,7 +18,7 @@ export default function LaboratoriosPage() {
       <div className="bg-circle-1 top-10 right-10"></div>
       <div className="bg-circle-2 bottom-10 left-10"></div>
 
-      <div ref={ref} className={`transition-all duration-700 ${isVisible ? 'animate__animated animate__fadeInUp' : 'opacity-0'}`}>
+      <div ref={ref} className={`transition-all duration-700 ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}>
         <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-secondary text-white flex items-center justify-center mx-auto mb-4 shadow-lg">
             <Beaker className="w-7 h-7" />

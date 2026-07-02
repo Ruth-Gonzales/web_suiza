@@ -85,6 +85,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileSubOpen, setMobileSubOpen] = useState(null);
   const [navVisible, setNavVisible] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
   const lastScrollY = useRef(0);
   const logoRef = useRef(null);
   const navInnerRef = useRef(null);
@@ -94,6 +95,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
   useEffect(() => {
     const handleScroll = () => {
       const current = window.scrollY;
+      setIsScrolled(current > 60);
       if (current > 80) {
         setNavVisible(current < lastScrollY.current);
       } else {
@@ -183,13 +185,15 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
   const langLabel = { es: 'ESP', en: 'ENG', sh: 'SHB' };
 
   return (
-    <nav className={`fixed top-0 z-50 w-full px-4 py-3 md:px-8 transition-transform duration-300 ${navVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <nav className={`fixed top-0 z-50 w-full px-4 py-2.5 md:px-8 transition-all duration-300 ${navVisible ? 'translate-y-0' : '-translate-y-full'} ${isScrolled ? 'shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.2)]' : ''}`}>
       <div
         className="max-w-7xl mx-auto mb-2 px-4 py-1.5 flex flex-wrap justify-between items-center text-xs border-b border-primary/10 text-slate-text/70 dark:text-dark-text/70 overflow-hidden"
         style={{
-          transition: 'opacity 800ms ease-out, transform 800ms ease-out',
-          opacity: isCentered ? 0 : 1,
-          transform: isCentered ? 'translateY(-10px)' : 'translateY(0)'
+          transition: 'opacity 600ms ease-out, height 400ms ease-out, margin 400ms ease-out',
+          opacity: isCentered ? 0 : (isScrolled ? 0 : 1),
+          height: isScrolled ? 0 : 'auto',
+          marginBottom: isScrolled ? 0 : undefined,
+          overflow: 'hidden'
         }}
       >
         <div className="flex gap-4 items-center">
@@ -205,7 +209,11 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
 
       <div
         ref={navInnerRef}
-        className="max-w-7xl mx-auto rounded-2xl glassmorphism dark:glassmorphism-dark shadow-[0_8px_32px_0_rgba(75,122,244,0.08)] px-4 py-3 md:px-6 flex items-center justify-between relative overflow-visible"
+        className={`max-w-7xl mx-auto rounded-2xl px-4 py-2.5 md:px-6 flex items-center justify-between relative overflow-visible transition-all duration-300 ${
+          isScrolled
+            ? 'bg-white/85 dark:bg-dark-card/85 backdrop-blur-xl shadow-[0_8px_32px_rgba(75,122,244,0.06)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.3)]'
+            : 'glassmorphism dark:glassmorphism-dark shadow-[0_8px_32px_0_rgba(75,122,244,0.08)]'
+        }`}
       >
         <div
           className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent pointer-events-none"
@@ -258,37 +266,47 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                   {link.hasSub ? (
                     <button
                       onClick={() => handleDropdown(link.subKey)}
-                      className={`flex items-center gap-0.5 px-2.5 py-1.5 rounded-xl text-xs font-semibold cursor-pointer ${
+                      className={`group relative flex items-center gap-0.5 px-2.5 py-1.5 rounded-xl text-xs font-semibold cursor-pointer transition-all duration-250 hover:-translate-y-0.5 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-dark-card ${
                         isActive(link.path)
-                          ? 'bg-primary text-white shadow-md shadow-primary/20'
-                          : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-border/50 hover:text-primary dark:hover:text-white'
+                          ? 'text-primary'
+                          : 'text-slate-text dark:text-dark-text hover:text-primary dark:hover:text-white hover:bg-slate-light dark:hover:bg-dark-border/30'
                       }`}
                       style={{
-                        transition: 'all 500ms ease-out',
+                        transition: 'all 250ms ease-out',
                         transitionDelay: isComplete ? `${600 + i * 80}ms` : '0s',
                         opacity: isComplete ? 1 : isCentered ? 0 : 1,
                         transform: isComplete ? 'translateY(0)' : isCentered ? 'translateY(-6px)' : 'translateY(0)'
                       }}
                     >
-                      <span>{link.label}</span>
-                      <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${openDropdown === link.subKey ? 'rotate-180' : ''}`} />
+                      <span className="relative">
+                        {link.label}
+                        {isActive(link.path) && (
+                          <span className="absolute -bottom-[5px] left-0 right-0 h-[2.5px] bg-gradient-to-r from-primary to-blue-400 rounded-full" />
+                        )}
+                      </span>
+                      <ChevronDown className={`w-3 h-3 transition-transform duration-250 ${openDropdown === link.subKey ? 'rotate-180' : ''}`} />
                     </button>
                   ) : (
                     <Link
                       to={link.path}
-                      className={`px-2.5 py-1.5 rounded-xl text-xs font-semibold ${
+                      className={`group relative px-2.5 py-1.5 rounded-xl text-xs font-semibold transition-all duration-250 hover:-translate-y-0.5 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-dark-card ${
                         isActive(link.path)
-                          ? 'bg-primary text-white shadow-md shadow-primary/20'
-                          : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-border/50 hover:text-primary dark:hover:text-white'
+                          ? 'text-primary'
+                          : 'text-slate-text dark:text-dark-text hover:text-primary dark:hover:text-white hover:bg-slate-light dark:hover:bg-dark-border/30'
                       }`}
                       style={{
-                        transition: 'all 500ms ease-out',
+                        transition: 'all 250ms ease-out',
                         transitionDelay: isComplete ? `${600 + i * 80}ms` : '0s',
                         opacity: isComplete ? 1 : isCentered ? 0 : 1,
                         transform: isComplete ? 'translateY(0)' : isCentered ? 'translateY(-6px)' : 'translateY(0)'
                       }}
                     >
-                      {link.label}
+                      <span className="relative">
+                        {link.label}
+                        {isActive(link.path) && (
+                          <span className="absolute -bottom-[5px] left-0 right-0 h-[2.5px] bg-gradient-to-r from-primary to-blue-400 rounded-full" />
+                        )}
+                      </span>
                     </Link>
                   )}
 
@@ -296,9 +314,9 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                   {link.hasSub && openDropdown === link.subKey && (
                     <div
                       ref={dropdownRef}
-                      className="absolute top-full left-0 mt-2 w-80 rounded-2xl backdrop-blur-xl bg-white/90 dark:bg-dark-bg/90 shadow-2xl border border-slate-200/60 dark:border-dark-border/40 p-3 overflow-hidden"
+                      className="absolute top-full left-0 mt-3 w-80 rounded-2xl backdrop-blur-xl bg-white/95 dark:bg-dark-bg/95 shadow-[0_16px_48px_rgba(0,0,0,0.12)] dark:shadow-[0_16px_48px_rgba(0,0,0,0.4)] border border-slate-200/60 dark:border-dark-border/40 p-3 overflow-hidden"
                       style={{
-                        animation: 'dropdown-enter 0.3s ease-out forwards',
+                        animation: 'dropdown-enter 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
                         transformOrigin: 'top center'
                       }}
                     >
@@ -323,10 +341,10 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                             handleNavClick(item.path);
                             setOpenDropdown(null);
                           }}
-                          className={`w-full text-left relative flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm transition-all duration-200 group overflow-hidden cursor-pointer ${
+                          className={`w-full text-left relative flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm transition-all duration-200 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${
                             item.highlight
-                              ? 'bg-gradient-to-r from-primary/10 to-secondary/8 text-primary font-semibold border border-primary/15 shadow-sm hover:shadow-md hover:from-primary/15 hover:to-secondary/12 mb-2'
-                              : 'text-slate-text dark:text-dark-text hover:text-primary dark:hover:text-primary'
+                              ? 'bg-gradient-to-r from-primary/10 to-secondary/8 text-primary font-semibold border border-primary/15 shadow-sm hover:shadow-md mb-2'
+                              : 'text-slate-text dark:text-dark-text hover:text-primary dark:hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/5'
                           }`}
                           style={{
                             opacity: 0,
@@ -355,16 +373,16 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
               ))}
             </div>
 
-            <div className="flex items-center gap-3">
-              <div className="flex bg-slate-light dark:bg-dark-border/50 p-1 rounded-xl">
+            <div className="flex items-center gap-2 pl-2 border-l border-slate-200/50 dark:border-dark-border/20">
+              <div className="flex bg-white/70 dark:bg-dark-border/40 p-0.5 rounded-lg shadow-sm border border-slate-200/30 dark:border-dark-border/20">
                 {['es', 'en', 'sh'].map((code) => (
                   <button
                     key={code}
                     onClick={() => setLang(code)}
-                    className={`px-2.5 py-1 rounded-lg text-xs font-semibold tracking-wider transition-all duration-300 ${
+                    className={`px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wider transition-all duration-250 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${
                       lang === code
                         ? 'bg-primary text-white shadow-sm'
-                        : 'text-slate-text/70 dark:text-dark-text/70 hover:text-primary dark:hover:text-white'
+                        : 'text-slate-text/70 dark:text-dark-text/70 hover:text-primary dark:hover:text-white hover:bg-white/50 dark:hover:bg-dark-border/30'
                     }`}
                   >
                     {langLabel[code]}
@@ -374,7 +392,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
 
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                className="p-2.5 rounded-xl bg-slate-light dark:bg-dark-border/50 hover:bg-primary/10 dark:hover:bg-primary/20 text-slate-text dark:text-dark-text hover:text-primary dark:hover:text-secondary transition-all duration-300 cursor-pointer"
+                className="p-2 rounded-lg bg-white/70 dark:bg-dark-border/40 border border-slate-200/30 dark:border-dark-border/20 text-slate-text dark:text-dark-text hover:text-primary dark:hover:text-primary hover:bg-primary/5 transition-all duration-250 cursor-pointer hover:-translate-y-0.5 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
                 aria-label="Toggle Theme"
               >
                 {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
@@ -382,7 +400,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
 
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden p-2.5 rounded-xl bg-slate-light dark:bg-dark-border/50 hover:bg-primary/10 dark:hover:bg-primary/20 text-slate-text dark:text-dark-text transition-all duration-300 cursor-pointer"
+                className="lg:hidden p-2 rounded-lg bg-white/70 dark:bg-dark-border/40 border border-slate-200/30 dark:border-dark-border/20 text-slate-text dark:text-dark-text hover:text-primary dark:hover:text-primary hover:bg-primary/5 transition-all duration-250 cursor-pointer hover:-translate-y-0.5 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
               >
                 {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
@@ -392,7 +410,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
       </div>
 
       {isOpen && (
-        <div className="lg:hidden absolute top-28 left-4 right-4 z-50 rounded-2xl glassmorphism dark:glassmorphism-dark shadow-2xl p-4 border border-white/20 animate-in fade-in slide-in-from-top-4 duration-300 max-h-[70vh] overflow-y-auto">
+        <div className="lg:hidden absolute top-[calc(100%-0.5rem)] left-4 right-4 z-50 rounded-2xl glassmorphism dark:glassmorphism-dark shadow-2xl p-4 border border-white/20 animate-in fade-in slide-in-from-top-4 duration-300 max-h-[70vh] overflow-y-auto">
           <div className="flex flex-col gap-1">
             {navLinks.map((link) => {
               const sub = link.hasSub ? submenus.find(s => s.key === link.subKey) : null;
@@ -404,13 +422,18 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                     key={link.path}
                     to={link.path}
                     onClick={() => setIsOpen(false)}
-                    className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
+                    className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${
                       isActive(link.path)
-                        ? 'bg-primary text-white shadow-md shadow-primary/25'
+                        ? 'text-primary bg-primary/8'
                         : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-border/50 hover:text-primary dark:hover:text-white'
                     }`}
                   >
-                    {link.label}
+                    <span className="relative">
+                      {link.label}
+                      {isActive(link.path) && (
+                        <span className="absolute -bottom-[4px] left-0 right-0 h-[2.5px] bg-gradient-to-r from-primary to-blue-400 rounded-full" />
+                      )}
+                    </span>
                   </Link>
                 );
               }
@@ -419,13 +442,18 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                 <div key={link.path}>
                   <button
                     onClick={() => setMobileSubOpen(isSubOpen ? null : link.subKey)}
-                    className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer ${
+                    className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${
                       isActive(link.path)
-                        ? 'bg-primary text-white shadow-md shadow-primary/25'
+                        ? 'text-primary bg-primary/8'
                         : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-border/50 hover:text-primary dark:hover:text-white'
                     }`}
                   >
-                    <span>{link.label}</span>
+                    <span className="relative">
+                      {link.label}
+                      {isActive(link.path) && (
+                        <span className="absolute -bottom-[4px] left-0 right-0 h-[2.5px] bg-gradient-to-r from-primary to-blue-400 rounded-full" />
+                      )}
+                    </span>
                     <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isSubOpen ? 'rotate-180' : ''}`} />
                   </button>
                   {isSubOpen && (
@@ -437,7 +465,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                             handleNavClick(item.path);
                             setIsOpen(false);
                           }}
-                          className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-medium text-slate-text/80 dark:text-dark-text/80 hover:bg-primary/5 hover:text-primary dark:hover:text-primary transition-all text-left"
+                          className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-medium text-slate-text/80 dark:text-dark-text/80 hover:bg-primary/5 hover:text-primary dark:hover:text-primary transition-all text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
                         >
                           <span className="flex items-center justify-center w-5 shrink-0 opacity-60">
                             <SvgIcon Icon={item.icon} />

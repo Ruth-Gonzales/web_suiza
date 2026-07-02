@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, User, Calendar, CheckCircle, XCircle, Clock, Award, DollarSign, ClipboardCheck, Trophy, UserPlus } from 'lucide-react';
+import { Search, User, Calendar, CheckCircle, XCircle, Clock, Award, DollarSign, ClipboardCheck, Trophy, UserPlus, CheckSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Admission({ t }) {

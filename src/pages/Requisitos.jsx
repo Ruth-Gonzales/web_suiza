@@ -1,4 +1,3 @@
-import React from 'react';
 import { FileText, CheckSquare, Award, Fingerprint, Camera, Receipt } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

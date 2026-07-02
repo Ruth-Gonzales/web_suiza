@@ -1,4 +1,3 @@
-import React from 'react';
 import { GraduationCap, Monitor, FileText } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 
@@ -19,7 +18,7 @@ const modalities = [
   },
   {
     icon: Monitor,
-    title: 'A distancia',
+    title: 'A Distancia',
     color: 'from-emerald-500 to-teal-500',
     desc: 'Plataforma virtual con acompañamiento docente, recursos digitales y evaluación online.',
     schedule: 'Acceso 24/7'
@@ -34,7 +33,7 @@ export default function ModalidadesPage() {
       <div className="bg-circle-1 top-10 left-10"></div>
       <div className="bg-circle-2 bottom-10 right-10"></div>
 
-      <div ref={ref} className={`transition-all duration-700 ${isVisible ? 'animate__animated animate__fadeInUp' : 'opacity-0'}`}>
+      <div ref={ref} className={`transition-all duration-700 ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}>
         <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-secondary text-white flex items-center justify-center mx-auto mb-4 shadow-lg">
             <FileText className="w-7 h-7" />

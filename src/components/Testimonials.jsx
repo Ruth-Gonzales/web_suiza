@@ -39,7 +39,7 @@ export default function Testimonials() {
   useEffect(() => {
     const timer = setInterval(next, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [next]);
 
   const t = testimonials[current];
 
@@ -81,12 +81,14 @@ export default function Testimonials() {
         <button
           onClick={prev}
           className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 p-2.5 rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border/50 shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all text-slate-text dark:text-dark-text cursor-pointer"
+          aria-label="Testimonio anterior"
         >
           <ChevronLeft className="w-4 h-4" />
         </button>
         <button
           onClick={next}
           className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 p-2.5 rounded-xl bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border/50 shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all text-slate-text dark:text-dark-text cursor-pointer"
+          aria-label="Testimonio siguiente"
         >
           <ChevronRight className="w-4 h-4" />
         </button>
@@ -101,6 +103,7 @@ export default function Testimonials() {
                   ? 'bg-primary w-6'
                   : 'bg-slate-300 dark:bg-dark-border hover:bg-primary/50'
               }`}
+              aria-label={`Ir al testimonio ${i + 1}`}
             />
           ))}
         </div>

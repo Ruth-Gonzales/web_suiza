@@ -1,4 +1,3 @@
-import React from 'react';
 import { DollarSign, CreditCard, FileText, BadgePercent, Landmark, Receipt } from 'lucide-react';
 
 const fees = [

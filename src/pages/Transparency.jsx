@@ -1,5 +1,4 @@
-import React from 'react';
-import { Shield, FileText, Scale, BarChart3, Search, Download, Eye, ChevronRight, FileSpreadsheet, Users, Building2, Landmark } from 'lucide-react';
+import { Shield, FileText, Scale, BarChart3, Search, Download, Eye, ChevronRight, FileSpreadsheet, Landmark } from 'lucide-react';
 
 const documents = [
   { title: 'Plan Estratégico Institucional 2024-2030', type: 'PDF', size: '2.4 MB', date: '2024' },

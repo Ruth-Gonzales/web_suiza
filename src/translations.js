@@ -9,7 +9,10 @@ export const translations = {
       contact: "Escríbenos",
       research: "Investigación",
       library: "Biblioteca",
-      transparency: "Transparencia"
+      transparency: "Transparencia",
+      servicios: "Servicios",
+      estudiantes: "Estudiantes",
+      egresados: "Egresados"
     },
     hero: {
       welcome: "Bienvenidos al Instituto de Educación Superior Tecnológico Público Suiza",
@@ -182,7 +185,10 @@ export const translations = {
       contact: "Contact Us",
       research: "Research",
       library: "Library",
-      transparency: "Transparency"
+      transparency: "Transparency",
+      servicios: "Services",
+      estudiantes: "Students",
+      egresados: "Graduates"
     },
     hero: {
       welcome: "Welcome to the Switzerland Public Higher Technological Institute",
@@ -355,7 +361,10 @@ export const translations = {
       contact: "Wishati",
       research: "Jakon Ointi",
       library: "Jatibi Shinanbo",
-      transparency: "Jakon Benati"
+      transparency: "Jakon Benati",
+      servicios: "Jatibi Yoi",
+      estudiantes: "Axoniti",
+      egresados: "Jakon Axonti"
     },
     hero: {
       welcome: "Jakon yatan, non joibo IESTP Suiza",

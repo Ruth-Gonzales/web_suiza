@@ -32,7 +32,7 @@ export default function Carousel({ autoPlayInterval = 5000, children }) {
   }, [next, autoPlayInterval]);
 
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full overflow-hidden group" role="region" aria-roledescription="carousel" aria-label="Carrusel de imágenes institucionales">
       {/* Background images with crossfade */}
       <div className="absolute inset-0">
         {images.map((img, idx) => (
@@ -45,7 +45,10 @@ export default function Carousel({ autoPlayInterval = 5000, children }) {
             <img
               src={img.src}
               alt={img.alt}
+              loading="lazy"
               className="w-full h-full object-cover"
+              width="1920"
+              height="800"
             />
           </div>
         ))}
@@ -65,12 +68,14 @@ export default function Carousel({ autoPlayInterval = 5000, children }) {
       <button
         onClick={prev}
         className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/25 transition-all opacity-0 group-hover:opacity-100 cursor-pointer hover:scale-110"
+        aria-label="Imagen anterior"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
       <button
         onClick={next}
         className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/25 transition-all opacity-0 group-hover:opacity-100 cursor-pointer hover:scale-110"
+        aria-label="Imagen siguiente"
       >
         <ChevronRight className="w-5 h-5" />
       </button>
@@ -86,6 +91,7 @@ export default function Carousel({ autoPlayInterval = 5000, children }) {
                 ? 'bg-white w-8'
                 : 'bg-white/40 hover:bg-white/70 w-2'
             }`}
+            aria-label={`Ir a imagen ${idx + 1}`}
           />
         ))}
       </div>

@@ -50,7 +50,9 @@ export default function FooterParticles() {
     };
 
     const resizeCanvas = () => {
-      const rect = canvas.parentElement.getBoundingClientRect();
+      const parent = canvas.parentElement;
+      if (!parent) return;
+      const rect = parent.getBoundingClientRect();
       canvas.width = rect.width * window.devicePixelRatio;
       canvas.height = rect.height * window.devicePixelRatio;
       canvas.style.width = `${rect.width}px`;
@@ -129,8 +131,9 @@ export default function FooterParticles() {
     }
 
     const init = () => {
-      const rect = canvas.parentElement.getBoundingClientRect();
-      // Adjust density based on screen width
+      const parent = canvas.parentElement;
+      if (!parent) return;
+      const rect = parent.getBoundingClientRect();
       const particleCount = Math.min(Math.floor(rect.width / 35), 45);
       particles = [];
       for (let i = 0; i < particleCount; i++) {
@@ -141,9 +144,9 @@ export default function FooterParticles() {
     init();
 
     // Re-initialize only if width changes significantly (e.g. orientation swap / resize)
-    let lastWidth = canvas.parentElement.getBoundingClientRect().width;
+    let lastWidth = canvas.parentElement ? canvas.parentElement.getBoundingClientRect().width : 0;
     const checkResize = () => {
-      const currentWidth = canvas.parentElement.getBoundingClientRect().width;
+      const currentWidth = canvas.parentElement ? canvas.parentElement.getBoundingClientRect().width : 0;
       if (Math.abs(currentWidth - lastWidth) > 50) {
         lastWidth = currentWidth;
         init();

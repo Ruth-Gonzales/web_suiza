@@ -1,5 +1,5 @@
 ﻿import { Link } from 'react-router-dom';
-import { GraduationCap, ArrowRight, ChevronRight, Sparkles, BookOpen, FlaskConical } from 'lucide-react';
+import { GraduationCap, ArrowRight, ChevronRight, Sparkles, BookOpen, FlaskConical, Users, Target, TrendingUp, Award } from 'lucide-react';
 import Carousel from '../components/Carousel';
 import Testimonials from '../components/Testimonials';
 import useScrollReveal from '../hooks/useScrollReveal';
@@ -16,6 +16,24 @@ function AnimatedStat({ end, label, suffix }) {
       <span className="text-xs font-medium text-white/75 mt-1 uppercase tracking-wider">
         {label}
       </span>
+    </div>
+  );
+}
+
+function AdmissionStat({ icon: Icon, end, label, suffix }) {
+  const { count, ref } = useCountUp({ end, duration: 1800 });
+
+  return (
+    <div className="text-center p-5 rounded-2xl bg-white/60 dark:bg-dark-card/60 backdrop-blur-sm border border-primary/5 dark:border-dark-border/30 hover:shadow-md transition-shadow">
+      <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-primary/10 mb-3">
+        <Icon className="w-5 h-5 text-primary" />
+      </div>
+      <div ref={ref} className="text-2xl md:text-3xl font-extrabold text-slate-text dark:text-white">
+        {count}{suffix}
+      </div>
+      <div className="text-[10px] font-semibold text-slate-text/60 dark:text-dark-text/60 uppercase tracking-wider mt-1">
+        {label}
+      </div>
     </div>
   );
 }
@@ -124,6 +142,34 @@ export default function Home({ t }) {
           ))}
         </div>
       </div>
+
+      <section className="max-w-7xl mx-auto px-4 md:px-8 mt-20">
+        <div className="rounded-3xl bg-gradient-to-br from-primary/5 via-primary/3 to-secondary/5 dark:from-primary/10 dark:to-secondary/5 border border-primary/10 dark:border-dark-border/40 p-8 md:p-12">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-slate-text dark:text-white tracking-tight">
+              Admisión 2026-II
+            </h2>
+            <p className="text-sm text-slate-text/70 dark:text-dark-text/70 mt-2">
+              Conoce las cifras del proceso de admisión
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            <AdmissionStat icon={Target} end={350} label="Vacantes" suffix="" />
+            <AdmissionStat icon={Users} end={1200} label="Postulantes" suffix="+" />
+            <AdmissionStat icon={TrendingUp} end={3.4} label="Postulantes x Vacante" suffix="" />
+            <AdmissionStat icon={Award} end={11} label="Carreras" suffix="" />
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              to="/admission"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-white font-semibold text-sm shadow-lg shadow-primary/20 hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
+            >
+              Ver proceso de admisión
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <Testimonials />
     </div>

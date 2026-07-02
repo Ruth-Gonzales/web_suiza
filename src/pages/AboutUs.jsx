@@ -1,5 +1,4 @@
-import React from 'react';
-import { Target, Eye, ShieldAlert, Award, Landmark, CheckCircle } from 'lucide-react';
+import { Target, Eye, Landmark, CheckCircle } from 'lucide-react';
 
 export default function AboutUs({ t }) {
   const values = [

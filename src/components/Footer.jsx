@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { GraduationCap, Globe, MapPin, Phone, Mail } from 'lucide-react';
+import { GraduationCap, Globe, MapPin, Phone, Mail, Image, HelpCircle, Briefcase, Users } from 'lucide-react';
 import FooterParticles from './FooterParticles';
+import Newsletter from './Newsletter';
 
 export default function Footer({ t }) {
   return (
     <footer className="relative w-full bg-slate-light/60 dark:bg-dark-card/50 border-t border-primary/10 dark:border-dark-border mt-20 transition-all duration-300 overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           
           {/* Section 1: Logo & Vision */}
           <div className="flex flex-col gap-4">
@@ -45,59 +46,79 @@ export default function Footer({ t }) {
           </div>
 
 
-          {/* Section 2: Quick Links */}
+          {/* Section 2: Enlaces */}
           <div>
             <h3 className="font-semibold text-sm text-slate-text dark:text-white uppercase tracking-wider mb-4">
-              {t.nav.about}
+              Institución
             </h3>
             <ul className="flex flex-col gap-2.5 text-sm">
               <li>
-                <Link to="/" className="text-slate-text/75 dark:text-dark-text/75 hover:text-primary dark:hover:text-secondary transition-colors">
-                  {t.nav.home}
+                <Link to="/" className="flex items-center gap-2 text-slate-text/75 dark:text-dark-text/75 hover:text-primary dark:hover:text-secondary transition-colors">
+                  <span className="w-1 h-1 rounded-full bg-primary/40" /> Inicio
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-slate-text/75 dark:text-dark-text/75 hover:text-primary dark:hover:text-secondary transition-colors">
-                  Misión y Visión
+                <Link to="/about" className="flex items-center gap-2 text-slate-text/75 dark:text-dark-text/75 hover:text-primary dark:hover:text-secondary transition-colors">
+                  <span className="w-1 h-1 rounded-full bg-primary/40" /> Institucional
                 </Link>
               </li>
               <li>
-                <Link to="/careers" className="text-slate-text/75 dark:text-dark-text/75 hover:text-primary dark:hover:text-secondary transition-colors">
-                  {t.nav.careers}
+                <Link to="/careers" className="flex items-center gap-2 text-slate-text/75 dark:text-dark-text/75 hover:text-primary dark:hover:text-secondary transition-colors">
+                  <span className="w-1 h-1 rounded-full bg-primary/40" /> Carreras
                 </Link>
               </li>
               <li>
-                <Link to="/admission" className="text-slate-text/75 dark:text-dark-text/75 hover:text-primary dark:hover:text-secondary transition-colors">
-                  Examen de Admisión
+                <Link to="/admission" className="flex items-center gap-2 text-slate-text/75 dark:text-dark-text/75 hover:text-primary dark:hover:text-secondary transition-colors">
+                  <span className="w-1 h-1 rounded-full bg-primary/40" /> Admisión
+                </Link>
+              </li>
+              <li>
+                <Link to="/directorio" className="flex items-center gap-2 text-slate-text/75 dark:text-dark-text/75 hover:text-primary dark:hover:text-secondary transition-colors">
+                  <Users className="w-3.5 h-3.5 text-primary/60" /> Directorio
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Section 3: Accesos Directos */}
+          {/* Section 3: Servicios */}
           <div>
             <h3 className="font-semibold text-sm text-slate-text dark:text-white uppercase tracking-wider mb-4">
-              Accesos Directos
+              Servicios
             </h3>
             <ul className="flex flex-col gap-2.5 text-sm text-slate-text/75 dark:text-dark-text/75">
               <li>
-                <Link to="/research" className="hover:text-primary dark:hover:text-secondary transition-colors">
-                  {t.nav.research}
+                <Link to="/research" className="flex items-center gap-2 hover:text-primary dark:hover:text-secondary transition-colors">
+                  <span className="w-1 h-1 rounded-full bg-primary/40" /> Investigación
                 </Link>
               </li>
               <li>
-                <Link to="/library" className="hover:text-primary dark:hover:text-secondary transition-colors">
-                  {t.nav.library}
+                <Link to="/library" className="flex items-center gap-2 hover:text-primary dark:hover:text-secondary transition-colors">
+                  <span className="w-1 h-1 rounded-full bg-primary/40" /> Biblioteca
                 </Link>
               </li>
               <li>
-                <Link to="/transparency" className="hover:text-primary dark:hover:text-secondary transition-colors">
-                  {t.nav.transparency}
+                <Link to="/transparency" className="flex items-center gap-2 hover:text-primary dark:hover:text-secondary transition-colors">
+                  <span className="w-1 h-1 rounded-full bg-primary/40" /> Transparencia
                 </Link>
               </li>
               <li>
-                <Link to="/news" className="hover:text-primary dark:hover:text-secondary transition-colors">
-                  {t.nav.news}
+                <Link to="/news" className="flex items-center gap-2 hover:text-primary dark:hover:text-secondary transition-colors">
+                  <span className="w-1 h-1 rounded-full bg-primary/40" /> Noticias
+                </Link>
+              </li>
+              <li>
+                <Link to="/galeria" className="flex items-center gap-2 hover:text-primary dark:hover:text-secondary transition-colors">
+                  <Image className="w-3.5 h-3.5 text-primary/60" /> Galería
+                </Link>
+              </li>
+              <li>
+                <Link to="/faq" className="flex items-center gap-2 hover:text-primary dark:hover:text-secondary transition-colors">
+                  <HelpCircle className="w-3.5 h-3.5 text-primary/60" /> FAQ
+                </Link>
+              </li>
+              <li>
+                <Link to="/bolsa-trabajo" className="flex items-center gap-2 hover:text-primary dark:hover:text-secondary transition-colors">
+                  <Briefcase className="w-3.5 h-3.5 text-primary/60" /> Bolsa de Trabajo
                 </Link>
               </li>
             </ul>
@@ -122,6 +143,11 @@ export default function Footer({ t }) {
             </div>
           </div>
 
+          {/* Section 5: Newsletter */}
+          <div>
+            <Newsletter />
+          </div>
+
         </div>
 
         {/* Bottom Bar */}
@@ -132,8 +158,8 @@ export default function Footer({ t }) {
           <div className="flex gap-4">
             <Link to="/transparency" className="hover:text-primary transition-colors">Transparencia</Link>
             <Link to="/library" className="hover:text-primary transition-colors">Biblioteca</Link>
+            <Link to="/faq" className="hover:text-primary transition-colors">FAQ</Link>
             <Link to="/contact" className="hover:text-primary transition-colors">Contacto</Link>
-            <a href="#" className="hover:text-primary transition-colors">Aula Virtual</a>
           </div>
         </div>
       </div>

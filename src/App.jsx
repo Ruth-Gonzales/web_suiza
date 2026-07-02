@@ -1,34 +1,66 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import Careers from './pages/Careers';
-import Admission from './pages/Admission';
-import AboutUs from './pages/AboutUs';
-import NewsPage from './pages/NewsPage';
-import Research from './pages/Research';
-import Library from './pages/Library';
-import Transparency from './pages/Transparency';
-import PreInscription from './pages/PreInscription';
-import MallaCurricular from './pages/MallaCurricular';
-import DocentesPage from './pages/DocentesPage';
-import LaboratoriosPage from './pages/LaboratoriosPage';
-import ConveniosPage from './pages/ConveniosPage';
-import PerfilEgresado from './pages/PerfilEgresado';
-import ModalidadesPage from './pages/ModalidadesPage';
-import Cronograma from './pages/Cronograma';
-import Costos from './pages/Costos';
-import Requisitos from './pages/Requisitos';
-import Resultados from './pages/Resultados';
-import ContactForm from './components/ContactForm';
 import VirtualAssistant from './components/VirtualAssistant';
+import BackToTop from './components/BackToTop';
+import WhatsAppButton from './components/WhatsAppButton';
+
+import CookieConsent from './components/CookieConsent';
+import ErrorBoundary from './components/ErrorBoundary';
+import useScrollToTop from './hooks/useScrollToTop';
 import { translations } from './translations';
+
+const Home = lazy(() => import('./pages/Home'));
+const Careers = lazy(() => import('./pages/Careers'));
+const Admission = lazy(() => import('./pages/Admission'));
+const AboutUs = lazy(() => import('./pages/AboutUs'));
+const NewsPage = lazy(() => import('./pages/NewsPage'));
+const Research = lazy(() => import('./pages/Research'));
+const Library = lazy(() => import('./pages/Library'));
+const Transparency = lazy(() => import('./pages/Transparency'));
+const PreInscription = lazy(() => import('./pages/PreInscription'));
+const MallaCurricular = lazy(() => import('./pages/MallaCurricular'));
+const DocentesPage = lazy(() => import('./pages/DocentesPage'));
+const LaboratoriosPage = lazy(() => import('./pages/LaboratoriosPage'));
+const ConveniosPage = lazy(() => import('./pages/ConveniosPage'));
+const PerfilEgresado = lazy(() => import('./pages/PerfilEgresado'));
+const ModalidadesPage = lazy(() => import('./pages/ModalidadesPage'));
+const Cronograma = lazy(() => import('./pages/Cronograma'));
+const Costos = lazy(() => import('./pages/Costos'));
+const Requisitos = lazy(() => import('./pages/Requisitos'));
+const Resultados = lazy(() => import('./pages/Resultados'));
+const Galeria = lazy(() => import('./pages/Galeria'));
+const FAQ = lazy(() => import('./pages/FAQ'));
+const BolsaTrabajo = lazy(() => import('./pages/BolsaTrabajo'));
+const Directorio = lazy(() => import('./pages/Directorio'));
+const Privacidad = lazy(() => import('./pages/Privacidad'));
+const Calendario = lazy(() => import('./pages/Calendario'));
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const Egresados = lazy(() => import('./pages/Egresados'));
+const AulaVirtual = lazy(() => import('./pages/AulaVirtual'));
+const Reglamentos = lazy(() => import('./pages/Reglamentos'));
+const Tutoria = lazy(() => import('./pages/Tutoria'));
+const Deportes = lazy(() => import('./pages/Deportes'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+const ContactForm = lazy(() => import('./components/ContactForm'));
+
+function PageLoader() {
+  return (
+    <div className="flex items-center justify-center min-h-[60vh]">
+      <div className="relative">
+        <div className="w-10 h-10 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
+      </div>
+    </div>
+  );
+}
 
 function AnimatedRoutes({ t }) {
   const location = useLocation();
   const [displayLocation, setDisplayLocation] = useState(location);
   const [transitionStage, setTransitionStage] = useState('enter');
+
+  useScrollToTop();
 
   useEffect(() => {
     if (location.pathname !== displayLocation.pathname) {
@@ -63,11 +95,39 @@ function AnimatedRoutes({ t }) {
         <Route path="/costos" element={<Costos />} />
         <Route path="/requisitos" element={<Requisitos />} />
         <Route path="/resultados" element={<Resultados />} />
+        <Route path="/galeria" element={<Galeria />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/bolsa-trabajo" element={<BolsaTrabajo />} />
+        <Route path="/directorio" element={<Directorio />} />
+        <Route path="/privacidad" element={<Privacidad />} />
+        <Route path="/calendario" element={<Calendario />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/egresados" element={<Egresados />} />
+        <Route path="/aulavirtual" element={<AulaVirtual />} />
+        <Route path="/reglamentos" element={<Reglamentos />} />
+        <Route path="/tutoria" element={<Tutoria />} />
+        <Route path="/deportes" element={<Deportes />} />
+        <Route path="/servicios" element={<div className="py-12 px-4 text-center text-slate-text/50 dark:text-dark-text/50 text-sm">Selecciona un servicio del menú.</div>} />
         <Route path="/contact" element={
-          <div className="py-12 px-4 flex justify-center items-center">
-            <ContactForm t={t} />
+          <div className="py-12 px-4">
+            <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 items-start">
+              <ContactForm t={t} />
+              <div className="rounded-2xl overflow-hidden border border-primary/5 dark:border-dark-border/40 shadow-lg h-[400px] lg:h-[500px]">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.4162854302617!2d-74.537947!3d-8.382842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91a44b4b5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2sIESTP%20Suiza!5e0!3m2!1ses!2spe!4v1"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Ubicación IESTP Suiza"
+                />
+              </div>
+            </div>
           </div>
         } />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
@@ -76,6 +136,7 @@ function AnimatedRoutes({ t }) {
 function App() {
   const [lang, setLang] = useState('es');
   const [darkMode, setDarkMode] = useState(false);
+  const [highContrast, setHighContrast] = useState(false);
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -86,24 +147,51 @@ function App() {
     }
   }, [darkMode]);
 
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (highContrast) {
+      root.classList.add('high-contrast');
+    } else {
+      root.classList.remove('high-contrast');
+    }
+  }, [highContrast]);
+
   const t = translations[lang] || translations['es'];
 
   return (
     <Router>
-      <div className="min-h-screen flex flex-col transition-colors duration-300 bg-bg-general dark:bg-dark-bg text-slate-text dark:text-dark-text pb-6 relative">
-        <div className="fixed top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-soft-pulse pointer-events-none" />
-        <div className="fixed bottom-1/3 right-0 w-80 h-80 bg-secondary/8 rounded-full blur-3xl animate-soft-pulse pointer-events-none" style={{ animationDelay: '4s' }} />
-        <div className="fixed top-2/3 left-1/4 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl animate-float-slow pointer-events-none" />
+      <ErrorBoundary>
+        <div className="min-h-screen flex flex-col transition-colors duration-300 bg-bg-general dark:bg-dark-bg text-slate-text dark:text-dark-text pb-6 relative">
+          <div className="fixed top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-soft-pulse pointer-events-none" />
+          <div className="fixed bottom-1/3 right-0 w-80 h-80 bg-secondary/8 rounded-full blur-3xl animate-soft-pulse pointer-events-none" style={{ animationDelay: '4s' }} />
+          <div className="fixed top-2/3 left-1/4 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl animate-float-slow pointer-events-none" />
 
-        <Navbar lang={lang} setLang={setLang} darkMode={darkMode} setDarkMode={setDarkMode} t={t} />
-        
-        <main className="flex-1 w-full mt-4">
-          <AnimatedRoutes t={t} />
-        </main>
+          <button
+            onClick={() => setHighContrast(!highContrast)}
+            className="fixed top-4 left-4 z-[60] p-2 rounded-xl bg-white/80 dark:bg-dark-card/80 backdrop-blur-sm border border-primary/10 text-xs font-medium text-slate-text dark:text-dark-text hover:bg-primary/10 hover:text-primary transition-all duration-300 cursor-pointer shadow-sm"
+            aria-label="Alternar alto contraste"
+            title="Alto contraste"
+          >
+            {highContrast ? '🔲' : '👁️'}
+          </button>
 
-        <Footer t={t} />
-        <VirtualAssistant />
-      </div>
+          <Navbar lang={lang} setLang={setLang} darkMode={darkMode} setDarkMode={setDarkMode} t={t} />
+          
+          <div className="pt-36">
+            <main className="flex-1 w-full">
+              <Suspense fallback={<PageLoader />}>
+                <AnimatedRoutes t={t} />
+              </Suspense>
+            </main>
+          </div>
+
+          <Footer t={t} />
+          <BackToTop />
+          <WhatsAppButton />
+          <CookieConsent />
+          <VirtualAssistant />
+        </div>
+      </ErrorBoundary>
     </Router>
   );
 }

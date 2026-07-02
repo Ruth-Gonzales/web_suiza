@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Send, CheckCircle2, User, Mail, Phone, BookOpen, Calendar, FileText } from 'lucide-react';
+import { useState } from 'react';
+import { Send, CheckCircle2, User, BookOpen, Calendar, FileText } from 'lucide-react';
 
 const programas = [
   'Desarrollo de Sistemas de Información',
@@ -100,33 +100,33 @@ export default function PreInscription() {
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
-                  <label className={labelClass}>Nombres *</label>
-                  <input className={inputClass} placeholder="Juan Carlos" value={form.nombres} onChange={e => update('nombres', e.target.value)} required />
+                  <label htmlFor="pre-nombres" className={labelClass}>Nombres *</label>
+                  <input id="pre-nombres" className={inputClass} placeholder="Juan Carlos" value={form.nombres} onChange={e => update('nombres', e.target.value)} required />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className={labelClass}>Apellidos *</label>
-                  <input className={inputClass} placeholder="García Pérez" value={form.apellidos} onChange={e => update('apellidos', e.target.value)} required />
+                  <label htmlFor="pre-apellidos" className={labelClass}>Apellidos *</label>
+                  <input id="pre-apellidos" className={inputClass} placeholder="García Pérez" value={form.apellidos} onChange={e => update('apellidos', e.target.value)} required />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className={labelClass}>DNI *</label>
-                  <input className={inputClass} placeholder="12345678" maxLength={8} value={form.dni} onChange={e => update('dni', e.target.value.replace(/\D/g, ''))} required />
+                  <label htmlFor="pre-dni" className={labelClass}>DNI *</label>
+                  <input id="pre-dni" className={inputClass} placeholder="12345678" maxLength={8} value={form.dni} onChange={e => update('dni', e.target.value.replace(/\D/g, ''))} required />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className={labelClass}>Fecha de Nacimiento *</label>
-                  <input type="date" className={inputClass} value={form.fechaNac} onChange={e => update('fechaNac', e.target.value)} required />
+                  <label htmlFor="pre-fechaNac" className={labelClass}>Fecha de Nacimiento *</label>
+                  <input id="pre-fechaNac" type="date" className={inputClass} value={form.fechaNac} onChange={e => update('fechaNac', e.target.value)} required />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className={labelClass}>Celular *</label>
-                  <input className={inputClass} placeholder="987654321" maxLength={9} value={form.celular} onChange={e => update('celular', e.target.value.replace(/\D/g, ''))} required />
+                  <label htmlFor="pre-celular" className={labelClass}>Celular *</label>
+                  <input id="pre-celular" className={inputClass} placeholder="987654321" maxLength={9} value={form.celular} onChange={e => update('celular', e.target.value.replace(/\D/g, ''))} required />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className={labelClass}>Correo Electrónico</label>
-                  <input type="email" className={inputClass} placeholder="correo@ejemplo.com" value={form.email} onChange={e => update('email', e.target.value)} />
+                  <label htmlFor="pre-email" className={labelClass}>Correo Electrónico</label>
+                  <input id="pre-email" type="email" className={inputClass} placeholder="correo@ejemplo.com" value={form.email} onChange={e => update('email', e.target.value)} />
                 </div>
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className={labelClass}>Dirección</label>
-                <input className={inputClass} placeholder="Jr. Los Olivos 123, Pucallpa" value={form.direccion} onChange={e => update('direccion', e.target.value)} />
+                <label htmlFor="pre-direccion" className={labelClass}>Dirección</label>
+                <input id="pre-direccion" className={inputClass} placeholder="Jr. Los Olivos 123, Pucallpa" value={form.direccion} onChange={e => update('direccion', e.target.value)} />
               </div>
             </div>
           )}

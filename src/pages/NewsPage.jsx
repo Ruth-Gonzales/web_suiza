@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Calendar, Tag, ChevronRight, Share2, Heart, Search } from 'lucide-react';
 
 export default function NewsPage({ t }) {
@@ -13,7 +13,7 @@ export default function NewsPage({ t }) {
   const filteredNews = t.news.items.filter(item => {
     const matchesFilter = filter === 'All' || 
       (filter === 'Académicas' && item.tag.includes('Revista')) ||
-      (filter === 'Admisión' && item.tag.includes('Admisión') || item.tag.includes('Simulacro'));
+      (filter === 'Admisión' && (item.tag.includes('Admisión') || item.tag.includes('Simulacro')));
     
     const matchesSearch = item.title.toLowerCase().includes(search.toLowerCase()) ||
       item.desc.toLowerCase().includes(search.toLowerCase()) ||
@@ -107,13 +107,10 @@ export default function NewsPage({ t }) {
 
               {/* Action buttons footer */}
               <div className="border-t border-primary/5 pt-4 flex justify-between items-center text-xs">
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-1 font-bold text-primary dark:text-secondary hover:translate-x-0.5 transition-transform"
-                >
+                <span className="inline-flex items-center gap-1 font-bold text-primary dark:text-secondary cursor-default">
                   <span>{t.news.readMore}</span>
                   <ChevronRight className="w-4 h-4" />
-                </a>
+                </span>
 
                 <div className="flex items-center gap-3">
                   <button 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Microscope, FileText, Megaphone, Sprout, BookOpen, Award, Users, ArrowUpRight } from 'lucide-react';
 
 const projects = [

@@ -1,0 +1,24 @@
+{
+  "name": "IESTP Suiza Pucallpa",
+  "short_name": "IESTP Suiza",
+  "description": "Instituto de Educación Superior Tecnológico Público Suiza - Pucallpa, Ucayali",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#E5EEFE",
+  "theme_color": "#4B7AF4",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

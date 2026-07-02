@@ -1,4 +1,3 @@
-import React from 'react';
 import { BookOpen, Search, Monitor, Clock, FileText, ArrowUpRight, BookMarked, GraduationCap, Globe } from 'lucide-react';
 
 const resources = [

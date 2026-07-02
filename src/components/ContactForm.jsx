@@ -1,18 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Send, CheckCircle2 } from 'lucide-react';
 
 export default function ContactForm({ t }) {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const submitTimerRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (submitTimerRef.current) clearTimeout(submitTimerRef.current);
+    };
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
     
     setLoading(true);
-    // Simulate API request
-    setTimeout(() => {
+    submitTimerRef.current = setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
       setFormData({ name: '', email: '', message: '' });
@@ -51,10 +57,11 @@ export default function ContactForm({ t }) {
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-text/80 dark:text-dark-text/80 mb-1.5 uppercase tracking-wider">
+            <label htmlFor="contact-name" className="block text-xs font-semibold text-slate-text/80 dark:text-dark-text/80 mb-1.5 uppercase tracking-wider">
               {t.contact.nameLabel}
             </label>
             <input
+              id="contact-name"
               type="text"
               required
               value={formData.name}
@@ -65,10 +72,11 @@ export default function ContactForm({ t }) {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-text/80 dark:text-dark-text/80 mb-1.5 uppercase tracking-wider">
+            <label htmlFor="contact-email" className="block text-xs font-semibold text-slate-text/80 dark:text-dark-text/80 mb-1.5 uppercase tracking-wider">
               {t.contact.emailLabel}
             </label>
             <input
+              id="contact-email"
               type="email"
               required
               value={formData.email}
@@ -79,10 +87,11 @@ export default function ContactForm({ t }) {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-text/80 dark:text-dark-text/80 mb-1.5 uppercase tracking-wider">
+            <label htmlFor="contact-message" className="block text-xs font-semibold text-slate-text/80 dark:text-dark-text/80 mb-1.5 uppercase tracking-wider">
               {t.contact.messageLabel}
             </label>
             <textarea
+              id="contact-message"
               required
               rows={4}
               value={formData.message}
