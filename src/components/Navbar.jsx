@@ -9,7 +9,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
   const location = useLocation();
   const navigate = useNavigate();
 
-    const navLinks = [
+  const navLinks = [
     { path: '/', label: t.nav.home },
     { path: '/about', label: t.nav.about, hasAboutMega: true },
     { path: '/careers', label: t.nav.careers, hasDropdown: true },
@@ -64,73 +64,27 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
         <div className="hidden lg:flex items-center gap-1.5 relative">
           {navLinks.map((link) => (
             <div key={link.path} className="relative group">
-              {link.hasDropdown ? (
+              {(link.hasDropdown || link.hasMega || link.hasAboutMega || link.hasSimpleDropdown) ? (
                 <button
-                  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-1.5 ${
-                    isOpen && location.pathname === link.path
+                  className={\`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-1.5 \${
+                    location.pathname.startsWith(link.path) && link.path !== '/'
+                      ? 'bg-primary text-white shadow-md shadow-primary/20'
+                      : location.pathname === link.path
                       ? 'bg-primary text-white shadow-md shadow-primary/20'
                       : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
-                  }`}
+                  }\`}
                 >
                   {link.label}
                   <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
                 </button>
-              ) : link.hasMega ? (
-                <button
-                  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-1.5 ${
-                    isOpen && location.pathname === link.path
-                      ? 'bg-primary text-white shadow-md shadow-primary/20'
-                      : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
-                  }`}
-                >
-                  {link.label}
-                  <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
-                </button>
-              ) : link.hasAboutMega ? (
-                <button
-                  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-1.5 ${
-                    location.pathname === link.path
-                      ? 'bg-primary text-white shadow-md shadow-primary/20'
-                      : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
-                  }`}
-                >
-                  {link.label}
-                  <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
-                </button>
-                            ) : link.hasSimpleDropdown ? (
-                <div>
-                  <Link
-                    to={link.path}
-                    onClick={() => setIsOpen(false)}
-                    className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block ${
-                      location.pathname === link.path
-                        ? 'bg-primary text-white shadow-md shadow-primary/25'
-                        : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                  <div className="mt-2 space-y-1 pl-4 border-l-2 border-primary/20">
-                    {t[link.menuKey]?.map((item, idx) => (
-                      <Link
-                        key={idx}
-                        to={item.path}
-                        onClick={() => setIsOpen(false)}
-                        className="w-full text-left px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-200 block text-xs font-semibold text-slate-text dark:text-white"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
               ) : (
                 <Link
                   to={link.path}
-                  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
+                  className={\`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 \${
                     location.pathname === link.path
                       ? 'bg-primary text-white shadow-md shadow-primary/20'
                       : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
-                  }`}
+                  }\`}
                 >
                   {link.label}
                 </Link>
@@ -159,7 +113,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                             </div>
                           </div>
                           <button
-                            onClick={() => navigate(`/careers/${career.id}`)}
+                            onClick={() => navigate(\`/careers/\${career.id}\`)}
                             className="flex-shrink-0 px-3 py-2 bg-primary hover:bg-primary-dark text-white text-xs font-bold rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-1 whitespace-nowrap group-hover/item:shadow-lg group-hover/item:shadow-primary/30"
                           >
                             Leer más
@@ -188,7 +142,6 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                 <div className="absolute top-full left-0 w-[820px] opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-out z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:w-full before:h-3">
                   <div className="dropdown-theme p-6">
                     <div className="grid grid-cols-3 gap-6">
-                      {/* Left column - categories list */}
                       <div className="col-span-1 border-r border-primary/10 dark:border-white/10 pr-4">
                         <p className="text-xs font-bold text-primary dark:text-secondary uppercase mb-4 transition-colors duration-300">Modalidades de admisión</p>
                         <ul className="space-y-3">
@@ -197,8 +150,6 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                           <li className="font-semibold text-sm text-slate-text dark:text-white cursor-pointer hover:text-primary dark:hover:text-secondary transition-colors duration-300">Experiencia laboral</li>
                         </ul>
                       </div>
-
-                      {/* Middle column - info blocks */}
                       <div className="col-span-1 space-y-3">
                         <div>
                           <h4 className="font-bold text-slate-text dark:text-white transition-colors duration-300">Traslado</h4>
@@ -209,8 +160,6 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                           <p className="text-sm text-slate-text/70 dark:text-dark-text/70 transition-colors duration-300">Explora nuestros 11 programas licenciados con alta demanda laboral y prácticas profesionales en la región.</p>
                         </div>
                       </div>
-
-                      {/* Right column - CTA */}
                       <div className="col-span-1 flex flex-col justify-between gap-4">
                         <div className="flex items-start gap-3">
                           <img src={LogoSuiza} alt="Logo" className="w-20 h-20 rounded-md object-cover" />
@@ -225,7 +174,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                   </div>
                 </div>
               )}
-            
+
               {/* Simple Dropdown for Transparency, Procedures, Services */}
               {link.hasSimpleDropdown && (
                 <div className="absolute top-full left-0 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-out z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:w-full before:h-3">
@@ -246,29 +195,26 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
               )}
             </div>
           ))}
-
         </div>
 
         {/* Action Controls (Lang, Dark Mode, Mobile Menu Button) */}
         <div className="flex items-center gap-3">
-          {/* Language Selector Segmented Control */}
           <div className="flex bg-slate-light dark:bg-dark-hover p-1 rounded-xl transition-colors duration-300">
             {languages.map((l) => (
               <button
                 key={l.code}
                 onClick={() => setLang(l.code)}
-                className={`px-2.5 py-1 rounded-lg text-xs font-semibold tracking-wider transition-all duration-300 ${
+                className={\`px-2.5 py-1 rounded-lg text-xs font-semibold tracking-wider transition-all duration-300 \${
                   lang === l.code
                     ? 'bg-primary text-white shadow-sm'
                     : 'text-slate-text/70 dark:text-dark-text/70 hover:text-primary dark:hover:text-white'
-                }`}
+                }\`}
               >
                 {l.label}
               </button>
             ))}
           </div>
 
-          {/* Theme Toggle Button */}
           <button
             onClick={() => setDarkMode(!darkMode)}
             className="p-2.5 rounded-xl bg-slate-light dark:bg-dark-hover hover:bg-primary/10 dark:hover:bg-primary/20 text-slate-text dark:text-dark-text hover:text-primary dark:hover:text-secondary transition-all duration-300 cursor-pointer"
@@ -277,7 +223,6 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
             {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
 
-          {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden p-2.5 rounded-xl bg-slate-light dark:bg-dark-hover hover:bg-primary/10 dark:hover:bg-primary/20 text-slate-text dark:text-dark-text transition-all duration-300 cursor-pointer"
@@ -294,23 +239,21 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
             <div key={link.path}>
               {link.hasDropdown ? (
                 <div>
-                  <Link
-                    to={link.path}
-                    onClick={() => setIsOpen(false)}
-                    className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block ${
-                      location.pathname === link.path
+                  <button
+                    className={\`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block \${
+                      location.pathname.startsWith(link.path)
                         ? 'bg-primary text-white shadow-md shadow-primary/25'
                         : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
-                    }`}
+                    }\`}
                   >
                     {link.label}
-                  </Link>
+                  </button>
                   <div className="mt-2 space-y-2 pl-4 border-l-2 border-primary/20">
                     {t.careers.items.map((career) => (
                       <button
                         key={career.id}
                         onClick={() => {
-                          navigate(`/careers/${career.id}`);
+                          navigate(\`/careers/\${career.id}\`);
                           setIsOpen(false);
                         }}
                         className="w-full text-left px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-200 group"
@@ -327,15 +270,56 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                 </div>
               ) : link.hasAboutMega ? (
                 <AboutMegaMenu t={t} isMobile onItemClick={() => setIsOpen(false)} />
+              ) : link.hasSimpleDropdown ? (
+                <div>
+                  <button
+                    className={\`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block \${
+                      location.pathname.startsWith(link.path)
+                        ? 'bg-primary text-white shadow-md shadow-primary/25'
+                        : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
+                    }\`}
+                  >
+                    {link.label}
+                  </button>
+                  <div className="mt-2 space-y-1 pl-4 border-l-2 border-primary/20">
+                    {t[link.menuKey]?.map((item, idx) => (
+                      <Link
+                        key={idx}
+                        to={item.path}
+                        onClick={() => setIsOpen(false)}
+                        className="w-full text-left px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-200 block text-xs font-semibold text-slate-text dark:text-white"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : link.hasMega ? (
+                <div>
+                  <button
+                    className={\`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block \${
+                      location.pathname.startsWith(link.path)
+                        ? 'bg-primary text-white shadow-md shadow-primary/25'
+                        : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
+                    }\`}
+                  >
+                    {link.label}
+                  </button>
+                  <div className="mt-2 space-y-1 pl-4 border-l-2 border-primary/20">
+                    <Link to="/admission" onClick={() => setIsOpen(false)} className="w-full text-left px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-200 block text-xs font-semibold text-slate-text dark:text-white">Admisión 2026</Link>
+                    <Link to="/contact" onClick={() => setIsOpen(false)} className="w-full text-left px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-200 block text-xs font-semibold text-slate-text dark:text-white">Contactenos</Link>
+                    <Link to="/careers" onClick={() => setIsOpen(false)} className="w-full text-left px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-200 block text-xs font-semibold text-slate-text dark:text-white">Ver programas</Link>
+                  </div>
+                </div>
               ) : (
                 <Link
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block ${
+                  className={\`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block \${
                     location.pathname === link.path
                       ? 'bg-primary text-white shadow-md shadow-primary/25'
                       : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
-                  }`}
+                  }\`}
                 >
                   {link.label}
                 </Link>
