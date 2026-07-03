@@ -30,7 +30,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
   return (
     <nav className="sticky top-0 z-50 w-full px-4 py-4 md:px-8">
       {/* Contact info bar above Navbar */}
-      <div className="max-w-7xl mx-auto mb-2 px-4 py-1.5 flex flex-wrap justify-between items-center text-xs border-b border-primary/10 dark:border-white/8 text-slate-text/70 dark:text-dark-text/70 transition-colors duration-300">
+      <div className="max-w-7xl w-full mx-auto mb-2 px-4 py-1.5 flex flex-wrap justify-between items-center text-xs border-b border-primary/10 dark:border-white/8 text-slate-text/70 dark:text-dark-text/70 transition-colors duration-300">
         <div className="flex gap-4 items-center">
           <span className="inline-flex items-center gap-1">📞 <span className="hidden xs:inline">061-280665</span></span>
           <span className="hidden sm:inline-flex items-center gap-1">✉️ suiza@iestpsuiza.edu.pe</span>
@@ -43,11 +43,11 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
       </div>
 
       {/* Main glassmorphism nav bar */}
-      <div className="max-w-7xl mx-auto rounded-2xl glassmorphism navbar-premium px-4 py-3 md:px-6 flex justify-between items-center transition-all duration-300">
+      <div className="max-w-7xl w-full mx-auto rounded-2xl glassmorphism navbar-premium px-4 py-3 md:px-6 flex justify-between items-center transition-all duration-300">
         
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="relative flex items-center justify-center w-20 h-20 rounded-xl shadow-lg shadow-primary/20 group-hover:scale-105 transition-all duration-300">
-            <img src={LogoSuiza} alt="Logo Suiza" className="w-20 h-20" />
+        <Link to="/" className="flex items-center gap-2.5 group shrink-0">
+          <div className="relative flex items-center justify-center w-20 h-20 rounded-xl shadow-lg shadow-primary/20 group-hover:scale-105 transition-all duration-300 shrink-0">
+            <img src={LogoSuiza} alt="Logo Suiza" className="w-20 h-20 object-contain shrink-0" />
             <div className="absolute -inset-0.5 rounded-xl border border-white/30 animate-ping opacity-25 pointer-events-none"></div>
           </div>
           <div>
@@ -162,7 +162,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                       </div>
                       <div className="col-span-1 flex flex-col justify-between gap-4">
                         <div className="flex items-start gap-3">
-                          <img src={LogoSuiza} alt="Logo" className="w-20 h-20 rounded-md object-cover" />
+                          <img src={LogoSuiza} alt="Logo" className="w-20 h-20 rounded-md object-contain shrink-0" />
                         </div>
                         <div className="space-y-2">
                           <button onClick={() => { navigate('/admission'); }} className="w-full inline-flex items-center justify-between gap-2 px-4 py-3 rounded-lg bg-primary text-white font-bold hover:bg-primary-dark transition-all duration-300">Admisión 2026 <ArrowRight className="w-4 h-4"/></button>
