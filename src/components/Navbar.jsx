@@ -66,13 +66,13 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
             <div key={link.path} className="relative group">
               {(link.hasDropdown || link.hasMega || link.hasAboutMega || link.hasSimpleDropdown) ? (
                 <button
-                  className={\`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-1.5 \${
+                  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-1.5 ${
                     location.pathname.startsWith(link.path) && link.path !== '/'
                       ? 'bg-primary text-white shadow-md shadow-primary/20'
                       : location.pathname === link.path
                       ? 'bg-primary text-white shadow-md shadow-primary/20'
                       : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
-                  }\`}
+                  }`}
                 >
                   {link.label}
                   <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
@@ -80,11 +80,11 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
               ) : (
                 <Link
                   to={link.path}
-                  className={\`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 \${
+                  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                     location.pathname === link.path
                       ? 'bg-primary text-white shadow-md shadow-primary/20'
                       : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
-                  }\`}
+                  }`}
                 >
                   {link.label}
                 </Link>
@@ -113,7 +113,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                             </div>
                           </div>
                           <button
-                            onClick={() => navigate(\`/careers/\${career.id}\`)}
+                            onClick={() => navigate(`/careers/${career.id}`)}
                             className="flex-shrink-0 px-3 py-2 bg-primary hover:bg-primary-dark text-white text-xs font-bold rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-1 whitespace-nowrap group-hover/item:shadow-lg group-hover/item:shadow-primary/30"
                           >
                             Leer más
@@ -204,11 +204,11 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
               <button
                 key={l.code}
                 onClick={() => setLang(l.code)}
-                className={\`px-2.5 py-1 rounded-lg text-xs font-semibold tracking-wider transition-all duration-300 \${
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold tracking-wider transition-all duration-300 ${
                   lang === l.code
                     ? 'bg-primary text-white shadow-sm'
                     : 'text-slate-text/70 dark:text-dark-text/70 hover:text-primary dark:hover:text-white'
-                }\`}
+                }`}
               >
                 {l.label}
               </button>
@@ -240,11 +240,11 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
               {link.hasDropdown ? (
                 <div>
                   <button
-                    className={\`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block \${
+                    className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block ${
                       location.pathname.startsWith(link.path)
                         ? 'bg-primary text-white shadow-md shadow-primary/25'
                         : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
-                    }\`}
+                    }`}
                   >
                     {link.label}
                   </button>
@@ -253,7 +253,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                       <button
                         key={career.id}
                         onClick={() => {
-                          navigate(\`/careers/\${career.id}\`);
+                          navigate(`/careers/${career.id}`);
                           setIsOpen(false);
                         }}
                         className="w-full text-left px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-200 group"
@@ -273,11 +273,11 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
               ) : link.hasSimpleDropdown ? (
                 <div>
                   <button
-                    className={\`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block \${
+                    className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block ${
                       location.pathname.startsWith(link.path)
                         ? 'bg-primary text-white shadow-md shadow-primary/25'
                         : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
-                    }\`}
+                    }`}
                   >
                     {link.label}
                   </button>
@@ -297,11 +297,11 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
               ) : link.hasMega ? (
                 <div>
                   <button
-                    className={\`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block \${
+                    className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block ${
                       location.pathname.startsWith(link.path)
                         ? 'bg-primary text-white shadow-md shadow-primary/25'
                         : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
-                    }\`}
+                    }`}
                   >
                     {link.label}
                   </button>
@@ -315,11 +315,11 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                 <Link
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={\`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block \${
+                  className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block ${
                     location.pathname === link.path
                       ? 'bg-primary text-white shadow-md shadow-primary/25'
                       : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
-                  }\`}
+                  }`}
                 >
                   {link.label}
                 </Link>
