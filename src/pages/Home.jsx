@@ -277,7 +277,7 @@ export default function Home({ t }) {
             },
             {
               title: "Admisión Regular 2026",
-              desc: "Requisitos de postulación, cronograma y vacantes de las 11 especialidades.",
+              desc: "Requisitos de postulación, cronograma y vacantes de las 7 especialidades.",
               link: "/admission",
               tag: "Admisiones"
             },

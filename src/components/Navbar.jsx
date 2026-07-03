@@ -179,7 +179,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                         </div>
                         <div>
                           <h4 className="font-bold text-slate-text dark:text-white transition-colors duration-300">Otros programas</h4>
-                          <p className="text-sm text-slate-text/70 dark:text-dark-text/70 transition-colors duration-300">Explora nuestros 11 programas licenciados con alta demanda laboral y prácticas profesionales en la región.</p>
+                          <p className="text-sm text-slate-text/70 dark:text-dark-text/70 transition-colors duration-300">Explora nuestros 7 programas licenciados con alta demanda laboral y prácticas profesionales en la región.</p>
                         </div>
                       </div>
 

@@ -52,15 +52,37 @@ export const translations = {
       viewCurriculum: "Ver Malla Curricular",
       items: [
         {
+          id: "turismo-ope",
+          name: "Administración de Operaciones Turísticas",
+          category: "business",
+          desc: "Planifica, organiza y dirige servicios turísticos y de hospitalidad con estándares de calidad.",
+          tagline: "Gestión y calidad para el sector turístico de la región.",
+          learn: "Gestión de agencias, hotelería, atención al cliente y diseño de paquetes turísticos.",
+          learningPoints: ["Gestión turística", "Atención al cliente", "Diseño de paquetes"],
+          alumni: { name: "Carlos Mendoza", role: "Gestor Turístico", quote: "El programa fue clave para mi crecimiento en el turismo." },
+          employabilityRate: 85
+        },
+        {
           id: "sys",
-          name: "Desarrollo de Sistemas de Información",
+          name: "Arquitectura de Plataformas y Servicios de Tecnologías de Información",
           category: "tech",
-          desc: "Diseña, desarrolla y administra software, aplicaciones móviles y bases de datos utilizando tecnologías de última generación.",
-          tagline: "Transforma ideas en soluciones digitales que impulsan la región.",
-          learn: "Aprenderás a programar, diseñar bases de datos y desarrollar aplicaciones web y móviles usando frameworks modernos.",
-          learningPoints: ["Programación full-stack","Diseño de bases de datos","Despliegue y mantenimiento de aplicaciones"],
-          alumni: { name: "María López", role: "Desarrolladora Full-Stack", quote: "Gracias al programa pude incorporarme a una empresa de software regional." },
+          desc: "Diseña, implementa y administra infraestructuras tecnológicas, redes y servicios TI corporativos.",
+          tagline: "Transforma la infraestructura tecnológica que impulsa la región.",
+          learn: "Administración de servidores, redes, seguridad informática y soporte TI corporativo.",
+          learningPoints: ["Administración de redes", "Soporte TI", "Seguridad de la información"],
+          alumni: { name: "María López", role: "Administradora TI", quote: "Gracias al programa pude incorporarme a una empresa tecnológica." },
           employabilityRate: 92
+        },
+        {
+          id: "cont",
+          name: "Contabilidad",
+          category: "business",
+          desc: "Gestiona la información financiera, de costos y tributaria de empresas públicas y privadas bajo estándares internacionales.",
+          tagline: "Precisión y ética para la gestión financiera de organizaciones.",
+          learn: "Contabilidad financiera, costos, auditoría y manejo de sistemas contables para empresas modernas.",
+          learningPoints: ["Contabilidad financiera","Auditoría","Tributación"],
+          alumni: { name: "Patricia Huaman", role: "Contadora", quote: "Pude certificarme y encontrar empleo en una firma contable regional." },
+          employabilityRate: 85
         },
         {
           id: "enfer",
@@ -75,58 +97,25 @@ export const translations = {
         },
         {
           id: "meca",
-          name: "Mecatrónica Automotriz",
+          name: "Mecánica Automotriz",
           category: "field",
           desc: "Diagnostica, repara y optimiza sistemas mecánicos, eléctricos y electrónicos de vehículos y maquinarias modernas.",
-          tagline: "Integra mecánica y electrónica para soluciones reales en movilidad.",
-          learn: "Formación en electrónica, mecánica y automatización aplicada a vehículos y sistemas mecatrónicos.",
-          learningPoints: ["Electrónica automotriz","Mecánica aplicada","Sistemas de control"],
-          alumni: { name: "Luis García", role: "Técnico Mecatrónico", quote: "Hoy trabajo manteniendo flotas de transporte regional." },
+          tagline: "Mantenimiento y reparación para soluciones reales en movilidad.",
+          learn: "Formación en mecánica de motores, sistemas eléctricos y diagnóstico automotriz.",
+          learningPoints: ["Mecánica de motores","Sistemas eléctricos","Diagnóstico automotriz"],
+          alumni: { name: "Luis García", role: "Técnico Automotriz", quote: "Hoy trabajo manteniendo flotas de transporte regional." },
           employabilityRate: 85
         },
         {
-          id: "agro",
-          name: "Producción Agropecuaria",
-          category: "field",
-          desc: "Gestiona procesos de producción agrícola y pecuaria con técnicas sostenibles, bio-tecnología y alta eficiencia.",
-          tagline: "Innovación y sostenibilidad para el campo y la comunidad.",
-          learn: "Técnicas de cultivo y crianza, gestión de agroecosistemas y uso de tecnologías para aumentar la productividad sostenible.",
-          learningPoints: ["Manejo de cultivos","Sanidad animal","Gestión de recursos hídricos"],
-          alumni: { name: "Ana Torres", role: "Gestora Agrícola", quote: "Implementé sistemas de producción sostenible en mi comunidad." },
+          id: "guia",
+          name: "Guía Oficial de Turismo",
+          category: "business",
+          desc: "Conduce, orienta y asiste a turistas nacionales y extranjeros, promoviendo el patrimonio cultural y natural.",
+          tagline: "Embajadores de nuestra cultura y biodiversidad.",
+          learn: "Técnicas de guiado, patrimonio cultural, geografía turística e idiomas aplicados al turismo.",
+          learningPoints: ["Técnicas de guiado","Patrimonio cultural","Atención al turista"],
+          alumni: { name: "Ana Torres", role: "Guía Oficial", quote: "Descubrí mi pasión por compartir nuestra cultura con el mundo." },
           employabilityRate: 80
-        },
-        {
-          id: "forest",
-          name: "Manejo Forestal",
-          category: "field",
-          desc: "Administra, protege y aprovecha de forma sostenible los recursos forestales y de fauna silvestre de la Amazonía peruana.",
-          tagline: "Conservación y uso responsable de nuestros recursos naturales.",
-          learn: "Gestión forestal sostenible, protección de ecosistemas y técnicas de aprovechamiento responsable.",
-          learningPoints: ["Inventario forestal","Restauración ecológica","Políticas de manejo sostenible"],
-          alumni: { name: "Marcos Rivera", role: "Especialista Forestal", quote: "Trabajo en proyectos de conservación con comunidades locales." },
-          employabilityRate: 82
-        },
-        {
-          id: "cont",
-          name: "Contabilidad",
-          category: "business",
-          desc: "Gestiona la información financiera, de costos y tributaria de empresas públicas y privadas bajo estándares internacionales.",
-          tagline: "Precisión y ética para la gestión financiera de organizaciones.",
-          learn: "Contabilidad financiera, costos, auditoría y manejo de sistemas contables para empresas modernas.",
-          learningPoints: ["Contabilidad financiera","Auditoría","Tributación"],
-          alumni: { name: "Patricia Huaman", role: "Contadora", quote: "Pude certificarme y encontrar empleo en una firma contable regional." },
-          employabilityRate: 85
-        },
-        {
-          id: "admin",
-          name: "Administración de Empresas",
-          category: "business",
-          desc: "Planifica, organiza y dirige organizaciones, liderando proyectos comerciales e impulsando la innovación empresarial.",
-          tagline: "Liderazgo y gestión para transformar organizaciones y proyectos.",
-          learn: "Gestión de proyectos, finanzas básicas, marketing y liderazgo para impulsar iniciativas productivas.",
-          learningPoints: ["Gestión de proyectos","Marketing básico","Liderazgo y gestión"],
-          alumni: { name: "Carlos Mendoza", role: "Gerente de Operaciones", quote: "El programa fue clave para mi crecimiento profesional." },
-          employabilityRate: 87
         },
         {
           id: "civil",
@@ -138,39 +127,6 @@ export const translations = {
           learningPoints: ["Lectura de planos","Gestión de obra","Seguridad industrial"],
           alumni: { name: "Javier Ramos", role: "Supervisor de Obras", quote: "Trabajo en proyectos de infraestructura regional con estándares modernos." },
           employabilityRate: 90
-        },
-        {
-          id: "elec",
-          name: "Electricidad Industrial",
-          category: "tech",
-          desc: "Instala, opera y mantiene sistemas de energía, automatización de maquinarias y sistemas de control industrial.",
-          tagline: "Energía y control para la industria moderna.",
-          learn: "Sistemas eléctricos industriales, automatización y mantenimiento preventivo de equipos eléctricos.",
-          learningPoints: ["Instalaciones eléctricas","Automatización","Mantenimiento industrial"],
-          alumni: { name: "Rosa Delgado", role: "Técnica Electricista", quote: "Participé en la instalación de sistemas eléctricos para una planta agroindustrial." },
-          employabilityRate: 86
-        },
-        {
-          id: "tur",
-          name: "Administración de Operaciones Turísticas",
-          category: "business",
-          desc: "Diseña, promociona y opera servicios turísticos sostenibles, valorando la biodiversidad y la riqueza cultural de nuestra selva.",
-          tagline: "Promoviendo experiencias sostenibles que conectan culturas y naturaleza.",
-          learn: "Gestión de servicios turísticos, promoción de destinos y atención al cliente especializada en turismo sostenible.",
-          learningPoints: ["Promoción turística","Atención al cliente","Gestión de servicios"],
-          alumni: { name: "Elena Fuentes", role: "Gestora Turística", quote: "Hoy coordino experiencias turísticas sostenibles para visitantes nacionales." },
-          employabilityRate: 78
-        },
-        {
-          id: "asist",
-          name: "Asistencia Administrativa",
-          category: "business",
-          desc: "Organiza, gestiona y optimiza las operaciones de oficina y las comunicaciones corporativas internas y externas.",
-          tagline: "Soporte eficiente para el funcionamiento de organizaciones y servicios.",
-          learn: "Herramientas de oficina, comunicación empresarial y organización administrativa para soportar procesos institucionales.",
-          learningPoints: ["Ofimática","Comunicación empresarial","Organización administrativa"],
-          alumni: { name: "Karina Soto", role: "Asistente Administrativa", quote: "Encontré empleo inmediatamente al graduarme en una municipalidad local." },
-          employabilityRate: 80
         }
       ]
     },
