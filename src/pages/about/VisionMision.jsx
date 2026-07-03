@@ -22,23 +22,24 @@ export default function VisionMision({ t }) {
           <div className="w-14 h-14 rounded-2xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center mb-5">
             <Target className="w-7 h-7 text-primary dark:text-secondary" />
           </div>
-          <h3 className="text-xl font-bold text-slate-text dark:text-white mb-3">Misión</h3>
-          <p className="text-sm text-slate-text/75 dark:text-dark-text/75 leading-relaxed">
-            Somos una institución de educación superior tecnológica pública licenciada, dedicada a formar 
-            profesionales técnicos competentes, creativos, innovadores y con sólidos valores éticos, capaces 
-            de contribuir activamente al desarrollo socioeconómico sostenible de la región Ucayali y el país.
+          <h2 className="text-2xl font-bold text-slate-text dark:text-white mb-4">Nuestra Misión</h2>
+          <p className="text-slate-text/80 dark:text-dark-text/80 leading-relaxed text-sm md:text-base">
+            Formar profesionales técnicos con valores, emprendedores, proactivos, creativos, productivos; comprometidos con la conservación de la biodiversidad para el desarrollo sostenible de la región y del país.
           </p>
         </div>
-        <div className="rounded-[2rem] bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 p-8 shadow-sm hover:shadow-md transition-shadow">
-          <div className="w-14 h-14 rounded-2xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center mb-5">
-            <Eye className="w-7 h-7 text-primary dark:text-secondary" />
+
+        {/* Vision Card */}
+        <div className="relative rounded-[2rem] bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 p-8 md:p-10 shadow-sm hover:shadow-md transition-shadow group overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110" />
+          <div className="relative z-10">
+            <div className="w-14 h-14 rounded-2xl bg-secondary/10 dark:bg-secondary/20 flex items-center justify-center mb-6">
+              <Eye className="w-7 h-7 text-secondary" />
+            </div>
+            <h2 className="text-2xl font-bold text-slate-text dark:text-white mb-4">Nuestra Visión</h2>
+            <p className="text-slate-text/80 dark:text-dark-text/80 leading-relaxed text-sm md:text-base">
+              Institución líder con excelente servicio educativo en la formación de profesionales técnicos competitivos, capacidad empresarial, creativa para generar autoempleo, desarrollar proyectos que transformen la realidad socio económico-cultural y preservar el medio ambiente para el desarrollo sostenible de la región y del país.
+            </p>
           </div>
-          <h3 className="text-xl font-bold text-slate-text dark:text-white mb-3">Visión</h3>
-          <p className="text-sm text-slate-text/75 dark:text-dark-text/75 leading-relaxed">
-            Al 2030, ser un instituto tecnológico líder en la Amazonía peruana y referente nacional por su 
-            excelencia académica, infraestructura moderna, procesos automatizados, convenios internacionales 
-            y egresados de alta empleabilidad comprometidos con la innovación y el cuidado ambiental.
-          </p>
         </div>
       </div>
 
