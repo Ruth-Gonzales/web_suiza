@@ -17,6 +17,7 @@ import Organigrama from './pages/about/Organigrama';
 import PlanaDocente from './pages/about/PlanaDocente';
 import NewsPage from './pages/NewsPage';
 import ContactPage from './pages/ContactPage';
+import GenericSectionPage from './pages/GenericSectionPage';
 import { translations } from './translations';
 import CursorBubbles from './components/CursorBubbles';
 import VirtualAssistant from './components/VirtualAssistant';
@@ -83,6 +84,9 @@ function App(){
           <Route path="/about/docentes" element={<PlanaDocente t={t} />} />
           <Route path="/news" element={<NewsPage t={t} />} />
           <Route path="/contact" element={<ContactPage t={t} />} />
+          <Route path="/transparency/*" element={<GenericSectionPage t={t} categoryKey="transparency" menuKey="transparencyMenu" title="Transparencia Institucional" subtitle="Acceso a la información pública y documentos de gestión del IESTP Suiza de acuerdo a las normativas del MINEDU." />} />
+          <Route path="/procedures/*" element={<GenericSectionPage t={t} categoryKey="procedures" menuKey="proceduresMenu" title="Trámites y Servicios" subtitle="Gestión de trámites académicos y administrativos para estudiantes y egresados." />} />
+          <Route path="/services/*" element={<GenericSectionPage t={t} categoryKey="services" menuKey="servicesMenu" title="Servicios Institucionales" subtitle="Plataformas y recursos integrales para potenciar el desarrollo académico y profesional." />} />
         </Routes>
       </main>
 
