@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Sun, Moon, Menu, X, Globe, GraduationCap, ChevronDown, ArrowRight } from 'lucide-react';
 import LogoSuiza from '../assets/img/logo_suiza_n.png';
@@ -6,8 +6,15 @@ import AboutMegaMenu from './AboutMegaMenu';
 
 export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [forceClose, setForceClose] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setForceClose(true);
+    const timer = setTimeout(() => setForceClose(false), 150);
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
 
   const navLinks = [
     { path: '/', label: t.nav.home },
@@ -92,7 +99,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
 
               {/* Dropdown Menu for Careers */}
               {link.hasDropdown && (
-                <div className="absolute top-full left-0 w-96 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-out z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:w-full before:h-3">
+                <div className={`absolute top-full left-0 w-96 opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:w-full before:h-3 ${!forceClose ? 'group-hover:opacity-100 group-hover:visible group-hover:translate-y-0' : ''}`}>
                   <div className="dropdown-theme p-4">
                     <div className="grid grid-cols-1 gap-2 max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
                       {t.careers.items.map((career) => (
@@ -134,12 +141,12 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
 
               {/* Mega Menu for About Us */}
               {link.hasAboutMega && (
-                <AboutMegaMenu t={t} />
+                <AboutMegaMenu t={t} forceClose={forceClose} />
               )}
 
               {/* Mega Menu for Admission */}
               {link.hasMega && (
-                <div className="absolute top-full left-0 w-[820px] opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-out z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:w-full before:h-3">
+                <div className={`absolute top-full left-0 w-[820px] opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:w-full before:h-3 ${!forceClose ? 'group-hover:opacity-100 group-hover:visible group-hover:translate-y-0' : ''}`}>
                   <div className="dropdown-theme p-6">
                     <div className="grid grid-cols-3 gap-6">
                       <div className="col-span-1 border-r border-primary/10 dark:border-white/10 pr-4">
@@ -177,7 +184,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
 
               {/* Simple Dropdown for Transparency, Procedures, Services */}
               {link.hasSimpleDropdown && (
-                <div className="absolute top-full left-0 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-out z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:w-full before:h-3">
+                <div className={`absolute top-full left-0 w-64 opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:w-full before:h-3 ${!forceClose ? 'group-hover:opacity-100 group-hover:visible group-hover:translate-y-0' : ''}`}>
                   <div className="dropdown-theme p-3">
                     <div className="flex flex-col gap-1 max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
                       {t[link.menuKey]?.map((item, idx) => (

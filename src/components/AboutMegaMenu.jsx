@@ -13,7 +13,7 @@ const col2Icons = [GraduationCap, Building2, Share2, Users];
 const col1Routes = ['/about/presentacion', '/about/director', '/about/vision-mision', '/about/historia'];
 const col2Routes = ['/about/gestion-academica', '/about/gestion-administrativa', '/about/organigrama', '/about/docentes'];
 
-export default function AboutMegaMenu({ t, isMobile, onItemClick }) {
+export default function AboutMegaMenu({ t, isMobile, onItemClick, forceClose = false }) {
   const [open, setOpen] = useState(false);
   const col1 = t.aboutMenu?.col1 || [];
   const col2 = t.aboutMenu?.col2 || [];
@@ -76,7 +76,7 @@ export default function AboutMegaMenu({ t, isMobile, onItemClick }) {
   }
 
   return (
-    <div className="absolute top-full left-1/2 -translate-x-1/2 w-[860px] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 translate-y-2 transition-all duration-300 ease-out z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:w-full before:h-3">
+    <div className={`absolute top-full left-1/2 -translate-x-1/2 w-[860px] opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:w-full before:h-3 ${!forceClose ? 'group-hover:opacity-100 group-hover:visible group-hover:translate-y-0' : ''}`}>
       <div className="dropdown-theme p-6">
         <div className="grid grid-cols-3 gap-6">
           {/* Column 1 */}
