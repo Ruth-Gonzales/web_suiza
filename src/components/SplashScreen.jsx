@@ -243,7 +243,7 @@ function TypingText({ text, shouldStart, speed = 80, onDone }) {
         setTimeout(() => {
           setDone(true);
           if (onDone) onDone();
-        }, 400);
+        }, 150);
       }
     }, speed);
     return () => clearInterval(interval);
@@ -325,11 +325,11 @@ export default function SplashScreen({ onComplete, isOffline }) {
 
   useEffect(() => {
     timersRef.current = [
-      setTimeout(() => setPhase('visible'), 150),
-      setTimeout(() => setShowMatrix(true), 600),
-      setTimeout(() => setShowLogo(true), 800),
-      setTimeout(() => setShowAnimations(true), 3800),
-      setTimeout(() => setShowBurst(true), 4100),
+      setTimeout(() => setPhase('visible'), 100),
+      setTimeout(() => setShowMatrix(true), 300),
+      setTimeout(() => setShowLogo(true), 400),
+      setTimeout(() => setShowAnimations(true), 800),
+      setTimeout(() => setShowBurst(true), 900),
     ];
     return () => timersRef.current.forEach(clearTimeout);
   }, []);
@@ -354,12 +354,12 @@ export default function SplashScreen({ onComplete, isOffline }) {
         intervalRef.current = null;
         completedRef.current = true;
         setIsExiting(true);
-        setTimeout(() => setPhase('exiting'), 500);
-        setTimeout(() => onComplete(), 1500);
+        setTimeout(() => setPhase('exiting'), 200);
+        setTimeout(() => onComplete(), 600);
       } else {
         setProgressDisplay(progressRef.current);
       }
-    }, 80);
+    }, 32);
 
     return () => {
       if (intervalRef.current) {
@@ -425,7 +425,7 @@ export default function SplashScreen({ onComplete, isOffline }) {
           <h1 className="splash-title">
             <span className="title-line line-1">Bienvenido a la página de</span>
             <span className={`title-line line-2 ${textDone ? 'glitch-text' : ''}`}>
-              <TypingText text="IESTP SUIZA" shouldStart={showAnimations} speed={100} onDone={handleTextDone} />
+              <TypingText text="IESTP SUIZA" shouldStart={showAnimations} speed={60} onDone={handleTextDone} />
             </span>
             <span className={`title-line line-3 ${textDone ? 'line-3-visible' : ''}`}>Instituto de Excelencia</span>
           </h1>

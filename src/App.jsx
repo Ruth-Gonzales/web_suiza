@@ -19,6 +19,7 @@ import NewsPage from './pages/NewsPage';
 import ContactPage from './pages/ContactPage';
 import { translations } from './translations';
 import CursorBubbles from './components/CursorBubbles';
+import VirtualAssistant from './components/VirtualAssistant';
 
 function App(){
   const [lang, setLang] = useState(() => localStorage.getItem('lang') || 'es');
@@ -87,6 +88,7 @@ function App(){
 
       <Footer t={t} />
       <CursorBubbles />
+      <VirtualAssistant />
     </div>
   );
 

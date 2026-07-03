@@ -3,14 +3,11 @@ export const translations = {
     nav: {
       home: "Inicio",
       careers: "Programas de Estudio",
-      admission: "Admisión 2026",
+      admission: "Admisión y Matrícula",
       about: "Nosotros",
-      news: "Noticias",
-      contact: "Escríbenos",
-      institute: "Instituto",
-      research: "Investigación",
-      library: "Biblioteca",
-      transparency: "Transparencia"
+      transparency: "Transparencia",
+      procedures: "Trámites",
+      services: "Servicios"
     },
     instituteMenu: {
       title: "Nuestro Instituto",
@@ -51,83 +48,17 @@ export const translations = {
       employability: "Empleabilidad",
       viewCurriculum: "Ver Malla Curricular",
       items: [
-        {
-          id: "turismo-ope",
-          name: "Administración de Operaciones Turísticas",
-          category: "business",
-          desc: "Planifica, organiza y dirige servicios turísticos y de hospitalidad con estándares de calidad.",
-          tagline: "Gestión y calidad para el sector turístico de la región.",
-          learn: "Gestión de agencias, hotelería, atención al cliente y diseño de paquetes turísticos.",
-          learningPoints: ["Gestión turística", "Atención al cliente", "Diseño de paquetes"],
-          alumni: { name: "Carlos Mendoza", role: "Gestor Turístico", quote: "El programa fue clave para mi crecimiento en el turismo." },
-          employabilityRate: 85
-        },
-        {
-          id: "sys",
-          name: "Arquitectura de Plataformas y Servicios de Tecnologías de Información",
-          category: "tech",
-          desc: "Diseña, implementa y administra infraestructuras tecnológicas, redes y servicios TI corporativos.",
-          tagline: "Transforma la infraestructura tecnológica que impulsa la región.",
-          learn: "Administración de servidores, redes, seguridad informática y soporte TI corporativo.",
-          learningPoints: ["Administración de redes", "Soporte TI", "Seguridad de la información"],
-          alumni: { name: "María López", role: "Administradora TI", quote: "Gracias al programa pude incorporarme a una empresa tecnológica." },
-          employabilityRate: 92
-        },
-        {
-          id: "cont",
-          name: "Contabilidad",
-          category: "business",
-          desc: "Gestiona la información financiera, de costos y tributaria de empresas públicas y privadas bajo estándares internacionales.",
-          tagline: "Precisión y ética para la gestión financiera de organizaciones.",
-          learn: "Contabilidad financiera, costos, auditoría y manejo de sistemas contables para empresas modernas.",
-          learningPoints: ["Contabilidad financiera","Auditoría","Tributación"],
-          alumni: { name: "Patricia Huaman", role: "Contadora", quote: "Pude certificarme y encontrar empleo en una firma contable regional." },
-          employabilityRate: 85
-        },
-        {
-          id: "enfer",
-          name: "Enfermería Técnica",
-          category: "field",
-          desc: "Brinda atención integral de salud en prevención, recuperación y rehabilitación a personas y comunidades con alto sentido humanitario.",
-          tagline: "Cuidando vidas, formando profesionales comprometidos con la comunidad.",
-          learn: "Aprenderás técnicas de cuidado, primeros auxilios, promoción de la salud y soporte en unidades clínicas y comunitarias.",
-          learningPoints: ["Cuidados básicos de enfermería","Técnicas de reanimación","Promoción y prevención en salud"],
-          alumni: { name: "José Pérez", role: "Técnico en Enfermería", quote: "El programa me dio la experiencia práctica que necesitaba para trabajar en un hospital local." },
-          employabilityRate: 88
-        },
-        {
-          id: "meca",
-          name: "Mecánica Automotriz",
-          category: "field",
-          desc: "Diagnostica, repara y optimiza sistemas mecánicos, eléctricos y electrónicos de vehículos y maquinarias modernas.",
-          tagline: "Mantenimiento y reparación para soluciones reales en movilidad.",
-          learn: "Formación en mecánica de motores, sistemas eléctricos y diagnóstico automotriz.",
-          learningPoints: ["Mecánica de motores","Sistemas eléctricos","Diagnóstico automotriz"],
-          alumni: { name: "Luis García", role: "Técnico Automotriz", quote: "Hoy trabajo manteniendo flotas de transporte regional." },
-          employabilityRate: 85
-        },
-        {
-          id: "guia",
-          name: "Guía Oficial de Turismo",
-          category: "business",
-          desc: "Conduce, orienta y asiste a turistas nacionales y extranjeros, promoviendo el patrimonio cultural y natural.",
-          tagline: "Embajadores de nuestra cultura y biodiversidad.",
-          learn: "Técnicas de guiado, patrimonio cultural, geografía turística e idiomas aplicados al turismo.",
-          learningPoints: ["Técnicas de guiado","Patrimonio cultural","Atención al turista"],
-          alumni: { name: "Ana Torres", role: "Guía Oficial", quote: "Descubrí mi pasión por compartir nuestra cultura con el mundo." },
-          employabilityRate: 80
-        },
-        {
-          id: "civil",
-          name: "Construcción Civil",
-          category: "field",
-          desc: "Supervisa, planifica y ejecuta obras de infraestructura civil, edificación y carreteras con estándares de calidad y seguridad.",
-          tagline: "Construyendo espacios seguros y sostenibles para la región.",
-          learn: "Técnicas de construcción, lecturas de planos, control de calidad y seguridad en obras civiles.",
-          learningPoints: ["Lectura de planos","Gestión de obra","Seguridad industrial"],
-          alumni: { name: "Javier Ramos", role: "Supervisor de Obras", quote: "Trabajo en proyectos de infraestructura regional con estándares modernos." },
-          employabilityRate: 90
-        }
+        { id: "turismo", name: "Administración de Operaciones Turísticas", category: "business", employabilityRate: 85, desc: "Planifica y opera servicios turísticos sostenibles." },
+        { id: "asistencia", name: "Asistencia Administrativa", category: "business", employabilityRate: 82, desc: "Organiza y gestiona las operaciones de oficina corporativas." },
+        { id: "contabilidad", name: "Contabilidad", category: "business", employabilityRate: 88, desc: "Gestiona información financiera y tributaria." },
+        { id: "civil", name: "Construcción Civil", category: "field", employabilityRate: 90, desc: "Planifica y ejecuta obras de infraestructura civil." },
+        { id: "gestion", name: "Gestión Administrativa", category: "business", employabilityRate: 84, desc: "Lidera procesos administrativos y recursos empresariales." },
+        { id: "sistemas", name: "Desarrollo de Sistemas de Información", category: "tech", employabilityRate: 92, desc: "Desarrolla software, aplicaciones y bases de datos." },
+        { id: "electricidad", name: "Electricidad Industrial", category: "tech", employabilityRate: 86, desc: "Instala y mantiene sistemas eléctricos e industriales." },
+        { id: "enfermeria", name: "Enfermería Técnica", category: "field", employabilityRate: 89, desc: "Brinda atención integral y promoción de la salud." },
+        { id: "forestal", name: "Manejo Forestal", category: "field", employabilityRate: 80, desc: "Administra y protege los recursos forestales y fauna." },
+        { id: "mecatronica", name: "Mecatrónica Automotriz", category: "field", employabilityRate: 87, desc: "Diagnostica y repara sistemas mecánicos y electrónicos." },
+        { id: "agropecuaria", name: "Producción Agropecuaria", category: "field", employabilityRate: 81, desc: "Gestiona producción agrícola y pecuaria." }
       ]
     },
     faq: {
@@ -748,6 +679,31 @@ export const translations = {
         ]
       }
     },
+    
+    transparencyMenu: [
+      { name: "Documentos de Gestión", path: "/transparency/documentos" },
+      { name: "Convenios", path: "/transparency/convenios" },
+      { name: "Convocatorias", path: "/transparency/convocatorias" },
+      { name: "Calendario Académico", path: "/transparency/calendario" },
+      { name: "Estadísticas", path: "/transparency/estadisticas" },
+      { name: "Inversiones y Donaciones", path: "/transparency/inversiones" }
+    ],
+    proceduresMenu: [
+      { name: "Trabajos de Aplicación Profesional", path: "/procedures/trabajos" },
+      { name: "Contáctanos", path: "/procedures/contactanos" },
+      { name: "Proceso de Titulación", path: "/procedures/titulacion" }
+    ],
+    servicesMenu: [
+      { name: "Campus Virtual", path: "/services/campus" },
+      { name: "Sistema de Gestión Académica", path: "/services/sga" },
+      { name: "Bolsa Laboral", path: "/services/bolsa" },
+      { name: "Centro de Idiomas", path: "/services/idiomas" },
+      { name: "Biblioteca Virtual", path: "/services/biblioteca" },
+      { name: "Publicaciones", path: "/services/publicaciones" },
+      { name: "Enlaces Institucionales", path: "/services/enlaces" },
+      { name: "Base de Datos", path: "/services/bd" }
+    ],
+
     aboutMenu: {
       col1: [
         { title: "Presentación", desc: "Conoce la historia y objetivos institucionales.", id: "presentacion" },
