@@ -19,7 +19,7 @@ export default function Home({ t }) {
   return (
     <div className="relative overflow-hidden w-full">
 
-      {/* Hero with full-width background slider */}
+      {/* Hero Section with Carousel */}
       <section className="relative overflow-hidden group">
         <Carousel>
           <div className="relative z-10 px-4 md:px-8 py-12 md:py-20">
@@ -35,7 +35,9 @@ export default function Home({ t }) {
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight mt-2 drop-shadow-lg">
                   {t.hero.welcome}
                 </h1>
-
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-yellow-400 leading-tight tracking-tight mt-2 drop-shadow-lg">
+                  {t.hero.welcome1}
+                </h1> 
                 <p className="text-base md:text-lg text-white/85 max-w-xl leading-relaxed drop-shadow-md">
                   {t.hero.subtitle}
                 </p>
@@ -43,7 +45,7 @@ export default function Home({ t }) {
                 <div className="flex flex-wrap gap-4 mt-2">
                   <Link
                     to="/careers"
-                    className="px-6 py-3.5 rounded-2xl bg-white dark:bg-dark-surface hover:bg-slate-light dark:hover:bg-dark-hover text-primary dark:text-white font-bold text-sm tracking-wider shadow-lg shadow-black/20 hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2 transition-all cursor-pointer"
+                    className="px-6 py-3.5 rounded-2xl bg-white hover:bg-slate-light text-primary font-bold text-sm tracking-wider shadow-lg shadow-black/20 hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2 transition-all cursor-pointer"
                   >
                     <span>{t.hero.explore}</span>
                     <ArrowRight className="w-4 h-4" />
@@ -71,185 +73,11 @@ export default function Home({ t }) {
                 </div>
               </div>
 
-              {/* Right Side: Vanguardist Interactive App Mockup */}
-              <div className="lg:col-span-6 w-full flex justify-center items-center relative py-8 md:py-12 overflow-visible">
-                <div className="relative flex flex-col md:flex-row gap-6 md:gap-4 items-center scale-90 sm:scale-100 origin-center transition-all duration-300">
-                  
-                  {/* Phone 1: Login UI */}
-                  {/* <div className="w-[230px] h-[460px] rounded-[2.5rem] bg-gradient-to-b from-[#4B7AF4] to-[#2b51ba] p-3 shadow-2xl relative shrink-0 border-[6px] border-white/30 flex flex-col justify-between overflow-hidden animate-in fade-in slide-in-from-bottom-8 duration-500 delay-100">
-                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-4 bg-white/30 rounded-full z-20"></div>
-                    
-                    <div className="flex-1 flex flex-col justify-between pt-8 pb-4 px-4 text-white">
-                      <div className="flex flex-col items-center gap-1.5 mt-8">
-                        <div className="w-18 h-18 rounded-[50%] backdrop-blur-md flex items-center justify-center border border-white/25">
-                          <img src={LogoSuiza} alt="Logo Suiza" className="w-15 h-15" />
-                        </div>
-                        <h4 className="text-lg font-bold tracking-tight mt-2">suizaLearning</h4>
-                        <span className="text-[9px] tracking-wider text-white/60">Aula Virtual</span>
-                      </div>
+              {/* Right Side: Empty to let the carousel background shine */}
+              <div className="lg:col-span-6 w-full hidden lg:flex justify-center items-center relative overflow-visible">
+                {/* Intentional empty space so the carousel images are fully visible on the right */}
+              </div>
 
-                      {isLogged ? (
-                        <div className="text-center py-6 animate-in zoom-in duration-300">
-                          <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto mb-3" />
-                          <p className="text-xs font-semibold">¡Bienvenido!</p>
-                          <p className="text-[10px] text-white/70 mt-1">Has iniciado sesión</p>
-                          <button 
-                            onClick={() => setIsLogged(false)}
-                            className="mt-4 px-4 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-[10px] font-medium border border-white/20 transition-all"
-                          >
-                            Cerrar
-                          </button>
-                        </div>
-                      ) : (
-                        <form onSubmit={(e) => { e.preventDefault(); setIsLogged(true); }} className="flex flex-col gap-3">
-                          <div className="flex flex-col gap-1 text-left">
-                            <label className="text-[9px] font-semibold text-white/80 uppercase">Correo</label>
-                            <input 
-                              type="email" 
-                              required
-                              value={loginForm.email}
-                              onChange={(e) => setLoginForm({...loginForm, email: e.target.value})}
-                              placeholder="usuario@suiza" 
-                              className="bg-white/10 border border-white/25 rounded-xl px-3 py-2 text-xs text-white placeholder-white/40 focus:outline-none focus:bg-white/15"
-                            />
-                          </div>
-                          <div className="flex flex-col gap-1 text-left">
-                            <label className="text-[9px] font-semibold text-white/80 uppercase">Clave</label>
-                            <input 
-                              type="password" 
-                              required
-                              value={loginForm.password}
-                              onChange={(e) => setLoginForm({...loginForm, password: e.target.value})}
-                              placeholder="••••••••" 
-                              className="bg-white/10 border border-white/25 rounded-xl px-3 py-2 text-xs text-white placeholder-white/40 focus:outline-none focus:bg-white/15"
-                            />
-                          </div>
-                          <button type="submit" className="w-full mt-2 py-2.5 rounded-xl bg-white dark:bg-dark-surface hover:bg-slate-light dark:hover:bg-dark-hover text-primary dark:text-white font-bold text-xs shadow-md transition-all cursor-pointer">
-                            LOGIN
-                          </button>
-                          <span className="text-[9px] text-white/60 hover:text-white text-center mt-1 cursor-pointer">¿Olvidaste tu contraseña?</span>
-                        </form>
-                      )}
-                    </div>
-                    <div className="w-20 h-1 bg-white/40 rounded-full mx-auto mb-1"></div>
-                  </div> */}
-
-                  {/* Phone 2: Dashboard UI */}
-                  {/* <div className="w-[230px] h-[460px] rounded-[2.5rem] bg-white dark:bg-dark-card p-3 shadow-2xl relative shrink-0 border-[6px] border-white/30 flex flex-col justify-between overflow-hidden md:-translate-y-4 animate-in fade-in slide-in-from-bottom-8 duration-500 delay-200">
-                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-4 bg-slate-text/30 dark:bg-dark-border/80 rounded-full z-20"></div>
-                    
-                    <div className="flex-1 flex flex-col text-slate-text dark:text-white pt-6 overflow-hidden">
-                      <div className="h-40 bg-gradient-to-br from-primary to-primary-dark rounded-b-[2rem] p-4 text-white flex flex-col justify-between pt-6 relative">
-                        <div className="flex justify-between items-center text-xs">
-                          <span className="text-[10px] font-bold">📚 IESTP SUIZA</span>
-                          <div className="w-6 h-6 rounded-full bg-white/25 border border-white/35 flex items-center justify-center">
-                            <User className="w-3.5 h-3.5" />
-                          </div>
-                        </div>
-                        <div className="text-left mt-2 pb-2">
-                          <span className="text-[10px] text-white/70 block leading-tight">Welcome,</span>
-                          <span className="text-sm font-bold block leading-none mt-0.5">Estudiante Suiza</span>
-                          <span className="text-[9px] text-white/60 block mt-1">ID: 192005104 • Sistemas</span>
-                        </div>
-                      </div>
-
-                      <div className="px-3 -mt-4 mb-4 relative z-10">
-                        <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-dark-border border border-primary/10 shadow-md">
-                          <Search className="w-3.5 h-3.5 text-primary" />
-                          <input 
-                            type="text" 
-                            placeholder="Search..."
-                            readOnly
-                            className="w-full text-[10px] text-slate-text dark:text-white outline-none bg-transparent"
-                          />
-                        </div>
-                      </div>
-
-                      <span className="text-[10px] font-bold text-left px-4 mb-2 opacity-80">¿Qué haremos hoy?</span>
-
-                      <div className="grid grid-cols-2 gap-3 px-4 flex-1 pb-4">
-                        <div className="rounded-2xl border border-primary/5 bg-slate-light/50 dark:bg-dark-border/20 p-3 flex flex-col items-center justify-center text-center gap-1.5 hover:scale-[1.03] transition-all cursor-pointer">
-                          <div className="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-                            <CheckSquare className="w-4 h-4" />
-                          </div>
-                          <span className="text-[9px] font-bold">Asistencia</span>
-                        </div>
-                        <div className="rounded-2xl border border-primary/5 bg-slate-light/50 dark:bg-dark-border/20 p-3 flex flex-col items-center justify-center text-center gap-1.5 hover:scale-[1.03] transition-all cursor-pointer">
-                          <div className="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-                            <BookOpen className="w-4 h-4" />
-                          </div>
-                          <span className="text-[9px] font-bold">Tareas</span>
-                        </div>
-                        <div className="rounded-2xl border border-primary/5 bg-slate-light/50 dark:bg-dark-border/20 p-3 flex flex-col items-center justify-center text-center gap-1.5 hover:scale-[1.03] transition-all cursor-pointer">
-                          <div className="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-                            <Folder className="w-4 h-4" />
-                          </div>
-                          <span className="text-[9px] font-bold">Recursos</span>
-                        </div>
-                        <div className="rounded-2xl border border-primary/5 bg-slate-light/50 dark:bg-dark-border/20 p-3 flex flex-col items-center justify-center text-center gap-1.5 hover:scale-[1.03] transition-all cursor-pointer">
-                          <div className="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-                            <Library className="w-4 h-4" />
-                          </div>
-                          <span className="text-[9px] font-bold">Biblioteca</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="w-20 h-1 bg-slate-text/40 dark:bg-dark-border rounded-full mx-auto mb-1"></div>
-                  </div>
-
-                  {/* Phone 3: Tasks and Progress list */}
-                  {/* <div className="w-[230px] h-[460px] rounded-[2.5rem] bg-white dark:bg-dark-card p-3 shadow-2xl relative shrink-0 border-[6px] border-white/30 flex flex-col justify-between overflow-hidden animate-in fade-in slide-in-from-bottom-8 duration-500 delay-300">
-                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-4 bg-slate-text/30 dark:bg-dark-border/80 rounded-full z-20"></div>
-                    
-                    <div className="flex-1 flex flex-col text-slate-text dark:text-white pt-6 overflow-hidden">
-                      <div className="px-4 pt-4 text-left">
-                        <h5 className="text-xs font-bold leading-none">Let's finish your task!</h5>
-                        <span className="text-[9px] opacity-60 block mt-1">05 Noviembre 2026</span>
-                      </div>
-
-                      <div className="flex justify-between border-b border-primary/5 px-4 py-2 mt-2">
-                        {['Recent', 'All', 'Complete'].map((tab) => (
-                          <button
-                            key={tab}
-                            onClick={() => setSelectedTaskTab(tab)}
-                            className={`text-[9px] font-bold pb-1 transition-all ${
-                              selectedTaskTab === tab
-                                ? 'text-primary border-b border-primary'
-                                : 'opacity-55 hover:opacity-100'
-                            }`}
-                          >
-                            {tab}
-                          </button>
-                        ))}
-                      </div>
-
-                      <div className="flex-1 overflow-y-auto px-3 py-2 flex flex-col gap-2.5">
-                        {[
-                          { title: "Desarrollo Web", progress: 80, deadline: "Nov 08" },
-                          { title: "Base de Datos", progress: 60, deadline: "Nov 10" },
-                          { title: "Estadística Aplicada", progress: 40, deadline: "Nov 25" }
-                        ].map((task, index) => (
-                          <div key={index} className="p-2.5 rounded-2xl bg-gradient-to-tr from-primary to-primary-dark text-white text-left relative overflow-hidden shadow-sm hover:scale-[1.01] transition-transform">
-                            <div className="flex items-center justify-between mb-1.5">
-                              <Folder className="w-5 h-5 opacity-70" />
-                              <span className="text-[8px] bg-white/20 px-1.5 py-0.5 rounded-full">Faltan 2 días</span>
-                            </div>
-                            <h6 className="text-[10px] font-bold truncate leading-tight">{task.title}</h6>
-                            <span className="text-[8px] opacity-75 block mt-0.5">Límite: {task.deadline}</span>
-                            
-                            <div className="w-full bg-white/25 rounded-full h-1 mt-2.5 overflow-hidden">
-                              <div className="bg-white h-1 rounded-full" style={{ width: `${task.progress}%` }}></div>
-                            </div>
-                            <span className="text-[8px] font-bold block text-right mt-1 opacity-90">{task.progress}% Completado</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="w-20 h-1 bg-slate-text/40 dark:bg-dark-border rounded-full mx-auto mb-1"></div>
-                  </div> */}
-
-                </div>
-              </div> */
             </div>
           </div>
         </Carousel>

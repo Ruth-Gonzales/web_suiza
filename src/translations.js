@@ -17,7 +17,8 @@ export const translations = {
       cta: "Conoce el Instituto"
     },
     hero: {
-      welcome: "Bienvenidos al Instituto de Educación Superior Tecnológico Público Suiza",
+      welcome: "Instituto de Educación Superior Tecnológico Público Suiza ",
+      welcome1: " Instituto de Excelencia",
       subtitle: "Formando profesionales técnicos de excelencia en la Amazonía peruana con reconocimiento nacional e internacional.",
       explore: "Explorar Carreras",
       portalTitle: "Portal del Estudiante",

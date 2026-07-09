@@ -6,21 +6,21 @@
 @theme {
   --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
 
-  --color-primary: #4B7AF4;
-  --color-secondary: #A0C1F7;
-  --color-bg-general: #E5EEFE;
-  --color-slate-text: #3A4B74;
-  --color-slate-light: #F0F4FD;
-  --color-dark-accent: #1A1D20;
+  --color-primary: #0044B2; /* Strong royal blue from examples */
+  --color-secondary: #002D7A; /* Darker blue for accents */
+  --color-bg-general: #F3F4F6; /* Clean light gray background */
+  --color-slate-text: #1E293B; /* Darker slate for readability */
+  --color-slate-light: #F8FAFC; /* Very light slate */
+  --color-dark-accent: #0F172A;
 
-  --color-primary-dark: #3b62c9;
+  --color-primary-dark: #003388;
   --color-dark-bg: #020617;
-  --color-dark-card: #111827;
-  --color-dark-surface: #0F172A;
-  --color-dark-hover: #1E293B;
+  --color-dark-card: #0F172A;
+  --color-dark-surface: #1E293B;
+  --color-dark-hover: #334155;
   --color-dark-text: #FFFFFF;
   --color-dark-text-secondary: #CBD5E1;
-  --color-dark-border: #1E293B;
+  --color-dark-border: #334155;
 }
 
 /* ===== CSS Custom Properties for themeable glassmorphism ===== */

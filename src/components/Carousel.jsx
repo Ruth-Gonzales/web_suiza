@@ -49,9 +49,9 @@ export default function Carousel({ autoPlayInterval = 5000, children }) {
             />
           </div>
         ))}
-        {/* Blue gradient overlay - suave */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/40 via-primary/25 to-primary/35" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+        {/* Blue gradient overlay: starts with navy blue on the left, transitions to primary blue, then fades to transparent on the right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#001A41]/95 from-[0%] via-primary/90 via-[40%] to-transparent to-[65%]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
       </div>
 
       {/* Content on top */}

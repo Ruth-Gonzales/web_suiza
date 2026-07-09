@@ -23,7 +23,7 @@ export default function VisionMision({ t }) {
             <Target className="w-7 h-7 text-primary dark:text-secondary" />
           </div>
           <h2 className="text-2xl font-bold text-slate-text dark:text-white mb-4">Nuestra Misión</h2>
-          <p className="text-slate-text/80 dark:text-dark-text/80 leading-relaxed text-sm md:text-base">
+          <p className="text-slate-text/80 dark:text-dark-text/80 leading-relaxed text-sm md:text-base text-justify">
             Formar profesionales técnicos con valores, emprendedores, proactivos, creativos, productivos; comprometidos con la conservación de la biodiversidad para el desarrollo sostenible de la región y del país.
           </p>
         </div>
@@ -36,7 +36,7 @@ export default function VisionMision({ t }) {
               <Eye className="w-7 h-7 text-secondary" />
             </div>
             <h2 className="text-2xl font-bold text-slate-text dark:text-white mb-4">Nuestra Visión</h2>
-            <p className="text-slate-text/80 dark:text-dark-text/80 leading-relaxed text-sm md:text-base">
+            <p className="text-slate-text/80 dark:text-dark-text/80 leading-relaxed text-sm md:text-base text-justify">
               Institución líder con excelente servicio educativo en la formación de profesionales técnicos competitivos, capacidad empresarial, creativa para generar autoempleo, desarrollar proyectos que transformen la realidad socio económico-cultural y preservar el medio ambiente para el desarrollo sostenible de la región y del país.
             </p>
           </div>

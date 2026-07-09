@@ -1,14 +1,23 @@
 import { Link } from 'react-router-dom';
 import { ChevronRight, Home, ArrowLeft } from 'lucide-react';
 
-export default function AboutPageShell({ title, breadcrumb, children }) {
+export default function AboutPageShell({ title, breadcrumb, image, children }) {
   return (
     <div className="max-w-7xl mx-auto px-4 md:px-8 py-6 relative">
       {/* Banner */}
-      <div className="relative w-full h-48 md:h-64 rounded-[2rem] overflow-hidden mb-8 bg-gradient-to-br from-primary/20 via-primary/10 to-blue-50 dark:from-primary/30 dark:via-dark-card dark:to-dark-hover/30 shadow-lg">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/40 dark:from-dark-bg/90 dark:to-dark-bg/60 z-10" />
-        <div className="absolute -top-10 -right-10 w-48 h-48 bg-secondary/30 rounded-full blur-3xl" />
-        <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl" />
+      <div className="relative w-full h-48 md:h-64 rounded-[2rem] overflow-hidden mb-8 bg-primary shadow-lg">
+        {image ? (
+          <>
+            <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#001A41]/95 from-[0%] via-primary/90 via-[40%] to-transparent to-[75%] z-10" />
+          </>
+        ) : (
+          <>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#001A41]/95 to-primary/80 dark:from-dark-bg/90 dark:to-dark-bg/60 z-10" />
+            <div className="absolute -top-10 -right-10 w-48 h-48 bg-secondary/30 rounded-full blur-3xl z-10" />
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl z-10" />
+          </>
+        )}
         <div className="relative z-20 h-full flex flex-col justify-center px-8 md:px-12">
           <h1 className="text-3xl md:text-5xl font-extrabold text-white drop-shadow-lg">
             {title}

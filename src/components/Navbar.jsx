@@ -37,7 +37,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
   return (
     <nav className="sticky top-0 z-50 w-full px-4 py-4 md:px-8">
       {/* Contact info bar above Navbar */}
-      <div className="max-w-7xl w-full mx-auto mb-2 px-4 py-1.5 flex flex-wrap justify-between items-center text-xs border-b border-primary/10 dark:border-white/8 text-slate-text/70 dark:text-dark-text/70 transition-colors duration-300">
+      <div className="max-w-[1440px] w-full mx-auto mb-2 px-4 py-1.5 flex flex-wrap justify-between items-center text-xs bg-slate-100 dark:bg-dark-surface rounded-lg shadow-sm border border-slate-200 dark:border-dark-border text-slate-text/80 dark:text-dark-text/80 transition-colors duration-300">
         <div className="flex gap-4 items-center">
           <span className="inline-flex items-center gap-1">📞 <span className="hidden xs:inline">061-280665</span></span>
           <span className="hidden sm:inline-flex items-center gap-1">✉️ suiza@iestpsuiza.edu.pe</span>
@@ -49,8 +49,8 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
         </div>
       </div>
 
-      {/* Main glassmorphism nav bar */}
-      <div className="max-w-7xl w-full mx-auto rounded-2xl glassmorphism navbar-premium px-4 py-3 md:px-6 flex justify-between items-center transition-all duration-300">
+      {/* Main nav bar */}
+      <div className="max-w-[1440px] w-full mx-auto rounded-2xl bg-white dark:bg-dark-surface shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-slate-200 dark:border-dark-border px-4 py-3 md:px-6 flex justify-between items-center transition-all duration-300 gap-4">
         
         <Link to="/" className="flex items-center gap-2.5 group shrink-0">
           <div className="relative flex items-center justify-center w-20 h-20 rounded-xl shadow-lg shadow-primary/20 group-hover:scale-105 transition-all duration-300 shrink-0">

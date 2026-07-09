@@ -14,7 +14,7 @@ export default function Historia({ t }) {
           Reseña Histórica del IESTP Suiza
         </h2>
         
-        <div className="space-y-6 text-sm md:text-base text-slate-text/80 dark:text-dark-text/80 leading-relaxed">
+        <div className="space-y-6 text-sm md:text-base text-slate-text/80 dark:text-dark-text/80 leading-relaxed text-justify">
           <p>
             El Instituto de Educación Superior Tecnológico Público "Suiza" de Pucallpa, se inició como Escuela Superior Profesional ESEP. Mediante Resolución Ministerial N° 0013-80-ED, de fecha 10 de enero de 1980. Dio inicio a su funcionamiento con 420 estudiantes matriculados en 4 especialidades. Agropecuaria, Forestal, Administración y Educación; este último pasó después a los Institutos Superiores Pedagógicos.
           </p>
