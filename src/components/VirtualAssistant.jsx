@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { MessageSquare, X, Send, User, Bot, HelpCircle, PhoneCall, Calendar } from 'lucide-react';
+import robotLogo from '../assets/img/robot_asistente.jpg';
+import logoSuiza from '../assets/img/logo_suiza.jpg';
 
 export default function VirtualAssistant() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,9 +17,12 @@ export default function VirtualAssistant() {
   const chatEndRef = useRef(null);
   const streamTimerRef = useRef(null);
 
-  // Cleanup stream timer on unmount
+  // Register chat opening event and cleanup stream timer on unmount
   useEffect(() => {
+    const handleOpenChat = () => setIsOpen(true);
+    window.addEventListener('open-suiza-ai-chat', handleOpenChat);
     return () => {
+      window.removeEventListener('open-suiza-ai-chat', handleOpenChat);
       if (streamTimerRef.current) {
         clearInterval(streamTimerRef.current);
       }
@@ -324,34 +329,110 @@ REGLAS CRÍTICAS DE COMPORTAMIENTO:
 
   return (
     <div className="fixed bottom-24 right-6 z-50 flex flex-col items-end">
+      {/* Custom animations for floating robot and waving arm */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes robot-float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-5px); }
+        }
+        @keyframes waving-hand {
+          0%, 100% { transform: rotate(0deg); }
+          50% { transform: rotate(-22deg); }
+        }
+        .animate-robot-float {
+          animation: robot-float 2.5s ease-in-out infinite;
+        }
+        .robot-waving-arm {
+          transform-origin: 70px 48px;
+          transition: transform 0.2s ease-in-out;
+        }
+        .group:hover .robot-waving-arm {
+          animation: waving-hand 0.5s ease-in-out infinite;
+        }
+      `}} />
       
       {/* 1. CHAT TOGGLE BUBBLE */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer border border-white/10"
+          className="w-24 h-24 flex items-center justify-center relative transition-all duration-300 cursor-pointer animate-robot-float group"
           title="Asistente Virtual"
         >
-          <MessageSquare className="w-6 h-6 animate-pulse" />
+          {/* Glowing pulse indicator */}
+          <span className="absolute top-2 right-2 w-4.5 h-4.5 bg-emerald-400 border-2 border-primary rounded-full animate-ping z-10" />
+          <span className="absolute top-2 right-2 w-4.5 h-4.5 bg-emerald-400 border-2 border-primary rounded-full z-10" />
+
+          {/* SVG Robot Structure */}
+          <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-lg">
+            {/* Antenna */}
+            <line x1="50" y1="15" x2="50" y2="8" stroke="#ffffff" strokeWidth="2.5" />
+            <circle cx="50" cy="6" r="3" fill="#f43f5e" />
+
+            {/* Helmet/Head */}
+            <rect x="33" y="15" width="34" height="22" rx="7" fill="#4b7af4" stroke="#ffffff" strokeWidth="2" />
+            
+            {/* Faceplate */}
+            <rect x="37" y="19" width="26" height="14" rx="4" fill="#ffffff" />
+            
+            {/* Eyes */}
+            <circle cx="45" cy="26" r="2.5" fill="#3b82f6" className="animate-pulse" />
+            <circle cx="55" cy="26" r="2.5" fill="#3b82f6" className="animate-pulse" />
+
+            {/* Neck */}
+            <rect x="46" y="37" width="8" height="4" fill="#e2e8f0" />
+
+            {/* Torso/Body */}
+            <rect x="30" y="41" width="40" height="34" rx="9" fill="#4b7af4" stroke="#ffffff" strokeWidth="2" />
+            
+            {/* Chest plate (background for the logo) */}
+            <rect x="35" y="46" width="30" height="24" rx="5" fill="#ffffff" />
+
+            {/* Left Arm */}
+            <g>
+              <circle cx="30" cy="48" r="4.5" fill="#ffffff" />
+              <rect x="23" y="48" width="6" height="20" rx="3" fill="#4b7af4" stroke="#ffffff" strokeWidth="1.5" transform="rotate(15 30 48)" />
+              <circle cx="20" cy="67" r="4.5" fill="#ffffff" />
+            </g>
+
+            {/* Right Arm (Waving Arm) */}
+            <g className="robot-waving-arm">
+              <circle cx="70" cy="48" r="4.5" fill="#ffffff" />
+              <rect x="67" y="25" width="6" height="23" rx="3" fill="#4b7af4" stroke="#ffffff" strokeWidth="1.5" transform="rotate(-45 70 48)" />
+              <circle cx="86" cy="32" r="4.5" fill="#ffffff" />
+            </g>
+          </svg>
+
+          {/* Absolute Pecho Logo Container */}
+          <div className="absolute top-[58%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-6 h-6 rounded-full overflow-hidden border border-slate-100 bg-white shadow-inner flex items-center justify-center">
+            <img 
+              src={logoSuiza} 
+              alt="Logo Suiza" 
+              className="w-full h-full object-cover"
+            />
+          </div>
         </button>
       )}
 
       {/* 2. CHAT DRAWER PANEL */}
       {isOpen && (
-        <div className="w-[320px] sm:w-[360px] h-[480px] bg-white dark:bg-dark-card rounded-[2.2rem] shadow-2xl border border-slate-100 dark:border-dark-border/80 flex flex-col justify-between overflow-hidden animate-in fade-in slide-in-from-bottom-6 duration-300">
+        <div className="w-[320px] sm:w-[360px] h-[500px] bg-white/95 dark:bg-dark-card/95 backdrop-blur-md rounded-[2.5rem] shadow-2xl border border-slate-100/80 dark:border-dark-border/40 flex flex-col justify-between overflow-hidden animate-in fade-in slide-in-from-bottom-6 duration-300 relative">
           
           {/* Header */}
-          <div className="bg-primary px-5 py-4.5 text-white flex justify-between items-center relative shadow-sm">
+          <div className="bg-gradient-to-r from-primary via-primary to-primary-dark px-5 py-4 text-white flex justify-between items-center relative shadow-md">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center border border-white/25">
-                <Bot className="w-4.5 h-4.5" />
+              <div className="w-9 h-9 rounded-full overflow-hidden border-2 border-white/30 shrink-0 bg-white shadow-sm">
+                <img 
+                  src={robotLogo} 
+                  alt="SuizaAI Logo" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="text-left">
-                <h4 className="font-extrabold text-sm leading-none">SuizaAI</h4>
+                <h4 className="font-extrabold text-sm leading-none tracking-wide">SuizaAI</h4>
                 <div className="flex items-center gap-1.5 mt-1">
                   <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping"></span>
                   <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full absolute"></span>
-                  <span className="text-[9px] text-white/75 font-semibold">Virtual Activo</span>
+                  <span className="text-[9px] text-white/80 font-bold uppercase tracking-wider">Activo</span>
                 </div>
               </div>
             </div>
@@ -359,14 +440,14 @@ REGLAS CRÍTICAS DE COMPORTAMIENTO:
             {/* Close Button */}
             <button
               onClick={() => setIsOpen(false)}
-              className="p-1 rounded-full hover:bg-white/15 transition-all text-white cursor-pointer"
+              className="p-1.5 rounded-full hover:bg-white/15 transition-all text-white cursor-pointer active:scale-95"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto px-4 py-4 flex flex-col gap-3.5 bg-slate-50/40 dark:bg-dark-bg/20">
+          <div className="flex-1 overflow-y-auto px-4 py-5 flex flex-col gap-4 bg-slate-50/20 dark:bg-dark-bg/10 scrollbar-none">
             {messages.map((m, idx) => {
               const isUser = m.sender === 'user';
               return (
@@ -374,24 +455,34 @@ REGLAS CRÍTICAS DE COMPORTAMIENTO:
                   
                   {/* Sender name & time */}
                   <div className="flex items-center gap-1.5 mb-1 px-1 text-[8px] text-slate-400 font-bold uppercase tracking-wider">
-                    {isUser ? <User className="w-2.5 h-2.5" /> : <Bot className="w-2.5 h-2.5" />}
+                    {isUser ? (
+                      <User className="w-2.5 h-2.5 text-primary" />
+                    ) : (
+                      <div className="w-3.5 h-3.5 rounded-full overflow-hidden border border-primary/20 shrink-0 bg-white">
+                        <img 
+                          src={robotLogo} 
+                          alt="AI" 
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
                     <span>{isUser ? 'Tú' : 'SuizaAI'}</span>
                     <span>•</span>
                     <span>{m.time}</span>
                   </div>
 
                   {/* Message Bubble */}
-                  <div className={`p-3.5 rounded-2xl text-xs md:text-sm leading-relaxed border shadow-sm whitespace-pre-wrap relative ${
+                  <div className={`p-3.5 rounded-[1.25rem] text-xs md:text-sm leading-relaxed border shadow-sm whitespace-pre-wrap relative ${
                     isUser
-                      ? 'bg-primary text-white border-primary rounded-tr-none'
+                      ? 'bg-gradient-to-tr from-primary to-indigo-600 text-white border-primary/10 rounded-tr-none'
                       : 'bg-white dark:bg-dark-card text-slate-700 dark:text-dark-text border-slate-100 dark:border-dark-border/40 rounded-tl-none text-left'
                   }`}>
                     <span>{m.text}</span>
                     {m.isStreaming && (
                       <span className="inline-flex items-center ml-1.5 gap-0.5 align-middle select-none">
-                        <span className="w-1 h-1 bg-slate-400 dark:bg-dark-text/60 rounded-full animate-bounce" style={{ animationDelay: '0s', display: 'inline-block' }}></span>
-                        <span className="w-1 h-1 bg-slate-400 dark:bg-dark-text/60 rounded-full animate-bounce" style={{ animationDelay: '0.15s', display: 'inline-block' }}></span>
-                        <span className="w-1 h-1 bg-slate-400 dark:bg-dark-text/60 rounded-full animate-bounce" style={{ animationDelay: '0.3s', display: 'inline-block' }}></span>
+                        <span className="w-1.5 h-1.5 bg-slate-400 dark:bg-dark-text/60 rounded-full animate-bounce" style={{ animationDelay: '0s', display: 'inline-block' }}></span>
+                        <span className="w-1.5 h-1.5 bg-slate-400 dark:bg-dark-text/60 rounded-full animate-bounce" style={{ animationDelay: '0.15s', display: 'inline-block' }}></span>
+                        <span className="w-1.5 h-1.5 bg-slate-400 dark:bg-dark-text/60 rounded-full animate-bounce" style={{ animationDelay: '0.3s', display: 'inline-block' }}></span>
                       </span>
                     )}
 
@@ -419,7 +510,13 @@ REGLAS CRÍTICAS DE COMPORTAMIENTO:
             {isTyping && (
               <div className="flex flex-col items-start max-w-[85%] self-start animate-pulse">
                 <div className="flex items-center gap-1.5 mb-1 px-1 text-[8px] text-slate-400 font-bold uppercase tracking-wider">
-                  <Bot className="w-2.5 h-2.5" />
+                  <div className="w-3 h-3 rounded-full overflow-hidden border border-primary/20 shrink-0 bg-white">
+                    <img 
+                      src={robotLogo} 
+                      alt="AI" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                   <span>SuizaAI está respondiendo...</span>
                 </div>
                 <div className="px-4 py-2.5 rounded-2xl bg-white dark:bg-dark-card border border-slate-100 dark:border-dark-border/40 rounded-tl-none flex gap-1">
@@ -433,16 +530,16 @@ REGLAS CRÍTICAS DE COMPORTAMIENTO:
           </div>
 
           {/* Quick FAQ Suggestion chips */}
-          <div className="px-3.5 py-2.5 bg-slate-50/20 dark:bg-dark-bg/10 border-t border-slate-100 dark:border-dark-border/30 flex gap-1.5 overflow-x-auto scrollbar-none shrink-0 text-left">
+          <div className="px-3.5 py-3 bg-white/60 dark:bg-dark-card/40 border-t border-slate-100/60 dark:border-dark-border/30 flex gap-2 overflow-x-auto scrollbar-none shrink-0 text-left">
             {commonQuestions.map((q, i) => (
               <button
                 key={i}
                 onClick={() => !isBotBusy && handleSend(q.text)}
                 disabled={isBotBusy}
-                className={`px-3 py-1.5 rounded-full bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border text-[9px] font-bold text-slate-500 dark:text-dark-text/75 transition-all whitespace-nowrap ${
+                className={`px-3.5 py-1.5 rounded-full border border-primary/10 dark:border-dark-border/60 hover:border-primary dark:hover:border-secondary bg-primary/5 hover:bg-primary/10 text-[9px] font-extrabold text-primary dark:text-secondary transition-all whitespace-nowrap ${
                   isBotBusy 
                     ? 'opacity-45 cursor-not-allowed' 
-                    : 'hover:border-primary hover:text-primary cursor-pointer hover:bg-slate-50/50'
+                    : 'hover:scale-[1.02] cursor-pointer active:scale-[0.98]'
                 }`}
               >
                 {q.label}
@@ -451,7 +548,7 @@ REGLAS CRÍTICAS DE COMPORTAMIENTO:
           </div>
 
           {/* Bottom Message Input Box */}
-          <div className="p-3 border-t border-slate-100 dark:border-dark-border/40 flex items-center gap-2 bg-white dark:bg-dark-card shrink-0">
+          <div className="p-3.5 border-t border-slate-100/60 dark:border-dark-border/30 flex items-center gap-2.5 bg-white dark:bg-dark-card shrink-0 shadow-[0_-4px_25px_rgba(0,0,0,0.015)]">
             <input
               type="text"
               value={inputVal}
@@ -459,14 +556,14 @@ REGLAS CRÍTICAS DE COMPORTAMIENTO:
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
               disabled={isBotBusy}
               placeholder={isBotBusy ? "SuizaAI está respondiendo..." : "Escribe tu consulta aquí..."}
-              className={`flex-1 px-4 py-2.5 border border-slate-100 dark:border-dark-border/40 rounded-full text-xs md:text-sm bg-slate-50 dark:bg-dark-bg/20 text-[#1A202C] dark:text-white focus:outline-none focus:border-primary/50 focus:bg-white ${
-                isBotBusy ? 'opacity-65 cursor-not-allowed' : ''
+              className={`flex-1 px-4.5 py-2.5 border border-slate-200/60 dark:border-dark-border/80 focus:border-primary dark:focus:border-primary/50 rounded-full text-xs md:text-sm bg-slate-50/50 dark:bg-dark-bg/30 text-slate-800 dark:text-white placeholder-slate-400 outline-none transition-all duration-300 ${
+                isBotBusy ? 'opacity-65 cursor-not-allowed bg-slate-100' : 'focus:bg-white'
               }`}
             />
             <button
               onClick={() => handleSend()}
               disabled={isBotBusy}
-              className={`w-9.5 h-9.5 rounded-full bg-primary hover:bg-primary-dark text-white flex items-center justify-center transition-all cursor-pointer shadow-md shadow-primary/15 shrink-0 ${
+              className={`w-10 h-10 rounded-full bg-primary hover:bg-primary-dark text-white flex items-center justify-center transition-all cursor-pointer shadow-md shadow-primary/20 shrink-0 hover:scale-[1.04] active:scale-[0.96] ${
                 isBotBusy ? 'opacity-50 cursor-not-allowed hover:bg-primary' : ''
               }`}
               aria-label="Enviar"

@@ -1,14 +1,57 @@
-import React, { useState } from 'react';
-import { Send, CheckCircle2 } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
 
 export default function ContactForm({ t }) {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
+
+  useEffect(() => {
+    const handlePrefill = (e) => {
+      const { message } = e.detail || {};
+      if (message) {
+        setFormData(prev => ({ ...prev, message }));
+      }
+      const formContainer = document.getElementById('admission-contact-form');
+      if (formContainer) {
+        formContainer.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+    window.addEventListener('prefill-admission-form', handlePrefill);
+    return () => {
+      window.removeEventListener('prefill-admission-form', handlePrefill);
+    };
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setErrorMsg('');
     if (!formData.name || !formData.email || !formData.message) return;
+
+    // Academic / admission content validation
+    const messageNormalized = formData.message
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
+    const validKeywords = [
+      'admision', 'carrera', 'estudiar', 'estudio', 'inscripcion', 'inscribir',
+      'costo', 'precio', 'pago', 'pagar', 'requisito', 'documento', 'matricula',
+      'horario', 'clases', 'examen', 'vacante', 'informacion', 'informe',
+      'consulta', 'duda', 'pregunta', 'postular', 'postulacion', 'sistemas',
+      'enfermeria', 'contabilidad', 'administracion', 'turismo', 'forestal',
+      'agropecuaria', 'civil', 'electricidad', 'mecatronica', 'computacion',
+      'ucayali', 'pucallpa', 'instituto', 'tecnologico', 'suiza', 'curso',
+      'cepretec', 'simulacro'
+    ];
+
+    const isMessageRelevant = validKeywords.some(keyword => messageNormalized.includes(keyword));
+
+    if (formData.message.trim().length < 8 || !isMessageRelevant) {
+      setErrorMsg('Tu mensaje debe estar relacionado con consultas de admisión, carreras o información académica del IESTP Suiza.');
+      return;
+    }
     
     setLoading(true);
     // Simulate API request
@@ -20,7 +63,7 @@ export default function ContactForm({ t }) {
   };
 
   return (
-    <div className="w-full max-w-lg mx-auto rounded-3xl bg-white dark:bg-dark-card border border-primary/10 dark:border-dark-border p-6 md:p-8 shadow-[0_20px_50px_rgba(75,122,244,0.05)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-300">
+    <div id="admission-contact-form" className="w-full max-w-lg mx-auto rounded-3xl bg-white dark:bg-dark-card border border-primary/10 dark:border-dark-border p-6 md:p-8 shadow-[0_20px_50px_rgba(75,122,244,0.05)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-300">
       <div className="text-center mb-6">
         <h3 className="text-xl md:text-2xl font-bold text-slate-text dark:text-white">
           {t.contact.title}
@@ -91,6 +134,13 @@ export default function ContactForm({ t }) {
               className="w-full px-4 py-3 rounded-xl bg-slate-light/60 dark:bg-dark-border/30 border border-primary/5 dark:border-dark-border focus:border-primary dark:focus:border-primary/50 text-slate-text dark:text-white placeholder-slate-text/40 dark:placeholder-dark-text/30 outline-none text-sm transition-all resize-none"
             />
           </div>
+
+          {errorMsg && (
+            <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 text-xs font-semibold flex items-center gap-2 animate-in fade-in slide-in-from-top-1 duration-200">
+              <AlertCircle className="w-4 h-4 shrink-0" />
+              <span>{errorMsg}</span>
+            </div>
+          )}
 
           <button
             type="submit"

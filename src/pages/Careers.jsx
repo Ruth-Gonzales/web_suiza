@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { X, BookOpen, Target, Sparkles, ChevronRight, GraduationCap, Briefcase, Clock, Award } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { X, BookOpen, Target, Sparkles, ChevronRight, ChevronLeft, GraduationCap, Briefcase, Clock, Award } from 'lucide-react';
 
 const careersData = [
   {
@@ -138,7 +138,7 @@ const careersData = [
       "Desarrollo web frontend y backend",
       "Aplicaciones móviles Android y iOS",
       "Bases de datos SQL y NoSQL",
-      "Redes, ciberseguridad y cloud computing",
+      "Redes, ciberseguridad and cloud computing",
       "Inteligencia artificial, data science y proyectos TI"
     ],
     skills: ["Pensamiento lógico", "Resolución de problemas", "Adaptabilidad tecnológica", "Creatividad digital", "Trabajo colaborativo", "Autogestión"],
@@ -150,7 +150,25 @@ const careersData = [
       "Emprendedor tecnológico y freelancer"
     ],
     whyYou: "Si te apasiona la tecnología, resolver problemas complejos y crear soluciones que impacten a miles de personas, esta carrera te dará las herramientas para innovar.",
-    whyChoose: "Porque la era digital necesita programadores. Es la carrera con mayor crecimiento laboral global, salarios competitivos y posibilidad de trabajo remoto desde cualquier lugar."
+    whyChoose: "Porque la era digital necesita programadores. Es la carrera con mayor crecimiento laboral global, salarios competitivos y posibilidad de trabajo remoto desde cualquier lugar.",
+    gallery: [
+      {
+        url: "https://iestpsuiza.edu.pe/wp-content/uploads/2023/09/DSC_8089-1024x683.jpg",
+        caption: "Estudiantes en nuestro moderno laboratorio de cómputo desarrollando proyectos prácticos en equipo."
+      },
+      {
+        url: "https://iestpsuiza.edu.pe/wp-content/uploads/2023/08/DSI-Mod1.png",
+        caption: "Módulo I: Programación y Gestión de Sistemas de Información."
+      },
+      {
+        url: "https://iestpsuiza.edu.pe/wp-content/uploads/2023/08/DSI-Mod2.png",
+        caption: "Módulo II: Desarrollo de Soluciones Web, Aplicaciones Móviles y Cloud Computing."
+      },
+      {
+        url: "https://iestpsuiza.edu.pe/wp-content/uploads/2023/08/DSI-Mod3.png",
+        caption: "Módulo III: Administración de Bases de Datos, Ciberseguridad y Gestión de Proyectos de TI."
+      }
+    ]
   },
   {
     id: "elec",
@@ -282,9 +300,29 @@ const careersData = [
 export default function Careers() {
   const [selected, setSelected] = useState(null);
   const [activePreview, setActivePreview] = useState(careersData[0]);
+  const [activeGallerySlide, setActiveGallerySlide] = useState(0);
 
-  const openCareer = (career) => setSelected(career);
-  const closeCareer = () => setSelected(null);
+  const openCareer = (career) => {
+    setSelected(career);
+    setActiveGallerySlide(0);
+  };
+  const closeCareer = () => {
+    setSelected(null);
+    setActiveGallerySlide(0);
+  };
+
+  // Autoplay for the career gallery inside the side panel
+  useEffect(() => {
+    if (!selected || !selected.gallery) return;
+    
+    const timer = setInterval(() => {
+      setActiveGallerySlide(prev => 
+        prev === selected.gallery.length - 1 ? 0 : prev + 1
+      );
+    }, 4500);
+
+    return () => clearInterval(timer);
+  }, [selected, activeGallerySlide]);
 
   return (
     <div>
@@ -429,6 +467,72 @@ export default function Careers() {
               <p className="text-base md:text-lg text-slate-text/80 dark:text-dark-text/80 leading-relaxed">
                 {selected.desc}
               </p>
+
+              {/* Carrusel de Galería de Programa de Estudio */}
+              {selected.gallery && (
+                <div className="space-y-4 border-t border-primary/5 pt-6 mt-6">
+                  <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2">
+                    <Sparkles className="w-5 h-5 text-primary animate-pulse" />
+                    Módulos y Laboratorios del Programa
+                  </h4>
+                  
+                  {/* Slider Card */}
+                  <div className="relative w-full aspect-[16/10] md:aspect-[16/9] rounded-[2rem] overflow-hidden border border-primary/5 dark:border-dark-border/40 shadow-lg bg-slate-900 group">
+                    {/* Sliding track */}
+                    <div 
+                      className="flex w-full h-full transition-transform duration-700 ease-in-out"
+                      style={{ transform: `translateX(-${activeGallerySlide * 100}%)`, display: 'flex' }}
+                    >
+                      {selected.gallery.map((img, idx) => (
+                        <div key={idx} className="w-full h-full shrink-0 relative">
+                          <img
+                            src={img.url}
+                            alt={img.caption || selected.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Gradient Overlay for Caption */}
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-6 pt-16 flex flex-col justify-end text-left pointer-events-none">
+                      <p className="text-xs md:text-sm font-semibold text-white leading-relaxed drop-shadow-md">
+                        {selected.gallery[activeGallerySlide].caption}
+                      </p>
+                    </div>
+
+                    {/* Left/Right Controls */}
+                    <button
+                      onClick={() => setActiveGallerySlide(prev => prev === 0 ? selected.gallery.length - 1 : prev - 1)}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md text-white flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-90"
+                      aria-label="Anterior"
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <button
+                      onClick={() => setActiveGallerySlide(prev => prev === selected.gallery.length - 1 ? 0 : prev + 1)}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md text-white flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-90"
+                      aria-label="Siguiente"
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+
+                    {/* Indicator Dots */}
+                    <div className="absolute top-4 right-4 flex gap-1 bg-black/30 backdrop-blur-sm px-2.5 py-1.5 rounded-full z-20">
+                      {selected.gallery.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setActiveGallerySlide(idx)}
+                          className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                            activeGallerySlide === idx ? 'w-4 bg-white' : 'w-1.5 bg-white/50'
+                          }`}
+                          aria-label={`Ir al slide ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {/* Plan de estudios */}
               <div>
