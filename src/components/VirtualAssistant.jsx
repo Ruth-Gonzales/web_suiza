@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { MessageSquare, X, Send, User, Bot, HelpCircle, PhoneCall, Calendar } from 'lucide-react';
+import { X, Send, User, Bot, HelpCircle, PhoneCall, Calendar } from 'lucide-react';
 
 export default function VirtualAssistant() {
   const [isOpen, setIsOpen] = useState(false);
@@ -325,15 +325,43 @@ REGLAS CRÍTICAS DE COMPORTAMIENTO:
   return (
     <div className="fixed bottom-24 right-6 z-50 flex flex-col items-end">
       
-      {/* 1. CHAT TOGGLE BUBBLE */}
+      {/* 1. CHAT TOGGLE - ROBOT CHARACTER */}
       {!isOpen && (
-        <button
-          onClick={() => setIsOpen(true)}
-          className="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer border border-white/10"
-          title="Asistente Virtual"
-        >
-          <MessageSquare className="w-6 h-6 animate-pulse" />
-        </button>
+        <div className="suiza-robot-scale" data-mood="happy">
+          <div
+            className="suiza-robot-wrapper"
+            onClick={() => setIsOpen(true)}
+            title="Asistente Virtual"
+          >
+            <div className="suiza-robot">
+              <div className="robot-antenna">
+                <span></span>
+              </div>
+              <div className="robot-head">
+                <div className="robot-screen">
+                  <div className="robot-eye left"></div>
+                  <div className="robot-eye right"></div>
+                  <div className="robot-mouth"></div>
+                </div>
+                <div className="robot-ear left"></div>
+                <div className="robot-ear right"></div>
+              </div>
+              <div className="robot-neck"></div>
+              <div className="robot-body">
+                <div className="robot-chest">S</div>
+              </div>
+              <div className="robot-arm left">
+                <div className="robot-hand"></div>
+              </div>
+              <div className="robot-arm right waving">
+                <div className="robot-hand"></div>
+              </div>
+              <div className="robot-leg left"></div>
+              <div className="robot-leg right"></div>
+              <div className="robot-glow"></div>
+            </div>
+          </div>
+        </div>
       )}
 
       {/* 2. CHAT DRAWER PANEL */}
