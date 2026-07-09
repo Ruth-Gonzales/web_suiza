@@ -1,14 +1,16 @@
 import { MessageSquareText, Quote, Mail, Phone, MapPin } from 'lucide-react';
 import AboutPageShell from './AboutPageShell';
 
+const contactIcons = [Mail, Phone, MapPin];
+
 export default function PalabrasDirector({ t }) {
   const data = t.aboutMenu?.col1?.[1] || {};
 
   return (
     <AboutPageShell
       t={t}
-      title={data.title || 'Palabras del Director'}
-      breadcrumb={data.title || 'Palabras del Director'}
+      title={data.title}
+      breadcrumb={data.title}
     >
       <div className="rounded-[2rem] bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 p-8 md:p-10 shadow-sm mb-8">
         <div className="flex flex-col md:flex-row gap-8 items-start">
@@ -23,19 +25,14 @@ export default function PalabrasDirector({ t }) {
               <Quote className="w-8 h-8 text-primary/20 dark:text-secondary/20 absolute -top-2 -left-2" />
               <div className="pl-6">
                 <p className="text-sm md:text-base text-slate-text/80 dark:text-dark-text/80 leading-relaxed italic mb-6">
-                  "Es un honor y una gran responsabilidad dirigir esta casa superior de estudios, 
-                  que por más de cuatro décadas ha sido el faro de conocimiento y progreso para 
-                  nuestra querida región Ucayali. Nuestro compromiso es inquebrantable: formar 
-                  profesionales técnicos competentes, con valores éticos sólidos y con la capacidad 
-                  de transformar su realidad y contribuir al desarrollo sostenible de nuestra Amazonía 
-                  y del Perú."
+                  "{t.aboutPage.palabrasDirector.quote}"
                 </p>
               </div>
             </div>
             <div className="border-t border-primary/10 dark:border-white/8 pt-4 mt-4">
-              <h3 className="font-bold text-lg text-slate-text dark:text-white">Mg. Juan Carlos Ramirez Torres</h3>
-              <p className="text-sm text-primary dark:text-secondary font-medium">Director General</p>
-              <p className="text-xs text-slate-text/50 dark:text-dark-text/50 mt-1">IESTP Suiza — Pucallpa</p>
+              <h3 className="font-bold text-lg text-slate-text dark:text-white">{t.aboutPage.palabrasDirector.directorName}</h3>
+              <p className="text-sm text-primary dark:text-secondary font-medium">{t.aboutPage.palabrasDirector.directorRole}</p>
+              <p className="text-xs text-slate-text/50 dark:text-dark-text/50 mt-1">{t.aboutPage.palabrasDirector.directorInstitution}</p>
             </div>
           </div>
         </div>
@@ -46,36 +43,29 @@ export default function PalabrasDirector({ t }) {
         <div className="rounded-2xl bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 p-6 shadow-sm">
           <h3 className="font-bold text-slate-text dark:text-white mb-3 flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-primary" />
-            Nuestra Visión de Futuro
+            {t.aboutPage.palabrasDirector.futureVisionTitle}
           </h3>
           <p className="text-sm text-slate-text/70 dark:text-dark-text/70 leading-relaxed">
-            Trabajamos incansablemente para que al 2030 seamos reconocidos como el instituto tecnológico 
-            líder de la Amazonía peruana, con estándares de calidad internacional, infraestructura moderna 
-            y egresados altamente empleables.
+            {t.aboutPage.palabrasDirector.futureVisionDesc}
           </p>
         </div>
         <div className="rounded-2xl bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 p-6 shadow-sm">
           <h3 className="font-bold text-slate-text dark:text-white mb-3 flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-primary" />
-            Compromiso con la Calidad
+            {t.aboutPage.palabrasDirector.qualityTitle}
           </h3>
           <p className="text-sm text-slate-text/70 dark:text-dark-text/70 leading-relaxed">
-            Cada día renovamos nuestro compromiso con la excelencia académica, la innovación tecnológica 
-            y la formación integral de nuestros estudiantes, preparándolos para los desafíos del mundo laboral.
+            {t.aboutPage.palabrasDirector.qualityDesc}
           </p>
         </div>
       </div>
 
       {/* Contact info */}
       <div className="rounded-2xl bg-primary/5 dark:bg-primary/10 border border-primary/10 dark:border-white/8 p-6 shadow-sm">
-        <h3 className="font-bold text-slate-text dark:text-white mb-4 text-sm">Contacto de Dirección</h3>
+        <h3 className="font-bold text-slate-text dark:text-white mb-4 text-sm">{t.aboutPage.palabrasDirector.contactTitle}</h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {[
-            { icon: Mail, label: 'Email', value: 'direccion@iestpsuiza.edu.pe' },
-            { icon: Phone, label: 'Teléfono', value: '(061) 280665' },
-            { icon: MapPin, label: 'Dirección', value: 'Carretera Federico Basadre Km 5.700' },
-          ].map((item, idx) => {
-            const Icon = item.icon;
+          {(t.aboutPage.palabrasDirector.contact).map((item, idx) => {
+            const Icon = contactIcons[idx];
             return (
               <div key={idx} className="flex items-center gap-3">
                 <Icon className="w-4 h-4 text-primary dark:text-secondary flex-shrink-0" />

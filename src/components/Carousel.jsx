@@ -1,10 +1,13 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { translations } from '../translations';
+
+const t = translations[localStorage.getItem('lang') || 'es'];
 
 const images = [
-  { src: '/fontis.jpg', alt: 'Fondo IESTP Suiza 1' },
-  { src: '/frontis_2.jpg', alt: 'Fondo IESTP Suiza 2' },
-  { src: '/campus.jpg', alt: 'Fondo IESTP Suiza 3' },
+  { src: '/fontis.jpg', alt: t.carousel.img1Alt },
+  { src: '/frontis_2.jpg', alt: t.carousel.img2Alt },
+  { src: '/campus.jpg', alt: t.carousel.img3Alt },
 ];
 
 export default function Carousel({ autoPlayInterval = 5000, children }) {

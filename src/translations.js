@@ -49,7 +49,17 @@ export const translations = {
           learn: "Aprenderás a programar, diseñar bases de datos y desarrollar aplicaciones web y móviles usando frameworks modernos.",
           learningPoints: ["Programación full-stack","Diseño de bases de datos","Despliegue y mantenimiento de aplicaciones"],
           alumni: { name: "María López", role: "Desarrolladora Full-Stack", quote: "Gracias al programa pude incorporarme a una empresa de software regional." },
-          employabilityRate: 92
+          employabilityRate: 92,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/sys.jpg",
+          degree: "Técnico en Desarrollo de Sistemas de Información",
+          technologies: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Python", "MySQL", "Docker", "Git", "APIs REST"],
+          curriculum: ["Programación estructurada y orientada a objetos","Desarrollo web frontend y backend","Aplicaciones móviles Android y iOS","Bases de datos SQL y NoSQL","Redes, ciberseguridad y cloud computing","Inteligencia artificial y data science"],
+          skills: ["Pensamiento lógico","Resolución de problemas","Adaptabilidad tecnológica","Creatividad digital","Trabajo colaborativo","Autogestión"],
+          opportunities: ["Desarrollador de software y aplicaciones","Programador web y administrador de bases de datos","Analista de sistemas y soporte TI","Especialista en ciberseguridad","Emprendedor tecnológico y freelancer"],
+          whyYou: "Si te apasiona la tecnología, resolver problemas complejos y crear soluciones que impacten a miles de personas, esta carrera te dará las herramientas para innovar.",
+          whyChoose: "Porque la era digital necesita programadores. Es la carrera con mayor crecimiento laboral global, salarios competitivos y posibilidad de trabajo remoto."
         },
         {
           id: "enfer",
@@ -60,7 +70,17 @@ export const translations = {
           learn: "Aprenderás técnicas de cuidado, primeros auxilios, promoción de la salud y soporte en unidades clínicas y comunitarias.",
           learningPoints: ["Cuidados básicos de enfermería","Técnicas de reanimación","Promoción y prevención en salud"],
           alumni: { name: "José Pérez", role: "Técnico en Enfermería", quote: "El programa me dio la experiencia práctica que necesitaba para trabajar en un hospital local." },
-          employabilityRate: 88
+          employabilityRate: 88,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/enfer.jpg",
+          degree: "Técnico en Enfermería",
+          technologies: [],
+          curriculum: ["Anatomía, fisiología y farmacología básica","Cuidados de enfermería en adulto, niño y neonato","Primeros auxilios, emergencias y desastres","Nutrición, salud comunitaria y epidemiología","Enfermería en pediatría, geriatría y cuidados paliativos","Prácticas preprofesionales en hospitales y centros de salud"],
+          skills: ["Empatía","Vocación de servicio","Trabajo bajo presión","Responsabilidad","Trabajo en equipo","Comunicación asertiva"],
+          opportunities: ["Técnico de enfermería en hospitales y clínicas","Promotor de salud comunitaria","Asistente en centros de salud y postas médicas","Cuidador de adultos mayores y pacientes domiciliarios","Técnico en programas de salud preventiva"],
+          whyYou: "Si tu vocación es cuidar de los demás, tienes empatía y sensibilidad social, la enfermería técnica te permitirá salvar vidas y mejorar la salud de tu comunidad.",
+          whyChoose: "Porque la salud es un derecho y una prioridad nacional. Los enfermeros técnicos son esenciales en el sistema de salud, con alta demanda y estabilidad laboral."
         },
         {
           id: "meca",
@@ -71,7 +91,17 @@ export const translations = {
           learn: "Formación en electrónica, mecánica y automatización aplicada a vehículos y sistemas mecatrónicos.",
           learningPoints: ["Electrónica automotriz","Mecánica aplicada","Sistemas de control"],
           alumni: { name: "Luis García", role: "Técnico Mecatrónico", quote: "Hoy trabajo manteniendo flotas de transporte regional." },
-          employabilityRate: 85
+          employabilityRate: 85,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/meca.jpg",
+          degree: "Técnico en Mecatrónica Automotriz",
+          technologies: [],
+          curriculum: ["Motores de combustión interna y sistemas de transmisión","Sistemas de frenos, suspensión y dirección","Electrónica automotriz y diagnóstico computarizado","Sistemas de inyección, encendido y sobrealimentación","Aire acondicionado automotriz y climatización","Mantenimiento de maquinaria pesada y equipos diésel"],
+          skills: ["Diagnóstico técnico","Precisión manual","Actualización constante","Pensamiento analítico","Uso de scanner automotriz","Trabajo en taller"],
+          opportunities: ["Técnico especializado en talleres mecánicos y concesionarios","Diagnosticador automotriz con scanner","Especialista en sistemas electrónicos de vehículos","Técnico en maquinaria pesada y equipos diésel","Emprendedor en taller de servicio automotriz"],
+          whyYou: "Si te apasionan los motores, la tecnología automotriz y el diagnóstico de precisión, esta carrera te convertirá en un experto altamente demandado.",
+          whyChoose: "Porque el parque automotor crece aceleradamente y los vehículos modernos requieren técnicos con formación en mecatrónica. Es una carrera con excelente proyección económica."
         },
         {
           id: "agro",
@@ -82,7 +112,17 @@ export const translations = {
           learn: "Técnicas de cultivo y crianza, gestión de agroecosistemas y uso de tecnologías para aumentar la productividad sostenible.",
           learningPoints: ["Manejo de cultivos","Sanidad animal","Gestión de recursos hídricos"],
           alumni: { name: "Ana Torres", role: "Gestora Agrícola", quote: "Implementé sistemas de producción sostenible en mi comunidad." },
-          employabilityRate: 80
+          employabilityRate: 80,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/agro.jpg",
+          degree: "Técnico en Producción Agropecuaria",
+          technologies: [],
+          curriculum: ["Cultivos tropicales, sanidad vegetal y fertilización","Riego tecnificado, suelos y manejo de cuencas","Crianza de animales mayores y menores","Biotecnología agropecuaria y transformación de productos","Gestión agroempresarial y comercio de insumos","Buenas prácticas agrícolas y certificación orgánica"],
+          skills: ["Trabajo de campo","Visión productiva","Innovación tecnológica","Gestión de recursos","Sostenibilidad","Capacidad emprendedora"],
+          opportunities: ["Técnico en empresas agroindustriales y fundos","Asistente técnico en producción agrícola y pecuaria","Promotor de buenas prácticas agropecuarias","Técnico en programas de desarrollo rural","Emprendedor agropecuario y productor independiente"],
+          whyYou: "Si valoras el trabajo del campo, te interesa la producción de alimentos y quieres aplicar tecnología al agro, esta carrera te hará parte de la revolución productiva del país.",
+          whyChoose: "Porque Ucayali tiene un enorme potencial agropecuario. Serás clave para impulsar la seguridad alimentaria y el desarrollo económico desde el campo."
         },
         {
           id: "forest",
@@ -93,7 +133,17 @@ export const translations = {
           learn: "Gestión forestal sostenible, protección de ecosistemas y técnicas de aprovechamiento responsable.",
           learningPoints: ["Inventario forestal","Restauración ecológica","Políticas de manejo sostenible"],
           alumni: { name: "Marcos Rivera", role: "Especialista Forestal", quote: "Trabajo en proyectos de conservación con comunidades locales." },
-          employabilityRate: 82
+          employabilityRate: 82,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/forest.jpg",
+          degree: "Técnico en Manejo Forestal",
+          technologies: [],
+          curriculum: ["Ecología forestal, botánica y dendrología","Sistemas de información geográfica (SIG) y teledetección","Aprovechamiento maderable y no maderable","Reforestación, silvicultura y viveros forestales","Conservación de fauna silvestre y áreas protegidas","Gestión de concesiones forestales y certificación"],
+          skills: ["Conciencia ambiental","Trabajo de campo","Visión sostenible","Manejo de SIG","Investigación aplicada","Liderazgo comunitario"],
+          opportunities: ["Técnico en empresas forestales y concesiones","Promotor de conservación y reforestación","Inspector de recursos forestales y fauna","Técnico en áreas naturales protegidas","Consultor en manejo forestal sostenible"],
+          whyYou: "Si amas la naturaleza, te preocupa el futuro del planeta y quieres trabajar directamente en la conservación de la Amazonía, esta carrera es tu propósito de vida.",
+          whyChoose: "Porque la Amazonía es el pulmón del mundo y necesita profesionales capacitados. Es una carrera única con impacto local y relevancia global."
         },
         {
           id: "cont",
@@ -104,7 +154,17 @@ export const translations = {
           learn: "Contabilidad financiera, costos, auditoría y manejo de sistemas contables para empresas modernas.",
           learningPoints: ["Contabilidad financiera","Auditoría","Tributación"],
           alumni: { name: "Patricia Huaman", role: "Contadora", quote: "Pude certificarme y encontrar empleo en una firma contable regional." },
-          employabilityRate: 85
+          employabilityRate: 85,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/cont.jpg",
+          degree: "Técnico en Contabilidad",
+          technologies: [],
+          curriculum: ["Contabilidad general, de costos y de sociedades","Legislación y tributación laboral y empresarial","Planillas electrónicas, PDT y declaraciones mensuales","Auditoría financiera y control interno","Sistemas contables computarizados (SUNAT, CONCAR)","Finanzas empresariales y presupuestos"],
+          skills: ["Razonamiento analítico","Meticulosidad","Ética profesional","Manejo de sistemas contables","Confidencialidad","Visión financiera"],
+          opportunities: ["Asistente o analista contable","Especialista en tributación y planillas","Auditor interno o externo","Contador general de empresas","Consultor financiero independiente"],
+          whyYou: "Si eres analítico, preciso y te interesa el mundo de las finanzas, la contabilidad te convertirá en el profesional de confianza que toda organización necesita.",
+          whyChoose: "Porque todas las empresas, sin excepción, requieren servicios contables. Es una de las carreras técnicas con mayor empleabilidad y estabilidad laboral."
         },
         {
           id: "admin",
@@ -115,7 +175,17 @@ export const translations = {
           learn: "Gestión de proyectos, finanzas básicas, marketing y liderazgo para impulsar iniciativas productivas.",
           learningPoints: ["Gestión de proyectos","Marketing básico","Liderazgo y gestión"],
           alumni: { name: "Carlos Mendoza", role: "Gerente de Operaciones", quote: "El programa fue clave para mi crecimiento profesional." },
-          employabilityRate: 87
+          employabilityRate: 87,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/admin.jpg",
+          degree: "Técnico en Administración de Empresas",
+          technologies: [],
+          curriculum: ["Gestión empresarial y planeamiento estratégico","Marketing, ventas y atención al cliente","Contabilidad general, costos y finanzas corporativas","Recursos humanos, liderazgo y trabajo en equipo","Legislación laboral, tributaria y comercio internacional","Proyectos de inversión, emprendimiento e innovación"],
+          skills: ["Liderazgo","Toma de decisiones","Gestión financiera","Negociación","Planificación estratégica","Trabajo en equipo"],
+          opportunities: ["Jefe de área administrativa o financiera","Gerente general de pequeñas y medianas empresas","Administrador de empresas comerciales, industriales o de servicios","Emprendedor y creador de tu propio negocio","Consultor empresarial independiente"],
+          whyYou: "Si posees facilidad para liderar, te motiva la toma de decisiones y el logro de objetivos, y te apasiona el mundo de los negocios, esta carrera potenciará tu talento directivo.",
+          whyChoose: "Porque todo tipo de organización necesita administradores competentes. Es una de las profesiones con mayor campo laboral, permitiéndote trabajar en cualquier sector económico del país."
         },
         {
           id: "civil",
@@ -126,7 +196,17 @@ export const translations = {
           learn: "Técnicas de construcción, lecturas de planos, control de calidad y seguridad en obras civiles.",
           learningPoints: ["Lectura de planos","Gestión de obra","Seguridad industrial"],
           alumni: { name: "Javier Ramos", role: "Supervisor de Obras", quote: "Trabajo en proyectos de infraestructura regional con estándares modernos." },
-          employabilityRate: 90
+          employabilityRate: 90,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/civil.jpg",
+          degree: "Técnico en Construcción Civil",
+          technologies: [],
+          curriculum: ["Dibujo técnico, planos y topografía","Tecnología de materiales, concreto y suelos","Costos, presupuestos y valorizaciones de obra","Estructuras, instalaciones sanitarias y eléctricas","Seguridad en obra y prevención de riesgos","Supervisión y control de calidad en construcción"],
+          skills: ["Visión espacial","Liderazgo técnico","Trabajo en campo","Cálculo de costos","Supervisión de equipos","Cumplimiento normativo"],
+          opportunities: ["Supervisor de obra y asistente de residente","Maestro general de obra calificado","Técnico en empresas constructoras e inmobiliarias","Inspector de obras públicas y privadas","Emprendedor en servicios de construcción"],
+          whyYou: "Si te apasiona ver cómo las ideas se convierten en estructuras sólidas y quieres ser parte del desarrollo urbano, esta carrera te dará el poder de construir.",
+          whyChoose: "Porque el déficit de infraestructura en el Perú demanda profesionales técnicos en construcción. Es una carrera estable, bien remunerada y con proyección a largo plazo."
         },
         {
           id: "elec",
@@ -137,7 +217,17 @@ export const translations = {
           learn: "Sistemas eléctricos industriales, automatización y mantenimiento preventivo de equipos eléctricos.",
           learningPoints: ["Instalaciones eléctricas","Automatización","Mantenimiento industrial"],
           alumni: { name: "Rosa Delgado", role: "Técnica Electricista", quote: "Participé en la instalación de sistemas eléctricos para una planta agroindustrial." },
-          employabilityRate: 86
+          employabilityRate: 86,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/elec.jpg",
+          degree: "Técnico en Electricidad Industrial",
+          technologies: [],
+          curriculum: ["Instalaciones eléctricas domiciliarias e industriales","Máquinas eléctricas, transformadores y motores","Automatización industrial con PLC y sensores","Sistemas de potencia y tableros de control","Instrumentación y mantenimiento eléctrico","Seguridad industrial y normativa eléctrica"],
+          skills: ["Precisión técnica","Razonamiento lógico","Trabajo seguro","Diagnóstico de fallas","Manejo de instrumentos","Visión sistémica"],
+          opportunities: ["Técnico electricista industrial","Supervisor de mantenimiento eléctrico","Instalador de sistemas de automatización","Técnico en empresas mineras, constructoras y fabriles","Emprendedor en servicios eléctricos"],
+          whyYou: "Si te fascina entender cómo funciona la energía y mantener los sistemas que mueven la industria, esta carrera te dará un campo de acción inmenso.",
+          whyChoose: "Porque la industria peruana demanda constantemente técnicos electricistas. Es una carrera con alta empleabilidad en minería, construcción, manufactura y servicios."
         },
         {
           id: "tur",
@@ -148,7 +238,17 @@ export const translations = {
           learn: "Gestión de servicios turísticos, promoción de destinos y atención al cliente especializada en turismo sostenible.",
           learningPoints: ["Promoción turística","Atención al cliente","Gestión de servicios"],
           alumni: { name: "Elena Fuentes", role: "Gestora Turística", quote: "Hoy coordino experiencias turísticas sostenibles para visitantes nacionales." },
-          employabilityRate: 78
+          employabilityRate: 78,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/tur.jpg",
+          degree: "Técnico en Administración de Operaciones Turísticas",
+          technologies: [],
+          curriculum: ["Planificación y gestión de destinos turísticos","Administración de hoteles, restaurantes y agencias de viaje","Marketing digital y comercialización turística","Contabilidad y legislación turística","Guía de turismo, interpretación ambiental y cultural","Diseño de paquetes turísticos sostenibles"],
+          skills: ["Creatividad","Comunicación intercultural","Gestión hotelera","Atención al cliente","Trabajo en campo","Visión sostenible"],
+          opportunities: ["Administrador de hoteles, lodges y restaurantes","Operador turístico y agente de viajes","Guía oficial de turismo especializado en Amazonía","Promotor de turismo comunitario y vivencial","Emprendedor en servicios turísticos sostenibles"],
+          whyYou: "Si eres creativo, con espíritu aventurero y vocación por compartir la riqueza natural y cultural de tu tierra, esta carrera hará de ti un agente de cambio.",
+          whyChoose: "Porque Ucayali es un destino con enorme potencial turístico aún por explotar. Serás protagonista del desarrollo económico regional a través del turismo responsable."
         },
         {
           id: "asist",
@@ -159,7 +259,17 @@ export const translations = {
           learn: "Herramientas de oficina, comunicación empresarial y organización administrativa para soportar procesos institucionales.",
           learningPoints: ["Ofimática","Comunicación empresarial","Organización administrativa"],
           alumni: { name: "Karina Soto", role: "Asistente Administrativa", quote: "Encontré empleo inmediatamente al graduarme en una municipalidad local." },
-          employabilityRate: 80
+          employabilityRate: 80,
+          duration: "2.5 años",
+          modality: "Presencial",
+          image: "/careers/asist.jpg",
+          degree: "Técnico en Asistencia Administrativa",
+          technologies: [],
+          curriculum: ["Gestión documentaria y archivo empresarial","Redacción y comunicación corporativa","Atención al cliente y protocolo empresarial","Contabilidad básica, planillas y tributación","Herramientas ofimáticas y sistemas administrativos","Organización de eventos y logística empresarial"],
+          skills: ["Organización","Responsabilidad","Comunicación efectiva","Manejo de software","Atención al detalle","Discreción profesional"],
+          opportunities: ["Asistente de gerencia o dirección","Secretario ejecutivo en empresas públicas y privadas","Administrador de oficina y archivo","Especialista en atención al cliente","Asistente de recursos humanos, logística o contabilidad"],
+          whyYou: "Si eres meticuloso, responsable y disfrutas del orden y la eficiencia, tu capacidad organizativa será el pilar que toda empresa necesita.",
+          whyChoose: "Porque todas las organizaciones requieren personal administrativo calificado. Es una carrera técnica con rápida inserción laboral y demanda constante."
         }
       ]
     },
@@ -179,6 +289,38 @@ export const translations = {
       title: "Noticias y Eventos Institucionales",
       subtitle: "Entérate de las últimas actividades, logros académicos y publicaciones de nuestra institución.",
       readMore: "Leer Artículo",
+      latestNews: "🔥 Últimas Noticias",
+      noResults: "No se encontraron artículos con los criterios especificados.",
+      eventsSectionTitle: "🎉 Eventos y Actividades",
+      achievementsSectionTitle: "🏆 Logros y Reconocimientos",
+      opportunitiesSectionTitle: "🚀 Oportunidades para Estudiantes",
+      discover: "🚀 Descubrir",
+      discoverStory: "Descubrir Historia",
+      viewDetails: "Ver Detalles",
+      learnMore: "Conocer Más",
+      dateLabel: "Fecha",
+      timeLabel: "Hora",
+      locationLabel: "Lugar",
+      organizerLabel: "Organizador",
+      audienceLabel: "Público",
+      objectiveLabel: "Objetivo",
+      descriptionLabel: "Descripción",
+      benefitsLabel: "Beneficios de asistir",
+      agendaLabel: "Agenda del Evento",
+      locationDetailLabel: "Ubicación",
+      howToGetThere: "Cómo llegar",
+      openInMaps: "Abrir en Google Maps",
+      interactiveMap: "Mapa interactivo",
+      galleryLabel: "Galería",
+      videosLabel: "🎥 Videos del Evento",
+      statsLabel: "Estadísticas del Evento",
+      testimonialsLabel: "Testimonios",
+      relatedEventsLabel: "🚀 También te puede interesar",
+      liked: "Te gusta",
+      like: "Me gusta",
+      share: "Compartir",
+      newsLabel: "Noticia",
+      photosLabel: "Fotografías",
       featured: {
         image: "from-indigo-600 via-primary to-secondary",
         title: "IESTP Suiza obtiene licenciamiento institucional por 6 años otorgado por el MINEDU",
@@ -502,6 +644,7 @@ export const translations = {
       achievements: {
         title: "Logros y Reconocimientos",
         subtitle: "Celebramos los éxitos de nuestra comunidad que nos llenan de orgullo institucional.",
+        viewFull: "🏆 Ver Historia Completa",
         items: [
           {
             image: "from-amber-500 to-yellow-600",
@@ -781,6 +924,199 @@ export const translations = {
         ]
       }
     },
+    aboutPage: {
+      header: {
+        title: "Nuestra Institución",
+        subtitle: "Conoce la trayectoria, misión, visión y valores del IESTP Suiza"
+      },
+      mission: {
+        title: "Misión",
+        description: "Somos una institución de educación superior tecnológica pública licenciada, dedicada a formar profesionales técnicos competentes, creativos, innovadores y con sólidos valores éticos."
+      },
+      vision: {
+        title: "Visión",
+        description: "Al 2030, ser un instituto tecnológico líder en la Amazonía peruana y referente nacional por su excelencia académica."
+      },
+      values: {
+        sectionTitle: "Nuestros Valores",
+        excellence: { title: "Excelencia", desc: "Buscamos el más alto estándar en la formación técnica y humana." },
+        innovation: { title: "Innovación", desc: "Impulsamos la investigación aplicada y el uso de tecnologías de vanguardia." },
+        inclusion: { title: "Inclusión", desc: "Respetamos y valoramos la diversidad sociocultural de nuestra Amazonía." },
+        integrity: { title: "Integridad", desc: "Actuamos con ética, honestidad, transparencia y responsabilidad social." }
+      },
+      history: {
+        title: "Reseña Histórica",
+        timeline: {
+          founding: { title: "Fundación y Primeros Pasos", desc: "Nace como respuesta a la creciente demanda de formación técnica calificada en la provincia de Coronel Portillo, Ucayali." },
+          consolidation: { title: "Consolidación y Nuevos Programas", desc: "Se inaugura el campus actual en la Carretera Federico Basadre y se incorporan nuevas especialidades." },
+          modernization: { title: "Modernización Tecnológica", desc: "Se equipan nuevos laboratorios con tecnología de punta en mecatrónica automotriz y desarrollo de software." },
+          licensing: { title: "Licenciamiento Institucional", desc: "El IESTP Suiza logra exitosamente su licenciamiento institucional ante el Ministerio de Educación." }
+        }
+      },
+      presentacion: {
+        title: "Presentación",
+        introTitle: "Instituto de Educación Superior Tecnológico Público Suiza",
+        introSubtitle: "Formando profesionales técnicos de excelencia desde 1976",
+        introP1: "El IESTP Suiza es una institución educativa pública ubicada en la ciudad de Pucallpa, capital de la región Ucayali. Fundada en 1976, nuestra institución ha sido un pilar fundamental en la formación técnica de miles de jóvenes amazónicos, contribuyendo activamente al desarrollo socioeconómico de la región y del país.",
+        introP2: "Contamos con 11 programas de estudio licenciados, laboratorios especializados modernos, una plana docente altamente calificada y convenios estratégicos con empresas e instituciones del sector público y privado. Nuestro compromiso es formar profesionales competentes, creativos, innovadores y con sólidos valores éticos.",
+        features: [
+          { title: "Licenciamiento", desc: "Institución licenciada por el MINEDU con condiciones básicas de calidad." },
+          { title: "Alta Empleabilidad", desc: "Más del 85% de nuestros egresados se insertan laboralmente en el primer año." },
+          { title: "Comunidad", desc: "Más de 2000 estudiantes y 150 docentes comprometidos con la excelencia." },
+          { title: "Ubicación", desc: "Carretera Federico Basadre Km 5.700, Pucallpa — Ucayali." }
+        ],
+        stats: [
+          { number: "1976", label: "Año de Fundación" },
+          { number: "11", label: "Programas Licenciados" },
+          { number: "2000+", label: "Estudiantes" },
+          { number: "85%", label: "Empleabilidad" }
+        ]
+      },
+      palabrasDirector: {
+        quote: "Es un honor y una gran responsabilidad dirigir esta casa superior de estudios, que por más de cuatro décadas ha sido el faro de conocimiento y progreso para nuestra querida región Ucayali. Nuestro compromiso es inquebrantable: formar profesionales técnicos competentes, con valores éticos sólidos y con la capacidad de transformar su realidad y contribuir al desarrollo sostenible de nuestra Amazonía y del Perú.",
+        directorName: "Mg. Juan Carlos Ramirez Torres",
+        directorRole: "Director General",
+        directorInstitution: "IESTP Suiza — Pucallpa",
+        futureVisionTitle: "Nuestra Visión de Futuro",
+        futureVisionDesc: "Trabajamos incansablemente para que al 2030 seamos reconocidos como el instituto tecnológico líder de la Amazonía peruana, con estándares de calidad internacional, infraestructura moderna y egresados altamente empleables.",
+        qualityTitle: "Compromiso con la Calidad",
+        qualityDesc: "Cada día renovamos nuestro compromiso con la excelencia académica, la innovación tecnológica y la formación integral de nuestros estudiantes, preparándolos para los desafíos del mundo laboral.",
+        contactTitle: "Contacto de Dirección",
+        contact: [
+          { label: "Email", value: "direccion@iestpsuiza.edu.pe" },
+          { label: "Teléfono", value: "(061) 280665" },
+          { label: "Dirección", value: "Carretera Federico Basadre Km 5.700" }
+        ]
+      },
+      visionMision: {
+        missionTitle: "Misión",
+        missionDesc: "Somos una institución de educación superior tecnológica pública licenciada, dedicada a formar profesionales técnicos competentes, creativos, innovadores y con sólidos valores éticos, capaces de contribuir activamente al desarrollo socioeconómico sostenible de la región Ucayali y el país.",
+        visionTitle: "Visión",
+        visionDesc: "Al 2030, ser un instituto tecnológico líder en la Amazonía peruana y referente nacional por su excelencia académica, infraestructura moderna, procesos automatizados, convenios internacionales y egresados de alta empleabilidad comprometidos con la innovación y el cuidado ambiental.",
+        valuesTitle: "Nuestros Valores Institucionales",
+        values: [
+          { title: "Excelencia", desc: "Buscamos el más alto estándar en la formación técnica y humana." },
+          { title: "Innovación", desc: "Impulsamos la investigación aplicada y el uso de tecnologías de vanguardia." },
+          { title: "Inclusión", desc: "Respetamos y valoramos la diversidad sociocultural de nuestra Amazonía." },
+          { title: "Integridad", desc: "Actuamos con ética, honestidad, transparencia y responsabilidad social." }
+        ],
+        objectivesTitle: "Objetivos Estratégicos",
+        objectives: [
+          "Fortalecer la calidad académica mediante la actualización curricular y la capacitación docente continua.",
+          "Modernizar la infraestructura tecnológica y los laboratorios especializados de todos los programas.",
+          "Incrementar los convenios institucionales para prácticas pre-profesionales y colaboración internacional.",
+          "Implementar un sistema de gestión de calidad con procesos automatizados y transparencia administrativa.",
+          "Promover la investigación aplicada y la innovación tecnológica en las líneas de cada programa de estudio."
+        ]
+      },
+      historia: {
+        introTitle: "Nuestra Trayectoria",
+        introDesc: "Desde nuestra fundación en 1976, el IESTP Suiza ha sido testigo y protagonista del desarrollo educativo y tecnológico de la región Ucayali. A lo largo de más de cuatro décadas, hemos evolucionado para ofrecer una educación técnica de calidad, adaptándonos a los cambios y necesidades del mercado laboral.",
+        galleryTitle: "Galería Histórica",
+        timeline: [
+          { year: "1976", title: "Fundación", desc: "Nace como respuesta a la creciente demanda de formación técnica calificada en la provincia de Coronel Portillo, Ucayali, ofreciendo los primeros programas en áreas agropecuarias y de mecánica." },
+          { year: "1995", title: "Consolidación y Nuevos Programas", desc: "Se inaugura el campus actual en la Carretera Federico Basadre y se incorporan especialidades como Contabilidad, Computación e Informática y Enfermería Técnica, adaptándose al crecimiento tecnológico de la época." },
+          { year: "2018", title: "Modernización Tecnológica", desc: "Se equipan nuevos laboratorios con tecnología de punta en mecatrónica automotriz y desarrollo de software. Se consolidan convenios estratégicos con empresas nacionales y regionales." },
+          { year: "2024", title: "Licenciamiento Institucional", desc: "El IESTP Suiza logra exitosamente su licenciamiento institucional ante el Ministerio de Educación, validando sus condiciones básicas de calidad académica, infraestructura y gestión." }
+        ],
+        gallery: [
+          { label: "Primera Promoción", year: "1979" },
+          { label: "Nuevo Campus", year: "1995" },
+          { label: "Laboratorios", year: "2018" },
+          { label: "Licenciamiento", year: "2024" }
+        ]
+      },
+      gestionAcademica: {
+        introTitle: "Organización Académica",
+        introDesc: "La gestión académica del IESTP Suiza está orientada a garantizar la calidad educativa mediante procesos planificados, ejecutados y evaluados con rigurosidad. Contamos con una estructura organizativa que asegura el cumplimiento de nuestros objetivos formativos.",
+        areas: [
+          { title: "Currículo", desc: "Diseño, actualización y evaluación de planes de estudio alineados a las demandas del mercado laboral." },
+          { title: "Evaluación Académica", desc: "Sistema de evaluación continua con indicadores de logro y seguimiento al desempeño estudiantil." },
+          { title: "Calendarización", desc: "Planificación académica semestral con cronogramas de actividades lectivas y evaluaciones." },
+          { title: "Tutoría", desc: "Programa de acompañamiento y orientación estudiantil para asegurar la permanencia y el éxito académico." },
+          { title: "Certificación", desc: "Proceso de certificación y titulación con estándares de calidad y reconocimiento oficial." }
+        ],
+        calendarTitle: "Calendario Académico 2026",
+        calendar: [
+          { period: "I Semestre", date: "Marzo — Julio 2026", status: "En curso" },
+          { period: "Vacaciones", date: "Agosto 2026", status: "Próximo" },
+          { period: "II Semestre", date: "Setiembre — Diciembre 2026", status: "Próximo" }
+        ]
+      },
+      gestionAdministrativa: {
+        introTitle: "Estructura Administrativa",
+        introDesc: "La gestión administrativa del IESTP Suiza se rige por principios de transparencia, eficiencia y eficacia. Nuestra estructura organizativa permite una administración óptima de los recursos institucionales al servicio de la comunidad educativa.",
+        departments: [
+          { title: "Dirección General", desc: "Máxima instancia ejecutiva que lidera la planificación estratégica y la toma de decisiones institucionales." },
+          { title: "Administración y Finanzas", desc: "Gestión de recursos económicos, presupuesto anual, contabilidad y tesorería institucional." },
+          { title: "Secretaría Académica", desc: "Registro y certificación de logros académicos, archivo documentario y trámites administrativos." },
+          { title: "Recursos Humanos", desc: "Gestión del talento humano: selección, capacitación, evaluación y bienestar del personal." },
+          { title: "Bienestar Institucional", desc: "Programas de bienestar estudiantil, servicios de salud, asistencia social y actividades culturales." }
+        ],
+        documentsTitle: "Documentos de Gestión",
+        documents: [
+          { title: "Plan Anual de Trabajo", desc: "Documento de gestión operativa institucional 2026", color: "from-primary/10 to-primary/5" },
+          { title: "Reglamento Interno", desc: "Normas y disposiciones que rigen la vida institucional", color: "from-secondary/10 to-secondary/5" },
+          { title: "Manual de Organización", desc: "Estructura orgánica y funciones de cada unidad", color: "from-amber-500/10 to-amber-500/5" }
+        ]
+      },
+      organigrama: {
+        introTitle: "Estructura Orgánica",
+        introDesc: "El IESTP Suiza cuenta con una estructura organizativa moderna y funcional, diseñada para garantizar una gestión eficiente y una comunicación fluida entre todas las instancias institucionales.",
+        governmentTitle: "Órganos de Gobierno",
+        government: [
+          { title: "Consejo Directivo", desc: "Máximo órgano de gobierno encargado de aprobar políticas, planes y presupuestos institucionales." },
+          { title: "Dirección General", desc: "Responsable de la conducción y representación legal de la institución." },
+          { title: "Comité Académico", desc: "Órgano consultivo que evalúa y propone mejoras en los procesos formativos." }
+        ]
+      },
+      plannDocente: {
+        introTitle: "Nuestro Equipo Docente",
+        introDesc: "Contamos con una plana docente altamente calificada, con amplia experiencia profesional y académica. Nuestros docentes están comprometidos con la formación integral de los estudiantes y la excelencia educativa.",
+        stats: [
+          { number: "150+", label: "Docentes Calificados" },
+          { number: "40%", label: "Con Posgrado" },
+          { number: "15+", label: "Años de Experiencia Promedio" },
+          { number: "95%", label: "Satisfacción Estudiantil" }
+        ],
+        faculties: [
+          {
+            area: "Desarrollo de Sistemas",
+            color: "from-blue-500/10 to-cyan-500/10",
+            members: [
+              { name: "Ing. Carlos Mendoza", role: "Coordinador", specialty: "Ingeniería de Software" },
+              { name: "Mg. Rosa Huamán", role: "Docente", specialty: "Bases de Datos" },
+              { name: "Lic. Pedro García", role: "Docente", specialty: "Programación Web" }
+            ]
+          },
+          {
+            area: "Enfermería Técnica",
+            color: "from-green-500/10 to-emerald-500/10",
+            members: [
+              { name: "Lic. María Torres", role: "Coordinadora", specialty: "Cuidados Intensivos" },
+              { name: "Mg. José López", role: "Docente", specialty: "Salud Pública" },
+              { name: "Lic. Ana Silva", role: "Docente", specialty: "Enfermería Comunitaria" }
+            ]
+          },
+          {
+            area: "Mecatrónica Automotriz",
+            color: "from-orange-500/10 to-amber-500/10",
+            members: [
+              { name: "Ing. Luis Vargas", role: "Coordinador", specialty: "Sistemas Electrónicos" },
+              { name: "Téc. Marco Díaz", role: "Docente", specialty: "Mecánica Automotriz" }
+            ]
+          },
+          {
+            area: "Administración de Empresas",
+            color: "from-purple-500/10 to-pink-500/10",
+            members: [
+              { name: "Mg. Patricia Ríos", role: "Coordinadora", specialty: "Gestión Empresarial" },
+              { name: "Lic. Fernando Ruiz", role: "Docente", specialty: "Marketing Digital" }
+            ]
+          }
+        ]
+      }
+    },
     aboutMenu: {
       col1: [
         { title: "Presentación", desc: "Conoce la historia y objetivos institucionales.", id: "presentacion" },
@@ -804,7 +1140,10 @@ export const translations = {
       hero: {
         title: "Estamos para ayudarte",
         subtitle: "Estudiantes, postulantes y comunidad en general pueden comunicarse con nosotros. Estamos aquí para resolver tus dudas y brindarte la información que necesitas.",
-        cta: "Contáctanos ahora"
+        cta: "Contáctanos ahora",
+        badge: "IESTP Suiza — Contacto",
+        locationCta: "Ver ubicación",
+        logoAlt: "IESTP Suiza"
       },
       info: {
         title: "Información de Contacto",
@@ -826,7 +1165,12 @@ export const translations = {
         locationDenied: "Permiso de ubicación denegado. Activa la ubicación para ver distancias.",
         locationError: "No se pudo obtener tu ubicación. Intenta nuevamente.",
         detectLocation: "Detectar mi ubicación",
-        calculating: "Calculando distancia..."
+        calculating: "Calculando distancia...",
+        notSupported: "Geolocalización no soportada en este navegador",
+        mapTitle: "IESTP Suiza Ubicación",
+        mapLabel: "IESTP Suiza",
+        addressLabel: "Dirección",
+        distanceText: "de distancia"
       },
       form: {
         title: "Envíanos un mensaje",
@@ -840,7 +1184,10 @@ export const translations = {
         success: "¡Mensaje enviado con éxito! Nos comunicaremos contigo pronto.",
         placeholderName: "Ej: Juan Pérez",
         placeholderEmail: "Ej: juan@example.com",
-        placeholderMsg: "Escribe tu consulta aquí..."
+        placeholderMsg: "Escribe tu consulta aquí...",
+        sendAnother: "Enviar otro mensaje",
+        successMessage: "¡Mensaje enviado con éxito! Nos comunicaremos contigo pronto.",
+        resetButton: "Enviar otro mensaje"
       },
       faq: {
         title: "Preguntas Frecuentes",
@@ -866,7 +1213,8 @@ export const translations = {
         subtitle: "Resuelve tus dudas de forma rápida y directa.",
         message: "¡Hola! Quiero información sobre el IESTP Suiza",
         cta: "Hablar con un asesor",
-        available: "Horario de atención: Lun - Vie 8:00 am - 5:00 pm"
+        available: "Horario de atención: Lun - Vie 8:00 am - 5:00 pm",
+        ariaLabel: "WhatsApp"
       },
       whyChooseUs: {
         title: "¿Por qué elegir el IESTP Suiza?",
@@ -916,6 +1264,187 @@ export const translations = {
         subtitle: "Nuestro equipo de atención está listo para resolver todas tus consultas.",
         cta: "Hablar con un asesor"
       }
+    },
+    megaMenu: {
+      careers: {
+        header: "PROGRAMAS DE ESTUDIO",
+        programs: "programas",
+        viewAll: "Ver todos los programas",
+        categories: { tech: "Tecnología", business: "Gestión", field: "Ingeniería" },
+        tabs: { info: "Información", plan: "Plan de Estudios", field: "Campo Laboral" },
+        labels: {
+          employability: "empleabilidad",
+          degree: "Técnico",
+          technologies: "Tecnologías",
+          curriculum: "Plan Curricular",
+          learning: "Lo que aprenderás",
+          fieldWork: "Campo Laboral",
+          skills: "Habilidades",
+          whyCareer: "¿Por qué esta carrera?",
+          viewComplete: "Ver información completa"
+        }
+      },
+      about: {
+        institution: "INSTITUCIÓN",
+        management: "GESTIÓN",
+        location: "IESTP Suiza — Pucallpa, Ucayali",
+        viewFull: "Ver página completa →"
+      }
+    },
+    admissionDropdown: {
+      title: "Modalidades de admisión",
+      modalities: ["Egresados de colegio", "Traslados externos", "Experiencia laboral"],
+      transfer: {
+        title: "Traslado",
+        desc: "Tienes títulos de institutos o carreras inconclusas. Completa tus estudios en IESTP Suiza con reconocimiento nacional."
+      },
+      otherPrograms: {
+        title: "Otros programas",
+        desc: "Explora nuestros 11 programas licenciados con alta demanda laboral y prácticas profesionales en la región."
+      },
+      ctaAdmission: "Admisión 2026",
+      ctaContact: "Contáctenos",
+      ctaPrograms: "Ver programas"
+    },
+    footer: {
+      academicExcellence: "EXCELENCIA ACADÉMICA",
+      missionVision: "Misión y Visión",
+      admissionExam: "Examen de Admisión",
+      locationContact: "Ubicación y Contacto",
+      rights: "Todos los derechos reservados. Licenciado por MINEDU.",
+      privacy: "Política de Privacidad",
+      transparency: "Transparencia Pública",
+      virtualClassroom: "Aula Virtual"
+    },
+    home: {
+      licensed: "Licenciado por MINEDU",
+      quickAccess: {
+        title: "Acceso Rápido al Estudiante",
+        subtitle: "Enlaces a portales oficiales y recursos digitales del IESTP Suiza."
+      },
+      whyUs: {
+        title: "¿Por qué IESTP Suiza?",
+        desc: "Conoce nuestra acreditación nacional, educación de calidad 100% gratuita y convenios.",
+        tag: "Institucional"
+      },
+      admission2026: {
+        title: "Admisión Regular 2026",
+        desc: "Requisitos de postulación, cronograma y vacantes de las 11 especialidades.",
+        tag: "Admisiones"
+      },
+      ourCareers: {
+        title: "Nuestras Carreras",
+        desc: "Explora la currícula, laboratorios y el campo de acción de cada carrera profesional.",
+        tag: "Especialidades"
+      },
+      latestNews: {
+        title: "Últimas Noticias",
+        desc: "Entérate de las actividades institucionales, eventos y publicaciones científicas.",
+        tag: "Eventos"
+      },
+      learnMore: "Saber más"
+    },
+    careersPage: {
+      title: "Programas de Estudio",
+      subtitle: "Ofrecemos 11 carreras profesionales técnicas con alta demanda laboral, formación de calidad y certificación nacional.",
+      sectionTitle: "CARRERAS",
+      viewMore: "Ver más detalles",
+      programLabel: "PROGRAMA DE ESTUDIO",
+      durationBadge: "3 Años / 6 Ciclos",
+      planTitle: "Plan de Estudios",
+      skillsTitle: "Habilidades a Desarrollar",
+      opportunitiesTitle: "Oportunidades Laborales",
+      whyTitle: "¿Por qué esta carrera es para ti?",
+      whyStudyTitle: "¿Por qué estudiar esta carrera?",
+      alt: "Carreras IESTP Suiza"
+    },
+    admissionPage: {
+      badge: "ADMISIÓN 2026",
+      title: "Tu futuro profesional comienza aquí",
+      subtitle: "Da el primer paso hacia una carrera con futuro. El IESTP Suiza te ofrece formación técnica de calidad, 100% gratuita con reconocimiento nacional.",
+      ctaContact: "Contáctanos",
+      ctaPrograms: "Ver Programas",
+      download: "Descargar Prospecto",
+      stats: {
+        students: "Estudiantes formados",
+        years: "Años de experiencia",
+        careers: "Carreras profesionales",
+        agreements: "Convenios institucionales"
+      },
+      modalities: {
+        title: "Modalidades de Admisión",
+        items: ["Egresados de colegiosecundario", "Traslados de otras instituciones", "Experiencia laboral comprobada"]
+      },
+      schedule: {
+        title: "Cronograma",
+        items: ["Inscripción: Julio 2026", "Examen de Admisión: Agosto 2026", "Resultados: Septiembre 2026"]
+      },
+      requirements: {
+        title: "Requisitos",
+        items: ["Certificado de estudios secundarios", "DNI vigente", "Partida de nacimiento", "Foto carnet fondo blanco", "Recibo de pago inscripción"]
+      },
+      scholarships: {
+        title: "Becas y Convenios",
+        items: ["Beca PRONABEC", "Convenios con empresas", "Prácticas pre-profesionales"]
+      },
+      advisory: {
+        title: "Asesoría",
+        items: ["Orientación vocacional", "Información de carreras", "Proceso de admisión"]
+      }
+    },
+    splash: {
+      offline: "Sin conexión — esperando red...",
+      loading: "Cargando sistemas... ",
+      welcomeLine1: "Bienvenido a la página de",
+      institutionName: "IESTP SUIZA",
+      welcomeLine2: "Instituto de Excelencia",
+      logoAlt: "IESTP Suiza"
+    },
+    assistant: {
+      welcome: "👋 ¡Hola! Soy SuizaAI, tu asistente virtual del IESTP Suiza. ¿En qué puedo ayudarte hoy?",
+      greeting: "👋 ¡Hola! ¿Cómo estás? Puedo ayudarte con información sobre admisión, carreras, requisitos y más.",
+      costs: "💰 Tasas de Admisión 2026-II:\n\n• Egresados de colegio: S/ 150.00\n• Traslados externos: S/ 100.00\n• Experiencia laboral: S/ 150.00\n\nEl pago se realiza en el Banco de la Nación.",
+      requirements: "📋 Requisitos Obligatorios para Postular:\n\n1. Certificado de estudios secundarios\n2. DNI vigente\n3. Partida de nacimiento original\n4. Foto tamaño carnet (fondo blanco)\n5. Recibo de pago por derecho de inscripción",
+      physicalRequirements: "🏥 Requisitos de Aptitud Física y Médica:\n\n• Certificado de aptitud médica\n• No tener enfermedades contagiosas\n• Estar en buenas condiciones físicas\n• Para Enfermería: examen psicológico adicional",
+      careers: "📚 Nuestras 11 Carreras Profesionales:\n\n1. Desarrollo de Sistemas de Información\n2. Enfermería Técnica\n3. Mecatrónica Automotriz\n4. Producción Agropecuaria\n5. Manejo Forestal\n6. Contabilidad\n7. Administración de Empresas\n8. Construcción Civil\n9. Electricidad Industrial\n10. Administración de Operaciones Turísticas\n11. Asistencia Administrativa",
+      calendar: "📅 Calendario Oficial de Admisión 2026-II:\n\n• Inscripciones: 1 al 31 de julio\n• Examen de Admisión: 16 y 17 de agosto\n• Resultados: 1 de septiembre\n• Inicio de clases: 8 de septiembre",
+      location: "📍 Ubicación y Horarios de Atención:\n\n• Dirección: Carretera Federico Basadre Km 5.700\n• Horario: Lunes a Viernes de 8:00 am a 5:00 pm\n• Teléfono: 061-280665\n• Email: suiza@iestpsuiza.edu.pe",
+      freeEducation: "✨ ¡Educación Pública 100% Gratuita!\n\nEl IESTP Suiza es una institución pública. No se pagan pensiones ni mensualidades. Solo el derecho de inscripción al examen de admisión.",
+      careerSystems: "💻 Carrera: Desarrollo de Sistemas de Información\n\nDuration: 3 años\nEmpleabilidad: 92%\n\nAprenderás a programar, diseñar bases de datos y desarrollar aplicaciones web y móviles.",
+      careerNursing: "🏥 Carrera: Enfermería Técnica\n\nDuration: 3 años\nEmpleabilidad: 88%\n\nFormación en cuidados de enfermería, primeros auxilios y promoción de la salud.",
+      security: "🛡️ Seguridad y Defensa del Campus:\n\nEl IESTP Suiza cuenta con personal de seguridad las 24 horas, cámaras de vigilancia y acceso controlado para garantizar la seguridad de toda la comunidad educativa.",
+      fallback: "Lo siento, no tengo una respuesta específica para esa pregunta. ¿Puedo ayudarte con información sobre admisión, carreras, requisitos o ubicación?",
+      connectingHuman: "¡Perfecto! Te estoy conectando con un asesor humano...",
+      startWhatsApp: "Iniciar Chat de WhatsApp",
+      offHours: "Lo sentimos. El horario de atención presencial es de lunes a viernes de 8:00 am a 5:00 pm. Puedes dejarnos un mensaje por WhatsApp.",
+      q1: "¿Qué carreras tienen?",
+      q2: "¿Cuánto cuesta postular?",
+      q3: "¿Cuáles son los requisitos de postulación?",
+      q4: "Quiero hablar con un asesor humano",
+      q1Label: "📚 Carreras",
+      q2Label: "💰 Costos",
+      q3Label: "📋 Requisitos",
+      q4Label: "👤 Hablar con Humano",
+      title: "Asistente Virtual",
+      name: "SuizaAI",
+      statusActive: "Virtual Activo",
+      you: "Tú",
+      botName: "SuizaAI",
+      responding: "SuizaAI está respondiendo...",
+      respondingPlaceholder: "SuizaAI está respondiendo...",
+      inputPlaceholder: "Escribe tu consulta aquí...",
+      ariaSend: "Enviar"
+    },
+    carousel: {
+      img1Alt: "Fondo IESTP Suiza 1",
+      img2Alt: "Fondo IESTP Suiza 2",
+      img3Alt: "Fondo IESTP Suiza 3"
+    },
+    newsPage: {
+      searchPlaceholder: "Buscar noticias..."
+    },
+    common: {
+      toggleTheme: "Cambiar tema"
     }
   },
   en: {
@@ -968,7 +1497,17 @@ export const translations = {
           learn: "You will learn to program, design databases and build web and mobile apps using modern frameworks.",
           learningPoints: ["Full-stack development","Database design","Deployment and maintenance"],
           alumni: { name: "María López", role: "Full-Stack Developer", quote: "The program helped me join a regional software company." },
-          employabilityRate: 92
+          employabilityRate: 92,
+          duration: "3 years",
+          modality: "In-person",
+          image: "/careers/sys.jpg",
+          degree: "Information Systems Development Technician",
+          technologies: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Python", "MySQL", "Docker", "Git", "REST APIs"],
+          curriculum: ["Structured and object-oriented programming","Frontend and backend web development","Android and iOS mobile applications","SQL and NoSQL databases","Networking, cybersecurity and cloud computing","Artificial intelligence and data science"],
+          skills: ["Logical thinking","Problem solving","Technological adaptability","Digital creativity","Collaborative work","Self-management"],
+          opportunities: ["Software and application developer","Web programmer and database administrator","Systems analyst and IT support","Cybersecurity specialist","Tech entrepreneur and freelancer"],
+          whyYou: "If you are passionate about technology, solving complex problems and creating solutions that impact thousands of people, this career will give you the tools to innovate.",
+          whyChoose: "Because the digital age needs programmers. It is the career with the highest global job growth, competitive salaries and the possibility of remote work."
         },
         {
           id: "enfer",
@@ -979,7 +1518,17 @@ export const translations = {
           learn: "You will learn care techniques, first aid, health promotion, and clinical/community support skills.",
           learningPoints: ["Basic nursing care","Resuscitation techniques","Health promotion and prevention"],
           alumni: { name: "José Pérez", role: "Nursing Technician", quote: "The program gave me the practical experience to work in a local hospital." },
-          employabilityRate: 88
+          employabilityRate: 88,
+          duration: "3 years",
+          modality: "In-person",
+          image: "/careers/enfer.jpg",
+          degree: "Nursing Technician",
+          technologies: [],
+          curriculum: ["Anatomy, physiology and basic pharmacology","Nursing care for adults, children and neonates","First aid, emergencies and disasters","Nutrition, community health and epidemiology","Pediatrics, geriatrics and palliative care nursing","Pre-professional internships in hospitals and health centers"],
+          skills: ["Empathy","Service vocation","Working under pressure","Responsibility","Teamwork","Assertive communication"],
+          opportunities: ["Nursing technician in hospitals and clinics","Community health promoter","Assistant in health centers and medical posts","Caregiver for elderly and home patients","Technician in preventive health programs"],
+          whyYou: "If your vocation is caring for others, you have empathy and social sensitivity, technical nursing will allow you to save lives and improve your community's health.",
+          whyChoose: "Because health is a right and a national priority. Technical nurses are essential in the health system, with high demand and job stability."
         },
         {
           id: "meca",
@@ -990,7 +1539,17 @@ export const translations = {
           learn: "Training in electronics, mechanics and automation applied to vehicles and mechatronic systems.",
           learningPoints: ["Automotive electronics","Applied mechanics","Control systems"],
           alumni: { name: "Luis García", role: "Mechatronics Technician", quote: "I maintain regional transport fleets today." },
-          employabilityRate: 85
+          employabilityRate: 85,
+          duration: "3 years",
+          modality: "In-person",
+          image: "/careers/meca.jpg",
+          degree: "Automotive Mechatronics Technician",
+          technologies: [],
+          curriculum: ["Internal combustion engines and transmission systems","Brake, suspension and steering systems","Automotive electronics and computerized diagnostics","Injection, ignition and supercharging systems","Automotive air conditioning and climate control","Heavy machinery and diesel equipment maintenance"],
+          skills: ["Technical diagnosis","Manual precision","Constant updating","Analytical thinking","Automotive scanner use","Workshop experience"],
+          opportunities: ["Specialized technician in mechanical workshops and dealerships","Automotive diagnostician with scanner","Vehicle electronic systems specialist","Heavy machinery and diesel equipment technician","Automotive service workshop entrepreneur"],
+          whyYou: "If you are passionate about engines, automotive technology and precision diagnosis, this career will make you a highly demanded expert.",
+          whyChoose: "Because the automotive fleet is growing rapidly and modern vehicles require technicians with mechatronics training. It is a career with excellent economic projection."
         },
         {
           id: "agro",
@@ -1001,7 +1560,17 @@ export const translations = {
           learn: "Techniques for cultivation and livestock management, agroecosystem management and productivity-boosting technologies.",
           learningPoints: ["Crop management","Animal health","Water resources management"],
           alumni: { name: "Ana Torres", role: "Agricultural Manager", quote: "I implemented sustainable production systems in my community." },
-          employabilityRate: 80
+          employabilityRate: 80,
+          duration: "3 years",
+          modality: "In-person",
+          image: "/careers/agro.jpg",
+          degree: "Agricultural Production Technician",
+          technologies: [],
+          curriculum: ["Tropical crops, plant health and fertilization","Technified irrigation, soils and watershed management","Major and minor animal husbandry","Agricultural biotechnology and product transformation","Agricultural business management and input commerce","Good agricultural practices and organic certification"],
+          skills: ["Field work","Productive vision","Technological innovation","Resource management","Sustainability","Entrepreneurial capacity"],
+          opportunities: ["Technician in agro-industrial companies and farms","Agricultural and livestock production technical assistant","Good agricultural practices promoter","Technician in rural development programs","Agricultural entrepreneur and independent producer"],
+          whyYou: "If you value field work, are interested in food production and want to apply technology to agriculture, this career will make you part of the country's productive revolution.",
+          whyChoose: "Because Ucayali has enormous agricultural potential. You will be key to driving food security and economic development from the field."
         },
         {
           id: "forest",
@@ -1012,7 +1581,17 @@ export const translations = {
           learn: "Sustainable forest management, ecosystem protection, and responsible use techniques.",
           learningPoints: ["Forest inventory","Ecological restoration","Sustainable management policies"],
           alumni: { name: "Marcos Rivera", role: "Forest Specialist", quote: "I work on conservation projects with local communities." },
-          employabilityRate: 82
+          employabilityRate: 82,
+          duration: "3 years",
+          modality: "In-person",
+          image: "/careers/forest.jpg",
+          degree: "Forest Management Technician",
+          technologies: [],
+          curriculum: ["Forest ecology, botany and dendrology","Geographic information systems (GIS) and remote sensing","Timber and non-timber harvesting","Reforestation, silviculture and forest nurseries","Wildlife conservation and protected areas","Forest concession management and certification"],
+          skills: ["Environmental awareness","Field work","Sustainable vision","GIS management","Applied research","Community leadership"],
+          opportunities: ["Technician in forestry companies and concessions","Conservation and reforestation promoter","Forest and wildlife resources inspector","Technician in protected natural areas","Sustainable forest management consultant"],
+          whyYou: "If you love nature, worry about the planet's future and want to work directly in the conservation of the Amazon, this career is your life purpose.",
+          whyChoose: "Because the Amazon is the lungs of the world and needs trained professionals. It is a unique career with local impact and global relevance."
         },
         {
           id: "cont",
@@ -1023,7 +1602,17 @@ export const translations = {
           learn: "Financial accounting, costing, auditing and accounting systems for modern businesses.",
           learningPoints: ["Financial accounting","Auditing","Taxation"],
           alumni: { name: "Patricia Huaman", role: "Accountant", quote: "I certified and found employment in a regional accounting firm." },
-          employabilityRate: 85
+          employabilityRate: 85,
+          duration: "3 years",
+          modality: "In-person",
+          image: "/careers/cont.jpg",
+          degree: "Accounting Technician",
+          technologies: [],
+          curriculum: ["General, cost and corporate accounting","Labor and business legislation and taxation","Electronic payroll, PDT and monthly declarations","Financial auditing and internal control","Computerized accounting systems (SUNAT, CONCAR)","Business finances and budgets"],
+          skills: ["Analytical reasoning","Meticulousness","Professional ethics","Accounting systems management","Confidentiality","Financial vision"],
+          opportunities: ["Accounting assistant or analyst","Taxation and payroll specialist","Internal or external auditor","General corporate accountant","Independent financial consultant"],
+          whyYou: "If you are analytical, precise and interested in the world of finance, accounting will make you the trusted professional that every organization needs.",
+          whyChoose: "Because all companies, without exception, require accounting services. It is one of the technical careers with the highest employability and job stability."
         },
         {
           id: "admin",
@@ -1034,7 +1623,17 @@ export const translations = {
           learn: "Project management, basic finance, marketing and leadership to drive productive initiatives.",
           learningPoints: ["Project management","Basic marketing","Leadership and management"],
           alumni: { name: "Carlos Mendoza", role: "Operations Manager", quote: "The program was key for my professional growth." },
-          employabilityRate: 87
+          employabilityRate: 87,
+          duration: "3 years",
+          modality: "In-person",
+          image: "/careers/admin.jpg",
+          degree: "Business Administration Technician",
+          technologies: [],
+          curriculum: ["Business management and strategic planning","Marketing, sales and customer service","General accounting, costs and corporate finance","Human resources, leadership and teamwork","Labor, tax and international trade legislation","Investment projects, entrepreneurship and innovation"],
+          skills: ["Leadership","Decision making","Financial management","Negotiation","Strategic planning","Teamwork"],
+          opportunities: ["Administrative or financial area manager","General manager of small and medium enterprises","Manager of commercial, industrial or service companies","Entrepreneur and creator of your own business","Independent business consultant"],
+          whyYou: "If you have a knack for leadership, are motivated by decision-making and goal achievement, and are passionate about the business world, this career will enhance your managerial talent.",
+          whyChoose: "Because every type of organization needs competent administrators. It is one of the professions with the widest job market, allowing you to work in any economic sector."
         },
         {
           id: "civil",
@@ -1045,7 +1644,17 @@ export const translations = {
           learn: "Construction techniques, blueprint reading, quality control and safety on civil works.",
           learningPoints: ["Blueprint reading","Construction management","Industrial safety"],
           alumni: { name: "Javier Ramos", role: "Works Supervisor", quote: "I work on regional infrastructure projects with modern standards." },
-          employabilityRate: 90
+          employabilityRate: 90,
+          duration: "3 years",
+          modality: "In-person",
+          image: "/careers/civil.jpg",
+          degree: "Civil Construction Technician",
+          technologies: [],
+          curriculum: ["Technical drawing, blueprints and topography","Materials technology, concrete and soils","Costs, budgets and work valuations","Structures, sanitary and electrical installations","Safety on site and risk prevention","Quality supervision and control in construction"],
+          skills: ["Spatial vision","Technical leadership","Field work","Cost calculation","Equipment supervision","Regulatory compliance"],
+          opportunities: ["Site supervisor and resident assistant","Qualified general foreman","Technician in construction and real estate companies","Public and private works inspector","Construction services entrepreneur"],
+          whyYou: "If you are passionate about seeing how ideas become solid structures and want to be part of urban development, this career will give you the power to build.",
+          whyChoose: "Because Peru's infrastructure deficit demands technical professionals in construction. It is a stable, well-paid career with long-term projection."
         },
         {
           id: "elec",
@@ -1056,7 +1665,17 @@ export const translations = {
           learn: "Industrial electrical systems, automation and preventive maintenance of electrical equipment.",
           learningPoints: ["Electrical installations","Automation","Industrial maintenance"],
           alumni: { name: "Rosa Delgado", role: "Electrician Technician", quote: "I participated in installing electrical systems for an agro-industrial plant." },
-          employabilityRate: 86
+          employabilityRate: 86,
+          duration: "3 years",
+          modality: "In-person",
+          image: "/careers/elec.jpg",
+          degree: "Industrial Electricity Technician",
+          technologies: [],
+          curriculum: ["Domestic and industrial electrical installations","Electric machines, transformers and motors","Industrial automation with PLC and sensors","Power systems and control panels","Instrumentation and electrical maintenance","Industrial safety and electrical regulations"],
+          skills: ["Technical precision","Logical reasoning","Safe work","Fault diagnosis","Instrument handling","Systemic vision"],
+          opportunities: ["Industrial electrician technician","Electrical maintenance supervisor","Automation systems installer","Technician in mining, construction and manufacturing companies","Electrical services entrepreneur"],
+          whyYou: "If you are fascinated by understanding how energy works and maintaining the systems that drive industry, this career will give you an immense field of action.",
+          whyChoose: "Because Peruvian industry constantly demands electrician technicians. It is a career with high employability in mining, construction, manufacturing and services."
         },
         {
           id: "tur",
@@ -1067,7 +1686,17 @@ export const translations = {
           learn: "Tourism service management, destination promotion and customer service specialized in sustainable tourism.",
           learningPoints: ["Tourism promotion","Customer service","Service management"],
           alumni: { name: "Elena Fuentes", role: "Tourism Manager", quote: "I coordinate sustainable tourism experiences for national visitors." },
-          employabilityRate: 78
+          employabilityRate: 78,
+          duration: "3 years",
+          modality: "In-person",
+          image: "/careers/tur.jpg",
+          degree: "Tourism Operations Administration Technician",
+          technologies: [],
+          curriculum: ["Tourism destination planning and management","Hotel, restaurant and travel agency administration","Digital marketing and tourism commercialization","Tourism accounting and legislation","Tourism guiding, environmental and cultural interpretation","Sustainable tourism package design"],
+          skills: ["Creativity","Intercultural communication","Hotel management","Customer service","Field work","Sustainable vision"],
+          opportunities: ["Hotel, lodge and restaurant manager","Tour operator and travel agent","Official tourism guide specialized in Amazon","Community and experiential tourism promoter","Sustainable tourism services entrepreneur"],
+          whyYou: "If you are creative, adventurous and have a vocation for sharing the natural and cultural richness of your land, this career will make you an agent of change.",
+          whyChoose: "Because Ucayali is a destination with enormous untapped tourism potential. You will be a protagonist in regional economic development through responsible tourism."
         },
         {
           id: "asist",
@@ -1078,7 +1707,17 @@ export const translations = {
           learn: "Office tools, business communication and administrative organization to support institutional processes.",
           learningPoints: ["Office automation","Business communication","Administrative organization"],
           alumni: { name: "Karina Soto", role: "Administrative Assistant", quote: "I found employment immediately after graduating at a local municipality." },
-          employabilityRate: 80
+          employabilityRate: 80,
+          duration: "2.5 years",
+          modality: "In-person",
+          image: "/careers/asist.jpg",
+          degree: "Administrative Assistance Technician",
+          technologies: [],
+          curriculum: ["Documentary management and business filing","Corporate writing and communication","Customer service and business protocol","Basic accounting, payroll and taxation","Office tools and administrative systems","Event organization and business logistics"],
+          skills: ["Organization","Responsibility","Effective communication","Software proficiency","Attention to detail","Professional discretion"],
+          opportunities: ["Management or direction assistant","Executive secretary in public and private companies","Office and filing manager","Customer service specialist","Human resources, logistics or accounting assistant"],
+          whyYou: "If you are meticulous, responsible and enjoy order and efficiency, your organizational skills will be the pillar that every company needs.",
+          whyChoose: "Because all organizations require qualified administrative personnel. It is a technical career with rapid labor insertion and constant demand."
         }
       ]
     },
@@ -1098,6 +1737,38 @@ export const translations = {
       title: "Institutional News and Events",
       subtitle: "Find out about the latest activities, academic achievements, and publications of our institution.",
       readMore: "Read Article",
+      latestNews: "🔥 Latest News",
+      noResults: "No articles found with the specified criteria.",
+      eventsSectionTitle: "🎉 Events and Activities",
+      achievementsSectionTitle: "🏆 Achievements and Recognitions",
+      opportunitiesSectionTitle: "🚀 Opportunities for Students",
+      discover: "🚀 Discover",
+      discoverStory: "Discover Story",
+      viewDetails: "View Details",
+      learnMore: "Learn More",
+      dateLabel: "Date",
+      timeLabel: "Time",
+      locationLabel: "Location",
+      organizerLabel: "Organizer",
+      audienceLabel: "Audience",
+      objectiveLabel: "Objective",
+      descriptionLabel: "Description",
+      benefitsLabel: "Benefits of attending",
+      agendaLabel: "Event Agenda",
+      locationDetailLabel: "Location",
+      howToGetThere: "How to get there",
+      openInMaps: "Open in Google Maps",
+      interactiveMap: "Interactive map",
+      galleryLabel: "Gallery",
+      videosLabel: "🎥 Event Videos",
+      statsLabel: "Event Statistics",
+      testimonialsLabel: "Testimonials",
+      relatedEventsLabel: "🚀 You may also be interested",
+      liked: "Liked",
+      like: "Like",
+      share: "Share",
+      newsLabel: "News",
+      photosLabel: "Photographs",
       featured: {
         image: "from-indigo-600 via-primary to-secondary",
         title: "IESTP Suiza obtains 6-year institutional licensing granted by MINEDU",
@@ -1240,6 +1911,7 @@ export const translations = {
       achievements: {
         title: "Achievements and Recognitions",
         subtitle: "We celebrate the successes of our community that fill us with institutional pride.",
+        viewFull: "🏆 View Full Story",
         items: [
           {
             image: "from-amber-500 to-yellow-600",
@@ -1523,7 +2195,10 @@ export const translations = {
       hero: {
         title: "We're here to help you",
         subtitle: "Students, applicants and the community can reach us. We're here to answer your questions and provide the information you need.",
-        cta: "Contact us now"
+        cta: "Contact us now",
+        badge: "IESTP Suiza — Contact",
+        locationCta: "View location",
+        logoAlt: "IESTP Suiza"
       },
       info: {
         title: "Contact Information",
@@ -1545,7 +2220,12 @@ export const translations = {
         locationDenied: "Location permission denied. Enable location to see distances.",
         locationError: "Could not get your location. Please try again.",
         detectLocation: "Detect my location",
-        calculating: "Calculating distance..."
+        calculating: "Calculating distance...",
+        notSupported: "Geolocation not supported in this browser",
+        mapTitle: "IESTP Suiza Location",
+        mapLabel: "IESTP Suiza",
+        addressLabel: "Address",
+        distanceText: "away"
       },
       form: {
         title: "Send us a message",
@@ -1559,7 +2239,10 @@ export const translations = {
         success: "Message sent successfully! We will contact you soon.",
         placeholderName: "E.g.: John Doe",
         placeholderEmail: "E.g.: john@example.com",
-        placeholderMsg: "Write your question here..."
+        placeholderMsg: "Write your question here...",
+        sendAnother: "Send another message",
+        successMessage: "Message sent successfully! We will contact you soon.",
+        resetButton: "Send another message"
       },
       faq: {
         title: "Frequently Asked Questions",
@@ -1585,7 +2268,8 @@ export const translations = {
         subtitle: "Get quick and direct answers to your questions.",
         message: "Hello! I want information about IESTP Suiza",
         cta: "Chat with an advisor",
-        available: "Office hours: Mon - Fri 8:00 am - 5:00 pm"
+        available: "Office hours: Mon - Fri 8:00 am - 5:00 pm",
+        ariaLabel: "WhatsApp"
       },
       whyChooseUs: {
         title: "Why choose IESTP Suiza?",
@@ -1636,6 +2320,199 @@ export const translations = {
         cta: "Chat with an advisor"
       }
     },
+    aboutPage: {
+      header: {
+        title: "Our Institution",
+        subtitle: "Learn about the trajectory, mission, vision and values of IESTP Suiza"
+      },
+      mission: {
+        title: "Mission",
+        description: "We are a licensed public higher technological education institution, dedicated to training competent, creative, innovative technical professionals with strong ethical values."
+      },
+      vision: {
+        title: "Vision",
+        description: "By 2030, to be a leading technological institute in the Peruvian Amazon and a national reference for academic excellence."
+      },
+      values: {
+        sectionTitle: "Our Values",
+        excellence: { title: "Excellence", desc: "We seek the highest standard in technical and human training." },
+        innovation: { title: "Innovation", desc: "We drive applied research and cutting-edge technologies." },
+        inclusion: { title: "Inclusion", desc: "We respect and value the sociocultural diversity of our Amazon." },
+        integrity: { title: "Integrity", desc: "We act with ethics, honesty, transparency and social responsibility." }
+      },
+      history: {
+        title: "Our History",
+        timeline: {
+          founding: { title: "Foundation and Early Steps", desc: "Born in response to the growing demand for qualified technical training in the province of Coronel Portillo, Ucayali." },
+          consolidation: { title: "Consolidation and New Programs", desc: "The current campus on Carretera Federico Basadre is inaugurated and new specialties are incorporated." },
+          modernization: { title: "Technological Modernization", desc: "New laboratories are equipped with cutting-edge technology in automotive mechatronics and software development." },
+          licensing: { title: "Institutional Licensing", desc: "IESTP Suiza successfully achieves its institutional licensing from the Ministry of Education." }
+        }
+      },
+      presentacion: {
+        title: "Presentation",
+        introTitle: "Switzerland Public Higher Technological Education Institute",
+        introSubtitle: "Training technical professionals of excellence since 1976",
+        introP1: "IESTP Suiza is a public educational institution located in the city of Pucallpa, capital of the Ucayali region. Founded in 1976, our institution has been a fundamental pillar in the technical training of thousands of young people from the Amazon, actively contributing to the socioeconomic development of the region and the country.",
+        introP2: "We have 11 licensed study programs, modern specialized laboratories, a highly qualified faculty, and strategic agreements with public and private sector companies and institutions. Our commitment is to train competent, creative, innovative professionals with strong ethical values.",
+        features: [
+          { title: "Licensing", desc: "Institution licensed by MINEDU with basic quality conditions." },
+          { title: "High Employability", desc: "More than 85% of our graduates enter the workforce in the first year." },
+          { title: "Community", desc: "More than 2000 students and 150 teachers committed to excellence." },
+          { title: "Location", desc: "Carretera Federico Basadre Km 5.700, Pucallpa — Ucayali." }
+        ],
+        stats: [
+          { number: "1976", label: "Year Founded" },
+          { number: "11", label: "Licensed Programs" },
+          { number: "2000+", label: "Students" },
+          { number: "85%", label: "Employability" }
+        ]
+      },
+      palabrasDirector: {
+        quote: "It is an honor and a great responsibility to lead this higher education institution, which for more than four decades has been the beacon of knowledge and progress for our beloved Ucayali region. Our commitment is unwavering: to train competent technical professionals with solid ethical values and the ability to transform their reality and contribute to the sustainable development of our Amazon and Peru.",
+        directorName: "Mg. Juan Carlos Ramirez Torres",
+        directorRole: "General Director",
+        directorInstitution: "IESTP Suiza — Pucallpa",
+        futureVisionTitle: "Our Future Vision",
+        futureVisionDesc: "We work tirelessly so that by 2030 we are recognized as the leading technological institute in the Peruvian Amazon, with international quality standards, modern infrastructure, and highly employable graduates.",
+        qualityTitle: "Commitment to Quality",
+        qualityDesc: "Every day we renew our commitment to academic excellence, technological innovation, and the comprehensive training of our students, preparing them for the challenges of the working world.",
+        contactTitle: "Director's Office Contact",
+        contact: [
+          { label: "Email", value: "direccion@iestpsuiza.edu.pe" },
+          { label: "Phone", value: "(061) 280665" },
+          { label: "Address", value: "Carretera Federico Basadre Km 5.700" }
+        ]
+      },
+      visionMision: {
+        missionTitle: "Mission",
+        missionDesc: "We are a licensed public higher technological education institution, dedicated to training competent, creative, innovative technical professionals with strong ethical values, capable of actively contributing to the sustainable socioeconomic development of the Ucayali region and the country.",
+        visionTitle: "Vision",
+        visionDesc: "By 2030, to be a leading technological institute in the Peruvian Amazon and a national reference for academic excellence, modern infrastructure, automated processes, international agreements, and highly employable graduates committed to innovation and environmental care.",
+        valuesTitle: "Our Institutional Values",
+        values: [
+          { title: "Excellence", desc: "We seek the highest standard in technical and human training." },
+          { title: "Innovation", desc: "We drive applied research and the use cutting-edge technologies." },
+          { title: "Inclusion", desc: "We respect and value the sociocultural diversity of our Amazon." },
+          { title: "Integrity", desc: "We act with ethics, honesty, transparency, and social responsibility." }
+        ],
+        objectivesTitle: "Strategic Objectives",
+        objectives: [
+          "Strengthen academic quality through curriculum updates and continuous teacher training.",
+          "Modernize technological infrastructure and specialized laboratories across all programs.",
+          "Increase institutional agreements for pre-professional internships and international collaboration.",
+          "Implement a quality management system with automated processes and administrative transparency.",
+          "Promote applied research and technological innovation in each study program."
+        ]
+      },
+      historia: {
+        introTitle: "Our Trajectory",
+        introDesc: "Since our founding in 1976, IESTP Suiza has been a witness and protagonist of the educational and technological development of the Ucayali region. Over more than four decades, we have evolved to offer quality technical education, adapting to the changes and needs of the labor market.",
+        galleryTitle: "Historical Gallery",
+        timeline: [
+          { year: "1976", title: "Foundation", desc: "Born in response to the growing demand for qualified technical training in the province of Coronel Portillo, Ucayali, offering the first programs in agricultural and mechanical areas." },
+          { year: "1995", title: "Consolidation and New Programs", desc: "The current campus on Carretera Federico Basadre is inaugurated and specialties such as Accounting, Computing and Informatics, and Technical Nursing are incorporated, adapting to the technological growth of the era." },
+          { year: "2018", title: "Technological Modernization", desc: "New laboratories are equipped with cutting-edge technology in automotive mechatronics and software development. Strategic agreements with national and regional companies are consolidated." },
+          { year: "2024", title: "Institutional Licensing", desc: "IESTP Suiza successfully achieves its institutional licensing from the Ministry of Education, validating its basic quality conditions in academics, infrastructure, and management." }
+        ],
+        gallery: [
+          { label: "First Graduating Class", year: "1979" },
+          { label: "New Campus", year: "1995" },
+          { label: "Laboratories", year: "2018" },
+          { label: "Licensing", year: "2024" }
+        ]
+      },
+      gestionAcademica: {
+        introTitle: "Academic Organization",
+        introDesc: "IESTP Suiza's academic management is oriented to guarantee educational quality through planned, executed, and rigorously evaluated processes. We have an organizational structure that ensures the fulfillment of our training objectives.",
+        areas: [
+          { title: "Curriculum", desc: "Design, updating, and evaluation of study plans aligned with labor market demands." },
+          { title: "Academic Evaluation", desc: "Continuous evaluation system with achievement indicators and student performance tracking." },
+          { title: "Scheduling", desc: "Semester academic planning with schedules for teaching activities and evaluations." },
+          { title: "Tutoring", desc: "Student accompaniment and guidance program to ensure persistence and academic success." },
+          { title: "Certification", desc: "Certification and degree process with quality standards and official recognition." }
+        ],
+        calendarTitle: "Academic Calendar 2026",
+        calendar: [
+          { period: "1st Semester", date: "March — July 2026", status: "In progress" },
+          { period: "Vacation", date: "August 2026", status: "Upcoming" },
+          { period: "2nd Semester", date: "September — December 2026", status: "Upcoming" }
+        ]
+      },
+      gestionAdministrativa: {
+        introTitle: "Administrative Structure",
+        introDesc: "IESTP Suiza's administrative management is guided by principles of transparency, efficiency, and effectiveness. Our organizational structure allows for optimal management of institutional resources in service of the educational community.",
+        departments: [
+          { title: "General Directorate", desc: "Maximum executive body that leads strategic planning and institutional decision-making." },
+          { title: "Administration and Finance", desc: "Management of economic resources, annual budget, accounting, and institutional treasury." },
+          { title: "Academic Secretariat", desc: "Registration and certification of academic achievements, document archiving, and administrative procedures." },
+          { title: "Human Resources", desc: "Human talent management: selection, training, evaluation, and staff well-being." },
+          { title: "Institutional Welfare", desc: "Student welfare programs, health services, social assistance, and cultural activities." }
+        ],
+        documentsTitle: "Management Documents",
+        documents: [
+          { title: "Annual Work Plan", desc: "Institutional operational management document 2026", color: "from-primary/10 to-primary/5" },
+          { title: "Internal Regulations", desc: "Rules and provisions governing institutional life", color: "from-secondary/10 to-secondary/5" },
+          { title: "Organization Manual", desc: "Organizational structure and functions of each unit", color: "from-amber-500/10 to-amber-500/5" }
+        ]
+      },
+      organigrama: {
+        introTitle: "Organizational Structure",
+        introDesc: "IESTP Suiza has a modern and functional organizational structure designed to ensure efficient management and fluid communication among all institutional instances.",
+        governmentTitle: "Governing Bodies",
+        government: [
+          { title: "Board of Directors", desc: "Maximum governing body responsible for approving policies, plans, and institutional budgets." },
+          { title: "General Directorate", desc: "Responsible for the leadership and legal representation of the institution." },
+          { title: "Academic Committee", desc: "Advisory body that evaluates and proposes improvements in training processes." }
+        ]
+      },
+      plannDocente: {
+        introTitle: "Our Faculty",
+        introDesc: "We have a highly qualified faculty with extensive professional and academic experience. Our teachers are committed to the comprehensive training of students and educational excellence.",
+        stats: [
+          { number: "150+", label: "Qualified Teachers" },
+          { number: "40%", label: "With Postgraduate" },
+          { number: "15+", label: "Average Years of Experience" },
+          { number: "95%", label: "Student Satisfaction" }
+        ],
+        faculties: [
+          {
+            area: "Systems Development",
+            color: "from-blue-500/10 to-cyan-500/10",
+            members: [
+              { name: "Ing. Carlos Mendoza", role: "Coordinator", specialty: "Software Engineering" },
+              { name: "Mg. Rosa Huamán", role: "Teacher", specialty: "Databases" },
+              { name: "Lic. Pedro García", role: "Teacher", specialty: "Web Programming" }
+            ]
+          },
+          {
+            area: "Technical Nursing",
+            color: "from-green-500/10 to-emerald-500/10",
+            members: [
+              { name: "Lic. María Torres", role: "Coordinator", specialty: "Intensive Care" },
+              { name: "Mg. José López", role: "Teacher", specialty: "Public Health" },
+              { name: "Lic. Ana Silva", role: "Teacher", specialty: "Community Nursing" }
+            ]
+          },
+          {
+            area: "Automotive Mechatronics",
+            color: "from-orange-500/10 to-amber-500/10",
+            members: [
+              { name: "Ing. Luis Vargas", role: "Coordinator", specialty: "Electronic Systems" },
+              { name: "Téc. Marco Díaz", role: "Teacher", specialty: "Automotive Mechanics" }
+            ]
+          },
+          {
+            area: "Business Administration",
+            color: "from-purple-500/10 to-pink-500/10",
+            members: [
+              { name: "Mg. Patricia Ríos", role: "Coordinator", specialty: "Business Management" },
+              { name: "Lic. Fernando Ruiz", role: "Teacher", specialty: "Digital Marketing" }
+            ]
+          }
+        ]
+      }
+    },
     aboutMenu: {
       col1: [
         { title: "Presentation", desc: "Learn about our history and institutional goals.", id: "presentacion" },
@@ -1654,6 +2531,187 @@ export const translations = {
         description: "Training technical professionals of excellence in the Peruvian Amazon with national and international recognition.",
         cta: "About Us"
       }
+    },
+    megaMenu: {
+      careers: {
+        header: "STUDY PROGRAMS",
+        programs: "programs",
+        viewAll: "View all programs",
+        categories: { tech: "Technology", business: "Management", field: "Engineering" },
+        tabs: { info: "Information", plan: "Study Plan", field: "Career Field" },
+        labels: {
+          employability: "employability",
+          degree: "Technician",
+          technologies: "Technologies",
+          curriculum: "Curriculum Plan",
+          learning: "What you will learn",
+          fieldWork: "Career Field",
+          skills: "Skills",
+          whyCareer: "Why this career?",
+          viewComplete: "View full information"
+        }
+      },
+      about: {
+        institution: "INSTITUTION",
+        management: "MANAGEMENT",
+        location: "IESTP Suiza — Pucallpa, Ucayali",
+        viewFull: "View full page →"
+      }
+    },
+    admissionDropdown: {
+      title: "Admission modalities",
+      modalities: ["High school graduates", "External transfers", "Work experience"],
+      transfer: {
+        title: "Transfer",
+        desc: "You have degrees from other institutes or incomplete programs. Complete your studies at IESTP Suiza with national recognition."
+      },
+      otherPrograms: {
+        title: "Other programs",
+        desc: "Explore our 11 accredited programs with high job demand and professional internships in the region."
+      },
+      ctaAdmission: "Admission 2026",
+      ctaContact: "Contact Us",
+      ctaPrograms: "View programs"
+    },
+    footer: {
+      academicExcellence: "ACADEMIC EXCELLENCE",
+      missionVision: "Mission and Vision",
+      admissionExam: "Admission Exam",
+      locationContact: "Location and Contact",
+      rights: "All rights reserved. Licensed by MINEDU.",
+      privacy: "Privacy Policy",
+      transparency: "Public Transparency",
+      virtualClassroom: "Virtual Classroom"
+    },
+    home: {
+      licensed: "Licensed by MINEDU",
+      quickAccess: {
+        title: "Quick Access for Students",
+        subtitle: "Links to official portals and digital resources of IESTP Suiza."
+      },
+      whyUs: {
+        title: "Why IESTP Suiza?",
+        desc: "Learn about our national accreditation, 100% free quality education and partnerships.",
+        tag: "Institutional"
+      },
+      admission2026: {
+        title: "Regular Admission 2026",
+        desc: "Application requirements, schedule and vacancies for all 11 programs.",
+        tag: "Admissions"
+      },
+      ourCareers: {
+        title: "Our Programs",
+        desc: "Explore the curriculum, laboratories and field of action of each professional program.",
+        tag: "Programs"
+      },
+      latestNews: {
+        title: "Latest News",
+        desc: "Learn about institutional activities, events and scientific publications.",
+        tag: "Events"
+      },
+      learnMore: "Learn more"
+    },
+    careersPage: {
+      title: "Study Programs",
+      subtitle: "We offer 11 technical professional programs with high job demand, quality training and national certification.",
+      sectionTitle: "PROGRAMS",
+      viewMore: "View more details",
+      programLabel: "STUDY PROGRAM",
+      durationBadge: "3 Years / 6 Semesters",
+      planTitle: "Study Plan",
+      skillsTitle: "Skills to Develop",
+      opportunitiesTitle: "Career Opportunities",
+      whyTitle: "Why is this career for you?",
+      whyStudyTitle: "Why study this career?",
+      alt: "IESTP Suiza Programs"
+    },
+    admissionPage: {
+      badge: "ADMISSION 2026",
+      title: "Your professional future starts here",
+      subtitle: "Take the first step toward a career with a future. IESTP Suiza offers you quality technical education, 100% free with national recognition.",
+      ctaContact: "Contact Us",
+      ctaPrograms: "View Programs",
+      download: "Download Prospectus",
+      stats: {
+        students: "Students trained",
+        years: "Years of experience",
+        careers: "Professional programs",
+        agreements: "Institutional partnerships"
+      },
+      modalities: {
+        title: "Admission Modalities",
+        items: ["High school graduates", "Transfers from other institutions", "Verified work experience"]
+      },
+      schedule: {
+        title: "Schedule",
+        items: ["Registration: July 2026", "Admission Exam: August 2026", "Results: September 2026"]
+      },
+      requirements: {
+        title: "Requirements",
+        items: ["High school certificate", "Valid ID", "Birth certificate", "White background photo", "Registration payment receipt"]
+      },
+      scholarships: {
+        title: "Scholarships and Agreements",
+        items: ["PRONABEC Scholarship", "Company partnerships", "Professional internships"]
+      },
+      advisory: {
+        title: "Advisory",
+        items: ["Vocational guidance", "Program information", "Admission process"]
+      }
+    },
+    splash: {
+      offline: "No connection — waiting for network...",
+      loading: "Loading systems... ",
+      welcomeLine1: "Welcome to the page of",
+      institutionName: "IESTP SUIZA",
+      welcomeLine2: "Institute of Excellence",
+      logoAlt: "IESTP Suiza"
+    },
+    assistant: {
+      welcome: "👋 Hello! I'm SuizaAI, your virtual assistant from IESTP Suiza. How can I help you today?",
+      greeting: "👋 Hi! How are you? I can help you with information about admission, programs, requirements and more.",
+      costs: "💰 Admission Fees 2026-II:\n\n• High school graduates: S/ 150.00\n• External transfers: S/ 100.00\n• Work experience: S/ 150.00\n\nPayment is made at Banco de la Nación.",
+      requirements: "📋 Mandatory Requirements to Apply:\n\n1. Secondary school certificate\n2. Valid ID (DNI)\n3. Original birth certificate\n4. Passport-sized photo (white background)\n5. Registration payment receipt",
+      physicalRequirements: "🏥 Physical and Medical Fitness Requirements:\n\n• Medical fitness certificate\n• No contagious diseases\n• Good physical condition\n• For Nursing: additional psychological exam",
+      careers: "📚 Our 11 Professional Programs:\n\n1. Information Systems Development\n2. Technical Nursing\n3. Automotive Mechatronics\n4. Agricultural Production\n5. Forest Management\n6. Accounting\n7. Business Administration\n8. Civil Construction\n9. Industrial Electricity\n10. Tourism Operations Administration\n11. Administrative Assistance",
+      calendar: "📅 Official Admission Calendar 2026-II:\n\n• Registration: July 1-31\n• Admission Exam: August 16-17\n• Results: September 1\n• Classes begin: September 8",
+      location: "📍 Location and Office Hours:\n\n• Address: Carretera Federico Basadre Km 5.700\n• Hours: Monday to Friday 8:00 am to 5:00 pm\n• Phone: 061-280665\n• Email: suiza@iestpsuiza.edu.pe",
+      freeEducation: "✨ 100% Free Public Education!\n\nIESTP Suiza is a public institution. No tuition fees are charged. Only the admission exam registration fee.",
+      careerSystems: "💻 Program: Information Systems Development\n\nDuration: 3 years\nEmployability: 92%\n\nYou'll learn to program, design databases and develop web and mobile applications.",
+      careerNursing: "🏥 Program: Technical Nursing\n\nDuration: 3 years\nEmployability: 88%\n\nTraining in nursing care, first aid and health promotion.",
+      security: "🛡️ Campus Security:\n\nIESTP Suiza has 24-hour security personnel, surveillance cameras and controlled access to ensure the safety of the entire educational community.",
+      fallback: "I'm sorry, I don't have a specific answer for that question. Can I help you with information about admission, programs, requirements or location?",
+      connectingHuman: "Great! I'm connecting you with a human advisor...",
+      startWhatsApp: "Start WhatsApp Chat",
+      offHours: "We're sorry. In-person office hours are Monday to Friday from 8:00 am to 5:00 pm. You can leave us a message on WhatsApp.",
+      q1: "What programs do you have?",
+      q2: "How much does it cost to apply?",
+      q3: "What are the admission requirements?",
+      q4: "I want to talk to a human advisor",
+      q1Label: "📚 Programs",
+      q2Label: "💰 Costs",
+      q3Label: "📋 Requirements",
+      q4Label: "👤 Talk to Human",
+      title: "Virtual Assistant",
+      name: "SuizaAI",
+      statusActive: "Virtual Active",
+      you: "You",
+      botName: "SuizaAI",
+      responding: "SuizaAI is responding...",
+      respondingPlaceholder: "SuizaAI is responding...",
+      inputPlaceholder: "Type your question here...",
+      ariaSend: "Send"
+    },
+    carousel: {
+      img1Alt: "IESTP Suiza Background 1",
+      img2Alt: "IESTP Suiza Background 2",
+      img3Alt: "IESTP Suiza Background 3"
+    },
+    newsPage: {
+      searchPlaceholder: "Search news..."
+    },
+    common: {
+      toggleTheme: "Toggle theme"
     }
   },
   sh: {
@@ -1702,77 +2760,187 @@ export const translations = {
           name: "Desarrollo de Sistemas de Información",
           category: "tech",
           desc: "Computadoras quirica axonti, software y apps wishati jomeax teti.",
-          employabilityRate: 92
+          employabilityRate: 92,
+          duration: "3 Baritia",
+          modality: "Presencial",
+          image: "/careers/sys.jpg",
+          degree: "Sistemas de Información Technician",
+          technologies: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Python", "MySQL", "Docker", "Git", "APIs REST"],
+          curriculum: ["Programación estructurada","Desarrollo web frontend y backend","Aplicaciones móviles","Bases de datos SQL y NoSQL","Redes y ciberseguridad","Inteligencia artificial"],
+          skills: ["Pensamiento lógico","Resolución de problemas","Adaptabilidad tecnológica","Creatividad digital","Trabajo colaborativo","Autogestión"],
+          opportunities: ["Desarrollador de software","Programador web","Analista de sistemas","Especialista en ciberseguridad","Emprendedor tecnológico"],
+          whyYou: "Si te apasiona la tecnología y crear soluciones, esta carrera te dará las herramientas para innovar.",
+          whyChoose: "Porque la era digital necesita programadores. Es la carrera con mayor crecimiento laboral."
         },
         {
           id: "enfer",
           name: "Enfermería Técnica",
           category: "field",
           desc: "Yoyo iquibo isinbo coinox, jakon shinanmobi joinox.",
-          employabilityRate: 88
+          employabilityRate: 88,
+          duration: "3 Baritia",
+          modality: "Presencial",
+          image: "/careers/enfer.jpg",
+          degree: "Enfermería Technician",
+          technologies: [],
+          curriculum: ["Anatomía y fisiología básica","Cuidados de enfermería","Primeros auxilios y emergencias","Nutrición y salud comunitaria","Enfermería en pediatría y geriatría","Prácticas en hospitales"],
+          skills: ["Empatía","Vocación de servicio","Trabajo bajo presión","Responsabilidad","Trabajo en equipo","Comunicación asertiva"],
+          opportunities: ["Técnico de enfermería en hospitales","Promotor de salud comunitaria","Asistente en centros de salud","Cuidador de adultos mayores","Técnico en programas de salud"],
+          whyYou: "Si tu vocación es cuidar de los demás, esta carrera te permitirá salvar vidas.",
+          whyChoose: "Porque la salud es prioridad nacional. Los enfermeros son esenciales en el sistema de salud."
         },
         {
           id: "meca",
           name: "Mecatrónica Automotriz",
           category: "field",
           desc: "Carrotibo y maquinariatibo reparati y minati jakon axonox.",
-          employabilityRate: 85
+          employabilityRate: 85,
+          duration: "3 Baritia",
+          modality: "Presencial",
+          image: "/careers/meca.jpg",
+          degree: "Mecatrónica Technician",
+          technologies: [],
+          curriculum: ["Motores de combustión interna","Sistemas de frenos y suspensión","Electrónica automotriz","Sistemas de inyección y encendido","Aire acondicionado automotriz","Mantenimiento de maquinaria pesada"],
+          skills: ["Diagnóstico técnico","Precisión manual","Actualización constante","Pensamiento analítico","Uso de scanner","Trabajo en taller"],
+          opportunities: ["Técnico en talleres mecánicos","Diagnosticador automotriz","Especialista en sistemas electrónicos","Técnico en maquinaria pesada","Emprendedor automotriz"],
+          whyYou: "Si te apasionan los motores y la tecnología automotriz, esta carrera te convertirá en un experto demandado.",
+          whyChoose: "Porque el parque automotor crece y los vehículos modernos requieren técnicos capacitados."
         },
         {
           id: "agro",
           name: "Producción Agropecuaria",
           category: "field",
           desc: "Wai banati, jawetibo coinox y quena bio-tecnología axeiti.",
-          employabilityRate: 80
+          employabilityRate: 80,
+          duration: "3 Baritia",
+          modality: "Presencial",
+          image: "/careers/agro.jpg",
+          degree: "Producción Agropecuaria Technician",
+          technologies: [],
+          curriculum: ["Cultivos tropicales y sanidad vegetal","Riego tecnificado y suelos","Crianza de animales","Biotecnología agropecuaria","Gestión agroempresarial","Buenas prácticas agrícolas"],
+          skills: ["Trabajo de campo","Visión productiva","Innovación tecnológica","Gestión de recursos","Sostenibilidad","Capacidad emprendedora"],
+          opportunities: ["Técnico en empresas agroindustriales","Asistente técnico en producción","Promotor de buenas prácticas","Técnico en desarrollo rural","Emprendedor agropecuario"],
+          whyYou: "Si valoras el trabajo del campo y quieres aplicar tecnología al agro, esta carrera es para ti.",
+          whyChoose: "Porque Ucayali tiene enorme potencial agropecuario. Serás clave para impulsar la producción."
         },
         {
           id: "forest",
           name: "Manejo Forestal",
           category: "field",
           desc: "Niibo, jiwibo y yoinabo coinox shinan axonti Amazoníapo.",
-          employabilityRate: 82
+          employabilityRate: 82,
+          duration: "3 Baritia",
+          modality: "Presencial",
+          image: "/careers/forest.jpg",
+          degree: "Manejo Forestal Technician",
+          technologies: [],
+          curriculum: ["Ecología forestal y botánica","Sistemas de información geográfica","Aprovechamiento maderable","Reforestación y silvicultura","Conservación de fauna silvestre","Gestión de concesiones forestales"],
+          skills: ["Conciencia ambiental","Trabajo de campo","Visión sostenible","Manejo de SIG","Investigación aplicada","Liderazgo comunitario"],
+          opportunities: ["Técnico en empresas forestales","Promotor de conservación","Inspector de recursos forestales","Técnico en áreas protegidas","Consultor forestal"],
+          whyYou: "Si amas la naturaleza y quieres trabajar en la conservación de la Amazonía, esta carrera es tu propósito.",
+          whyChoose: "Porque la Amazonía necesita profesionales capacitados. Es una carrera con impacto local y global."
         },
         {
           id: "cont",
           name: "Contabilidad",
           category: "business",
           desc: "Coriqui shinanti y teti empresaquin, quirica jakon wishati.",
-          employabilityRate: 85
+          employabilityRate: 85,
+          duration: "3 Baritia",
+          modality: "Presencial",
+          image: "/careers/cont.jpg",
+          degree: "Contabilidad Technician",
+          technologies: [],
+          curriculum: ["Contabilidad general y de costos","Legislación y tributación","Planillas electrónicas","Auditoría financiera","Sistemas contables computarizados","Finanzas empresariales"],
+          skills: ["Razonamiento analítico","Meticulosidad","Ética profesional","Manejo de sistemas contables","Confidencialidad","Visión financiera"],
+          opportunities: ["Asistente contable","Especialista en tributación","Auditor interno o externo","Contador general","Consultor financiero"],
+          whyYou: "Si eres analítico y te interesa el mundo de las finanzas, la contabilidad te convertirá en un profesional de confianza.",
+          whyChoose: "Porque todas las empresas requieren servicios contables. Es una carrera con alta empleabilidad."
         },
         {
           id: "admin",
           name: "Administración de Empresas",
           category: "business",
           desc: "Empresatibo organizati, tee bebonox y proyectos shinanti.",
-          employabilityRate: 87
+          employabilityRate: 87,
+          duration: "3 Baritia",
+          modality: "Presencial",
+          image: "/careers/admin.jpg",
+          degree: "Administración Technician",
+          technologies: [],
+          curriculum: ["Gestión empresarial y planeamiento estratégico","Marketing y atención al cliente","Contabilidad y finanzas corporativas","Recursos humanos y liderazgo","Legislación laboral y tributaria","Proyectos de inversión e innovación"],
+          skills: ["Liderazgo","Toma de decisiones","Gestión financiera","Negociación","Planificación estratégica","Trabajo en equipo"],
+          opportunities: ["Jefe de área administrativa","Gerente general","Administrador de empresas","Emprendedor","Consultor empresarial"],
+          whyYou: "Si te motiva la toma de decisiones y el mundo de los negocios, esta carrera potenciará tu talento.",
+          whyChoose: "Porque toda organización necesita administradores competentes. Es una profesión con gran campo laboral."
         },
         {
           id: "civil",
           name: "Construcción Civil",
           category: "field",
           desc: "Tapiti y caibo wishati, xoboribo tapinox jakonbi.",
-          employabilityRate: 90
+          employabilityRate: 90,
+          duration: "3 Baritia",
+          modality: "Presencial",
+          image: "/careers/civil.jpg",
+          degree: "Construcción Civil Technician",
+          technologies: [],
+          curriculum: ["Dibujo técnico y planos","Tecnología de materiales","Costos y presupuestos de obra","Estructuras e instalaciones","Seguridad en obra","Control de calidad"],
+          skills: ["Visión espacial","Liderazgo técnico","Trabajo en campo","Cálculo de costos","Supervisión de equipos","Cumplimiento normativo"],
+          opportunities: ["Supervisor de obra","Maestro de obra calificado","Técnico en constructoras","Inspector de obras","Emprendedor en construcción"],
+          whyYou: "Si te apasiona ver cómo las ideas se convierten en estructuras, esta carrera te dará el poder de construir.",
+          whyChoose: "Porque el déficit de infraestructura demanda técnicos en construcción. Es una carrera estable y bien remunerada."
         },
         {
           id: "elec",
           name: "Electricidad Industrial",
           category: "tech",
           desc: "Corriente y motores instali y repairti industriatibopo.",
-          employabilityRate: 86
+          employabilityRate: 86,
+          duration: "3 Baritia",
+          modality: "Presencial",
+          image: "/careers/elec.jpg",
+          degree: "Electricidad Industrial Technician",
+          technologies: [],
+          curriculum: ["Instalaciones eléctricas industriales","Máquinas eléctricas y motores","Automatización con PLC","Sistemas de potencia","Instrumentación y mantenimiento","Seguridad industrial"],
+          skills: ["Precisión técnica","Razonamiento lógico","Trabajo seguro","Diagnóstico de fallas","Manejo de instrumentos","Visión sistémica"],
+          opportunities: ["Técnico electricista industrial","Supervisor de mantenimiento","Instalador de automatización","Técnico en empresas mineras","Emprendedor eléctrico"],
+          whyYou: "Si te fascina la energía y los sistemas industriales, esta carrera te dará un campo de acción inmenso.",
+          whyChoose: "Porque la industria demanda técnicos electricistas. Es una carrera con alta empleabilidad."
         },
         {
           id: "tur",
           name: "Administración de Operaciones Turísticas",
           category: "business",
           desc: "Turistabo jonibo joinox y noa jeme oinonox noa joshi noa joni.",
-          employabilityRate: 78
+          employabilityRate: 78,
+          duration: "3 Baritia",
+          modality: "Presencial",
+          image: "/careers/tur.jpg",
+          degree: "Operaciones Turísticas Technician",
+          technologies: [],
+          curriculum: ["Planificación de destinos turísticos","Administración hotelera","Marketing digital turístico","Legislación turística","Guía de turismo","Diseño de paquetes turísticos"],
+          skills: ["Creatividad","Comunicación intercultural","Gestión hotelera","Atención al cliente","Trabajo en campo","Visión sostenible"],
+          opportunities: ["Administrador de hoteles","Operador turístico","Guía de turismo","Promotor de turismo comunitario","Emprendedor turístico"],
+          whyYou: "Si eres creativo y tienes espíritu aventurero, esta carrera hará de ti un agente de cambio.",
+          whyChoose: "Porque Ucayali tiene enorme potencial turístico. Serás protagonista del desarrollo regional."
         },
         {
           id: "asist",
           name: "Asistencia Administrativa",
           category: "business",
           desc: "Oficinapo tee axonox y jatibi quinonox quiricatibo.",
-          employabilityRate: 80
+          employabilityRate: 80,
+          duration: "2.5 Baritia",
+          modality: "Presencial",
+          image: "/careers/asist.jpg",
+          degree: "Asistencia Administrativa Technician",
+          technologies: [],
+          curriculum: ["Gestión documentaria","Redacción corporativa","Atención al cliente","Contabilidad básica","Herramientas ofimáticas","Organización de eventos"],
+          skills: ["Organización","Responsabilidad","Comunicación efectiva","Manejo de software","Atención al detalle","Discreción profesional"],
+          opportunities: ["Asistente de gerencia","Secretario ejecutivo","Administrador de oficina","Especialista en atención al cliente","Asistente de recursos humanos"],
+          whyYou: "Si eres meticuloso y responsable, tu capacidad organizativa será el pilar que toda empresa necesita.",
+          whyChoose: "Porque todas las organizaciones requieren personal administrativo. Es una carrera con rápida inserción laboral."
         }
       ]
     },
@@ -1792,6 +2960,38 @@ export const translations = {
       title: "Noticias y Eventos Institucionales",
       subtitle: "Ramano tee axona noa instituto jomeax ointi.",
       readMore: "Ointi",
+      latestNews: "🔥 Últimas Noticias",
+      noResults: "No se encontraron artículos con los criterios especificados.",
+      eventsSectionTitle: "🎉 Eventos y Actividades",
+      achievementsSectionTitle: "🏆 Logros y Reconocimientos",
+      opportunitiesSectionTitle: "🚀 Oportunidades para Estudiantes",
+      discover: "🚀 Descubrir",
+      discoverStory: "Descubrir Historia",
+      viewDetails: "Ver Detalles",
+      learnMore: "Conocer Más",
+      dateLabel: "Fecha",
+      timeLabel: "Hora",
+      locationLabel: "Lugar",
+      organizerLabel: "Organizador",
+      audienceLabel: "Público",
+      objectiveLabel: "Objetivo",
+      descriptionLabel: "Descripción",
+      benefitsLabel: "Beneficios de asistir",
+      agendaLabel: "Agenda del Evento",
+      locationDetailLabel: "Ubicación",
+      howToGetThere: "Cómo llegar",
+      openInMaps: "Abrir en Google Maps",
+      interactiveMap: "Mapa interactivo",
+      galleryLabel: "Galería",
+      videosLabel: "🎥 Videos del Evento",
+      statsLabel: "Estadísticas del Evento",
+      testimonialsLabel: "Testimonios",
+      relatedEventsLabel: "🚀 También te puede interesar",
+      liked: "Te gusta",
+      like: "Me gusta",
+      share: "Compartir",
+      newsLabel: "Noticia",
+      photosLabel: "Fotografías",
       featured: {
         image: "from-indigo-600 via-primary to-secondary",
         title: "IESTP Suiza MINEDUquin licencia 6 baritia benti",
@@ -1934,6 +3134,7 @@ export const translations = {
       achievements: {
         title: "Logros y Reconocimientos",
         subtitle: "Noa comunidad éxitos celebra, orgullo institucional.",
+        viewFull: "🏆 Historia Jakon Ointi",
         items: [
           {
             image: "from-amber-500 to-yellow-600",
@@ -2213,6 +3414,141 @@ export const translations = {
         ]
       }
     },
+    aboutPage: {
+      header: {
+        title: "Noa Instituto",
+        subtitle: "Noa instituto jomeax ointi, misión, visión y valores"
+      },
+      mission: {
+        title: "Misión",
+        description: "Non institución educación superior tecnológica pública licenciada bican, formar profesionales técnicos competentes, creativos, innovadores y valores éticos sólidos dedicada."
+      },
+      vision: {
+        title: "Visión",
+        description: "2030 betan, instituto tecnológico líder Amazonía peruana ser y referente nacional excelencia académica."
+      },
+      values: {
+        sectionTitle: "Noa Valores",
+        excellence: { title: "Excelencia", desc: "Estándar más alto formación técnica y humana busca." },
+        innovation: { title: "Innovación", desc: "Investigación aplicada y tecnología vanguardia uso impulsa." },
+        inclusion: { title: "Inclusión", desc: "Diversidad sociocultural Amazonía respeta y valora." },
+        integrity: { title: "Integridad", desc: "Ética, honestidad, transparencia y responsabilidad social actúa." }
+      },
+      history: {
+        title: "Noa Bena",
+        timeline: {
+          founding: { title: "Fundación y Primeros Pasos", desc: "Nace como respuesta a la creciente demanda de formación técnica calificada en la provincia de Coronel Portillo, Ucayali." },
+          consolidation: { title: "Consolidación y Nuevos Programas", desc: "Se inaugura el campus actual en la Carretera Federico Basadre y se incorporan nuevas especialidades." },
+          modernization: { title: "Modernización Tecnológica", desc: "Se equipan nuevos laboratorios con tecnología de punta en mecatrónica automotriz y desarrollo de software." },
+          licensing: { title: "Licenciamiento Institucional", desc: "El IESTP Suiza logra exitosamente su licenciamiento institucional ante el Ministerio de Educación." }
+        }
+      },
+      presentacion: {
+        title: "Joi Jato",
+        introTitle: "IESTP Suiza Instituto",
+        introSubtitle: "Jakon mestrotibo formando 1976 betan",
+        introP1: "IESTP Suiza non instituto público Pucallpa po jeme, Ucayali región capital. 1976po fundada, non instituto axonibo jakon formación técnica jomeax betan pillar bican, Ucayali región y país desarrollo socioeconómico contribute.",
+        introP2: "Non 11 programa estudio licenciado bican, laboratorio moderno especializado, mestrotibo jakon calificado y convenio estratégico empresa e instituciones público y privado. Non compromiso formar profesionales competentes, creativos, innovadores y valores éticos sólidos."
+      },
+      palabrasDirector: {
+        quote: "Non honor y responsabilidad grande bican noa estudios superior dirigir, cuatro décadas betan conocimiento y progreso faro bican Ucayali región. Non compromiso inquebrantable: profesionales técnicos competentes formar, valores éticos sólidos y transformar realidad contribute capacidad.",
+        directorName: "Mg. Juan Carlos Ramirez Torres",
+        directorRole: "Director General",
+        directorInstitution: "IESTP Suiza — Pucallpa",
+        futureVisionTitle: "Noa Futuro Visión",
+        futureVisionDesc: "Trabajati incansablemente 2030 betan instituto tecnológico líder Amazonía peruana reconocida, calidad internacional estándares, infraestructura moderna y egresados altamente empleables.",
+        qualityTitle: "Calidad Compromiso",
+        qualityDesc: "Cada día noa compromiso excelencia académica, innovación tecnológica y formación integral axoni jonibo renueva, mundo laboral desafíos preparando.",
+        contactTitle: "Dirección Contacto"
+      },
+      visionMision: {
+        missionTitle: "Misión",
+        missionDesc: "Non instituto educación superior tecnológica pública licenciada bican, formar profesionales técnicos competentes, creativos, innovadores y valores éticos sólidos dedicada, Ucayali región y país desarrollo socioeconómico sostenible contribute.",
+        visionTitle: "Visión",
+        visionDesc: "2030 betan, instituto tecnológico líder Amazonía peruana ser y referente nacional excelencia académica, infraestructura moderna, procesos automatizados, convenios internacionales y egresados alta empleabilidad innovación y cuidado ambiental comprometidos.",
+        valuesTitle: "Noa Valores Institucionales",
+        values: [
+          { title: "Excelencia", desc: "Estándar más alto formación técnica y humana busca." },
+          { title: "Innovación", desc: "Investigación aplicada y tecnología vanguardia uso impulsa." },
+          { title: "Inclusión", desc: "Diversidad sociocultural Amazonía respeta y valora." },
+          { title: "Integridad", desc: "Ética, honestidad, transparencia y responsabilidad social actúa." }
+        ],
+        objectivesTitle: "Objetivos Estratégicos",
+        objectives: [
+          "Calidad académica fortalece actualización curricular y capacitación docente continua.",
+          "Infraestructura tecnológica y laboratorios especializados moderniza.",
+          "Convenios institucionales prácticas pre-profesionales incrementa.",
+          "Sistema gestión calidad implementa procesos automatizados y transparencia administrativa.",
+          "Investigación aplicada e innovación tecnológica promueve."
+        ]
+      },
+      historia: {
+        introTitle: "Noa Trayectoria",
+        introDesc: "1976 fundación betan, IESTP Suiza testigo y protagonista Ucayali región desarrollo educativo y tecnológico bican. Cuatro décadas betan más, educación técnica calidad ofrecer evoluciona, mercado laboral cambios y necesidades adaptando.",
+        galleryTitle: "Galería Histórica",
+        timeline: [
+          { year: "1976", title: "Fundación", desc: "Coronel Portillo provincia formación técnica calificada demanda creciente respuesta nace, agropecuarias y mecánica áreas primeros programas ofreciendo." },
+          { year: "1995", title: "Consolidación y Nuevos Programas", desc: "Carretera Federico Basadre campus actual inaugura y Contabilidad, Computación e Informática y Enfermería Técnica especialidades incorpora, época crecimiento tecnológico adaptándose." },
+          { year: "2018", title: "Modernización Tecnológica", desc: "Mecatrónica automotriz y desarrollo software tecnología punta laboratorios equipa. Convenios estratégicos empresas nacionales y regionales consolida." },
+          { year: "2024", title: "Licenciamiento Institucional", desc: "IESTP Suiza licenciamiento institucional Ministerio Educación ante exitosamente logra, calidad académica, infraestructura y gestión condiciones básicas valida." }
+        ],
+        gallery: [
+          { label: "Primera Promoción", year: "1979" },
+          { label: "Nuevo Campus", year: "1995" },
+          { label: "Laboratorios", year: "2018" },
+          { label: "Licenciamiento", year: "2024" }
+        ]
+      },
+      gestionAcademica: {
+        introTitle: "Organización Académica",
+        introDesc: "IESTP Suiza gestión académica calidad educativa garantizar orientada procesos planificados, ejecutados y evaluados rigurosidad. Estructura organizativa objetivo formativos cumplimiento asegura.",
+        areas: [
+          { title: "Currículo", desc: "Planes estudio diseño, actualización y evaluación mercado laboral demandas alineados." },
+          { title: "Evaluación Académica", desc: "Evaluación continua sistema logro indicadores y desempeño estudiantil seguimiento." },
+          { title: "Calendarización", desc: "Planificación académica semestral cronogramas actividades lectivas y evaluaciones." },
+          { title: "Tutoría", desc: "Acompañamiento y orientación estudiantil programa permanencia y éxito académico asegurar." },
+          { title: "Certificación", desc: "Certificación y titulación proceso calidad estándares y reconocimiento oficial." }
+        ],
+        calendarTitle: "Calendario Académico 2026",
+        calendar: [
+          { period: "I Semestre", date: "Marzo — Julio 2026", status: "Axonona" },
+          { period: "Vacaciones", date: "Agosto 2026", status: "Bia" },
+          { period: "II Semestre", date: "Setiembre — Diciembre 2026", status: "Bia" }
+        ]
+      },
+      gestionAdministrativa: {
+        introTitle: "Estructura Administrativa",
+        introDesc: "IESTP Suiza gestión administrativa transparencia, eficiencia y eficacia principios rige. Estructura organizativa recursos institucionales administración óptima permite comunidad educativa servicio.",
+        departments: [
+          { title: "Dirección General", desc: "Instancia ejecutiva máxima planificación estratégica y decisiones institucionales lidera." },
+          { title: "Administración y Finanzas", desc: "Recursos económicos gestión, presupuesto anual, contabilidad y tesorería institucional." },
+          { title: "Secretaría Académica", desc: "Logros académicos registro y certificación, archivo documentario y trámites administrativos." },
+          { title: "Recursos Humanos", desc: "Talento humano gestión: selección, capacitación, evaluación y bienestar personal." },
+          { title: "Bienestar Institucional", desc: "Bienestar estudiantil programas, servicios salud, asistencia social y actividades culturales." }
+        ],
+        documentsTitle: "Documentos de Gestión"
+      },
+      organigrama: {
+        introTitle: "Estructura Orgánica",
+        introDesc: "IESTP Suiza estructura organizativa moderna y funcional bican, gestión eficiente y comunicación fluida todas instancias institucionales garantizar diseñada.",
+        governmentTitle: "Órganos de Gobierno",
+        government: [
+          { title: "Consejo Directivo", desc: "Gobierno órgano máximo políticas, planes y presupuestos institucionales aprobar responsable." },
+          { title: "Dirección General", desc: "Institución conducción y representación legal responsable." },
+          { title: "Comité Académico", desc: "Procesos formativos evalúa y mejoras propone órgano consultivo." }
+        ]
+      },
+      plannDocente: {
+        introTitle: "Noa Mestrotibo Equipo",
+        introDesc: "Mestrotibo jakon calificado, experiencia profesional y académica amplia bican. Mestrotibo axoni jonibo formación integral y excelencia educativa comprometidos.",
+        stats: [
+          { number: "150+", label: "Mestrotibo Calificados" },
+          { number: "40%", label: "Posgrado Bican" },
+          { number: "15+", label: "Baritia Experiencia Promedio" },
+          { number: "95%", label: "Satisfacción Estudiantil" }
+        ]
+      }
+    },
     aboutMenu: {
       col1: [
         { title: "Joi Jato", desc: "Noa instituto jomeax ointi.", id: "presentacion" },
@@ -2236,7 +3572,10 @@ export const translations = {
       hero: {
         title: "Noa joshin betan yoyoiti",
         subtitle: "Axoni jonibo, jeneibo y jatibi jonibo noa betan yoyoiti. Noa joshin betan yoyoiti mia yocati joibo ointi.",
-        cta: "Noa wishahué raman"
+        cta: "Noa wishahué raman",
+        badge: "IESTP Suiza — Wishati",
+        locationCta: "Jeme ointi",
+        logoAlt: "IESTP Suiza"
       },
       info: {
         title: "Wishati Joi Jato",
@@ -2258,7 +3597,12 @@ export const translations = {
         locationDenied: "Ubicación permitioma. Ubicación activa ointi distancias oinon.",
         locationError: "Mia jeme oinoma. Atia jewe.",
         detectLocation: "Non jeme ointi",
-        calculating: "Distancia contati..."
+        calculating: "Distancia contati...",
+        notSupported: "Ubicación shinma navegador po",
+        mapTitle: "IESTP Suiza Jeme",
+        mapLabel: "IESTP Suiza",
+        addressLabel: "Jeme",
+        distanceText: "betan"
       },
       form: {
         title: "Noa joi wishati",
@@ -2272,7 +3616,10 @@ export const translations = {
         success: "¡Irake! Moa joi wishana. Non yoyoiti ramano.",
         placeholderName: "Ej: Juan Pérez",
         placeholderEmail: "Ej: juan@example.com",
-        placeholderMsg: "Nono wishahué..."
+        placeholderMsg: "Nono wishahué...",
+        sendAnother: "Bia joi wishati",
+        successMessage: "¡Irake! Moa joi wishana. Non yoyoiti ramano.",
+        resetButton: "Bia joi wishati"
       },
       faq: {
         title: "Yocati Joinibo",
@@ -2298,7 +3645,8 @@ export const translations = {
         subtitle: "Raman yoyoiti noa betan.",
         message: "¡Hola! Quiero información sobre el IESTP Suiza",
         cta: "Asesor betan yoyoiti",
-        available: "Atencion tiempo: Lun - Vie 8:00 am - 5:00 pm"
+        available: "Atencion tiempo: Lun - Vie 8:00 am - 5:00 pm",
+        ariaLabel: "WhatsApp"
       },
       whyChooseUs: {
         title: "¿Jawecopa IESTP Suiza axonti?",
@@ -2345,9 +3693,190 @@ export const translations = {
       },
       whatsappHighlight: {
         title: "¿Admisión o carreras dudas bican?",
-        subtitle: "Non atencion equipo mia yocati resolver listo.",
+        subtitle: "Non atencion equipo mia yoyoiti resolver listo.",
         cta: "Asesor betan yoyoiti"
       }
+    },
+    megaMenu: {
+      careers: {
+        header: "AXONTIBO JAKON",
+        programs: "axontibo",
+        viewAll: "Axontibo jakon ointi",
+        categories: { tech: "Axonti", business: "Gestión", field: "Ingeniería" },
+        tabs: { info: "Información", plan: "Plan de Estudios", field: "Campo Laboral" },
+        labels: {
+          employability: "empleabilidad",
+          degree: "Técnico",
+          technologies: "Tecnologías",
+          curriculum: "Plan Curricular",
+          learning: "Bia ononero",
+          fieldWork: "Campo Laboral",
+          skills: "Habilidades",
+          whyCareer: "¿Bia carrerabin jakon?",
+          viewComplete: "Información jakon ointi"
+        }
+      },
+      about: {
+        institution: "INSTITUCIÓN",
+        management: "GESTIÓN",
+        location: "IESTP Suiza — Pucallpa, Ucayali",
+        viewFull: "Página jakon ointi →"
+      }
+    },
+    admissionDropdown: {
+      title: "Admisión modalidades",
+      modalities: ["Egresados de colegio", "Traslados externos", "Experiencia laboral"],
+      transfer: {
+        title: "Traslado",
+        desc: "Títulos institutos bican o carreras inconclusas. IESTP Suiza estudiobo completar nacional reconocimiento."
+      },
+      otherPrograms: {
+        title: "Otros programas",
+        desc: "11 programas licenciados ointi alta demanda laboral prácticas profesionales región."
+      },
+      ctaAdmission: "Ikanti 2026",
+      ctaContact: "Wishati",
+      ctaPrograms: "Axontibo ointi"
+    },
+    footer: {
+      academicExcellence: "EXCELENCIA ACADÉMICA",
+      missionVision: "Misión y Visión",
+      admissionExam: "Examen de Admisión",
+      locationContact: "Ubicación y Contacto",
+      rights: "Derechos reservados. Licenciado por MINEDU.",
+      privacy: "Política de Privacidad",
+      transparency: "Transparencia Pública",
+      virtualClassroom: "Aula Virtual"
+    },
+    home: {
+      licensed: "MINEDU licenciado",
+      quickAccess: {
+        title: "Axonibo Acceso Rápido",
+        subtitle: "IESTP Suiza portales recursos digitales enlaces."
+      },
+      whyUs: {
+        title: "¿Bia IESTP Suiza?",
+        desc: "Acreditación nacional educación calidad 100% gratuita convenios.",
+        tag: "Institucional"
+      },
+      admission2026: {
+        title: "Ikanti Regular 2026",
+        desc: "Requisitos postulación cronograma vacantes 11 especialidades.",
+        tag: "Ikanti"
+      },
+      ourCareers: {
+        title: "Non Axontibo",
+        desc: "Currícula laboratorios campo acción carrera profesional ointi.",
+        tag: "Especialidades"
+      },
+      latestNews: {
+        title: "Joibo Jakon",
+        desc: "Actividades institucionales eventos publicaciones.",
+        tag: "Eventos"
+      },
+      learnMore: "Ointi bia"
+    },
+    careersPage: {
+      title: "Axontibo Jakon",
+      subtitle: "11 carreras profesionales técnicas alta demanda laboral formación calidad certificación nacional.",
+      sectionTitle: "CARRERAS",
+      viewMore: "Ointi bia detalles",
+      programLabel: "AXONTIBO JAKON",
+      durationBadge: "3 Baritia / 6 Ciclos",
+      planTitle: "Plan de Estudios",
+      skillsTitle: "Habilidades Bia Ononero",
+      opportunitiesTitle: "Campo Laboral",
+      whyTitle: "¿Bia carrera bican jakon?",
+      whyStudyTitle: "¿Bia carrerabin axonero?",
+      alt: "Axontibo IESTP Suiza"
+    },
+    admissionPage: {
+      badge: "IKANTI 2026",
+      title: "Carrera profesional futuro bican",
+      subtitle: "Primer paso carrera futuro. IESTP Suiza formación técnica calidad 100% gratuita nacional reconocimiento.",
+      ctaContact: "Wishati",
+      ctaPrograms: "Axontibo Ointi",
+      download: "Prospecto Descargar",
+      stats: {
+        students: "Axonibo formados",
+        years: "Baritia experiencia",
+        careers: "Carreras profesionales",
+        agreements: "Convenios institucionales"
+      },
+      modalities: {
+        title: "Ikanti Modalidades",
+        items: ["Egresados colegio", "Traslados instituciones", "Experiencia laboral comprobada"]
+      },
+      schedule: {
+        title: "Cronograma",
+        items: ["Inscripción: Julio 2026", "Examen Ikanti: Agosto 2026", "Resultados: Septiembre 2026"]
+      },
+      requirements: {
+        title: "Requisitos",
+        items: ["Certificado estudios secundarios", "DNI vigente", "Partida nacimiento", "Foto carnet fondo blanco", "Recibo pago inscripción"]
+      },
+      scholarships: {
+        title: "Becas y Convenios",
+        items: ["Beca PRONABEC", "Convenios empresas", "Prácticas pre-profesionales"]
+      },
+      advisory: {
+        title: "Asesoría",
+        items: ["Orientación vocacional", "Información carreras", "Proceso admisión"]
+      }
+    },
+    splash: {
+      offline: "Red connectionshinma — red bia jitechati...",
+      loading: "Sistemas yonkati... ",
+      welcomeLine1: "Jakon yatan noa página",
+      institutionName: "IESTP SUIZA",
+      welcomeLine2: "Instituto Jakon Excelencia",
+      logoAlt: "IESTP Suiza"
+    },
+    assistant: {
+      welcome: "👋 Jakon! Non SuizaAI bican, IESTP Suiza asistente virtual. Bia shinanti yoyoiti?",
+      greeting: "👋 Jakon! Bia bia? Admisión, axontibo, requisitos y bia shinanti yoyoiti.",
+      costs: "💰 Ikanti Coriqui 2026-II:\n\n• Egresados colegio: S/ 150.00\n• Traslados externos: S/ 100.00\n• Experiencia laboral: S/ 150.00\n\nBanco de la Nación quin pagati.",
+      requirements: "📋 Requisitos Jakon Postular:\n\n1. Certificado secundaria seneti\n2. DNI vigente\n3. Partida nacimiento original\n4. Foto carnet fondo blanco\n5. Recibo pago inscripción",
+      physicalRequirements: "🏥 Aptitud Física y Médica Requisitos:\n\n• Certificado aptitud médica\n• Enfermedades contagiosas shinma\n• Condiciones físicas jakon\n• Enfermería: examen psicológico bia",
+      careers: "📚 Non 11 Carreras Profesionales:\n\n1. Desarrollo de Sistemas de Información\n2. Enfermería Técnica\n3. Mecatrónica Automotriz\n4. Producción Agropecuaria\n5. Manejo Forestal\n6. Contabilidad\n7. Administración de Empresas\n8. Construcción Civil\n9. Electricidad Industrial\n10. Administración de Operaciones Turísticas\n11. Asistencia Administrativa",
+      calendar: "📅 Ikanti Calendario Oficial 2026-II:\n\n• Inscripción: Julio 1-31\n• Examen Ikanti: Agosto 16-17\n• Resultados: Septiembre 1\n• Clase inicio: Septiembre 8",
+      location: "📍 Jeme y Atencion Tiempo:\n\n• Jeme: Carretera Federico Basadre Km 5.700\n• Tiempo: Lunes a Viernes 8:00 am 5:00 pm\n• Teléfono: 061-280665\n• Email: suiza@iestpsuiza.edu.pe",
+      freeEducation: "✨ ¡Educación Pública 100% Gratuita!\n\nIESTP Suiza non instituto público. Pensiones y mensualidades shinma. Solo ikanti examen inscripción coriqui.",
+      careerSystems: "💻 Carrera: Desarrollo de Sistemas de Información\n\nBaritia: 3 años\nEmpleabilidad: 92%\n\nComputadoras quirica axonti, software y apps wishati jomeax teti.",
+      careerNursing: "🏥 Carrera: Enfermería Técnica\n\nBaritia: 3 años\nEmpleabilidad: 88%\n\nYoyo iquibo isinbo coinox, jakon shinanmobi joinox.",
+      security: "🛡️ Campus Seguridad:\n\nIESTP Suiza seguridad personal 24 horas, cámaras vigilancia y acceso controlado bican, comunidad educativa seguridad garantizar.",
+      fallback: "Sentiti, yocati específico shinma. Admisión, axontibo, requisitos o jeme shinanti yoyoiti?",
+      connectingHuman: "Jakon! Asesor humano betan yoyoiti conectorati...",
+      startWhatsApp: "WhatsApp Chat Ointi",
+      offHours: "Sentiti. Atencion tiempo lunes a viernes 8:00 am 5:00 pm. WhatsApp po joi wishati.",
+      q1: "¿Jawe axontibo non bican?",
+      q2: "¿Jawecopa coriqui postular?",
+      q3: "¿Jawe requisitos postulación?",
+      q4: "Asesor humano betan yoyoiti",
+      q1Label: "📚 Axontibo",
+      q2Label: "💰 Coriqui",
+      q3Label: "📋 Requisitos",
+      q4Label: "👤 Humano Yoyoiti",
+      title: "Asistente Virtual",
+      name: "SuizaAI",
+      statusActive: "Virtual Activo",
+      you: "Mia",
+      botName: "SuizaAI",
+      responding: "SuizaAI yoyoiti...",
+      respondingPlaceholder: "SuizaAI yoyoiti...",
+      inputPlaceholder: "Nono yocati wishahué...",
+      ariaSend: "Wishati"
+    },
+    carousel: {
+      img1Alt: "IESTP Suiza Fondo 1",
+      img2Alt: "IESTP Suiza Fondo 2",
+      img3Alt: "IESTP Suiza Fondo 3"
+    },
+    newsPage: {
+      searchPlaceholder: "Joibo beneti..."
+    },
+    common: {
+      toggleTheme: "Tema cambia"
     }
   }
 };
