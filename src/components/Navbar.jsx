@@ -126,7 +126,10 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                             <div className="text-xs text-slate-text/60 dark:text-dark-text/60 mt-1 line-clamp-2 transition-colors duration-300">
                               {career.desc}
                             </div>
-
+                            <div className="flex items-center gap-1 mt-2">
+                              <span className="text-xs font-semibold text-amber-500">{career.employabilityRate}%</span>
+                              <span className="text-[10px] text-slate-text/50 dark:text-dark-text/50 transition-colors duration-300">Empleabilidad</span>
+                            </div>
                           </div>
                           <button
                             onClick={() => navigate(`/careers/${career.id}`)}
@@ -283,7 +286,9 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                         <div className="font-semibold text-xs text-slate-text dark:text-white group-hover:text-primary dark:group-hover:text-secondary transition-colors duration-300">
                           {career.name}
                         </div>
-
+                        <div className="text-[10px] text-slate-text/60 dark:text-dark-text/60 mt-0.5 transition-colors duration-300">
+                          {career.employabilityRate}% Empleabilidad
+                        </div>
                       </button>
                     ))}
                   </div>
