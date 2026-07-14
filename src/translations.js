@@ -49,17 +49,17 @@ export const translations = {
       employability: "Empleabilidad",
       viewCurriculum: "Ver Malla Curricular",
       items: [
-        { id: "turismo", name: "Administración de Operaciones Turísticas", category: "business", employabilityRate: 85, desc: "Planifica y opera servicios turísticos sostenibles." },
-        { id: "asistencia", name: "Asistencia Administrativa", category: "business", employabilityRate: 82, desc: "Organiza y gestiona las operaciones de oficina corporativas." },
-        { id: "contabilidad", name: "Contabilidad", category: "business", employabilityRate: 88, desc: "Gestiona información financiera y tributaria." },
-        { id: "civil", name: "Construcción Civil", category: "field", employabilityRate: 90, desc: "Planifica y ejecuta obras de infraestructura civil." },
-        { id: "gestion", name: "Gestión Administrativa", category: "business", employabilityRate: 84, desc: "Lidera procesos administrativos y recursos empresariales." },
-        { id: "sistemas", name: "Desarrollo de Sistemas de Información", category: "tech", employabilityRate: 92, desc: "Desarrolla software, aplicaciones y bases de datos." },
-        { id: "electricidad", name: "Electricidad Industrial", category: "tech", employabilityRate: 86, desc: "Instala y mantiene sistemas eléctricos e industriales." },
-        { id: "enfermeria", name: "Enfermería Técnica", category: "field", employabilityRate: 89, desc: "Brinda atención integral y promoción de la salud." },
-        { id: "forestal", name: "Manejo Forestal", category: "field", employabilityRate: 80, desc: "Administra y protege los recursos forestales y fauna." },
-        { id: "mecatronica", name: "Mecatrónica Automotriz", category: "field", employabilityRate: 87, desc: "Diagnostica y repara sistemas mecánicos y electrónicos." },
-        { id: "agropecuaria", name: "Producción Agropecuaria", category: "field", employabilityRate: 81, desc: "Gestiona producción agrícola y pecuaria." }
+        { id: "admin", name: "Administración de Empresas", category: "business", desc: "Forma líderes empresariales con visión estratégica y capacidad de gestión." },
+        { id: "tur", name: "Administración de Operaciones Turísticas", category: "business", desc: "Planifica y opera servicios turísticos sostenibles." },
+        { id: "asist", name: "Asistencia Administrativa", category: "business", desc: "Organiza y gestiona las operaciones de oficina corporativas." },
+        { id: "cont", name: "Contabilidad", category: "business", desc: "Gestiona información financiera y tributaria." },
+        { id: "civil", name: "Construcción Civil", category: "field", desc: "Planifica y ejecuta obras de infraestructura civil." },
+        { id: "sys", name: "Desarrollo de Sistemas de Información", category: "tech", desc: "Desarrolla software, aplicaciones y bases de datos." },
+        { id: "elec", name: "Electricidad Industrial", category: "tech", desc: "Instala y mantiene sistemas eléctricos e industriales." },
+        { id: "enfer", name: "Enfermería Técnica", category: "field", desc: "Brinda atención integral y promoción de la salud." },
+        { id: "meca", name: "Mecatrónica Automotriz", category: "field", desc: "Diagnostica y repara sistemas mecánicos y electrónicos." },
+        { id: "forest", name: "Manejo Forestal", category: "field", desc: "Administra y protege los recursos forestales y fauna." },
+        { id: "agro", name: "Producción Agropecuaria", category: "field", desc: "Gestiona producción agrícola y pecuaria." }
       ]
     },
     faq: {

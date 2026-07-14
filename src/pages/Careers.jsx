@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { X, BookOpen, Target, Sparkles, ChevronRight, GraduationCap, Briefcase, Clock, Award } from 'lucide-react';
 
 const careersData = [
@@ -280,11 +281,22 @@ const careersData = [
 ];
 
 export default function Careers() {
+  const { careerId } = useParams();
   const [selected, setSelected] = useState(null);
   const [activePreview, setActivePreview] = useState(careersData[0]);
 
   const openCareer = (career) => setSelected(career);
   const closeCareer = () => setSelected(null);
+
+  useEffect(() => {
+    if (careerId) {
+      const career = careersData.find(c => c.id === careerId);
+      if (career) {
+        setSelected(career);
+        setActivePreview(career);
+      }
+    }
+  }, [careerId]);
 
   return (
     <div>
