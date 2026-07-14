@@ -49,17 +49,7 @@ export const translations = {
       employability: "Empleabilidad",
       viewCurriculum: "Ver Malla Curricular",
       items: [
-        { id: "admin", name: "Administración de Empresas", category: "business", desc: "Forma líderes empresariales con visión estratégica y capacidad de gestión." },
-        { id: "tur", name: "Administración de Operaciones Turísticas", category: "business", desc: "Planifica y opera servicios turísticos sostenibles." },
-        { id: "asist", name: "Asistencia Administrativa", category: "business", desc: "Organiza y gestiona las operaciones de oficina corporativas." },
-        { id: "cont", name: "Contabilidad", category: "business", desc: "Gestiona información financiera y tributaria." },
-        { id: "civil", name: "Construcción Civil", category: "field", desc: "Planifica y ejecuta obras de infraestructura civil." },
-        { id: "sys", name: "Desarrollo de Sistemas de Información", category: "tech", desc: "Desarrolla software, aplicaciones y bases de datos." },
-        { id: "elec", name: "Electricidad Industrial", category: "tech", desc: "Instala y mantiene sistemas eléctricos e industriales." },
-        { id: "enfer", name: "Enfermería Técnica", category: "field", desc: "Brinda atención integral y promoción de la salud." },
-        { id: "meca", name: "Mecatrónica Automotriz", category: "field", desc: "Diagnostica y repara sistemas mecánicos y electrónicos." },
-        { id: "forest", name: "Manejo Forestal", category: "field", desc: "Administra y protege los recursos forestales y fauna." },
-        { id: "agro", name: "Producción Agropecuaria", category: "field", desc: "Gestiona producción agrícola y pecuaria." }
+<<<<<<< HEAD
         { id: "turismo", name: "Administración de Operaciones Turísticas", category: "business", employabilityRate: 85, desc: "Planifica y opera servicios turísticos sostenibles." },
         { id: "asistencia", name: "Asistencia Administrativa", category: "business", employabilityRate: 82, desc: "Organiza y gestiona las operaciones de oficina corporativas." },
         { id: "contabilidad", name: "Contabilidad", category: "business", employabilityRate: 88, desc: "Gestiona información financiera y tributaria." },
@@ -70,7 +60,240 @@ export const translations = {
         { id: "enfermeria", name: "Enfermería Técnica", category: "field", employabilityRate: 89, desc: "Brinda atención integral y promoción de la salud." },
         { id: "forestal", name: "Manejo Forestal", category: "field", employabilityRate: 80, desc: "Administra y protege los recursos forestales y fauna." },
         { id: "mecatronica", name: "Mecatrónica Automotriz", category: "field", employabilityRate: 87, desc: "Diagnostica y repara sistemas mecánicos y electrónicos." },
-        { id: "agropecuaria", name: "Producción Agropecuaria", category: "field", employabilityRate: 81, desc: "Gestiona producción agrícola y pecuaria." }main
+        { id: "agropecuaria", name: "Producción Agropecuaria", category: "field", employabilityRate: 81, desc: "Gestiona producción agrícola y pecuaria." }
+=======
+        {
+          id: "sys",
+          name: "Desarrollo de Sistemas de Información",
+          category: "tech",
+          desc: "Diseña, desarrolla y administra software, aplicaciones móviles y bases de datos utilizando tecnologías de última generación.",
+          tagline: "Transforma ideas en soluciones digitales que impulsan la región.",
+          learn: "Aprenderás a programar, diseñar bases de datos y desarrollar aplicaciones web y móviles usando frameworks modernos.",
+          learningPoints: ["Programación full-stack","Diseño de bases de datos","Despliegue y mantenimiento de aplicaciones"],
+          alumni: { name: "María López", role: "Desarrolladora Full-Stack", quote: "Gracias al programa pude incorporarme a una empresa de software regional." },
+          employabilityRate: 92,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/sys.jpg",
+          degree: "Técnico en Desarrollo de Sistemas de Información",
+          technologies: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Python", "MySQL", "Docker", "Git", "APIs REST"],
+          curriculum: ["Programación estructurada y orientada a objetos","Desarrollo web frontend y backend","Aplicaciones móviles Android y iOS","Bases de datos SQL y NoSQL","Redes, ciberseguridad y cloud computing","Inteligencia artificial y data science"],
+          skills: ["Pensamiento lógico","Resolución de problemas","Adaptabilidad tecnológica","Creatividad digital","Trabajo colaborativo","Autogestión"],
+          opportunities: ["Desarrollador de software y aplicaciones","Programador web y administrador de bases de datos","Analista de sistemas y soporte TI","Especialista en ciberseguridad","Emprendedor tecnológico y freelancer"],
+          whyYou: "Si te apasiona la tecnología, resolver problemas complejos y crear soluciones que impacten a miles de personas, esta carrera te dará las herramientas para innovar.",
+          whyChoose: "Porque la era digital necesita programadores. Es la carrera con mayor crecimiento laboral global, salarios competitivos y posibilidad de trabajo remoto."
+        },
+        {
+          id: "enfer",
+          name: "Enfermería Técnica",
+          category: "field",
+          desc: "Brinda atención integral de salud en prevención, recuperación y rehabilitación a personas y comunidades con alto sentido humanitario.",
+          tagline: "Cuidando vidas, formando profesionales comprometidos con la comunidad.",
+          learn: "Aprenderás técnicas de cuidado, primeros auxilios, promoción de la salud y soporte en unidades clínicas y comunitarias.",
+          learningPoints: ["Cuidados básicos de enfermería","Técnicas de reanimación","Promoción y prevención en salud"],
+          alumni: { name: "José Pérez", role: "Técnico en Enfermería", quote: "El programa me dio la experiencia práctica que necesitaba para trabajar en un hospital local." },
+          employabilityRate: 88,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/enfer.jpg",
+          degree: "Técnico en Enfermería",
+          technologies: [],
+          curriculum: ["Anatomía, fisiología y farmacología básica","Cuidados de enfermería en adulto, niño y neonato","Primeros auxilios, emergencias y desastres","Nutrición, salud comunitaria y epidemiología","Enfermería en pediatría, geriatría y cuidados paliativos","Prácticas preprofesionales en hospitales y centros de salud"],
+          skills: ["Empatía","Vocación de servicio","Trabajo bajo presión","Responsabilidad","Trabajo en equipo","Comunicación asertiva"],
+          opportunities: ["Técnico de enfermería en hospitales y clínicas","Promotor de salud comunitaria","Asistente en centros de salud y postas médicas","Cuidador de adultos mayores y pacientes domiciliarios","Técnico en programas de salud preventiva"],
+          whyYou: "Si tu vocación es cuidar de los demás, tienes empatía y sensibilidad social, la enfermería técnica te permitirá salvar vidas y mejorar la salud de tu comunidad.",
+          whyChoose: "Porque la salud es un derecho y una prioridad nacional. Los enfermeros técnicos son esenciales en el sistema de salud, con alta demanda y estabilidad laboral."
+        },
+        {
+          id: "meca",
+          name: "Mecatrónica Automotriz",
+          category: "field",
+          desc: "Diagnostica, repara y optimiza sistemas mecánicos, eléctricos y electrónicos de vehículos y maquinarias modernas.",
+          tagline: "Integra mecánica y electrónica para soluciones reales en movilidad.",
+          learn: "Formación en electrónica, mecánica y automatización aplicada a vehículos y sistemas mecatrónicos.",
+          learningPoints: ["Electrónica automotriz","Mecánica aplicada","Sistemas de control"],
+          alumni: { name: "Luis García", role: "Técnico Mecatrónico", quote: "Hoy trabajo manteniendo flotas de transporte regional." },
+          employabilityRate: 85,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/meca.jpg",
+          degree: "Técnico en Mecatrónica Automotriz",
+          technologies: [],
+          curriculum: ["Motores de combustión interna y sistemas de transmisión","Sistemas de frenos, suspensión y dirección","Electrónica automotriz y diagnóstico computarizado","Sistemas de inyección, encendido y sobrealimentación","Aire acondicionado automotriz y climatización","Mantenimiento de maquinaria pesada y equipos diésel"],
+          skills: ["Diagnóstico técnico","Precisión manual","Actualización constante","Pensamiento analítico","Uso de scanner automotriz","Trabajo en taller"],
+          opportunities: ["Técnico especializado en talleres mecánicos y concesionarios","Diagnosticador automotriz con scanner","Especialista en sistemas electrónicos de vehículos","Técnico en maquinaria pesada y equipos diésel","Emprendedor en taller de servicio automotriz"],
+          whyYou: "Si te apasionan los motores, la tecnología automotriz y el diagnóstico de precisión, esta carrera te convertirá en un experto altamente demandado.",
+          whyChoose: "Porque el parque automotor crece aceleradamente y los vehículos modernos requieren técnicos con formación en mecatrónica. Es una carrera con excelente proyección económica."
+        },
+        {
+          id: "agro",
+          name: "Producción Agropecuaria",
+          category: "field",
+          desc: "Gestiona procesos de producción agrícola y pecuaria con técnicas sostenibles, bio-tecnología y alta eficiencia.",
+          tagline: "Innovación y sostenibilidad para el campo y la comunidad.",
+          learn: "Técnicas de cultivo y crianza, gestión de agroecosistemas y uso de tecnologías para aumentar la productividad sostenible.",
+          learningPoints: ["Manejo de cultivos","Sanidad animal","Gestión de recursos hídricos"],
+          alumni: { name: "Ana Torres", role: "Gestora Agrícola", quote: "Implementé sistemas de producción sostenible en mi comunidad." },
+          employabilityRate: 80,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/agro.jpg",
+          degree: "Técnico en Producción Agropecuaria",
+          technologies: [],
+          curriculum: ["Cultivos tropicales, sanidad vegetal y fertilización","Riego tecnificado, suelos y manejo de cuencas","Crianza de animales mayores y menores","Biotecnología agropecuaria y transformación de productos","Gestión agroempresarial y comercio de insumos","Buenas prácticas agrícolas y certificación orgánica"],
+          skills: ["Trabajo de campo","Visión productiva","Innovación tecnológica","Gestión de recursos","Sostenibilidad","Capacidad emprendedora"],
+          opportunities: ["Técnico en empresas agroindustriales y fundos","Asistente técnico en producción agrícola y pecuaria","Promotor de buenas prácticas agropecuarias","Técnico en programas de desarrollo rural","Emprendedor agropecuario y productor independiente"],
+          whyYou: "Si valoras el trabajo del campo, te interesa la producción de alimentos y quieres aplicar tecnología al agro, esta carrera te hará parte de la revolución productiva del país.",
+          whyChoose: "Porque Ucayali tiene un enorme potencial agropecuario. Serás clave para impulsar la seguridad alimentaria y el desarrollo económico desde el campo."
+        },
+        {
+          id: "forest",
+          name: "Manejo Forestal",
+          category: "field",
+          desc: "Administra, protege y aprovecha de forma sostenible los recursos forestales y de fauna silvestre de la Amazonía peruana.",
+          tagline: "Conservación y uso responsable de nuestros recursos naturales.",
+          learn: "Gestión forestal sostenible, protección de ecosistemas y técnicas de aprovechamiento responsable.",
+          learningPoints: ["Inventario forestal","Restauración ecológica","Políticas de manejo sostenible"],
+          alumni: { name: "Marcos Rivera", role: "Especialista Forestal", quote: "Trabajo en proyectos de conservación con comunidades locales." },
+          employabilityRate: 82,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/forest.jpg",
+          degree: "Técnico en Manejo Forestal",
+          technologies: [],
+          curriculum: ["Ecología forestal, botánica y dendrología","Sistemas de información geográfica (SIG) y teledetección","Aprovechamiento maderable y no maderable","Reforestación, silvicultura y viveros forestales","Conservación de fauna silvestre y áreas protegidas","Gestión de concesiones forestales y certificación"],
+          skills: ["Conciencia ambiental","Trabajo de campo","Visión sostenible","Manejo de SIG","Investigación aplicada","Liderazgo comunitario"],
+          opportunities: ["Técnico en empresas forestales y concesiones","Promotor de conservación y reforestación","Inspector de recursos forestales y fauna","Técnico en áreas naturales protegidas","Consultor en manejo forestal sostenible"],
+          whyYou: "Si amas la naturaleza, te preocupa el futuro del planeta y quieres trabajar directamente en la conservación de la Amazonía, esta carrera es tu propósito de vida.",
+          whyChoose: "Porque la Amazonía es el pulmón del mundo y necesita profesionales capacitados. Es una carrera única con impacto local y relevancia global."
+        },
+        {
+          id: "cont",
+          name: "Contabilidad",
+          category: "business",
+          desc: "Gestiona la información financiera, de costos y tributaria de empresas públicas y privadas bajo estándares internacionales.",
+          tagline: "Precisión y ética para la gestión financiera de organizaciones.",
+          learn: "Contabilidad financiera, costos, auditoría y manejo de sistemas contables para empresas modernas.",
+          learningPoints: ["Contabilidad financiera","Auditoría","Tributación"],
+          alumni: { name: "Patricia Huaman", role: "Contadora", quote: "Pude certificarme y encontrar empleo en una firma contable regional." },
+          employabilityRate: 85,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/cont.jpg",
+          degree: "Técnico en Contabilidad",
+          technologies: [],
+          curriculum: ["Contabilidad general, de costos y de sociedades","Legislación y tributación laboral y empresarial","Planillas electrónicas, PDT y declaraciones mensuales","Auditoría financiera y control interno","Sistemas contables computarizados (SUNAT, CONCAR)","Finanzas empresariales y presupuestos"],
+          skills: ["Razonamiento analítico","Meticulosidad","Ética profesional","Manejo de sistemas contables","Confidencialidad","Visión financiera"],
+          opportunities: ["Asistente o analista contable","Especialista en tributación y planillas","Auditor interno o externo","Contador general de empresas","Consultor financiero independiente"],
+          whyYou: "Si eres analítico, preciso y te interesa el mundo de las finanzas, la contabilidad te convertirá en el profesional de confianza que toda organización necesita.",
+          whyChoose: "Porque todas las empresas, sin excepción, requieren servicios contables. Es una de las carreras técnicas con mayor empleabilidad y estabilidad laboral."
+        },
+        {
+          id: "admin",
+          name: "Administración de Empresas",
+          category: "business",
+          desc: "Planifica, organiza y dirige organizaciones, liderando proyectos comerciales e impulsando la innovación empresarial.",
+          tagline: "Liderazgo y gestión para transformar organizaciones y proyectos.",
+          learn: "Gestión de proyectos, finanzas básicas, marketing y liderazgo para impulsar iniciativas productivas.",
+          learningPoints: ["Gestión de proyectos","Marketing básico","Liderazgo y gestión"],
+          alumni: { name: "Carlos Mendoza", role: "Gerente de Operaciones", quote: "El programa fue clave para mi crecimiento profesional." },
+          employabilityRate: 87,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/admin.jpg",
+          degree: "Técnico en Administración de Empresas",
+          technologies: [],
+          curriculum: ["Gestión empresarial y planeamiento estratégico","Marketing, ventas y atención al cliente","Contabilidad general, costos y finanzas corporativas","Recursos humanos, liderazgo y trabajo en equipo","Legislación laboral, tributaria y comercio internacional","Proyectos de inversión, emprendimiento e innovación"],
+          skills: ["Liderazgo","Toma de decisiones","Gestión financiera","Negociación","Planificación estratégica","Trabajo en equipo"],
+          opportunities: ["Jefe de área administrativa o financiera","Gerente general de pequeñas y medianas empresas","Administrador de empresas comerciales, industriales o de servicios","Emprendedor y creador de tu propio negocio","Consultor empresarial independiente"],
+          whyYou: "Si posees facilidad para liderar, te motiva la toma de decisiones y el logro de objetivos, y te apasiona el mundo de los negocios, esta carrera potenciará tu talento directivo.",
+          whyChoose: "Porque todo tipo de organización necesita administradores competentes. Es una de las profesiones con mayor campo laboral, permitiéndote trabajar en cualquier sector económico del país."
+        },
+        {
+          id: "civil",
+          name: "Construcción Civil",
+          category: "field",
+          desc: "Supervisa, planifica y ejecuta obras de infraestructura civil, edificación y carreteras con estándares de calidad y seguridad.",
+          tagline: "Construyendo espacios seguros y sostenibles para la región.",
+          learn: "Técnicas de construcción, lecturas de planos, control de calidad y seguridad en obras civiles.",
+          learningPoints: ["Lectura de planos","Gestión de obra","Seguridad industrial"],
+          alumni: { name: "Javier Ramos", role: "Supervisor de Obras", quote: "Trabajo en proyectos de infraestructura regional con estándares modernos." },
+          employabilityRate: 90,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/civil.jpg",
+          degree: "Técnico en Construcción Civil",
+          technologies: [],
+          curriculum: ["Dibujo técnico, planos y topografía","Tecnología de materiales, concreto y suelos","Costos, presupuestos y valorizaciones de obra","Estructuras, instalaciones sanitarias y eléctricas","Seguridad en obra y prevención de riesgos","Supervisión y control de calidad en construcción"],
+          skills: ["Visión espacial","Liderazgo técnico","Trabajo en campo","Cálculo de costos","Supervisión de equipos","Cumplimiento normativo"],
+          opportunities: ["Supervisor de obra y asistente de residente","Maestro general de obra calificado","Técnico en empresas constructoras e inmobiliarias","Inspector de obras públicas y privadas","Emprendedor en servicios de construcción"],
+          whyYou: "Si te apasiona ver cómo las ideas se convierten en estructuras sólidas y quieres ser parte del desarrollo urbano, esta carrera te dará el poder de construir.",
+          whyChoose: "Porque el déficit de infraestructura en el Perú demanda profesionales técnicos en construcción. Es una carrera estable, bien remunerada y con proyección a largo plazo."
+        },
+        {
+          id: "elec",
+          name: "Electricidad Industrial",
+          category: "tech",
+          desc: "Instala, opera y mantiene sistemas de energía, automatización de maquinarias y sistemas de control industrial.",
+          tagline: "Energía y control para la industria moderna.",
+          learn: "Sistemas eléctricos industriales, automatización y mantenimiento preventivo de equipos eléctricos.",
+          learningPoints: ["Instalaciones eléctricas","Automatización","Mantenimiento industrial"],
+          alumni: { name: "Rosa Delgado", role: "Técnica Electricista", quote: "Participé en la instalación de sistemas eléctricos para una planta agroindustrial." },
+          employabilityRate: 86,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/elec.jpg",
+          degree: "Técnico en Electricidad Industrial",
+          technologies: [],
+          curriculum: ["Instalaciones eléctricas domiciliarias e industriales","Máquinas eléctricas, transformadores y motores","Automatización industrial con PLC y sensores","Sistemas de potencia y tableros de control","Instrumentación y mantenimiento eléctrico","Seguridad industrial y normativa eléctrica"],
+          skills: ["Precisión técnica","Razonamiento lógico","Trabajo seguro","Diagnóstico de fallas","Manejo de instrumentos","Visión sistémica"],
+          opportunities: ["Técnico electricista industrial","Supervisor de mantenimiento eléctrico","Instalador de sistemas de automatización","Técnico en empresas mineras, constructoras y fabriles","Emprendedor en servicios eléctricos"],
+          whyYou: "Si te fascina entender cómo funciona la energía y mantener los sistemas que mueven la industria, esta carrera te dará un campo de acción inmenso.",
+          whyChoose: "Porque la industria peruana demanda constantemente técnicos electricistas. Es una carrera con alta empleabilidad en minería, construcción, manufactura y servicios."
+        },
+        {
+          id: "tur",
+          name: "Administración de Operaciones Turísticas",
+          category: "business",
+          desc: "Diseña, promociona y opera servicios turísticos sostenibles, valorando la biodiversidad y la riqueza cultural de nuestra selva.",
+          tagline: "Promoviendo experiencias sostenibles que conectan culturas y naturaleza.",
+          learn: "Gestión de servicios turísticos, promoción de destinos y atención al cliente especializada en turismo sostenible.",
+          learningPoints: ["Promoción turística","Atención al cliente","Gestión de servicios"],
+          alumni: { name: "Elena Fuentes", role: "Gestora Turística", quote: "Hoy coordino experiencias turísticas sostenibles para visitantes nacionales." },
+          employabilityRate: 78,
+          duration: "3 años",
+          modality: "Presencial",
+          image: "/careers/tur.jpg",
+          degree: "Técnico en Administración de Operaciones Turísticas",
+          technologies: [],
+          curriculum: ["Planificación y gestión de destinos turísticos","Administración de hoteles, restaurantes y agencias de viaje","Marketing digital y comercialización turística","Contabilidad y legislación turística","Guía de turismo, interpretación ambiental y cultural","Diseño de paquetes turísticos sostenibles"],
+          skills: ["Creatividad","Comunicación intercultural","Gestión hotelera","Atención al cliente","Trabajo en campo","Visión sostenible"],
+          opportunities: ["Administrador de hoteles, lodges y restaurantes","Operador turístico y agente de viajes","Guía oficial de turismo especializado en Amazonía","Promotor de turismo comunitario y vivencial","Emprendedor en servicios turísticos sostenibles"],
+          whyYou: "Si eres creativo, con espíritu aventurero y vocación por compartir la riqueza natural y cultural de tu tierra, esta carrera hará de ti un agente de cambio.",
+          whyChoose: "Porque Ucayali es un destino con enorme potencial turístico aún por explotar. Serás protagonista del desarrollo económico regional a través del turismo responsable."
+        },
+        {
+          id: "asist",
+          name: "Asistencia Administrativa",
+          category: "business",
+          desc: "Organiza, gestiona y optimiza las operaciones de oficina y las comunicaciones corporativas internas y externas.",
+          tagline: "Soporte eficiente para el funcionamiento de organizaciones y servicios.",
+          learn: "Herramientas de oficina, comunicación empresarial y organización administrativa para soportar procesos institucionales.",
+          learningPoints: ["Ofimática","Comunicación empresarial","Organización administrativa"],
+          alumni: { name: "Karina Soto", role: "Asistente Administrativa", quote: "Encontré empleo inmediatamente al graduarme en una municipalidad local." },
+          employabilityRate: 80,
+          duration: "2.5 años",
+          modality: "Presencial",
+          image: "/careers/asist.jpg",
+          degree: "Técnico en Asistencia Administrativa",
+          technologies: [],
+          curriculum: ["Gestión documentaria y archivo empresarial","Redacción y comunicación corporativa","Atención al cliente y protocolo empresarial","Contabilidad básica, planillas y tributación","Herramientas ofimáticas y sistemas administrativos","Organización de eventos y logística empresarial"],
+          skills: ["Organización","Responsabilidad","Comunicación efectiva","Manejo de software","Atención al detalle","Discreción profesional"],
+          opportunities: ["Asistente de gerencia o dirección","Secretario ejecutivo en empresas públicas y privadas","Administrador de oficina y archivo","Especialista en atención al cliente","Asistente de recursos humanos, logística o contabilidad"],
+          whyYou: "Si eres meticuloso, responsable y disfrutas del orden y la eficiencia, tu capacidad organizativa será el pilar que toda empresa necesita.",
+          whyChoose: "Porque todas las organizaciones requieren personal administrativo calificado. Es una carrera técnica con rápida inserción laboral y demanda constante."
+        }
+>>>>>>> web_suiza/clase2
       ]
     },
     faq: {
@@ -724,6 +947,7 @@ export const translations = {
         ]
       }
     },
+<<<<<<< HEAD
     
     transparencyMenu: [
       { name: "Documentos de Gestión", path: "/transparency/documentos" },
@@ -897,6 +1121,201 @@ export const translations = {
       }
     },
 
+=======
+    aboutPage: {
+      header: {
+        title: "Nuestra Institución",
+        subtitle: "Conoce la trayectoria, misión, visión y valores del IESTP Suiza"
+      },
+      mission: {
+        title: "Misión",
+        description: "Somos una institución de educación superior tecnológica pública licenciada, dedicada a formar profesionales técnicos competentes, creativos, innovadores y con sólidos valores éticos."
+      },
+      vision: {
+        title: "Visión",
+        description: "Al 2030, ser un instituto tecnológico líder en la Amazonía peruana y referente nacional por su excelencia académica."
+      },
+      values: {
+        sectionTitle: "Nuestros Valores",
+        excellence: { title: "Excelencia", desc: "Buscamos el más alto estándar en la formación técnica y humana." },
+        innovation: { title: "Innovación", desc: "Impulsamos la investigación aplicada y el uso de tecnologías de vanguardia." },
+        inclusion: { title: "Inclusión", desc: "Respetamos y valoramos la diversidad sociocultural de nuestra Amazonía." },
+        integrity: { title: "Integridad", desc: "Actuamos con ética, honestidad, transparencia y responsabilidad social." }
+      },
+      history: {
+        title: "Reseña Histórica",
+        timeline: {
+          founding: { title: "Fundación y Primeros Pasos", desc: "Nace como respuesta a la creciente demanda de formación técnica calificada en la provincia de Coronel Portillo, Ucayali." },
+          consolidation: { title: "Consolidación y Nuevos Programas", desc: "Se inaugura el campus actual en la Carretera Federico Basadre y se incorporan nuevas especialidades." },
+          modernization: { title: "Modernización Tecnológica", desc: "Se equipan nuevos laboratorios con tecnología de punta en mecatrónica automotriz y desarrollo de software." },
+          licensing: { title: "Licenciamiento Institucional", desc: "El IESTP Suiza logra exitosamente su licenciamiento institucional ante el Ministerio de Educación." }
+        }
+      },
+      presentacion: {
+        title: "Presentación",
+        introTitle: "Instituto de Educación Superior Tecnológico Público Suiza",
+        introSubtitle: "Formando profesionales técnicos de excelencia desde 1976",
+        introP1: "El IESTP Suiza es una institución educativa pública ubicada en la ciudad de Pucallpa, capital de la región Ucayali. Fundada en 1976, nuestra institución ha sido un pilar fundamental en la formación técnica de miles de jóvenes amazónicos, contribuyendo activamente al desarrollo socioeconómico de la región y del país.",
+        introP2: "Contamos con 11 programas de estudio licenciados, laboratorios especializados modernos, una plana docente altamente calificada y convenios estratégicos con empresas e instituciones del sector público y privado. Nuestro compromiso es formar profesionales competentes, creativos, innovadores y con sólidos valores éticos.",
+        features: [
+          { title: "Licenciamiento", desc: "Institución licenciada por el MINEDU con condiciones básicas de calidad." },
+          { title: "Alta Empleabilidad", desc: "Más del 85% de nuestros egresados se insertan laboralmente en el primer año." },
+          { title: "Comunidad", desc: "Más de 2000 estudiantes y 150 docentes comprometidos con la excelencia." },
+          { title: "Ubicación", desc: "Carretera Federico Basadre Km 5.700, Pucallpa — Ucayali." }
+        ],
+        stats: [
+          { number: "1976", label: "Año de Fundación" },
+          { number: "11", label: "Programas Licenciados" },
+          { number: "2000+", label: "Estudiantes" },
+          { number: "85%", label: "Empleabilidad" }
+        ]
+      },
+      palabrasDirector: {
+        quote: "Es un honor y una gran responsabilidad dirigir esta casa superior de estudios, que por más de cuatro décadas ha sido el faro de conocimiento y progreso para nuestra querida región Ucayali. Nuestro compromiso es inquebrantable: formar profesionales técnicos competentes, con valores éticos sólidos y con la capacidad de transformar su realidad y contribuir al desarrollo sostenible de nuestra Amazonía y del Perú.",
+        directorName: "Mg. Juan Carlos Ramirez Torres",
+        directorRole: "Director General",
+        directorInstitution: "IESTP Suiza — Pucallpa",
+        futureVisionTitle: "Nuestra Visión de Futuro",
+        futureVisionDesc: "Trabajamos incansablemente para que al 2030 seamos reconocidos como el instituto tecnológico líder de la Amazonía peruana, con estándares de calidad internacional, infraestructura moderna y egresados altamente empleables.",
+        qualityTitle: "Compromiso con la Calidad",
+        qualityDesc: "Cada día renovamos nuestro compromiso con la excelencia académica, la innovación tecnológica y la formación integral de nuestros estudiantes, preparándolos para los desafíos del mundo laboral.",
+        contactTitle: "Contacto de Dirección",
+        contact: [
+          { label: "Email", value: "direccion@iestpsuiza.edu.pe" },
+          { label: "Teléfono", value: "(061) 280665" },
+          { label: "Dirección", value: "Carretera Federico Basadre Km 5.700" }
+        ]
+      },
+      visionMision: {
+        missionTitle: "Misión",
+        missionDesc: "Somos una institución de educación superior tecnológica pública licenciada, dedicada a formar profesionales técnicos competentes, creativos, innovadores y con sólidos valores éticos, capaces de contribuir activamente al desarrollo socioeconómico sostenible de la región Ucayali y el país.",
+        visionTitle: "Visión",
+        visionDesc: "Al 2030, ser un instituto tecnológico líder en la Amazonía peruana y referente nacional por su excelencia académica, infraestructura moderna, procesos automatizados, convenios internacionales y egresados de alta empleabilidad comprometidos con la innovación y el cuidado ambiental.",
+        valuesTitle: "Nuestros Valores Institucionales",
+        values: [
+          { title: "Excelencia", desc: "Buscamos el más alto estándar en la formación técnica y humana." },
+          { title: "Innovación", desc: "Impulsamos la investigación aplicada y el uso de tecnologías de vanguardia." },
+          { title: "Inclusión", desc: "Respetamos y valoramos la diversidad sociocultural de nuestra Amazonía." },
+          { title: "Integridad", desc: "Actuamos con ética, honestidad, transparencia y responsabilidad social." }
+        ],
+        objectivesTitle: "Objetivos Estratégicos",
+        objectives: [
+          "Fortalecer la calidad académica mediante la actualización curricular y la capacitación docente continua.",
+          "Modernizar la infraestructura tecnológica y los laboratorios especializados de todos los programas.",
+          "Incrementar los convenios institucionales para prácticas pre-profesionales y colaboración internacional.",
+          "Implementar un sistema de gestión de calidad con procesos automatizados y transparencia administrativa.",
+          "Promover la investigación aplicada y la innovación tecnológica en las líneas de cada programa de estudio."
+        ]
+      },
+      historia: {
+        introTitle: "Nuestra Trayectoria",
+        introDesc: "Desde nuestra fundación en 1976, el IESTP Suiza ha sido testigo y protagonista del desarrollo educativo y tecnológico de la región Ucayali. A lo largo de más de cuatro décadas, hemos evolucionado para ofrecer una educación técnica de calidad, adaptándonos a los cambios y necesidades del mercado laboral.",
+        galleryTitle: "Galería Histórica",
+        timeline: [
+          { year: "1976", title: "Fundación", desc: "Nace como respuesta a la creciente demanda de formación técnica calificada en la provincia de Coronel Portillo, Ucayali, ofreciendo los primeros programas en áreas agropecuarias y de mecánica." },
+          { year: "1995", title: "Consolidación y Nuevos Programas", desc: "Se inaugura el campus actual en la Carretera Federico Basadre y se incorporan especialidades como Contabilidad, Computación e Informática y Enfermería Técnica, adaptándose al crecimiento tecnológico de la época." },
+          { year: "2018", title: "Modernización Tecnológica", desc: "Se equipan nuevos laboratorios con tecnología de punta en mecatrónica automotriz y desarrollo de software. Se consolidan convenios estratégicos con empresas nacionales y regionales." },
+          { year: "2024", title: "Licenciamiento Institucional", desc: "El IESTP Suiza logra exitosamente su licenciamiento institucional ante el Ministerio de Educación, validando sus condiciones básicas de calidad académica, infraestructura y gestión." }
+        ],
+        gallery: [
+          { label: "Primera Promoción", year: "1979" },
+          { label: "Nuevo Campus", year: "1995" },
+          { label: "Laboratorios", year: "2018" },
+          { label: "Licenciamiento", year: "2024" }
+        ]
+      },
+      gestionAcademica: {
+        introTitle: "Organización Académica",
+        introDesc: "La gestión académica del IESTP Suiza está orientada a garantizar la calidad educativa mediante procesos planificados, ejecutados y evaluados con rigurosidad. Contamos con una estructura organizativa que asegura el cumplimiento de nuestros objetivos formativos.",
+        areas: [
+          { title: "Currículo", desc: "Diseño, actualización y evaluación de planes de estudio alineados a las demandas del mercado laboral." },
+          { title: "Evaluación Académica", desc: "Sistema de evaluación continua con indicadores de logro y seguimiento al desempeño estudiantil." },
+          { title: "Calendarización", desc: "Planificación académica semestral con cronogramas de actividades lectivas y evaluaciones." },
+          { title: "Tutoría", desc: "Programa de acompañamiento y orientación estudiantil para asegurar la permanencia y el éxito académico." },
+          { title: "Certificación", desc: "Proceso de certificación y titulación con estándares de calidad y reconocimiento oficial." }
+        ],
+        calendarTitle: "Calendario Académico 2026",
+        calendar: [
+          { period: "I Semestre", date: "Marzo — Julio 2026", status: "En curso" },
+          { period: "Vacaciones", date: "Agosto 2026", status: "Próximo" },
+          { period: "II Semestre", date: "Setiembre — Diciembre 2026", status: "Próximo" }
+        ]
+      },
+      gestionAdministrativa: {
+        introTitle: "Estructura Administrativa",
+        introDesc: "La gestión administrativa del IESTP Suiza se rige por principios de transparencia, eficiencia y eficacia. Nuestra estructura organizativa permite una administración óptima de los recursos institucionales al servicio de la comunidad educativa.",
+        departments: [
+          { title: "Dirección General", desc: "Máxima instancia ejecutiva que lidera la planificación estratégica y la toma de decisiones institucionales." },
+          { title: "Administración y Finanzas", desc: "Gestión de recursos económicos, presupuesto anual, contabilidad y tesorería institucional." },
+          { title: "Secretaría Académica", desc: "Registro y certificación de logros académicos, archivo documentario y trámites administrativos." },
+          { title: "Recursos Humanos", desc: "Gestión del talento humano: selección, capacitación, evaluación y bienestar del personal." },
+          { title: "Bienestar Institucional", desc: "Programas de bienestar estudiantil, servicios de salud, asistencia social y actividades culturales." }
+        ],
+        documentsTitle: "Documentos de Gestión",
+        documents: [
+          { title: "Plan Anual de Trabajo", desc: "Documento de gestión operativa institucional 2026", color: "from-primary/10 to-primary/5" },
+          { title: "Reglamento Interno", desc: "Normas y disposiciones que rigen la vida institucional", color: "from-secondary/10 to-secondary/5" },
+          { title: "Manual de Organización", desc: "Estructura orgánica y funciones de cada unidad", color: "from-amber-500/10 to-amber-500/5" }
+        ]
+      },
+      organigrama: {
+        introTitle: "Estructura Orgánica",
+        introDesc: "El IESTP Suiza cuenta con una estructura organizativa moderna y funcional, diseñada para garantizar una gestión eficiente y una comunicación fluida entre todas las instancias institucionales.",
+        governmentTitle: "Órganos de Gobierno",
+        government: [
+          { title: "Consejo Directivo", desc: "Máximo órgano de gobierno encargado de aprobar políticas, planes y presupuestos institucionales." },
+          { title: "Dirección General", desc: "Responsable de la conducción y representación legal de la institución." },
+          { title: "Comité Académico", desc: "Órgano consultivo que evalúa y propone mejoras en los procesos formativos." }
+        ]
+      },
+      plannDocente: {
+        introTitle: "Nuestro Equipo Docente",
+        introDesc: "Contamos con una plana docente altamente calificada, con amplia experiencia profesional y académica. Nuestros docentes están comprometidos con la formación integral de los estudiantes y la excelencia educativa.",
+        stats: [
+          { number: "150+", label: "Docentes Calificados" },
+          { number: "40%", label: "Con Posgrado" },
+          { number: "15+", label: "Años de Experiencia Promedio" },
+          { number: "95%", label: "Satisfacción Estudiantil" }
+        ],
+        faculties: [
+          {
+            area: "Desarrollo de Sistemas",
+            color: "from-blue-500/10 to-cyan-500/10",
+            members: [
+              { name: "Ing. Carlos Mendoza", role: "Coordinador", specialty: "Ingeniería de Software" },
+              { name: "Mg. Rosa Huamán", role: "Docente", specialty: "Bases de Datos" },
+              { name: "Lic. Pedro García", role: "Docente", specialty: "Programación Web" }
+            ]
+          },
+          {
+            area: "Enfermería Técnica",
+            color: "from-green-500/10 to-emerald-500/10",
+            members: [
+              { name: "Lic. María Torres", role: "Coordinadora", specialty: "Cuidados Intensivos" },
+              { name: "Mg. José López", role: "Docente", specialty: "Salud Pública" },
+              { name: "Lic. Ana Silva", role: "Docente", specialty: "Enfermería Comunitaria" }
+            ]
+          },
+          {
+            area: "Mecatrónica Automotriz",
+            color: "from-orange-500/10 to-amber-500/10",
+            members: [
+              { name: "Ing. Luis Vargas", role: "Coordinador", specialty: "Sistemas Electrónicos" },
+              { name: "Téc. Marco Díaz", role: "Docente", specialty: "Mecánica Automotriz" }
+            ]
+          },
+          {
+            area: "Administración de Empresas",
+            color: "from-purple-500/10 to-pink-500/10",
+            members: [
+              { name: "Mg. Patricia Ríos", role: "Coordinadora", specialty: "Gestión Empresarial" },
+              { name: "Lic. Fernando Ruiz", role: "Docente", specialty: "Marketing Digital" }
+            ]
+          }
+        ]
+      }
+    },
+>>>>>>> web_suiza/clase2
     aboutMenu: {
       col1: [
         { title: "Presentación", desc: "Conoce la historia y objetivos institucionales.", id: "presentacion" },
