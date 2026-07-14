@@ -1,6 +1,6 @@
 import { Calendar, Tag } from 'lucide-react';
 
-export default function NewsCard({ item, onReadMore, index }) {
+export default function NewsCard({ item, onReadMore, index, t }) {
   return (
     <div
       onClick={onReadMore}
@@ -13,7 +13,7 @@ export default function NewsCard({ item, onReadMore, index }) {
           <span>{item.tag}</span>
         </span>
         <div className="absolute right-5 bottom-4 opacity-10">
-          <span className="text-3xl font-extrabold tracking-tighter">SUIZA</span>
+          <span className="text-3xl font-extrabold tracking-tighter">{t?.news?.brandName || 'SUIZA'}</span>
         </div>
         <span className="inline-flex items-center gap-1.5 text-xs text-white/80">
           <Calendar className="w-3.5 h-3.5" />
@@ -32,7 +32,7 @@ export default function NewsCard({ item, onReadMore, index }) {
         </div>
 
         <span className="inline-flex items-center gap-1.5 text-xs font-bold text-primary dark:text-secondary bg-primary/5 dark:bg-primary/10 px-3.5 py-1.5 rounded-xl">
-          <span>🚀 Descubrir</span>
+          <span>{t?.news?.discover}</span>
         </span>
       </div>
     </div>

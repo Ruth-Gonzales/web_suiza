@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import LogoSuiza from '../assets/img/logo_suiza_n.png';
+import { translations } from '../translations';
 import './SplashScreen.css';
+
+const t = translations[localStorage.getItem('lang') || 'es'];
 
 function CombinedBackground({ active }) {
   const canvasRef = useRef(null);
@@ -280,7 +283,7 @@ function LoadingBar({ progress, isOffline, visible }) {
         </div>
       </div>
       <span className="loading-text">
-        {isOffline ? 'Sin conexión — esperando red...' : `Cargando sistemas... ${progress}%`}
+        {isOffline ? t.splash.offline : `${t.splash.loading}${progress}%`}
       </span>
     </div>
   );
@@ -409,7 +412,7 @@ export default function SplashScreen({ onComplete, isOffline }) {
             
             <img 
               src={LogoSuiza} 
-              alt="IESTP Suiza" 
+              alt={t.splash.logoAlt} 
               className="logo-image"
             />
             
@@ -423,11 +426,15 @@ export default function SplashScreen({ onComplete, isOffline }) {
 
         <div className={`text-container ${showAnimations ? 'visible' : ''}`}>
           <h1 className="splash-title">
-            <span className="title-line line-1">Bienvenido a la página de</span>
+            <span className="title-line line-1">{t.splash.welcomeLine1}</span>
             <span className={`title-line line-2 ${textDone ? 'glitch-text' : ''}`}>
+<<<<<<< HEAD
               <TypingText text="IESTP SUIZA" shouldStart={showAnimations} speed={60} onDone={handleTextDone} />
+=======
+              <TypingText text={t.splash.institutionName} shouldStart={showAnimations} speed={100} onDone={handleTextDone} />
+>>>>>>> web_suiza/clase2
             </span>
-            <span className={`title-line line-3 ${textDone ? 'line-3-visible' : ''}`}>Instituto de Excelencia</span>
+            <span className={`title-line line-3 ${textDone ? 'line-3-visible' : ''}`}>{t.splash.welcomeLine2}</span>
           </h1>
         </div>
 

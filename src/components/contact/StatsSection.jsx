@@ -40,17 +40,17 @@ function Counter({ end, duration = 2000 }) {
 export default function StatsSection({ t }) {
   const data = t.contact?.stats || {};
   const stats = [
-    { icon: statIcons[0], end: 2000, label: data.students || 'Estudiantes', suffix: '+' },
-    { icon: statIcons[1], end: 3500, label: data.graduates || 'Egresados', suffix: '+' },
-    { icon: statIcons[2], end: 49, label: data.years || 'Años de Experiencia', suffix: '' },
-    { icon: statIcons[3], end: 11, label: data.programs || 'Carreras Profesionales', suffix: '' },
-    { icon: statIcons[4], end: 30, label: data.agreements || 'Convenios Estratégicos', suffix: '+' },
+    { icon: statIcons[0], end: 2000, label: data.students, suffix: '+' },
+    { icon: statIcons[1], end: 3500, label: data.graduates, suffix: '+' },
+    { icon: statIcons[2], end: 49, label: data.years, suffix: '' },
+    { icon: statIcons[3], end: 11, label: data.programs, suffix: '' },
+    { icon: statIcons[4], end: 30, label: data.agreements, suffix: '+' },
   ];
 
   return (
     <section className="mb-16">
       <h2 className="text-2xl md:text-3xl font-bold text-slate-text dark:text-white mb-10 text-center">
-        {data.title || 'El IESTP Suiza en cifras'}
+        {data.title}
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
         {stats.map((stat, idx) => {

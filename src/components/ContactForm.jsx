@@ -36,7 +36,7 @@ export default function ContactForm({ t }) {
             <CheckCircle2 className="w-10 h-10" />
           </div>
           <h4 className="text-lg font-semibold text-slate-text dark:text-white mb-2">
-            ¡Mensaje Enviado!
+            {t.contact.form.success}
           </h4>
           <p className="text-sm text-slate-text/70 dark:text-dark-text/70 max-w-sm">
             {t.contact.success}
@@ -45,7 +45,7 @@ export default function ContactForm({ t }) {
             onClick={() => setSubmitted(false)}
             className="mt-6 px-5 py-2 rounded-xl bg-slate-light dark:bg-dark-border hover:bg-primary/10 dark:hover:bg-primary/20 text-primary dark:text-secondary text-sm font-semibold transition-all"
           >
-            Enviar otro mensaje
+            {t.contact.form.sendAnother}
           </button>
         </div>
       ) : (

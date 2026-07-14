@@ -303,7 +303,7 @@ export default function Careers() {
       <section className="relative w-full h-[350px] md:h-[420px] overflow-hidden -mt-4">
         <img
           src="/carrera1.jpg"
-          alt="Carreras IESTP Suiza"
+          alt={t.careersPage.alt}
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/50 to-primary/30" />
@@ -311,10 +311,10 @@ export default function Careers() {
 
         <div className="relative z-10 h-full flex flex-col justify-center items-start pl-4 md:pl-8 lg:pl-16">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight drop-shadow-lg">
-            Programas de Estudio
+            {t.careersPage.title}
           </h1>
           <p className="text-sm md:text-base text-white/90 mt-3 max-w-xl drop-shadow-md">
-            Ofrecemos 11 carreras profesionales técnicas con alta demanda laboral, formación de calidad y certificación nacional.
+            {t.careersPage.subtitle}
           </p>
         </div>
       </section>
@@ -323,7 +323,7 @@ export default function Careers() {
         <div className="flex pt-12">
           <div className="pl-4 md:px-8 lg:pl-16 lg:pr-12 shrink-0">
             <h2 className="text-2xl md:text-3xl font-bold text-slate-text dark:text-white mb-8">
-              CARRERAS
+              {t.careersPage.sectionTitle}
             </h2>
             <div className="inline-block">
               {careersData.map((career) => (
@@ -363,7 +363,7 @@ export default function Careers() {
                     onClick={() => openCareer(activePreview)}
                     className="mt-4 inline-block text-xs font-bold text-white bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-full hover:bg-white/30 transition-all cursor-pointer"
                   >
-                    Ver más detalles
+                    {t.careersPage.viewMore}
                   </button>
                 </div>
               </div>
@@ -403,7 +403,7 @@ export default function Careers() {
 
               <div className="absolute bottom-6 left-6 right-6">
                 <p className="text-base font-semibold text-white/80 tracking-widest mb-1">
-                  PROGRAMA DE ESTUDIO
+                  {t.careersPage.programLabel}
                 </p>
                 <h3 className="text-3xl md:text-4xl font-extrabold text-white leading-tight drop-shadow-lg">
                   {selected.name}
@@ -418,7 +418,7 @@ export default function Careers() {
               <div className="flex flex-wrap gap-3">
                 <div className="flex items-center gap-1.5 text-sm font-semibold text-primary bg-primary/10 px-4 py-2 rounded-full">
                   <Clock className="w-4 h-4" />
-                  <span>3 Años / 6 Ciclos</span>
+                  <span>{t.careersPage.durationBadge}</span>
                 </div>
                 <div className="flex items-center gap-1.5 text-sm font-semibold text-emerald-600 bg-emerald-50 dark:bg-emerald-500/10 px-4 py-2 rounded-full">
                   <GraduationCap className="w-4 h-4" />
@@ -433,7 +433,7 @@ export default function Careers() {
               <div>
                 <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-4">
                   <BookOpen className="w-5 h-5 text-primary" />
-                  Plan de Estudios
+                  {t.careersPage.planTitle}
                 </h4>
                 <div className="space-y-3">
                   {selected.curriculum.map((item, i) => (
@@ -452,7 +452,7 @@ export default function Careers() {
               <div>
                 <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-4">
                   <Award className="w-5 h-5 text-primary" />
-                  Habilidades a Desarrollar
+                  {t.careersPage.skillsTitle}
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {selected.skills.map((skill, i) => (
@@ -469,7 +469,7 @@ export default function Careers() {
               <div>
                 <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-4">
                   <Briefcase className="w-5 h-5 text-primary" />
-                  Oportunidades Laborales
+                  {t.careersPage.opportunitiesTitle}
                 </h4>
                 <div className="space-y-3">
                   {selected.opportunities.map((item, i) => (
@@ -486,7 +486,7 @@ export default function Careers() {
               <div className="bg-gradient-to-r from-primary/5 to-transparent p-6 rounded-2xl border border-primary/10">
                 <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-3">
                   <Target className="w-5 h-5 text-primary" />
-                  ¿Por qué esta carrera es para ti?
+                  {t.careersPage.whyTitle}
                 </h4>
                 <p className="text-base md:text-lg text-slate-text/75 dark:text-dark-text/75 leading-relaxed">
                   {selected.whyYou}
@@ -496,7 +496,7 @@ export default function Careers() {
               <div className="bg-gradient-to-r from-amber-500/5 to-transparent p-6 rounded-2xl border border-amber-500/10">
                 <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-3">
                   <Sparkles className="w-5 h-5 text-amber-500" />
-                  ¿Por qué estudiar esta carrera?
+                  {t.careersPage.whyStudyTitle}
                 </h4>
                 <p className="text-base md:text-lg text-slate-text/75 dark:text-dark-text/75 leading-relaxed">
                   {selected.whyChoose}

@@ -1,6 +1,6 @@
 import { Clock } from 'lucide-react';
 
-export default function OpportunitySection({ data }) {
+export default function OpportunitySection({ data, t }) {
   if (!data || !data.items) return null;
   const items = data.items;
 
@@ -33,7 +33,7 @@ export default function OpportunitySection({ data }) {
                 {item.desc}
               </p>
               <button className="inline-flex items-center gap-1.5 text-[10px] font-bold text-primary dark:text-secondary bg-primary/5 dark:bg-primary/10 px-3.5 py-1.5 rounded-lg hover:bg-primary hover:text-white dark:hover:bg-secondary dark:hover:text-dark-bg transition-all cursor-pointer">
-                <span>🚀 Explorar</span>
+                <span>{t?.news?.explore}</span>
               </button>
             </div>
           </div>

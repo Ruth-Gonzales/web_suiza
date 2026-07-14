@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { GraduationCap, Globe, MapPin, Phone, Mail } from 'lucide-react';
 import FooterParticles from './FooterParticles';
@@ -24,7 +23,7 @@ export default function Footer({ t }) {
                   IESTP SUIZA
                 </div>
                 <div className="text-[10px] text-primary dark:text-secondary font-medium tracking-widest mt-0.5">
-                  EXCELENCIA ACADÉMICA
+                  {t.footer.academicExcellence}
                 </div>
               </div>
             </div>
@@ -32,13 +31,13 @@ export default function Footer({ t }) {
               {t.hero.subtitle}
             </p>
             <div className="flex items-center gap-3 mt-2">
-              <a href="#" className="group relative p-2.5 rounded-xl bg-white dark:bg-dark-border/40 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:scale-110 hover:bg-primary hover:text-white dark:hover:bg-primary text-slate-text/70 dark:text-dark-text transition-all duration-300" aria-label="Facebook">
+              <a href="#" className="group relative p-2.5 rounded-xl bg-white dark:bg-dark-border/40 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:scale-110 hover:bg-primary hover:text-white dark:hover:bg-primary text-slate-text/70 dark:text-dark-text transition-all duration-300" aria-label={t.contact.social.facebook}>
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-primary/0 via-white/0 to-white/40 dark:to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <svg className="relative w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
                 </svg>
               </a>
-              <a href="#" className="group relative p-2.5 rounded-xl bg-white dark:bg-dark-border/40 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:scale-110 hover:bg-primary hover:text-white dark:hover:bg-primary text-slate-text/70 dark:text-dark-text transition-all duration-300" aria-label="Youtube">
+              <a href="#" className="group relative p-2.5 rounded-xl bg-white dark:bg-dark-border/40 shadow-sm hover:shadow-lg hover:shadow-primary/20 hover:scale-110 hover:bg-primary hover:text-white dark:hover:bg-primary text-slate-text/70 dark:text-dark-text transition-all duration-300" aria-label={t.contact.social.youtube}>
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-primary/0 via-white/0 to-white/40 dark:to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <svg className="relative w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M23.498 6.163c-.272-.98-1.071-1.762-2.075-2.02C19.57 3.545 12 3.545 12 3.545s-7.57 0-9.423.598c-1.004.258-1.803 1.04-2.075 2.02C0 7.978 0 12.01 0 12.01s0 4.032.502 6.008c.272.98 1.071 1.762 2.075 2.02 1.853.598 9.423.598 9.423.598s7.57 0 9.423-.598c1.004-.258 1.803-1.04 2.075-2.02.502-1.976.502-6.008.502-6.008s0-4.032-.502-6.008zM9.545 15.568V8.452L15.818 12l-6.273 3.568z"/>
@@ -65,7 +64,7 @@ export default function Footer({ t }) {
               </li>
               <li>
                 <Link to="/about" className="text-slate-text/75 dark:text-dark-text/75 hover:text-primary dark:hover:text-secondary transition-colors">
-                  Misión y Visión
+                  {t.footer.missionVision}
                 </Link>
               </li>
               <li>
@@ -75,7 +74,7 @@ export default function Footer({ t }) {
               </li>
               <li>
                 <Link to="/admission" className="text-slate-text/75 dark:text-dark-text/75 hover:text-primary dark:hover:text-secondary transition-colors">
-                  Examen de Admisión
+                  {t.footer.admissionExam}
                 </Link>
               </li>
             </ul>
@@ -89,22 +88,22 @@ export default function Footer({ t }) {
             <ul className="flex flex-col gap-2.5 text-sm text-slate-text/75 dark:text-dark-text/75">
               <li>
                 <Link to="/careers" className="hover:text-primary dark:hover:text-secondary transition-colors">
-                  Desarrollo de Sistemas
+                  {t.careers.items[0].name}
                 </Link>
               </li>
               <li>
                 <Link to="/careers" className="hover:text-primary dark:hover:text-secondary transition-colors">
-                  Enfermería Técnica
+                  {t.careers.items[1].name}
                 </Link>
               </li>
               <li>
                 <Link to="/careers" className="hover:text-primary dark:hover:text-secondary transition-colors">
-                  Mecatrónica Automotriz
+                  {t.careers.items[2].name}
                 </Link>
               </li>
               <li>
                 <Link to="/careers" className="hover:text-primary dark:hover:text-secondary transition-colors">
-                  Manejo Forestal
+                  {t.careers.items[5].name}
                 </Link>
               </li>
             </ul>
@@ -113,7 +112,7 @@ export default function Footer({ t }) {
           {/* Section 4: Contact Coordinate */}
           <div className="flex flex-col gap-3.5 text-sm text-slate-text/75 dark:text-dark-text/75">
             <h3 className="font-semibold text-sm text-slate-text dark:text-white uppercase tracking-wider mb-0.5">
-              Ubicación y Contacto
+              {t.footer.locationContact}
             </h3>
             <div className="flex items-start gap-2.5">
               <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
@@ -134,12 +133,12 @@ export default function Footer({ t }) {
         {/* Bottom Bar */}
         <div className="border-t border-primary/10 dark:border-white/8 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-text/60 dark:text-dark-text/60">
           <div>
-            © {new Date().getFullYear()} IESTP SUIZA Pucallpa. Todos los derechos reservados. Licenciado por MINEDU.
+            © {new Date().getFullYear()} IESTP SUIZA Pucallpa. {t.footer.rights}
           </div>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-primary transition-colors">Política de Privacidad</a>
-            <a href="#" className="hover:text-primary transition-colors">Transparencia Pública</a>
-            <a href="#" className="hover:text-primary transition-colors">Aula Virtual</a>
+            <a href="#" className="hover:text-primary transition-colors">{t.footer.privacy}</a>
+            <a href="#" className="hover:text-primary transition-colors">{t.footer.transparency}</a>
+            <a href="#" className="hover:text-primary transition-colors">{t.footer.virtualClassroom}</a>
           </div>
         </div>
       </div>

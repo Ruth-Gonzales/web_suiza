@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Calendar, Tag, Sparkles } from 'lucide-react';
 
-export default function NewsCarousel({ title, items, icon, onCardClick }) {
+export default function NewsCarousel({ title, items, icon, onCardClick, t }) {
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -70,7 +70,7 @@ export default function NewsCarousel({ title, items, icon, onCardClick }) {
               <div className="relative z-10 flex flex-col justify-between h-full">
                 <span className="inline-flex items-center gap-1 self-start px-2 py-0.5 rounded-full bg-white/20 dark:bg-white/[0.06] backdrop-blur-md border border-white/20 text-[9px] font-bold text-white uppercase">
                   <Tag className="w-2.5 h-2.5" />
-                  {item.tag || item.categoryId || 'Noticia'}
+                  {item.tag || item.categoryId || t?.news?.newsLabel}
                 </span>
                 <span className="inline-flex items-center gap-1 text-[10px] text-white/80">
                   <Calendar className="w-3 h-3" />
@@ -87,7 +87,7 @@ export default function NewsCarousel({ title, items, icon, onCardClick }) {
               </p>
               <span className="inline-flex items-center gap-1 text-[10px] font-bold text-primary dark:text-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-1 group-hover:translate-y-0">
                 <Sparkles className="w-3 h-3" />
-                Descubrir
+                {t?.news?.discover}
               </span>
             </div>
           </button>

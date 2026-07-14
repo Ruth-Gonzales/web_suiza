@@ -75,7 +75,7 @@ export default function NewsPage({ t }) {
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Buscar noticias..."
+            placeholder={t.newsPage.searchPlaceholder}
             className="w-full pl-10 pr-4 py-2.5 rounded-2xl bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 focus:border-primary dark:focus:border-primary/50 text-slate-text dark:text-white text-sm outline-none shadow-sm transition-all"
           />
         </div>
@@ -91,6 +91,7 @@ export default function NewsPage({ t }) {
         <HeroHighlight
           item={data.featured}
           onAction={() => openModal(data.featured)}
+          t={t}
         />
       )}
 
@@ -104,7 +105,7 @@ export default function NewsPage({ t }) {
         <section className="mb-16">
           {filter === 'all' ? (
             <NewsCarousel
-              title="🔥 Últimas Noticias"
+              title={t.news.latestNews}
               items={filteredItems}
               onCardClick={openModal}
             />
@@ -112,11 +113,11 @@ export default function NewsPage({ t }) {
             <>
               <h2 className="text-xl md:text-2xl font-bold text-slate-text dark:text-white mb-6 flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-primary dark:text-secondary" />
-                {data.categories.find((c) => c.id === filter)?.label || 'Noticias'}
+                {data.categories.find((c) => c.id === filter)?.label}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredItems.map((item, idx) => (
-                  <NewsCard key={idx} item={item} index={idx} onReadMore={() => openModal(item)} />
+                  <NewsCard key={idx} item={item} index={idx} onReadMore={() => openModal(item)} t={t} />
                 ))}
               </div>
             </>
@@ -126,7 +127,7 @@ export default function NewsPage({ t }) {
 
       {filteredItems.length === 0 && (
         <div className="text-center py-12 text-slate-text/50 dark:text-dark-text/50 mb-8">
-          No se encontraron artículos con los criterios especificados.
+          {t.news.noResults}
         </div>
       )}
 
@@ -139,7 +140,7 @@ export default function NewsPage({ t }) {
           {/* Events Carousel */}
           {filteredEvents.length > 0 && (
             <NewsCarousel
-              title="🎉 Eventos y Actividades"
+              title={t.news.eventsSectionTitle}
               items={filteredEvents}
               onCardClick={openModal}
             />
@@ -148,7 +149,7 @@ export default function NewsPage({ t }) {
           {/* Achievements Carousel */}
           {filteredAchievements.length > 0 && (
             <NewsCarousel
-              title="🏆 Logros y Reconocimientos"
+              title={t.news.achievementsSectionTitle}
               items={filteredAchievements}
               onCardClick={openModal}
             />
@@ -157,7 +158,7 @@ export default function NewsPage({ t }) {
           {/* Opportunities Carousel */}
           {filteredOpportunities.length > 0 && (
             <NewsCarousel
-              title="🚀 Oportunidades para Estudiantes"
+              title={t.news.opportunitiesSectionTitle}
               items={filteredOpportunities}
               onCardClick={openModal}
             />
@@ -175,7 +176,7 @@ export default function NewsPage({ t }) {
       )}
 
       {/* Interactive Modal */}
-      {modalItem && <EventDetailModal item={modalItem} onClose={() => setModalItem(null)} />}
+      {modalItem && <EventDetailModal item={modalItem} onClose={() => setModalItem(null)} t={t} />}
     </div>
   );
 }

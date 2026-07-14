@@ -1,63 +1,24 @@
 import { Users, Award, BookOpen, Star, GraduationCap } from 'lucide-react';
 import AboutPageShell from './AboutPageShell';
 
-const faculties = [
-  {
-    area: 'Desarrollo de Sistemas',
-    color: 'from-blue-500/10 to-cyan-500/10',
-    members: [
-      { name: 'Ing. Carlos Mendoza', role: 'Coordinador', specialty: 'Ingeniería de Software' },
-      { name: 'Mg. Rosa Huamán', role: 'Docente', specialty: 'Bases de Datos' },
-      { name: 'Lic. Pedro García', role: 'Docente', specialty: 'Programación Web' },
-    ]
-  },
-  {
-    area: 'Enfermería Técnica',
-    color: 'from-green-500/10 to-emerald-500/10',
-    members: [
-      { name: 'Lic. María Torres', role: 'Coordinadora', specialty: 'Cuidados Intensivos' },
-      { name: 'Mg. José López', role: 'Docente', specialty: 'Salud Pública' },
-      { name: 'Lic. Ana Silva', role: 'Docente', specialty: 'Enfermería Comunitaria' },
-    ]
-  },
-  {
-    area: 'Mecatrónica Automotriz',
-    color: 'from-orange-500/10 to-amber-500/10',
-    members: [
-      { name: 'Ing. Luis Vargas', role: 'Coordinador', specialty: 'Sistemas Electrónicos' },
-      { name: 'Téc. Marco Díaz', role: 'Docente', specialty: 'Mecánica Automotriz' },
-    ]
-  },
-  {
-    area: 'Administración de Empresas',
-    color: 'from-purple-500/10 to-pink-500/10',
-    members: [
-      { name: 'Mg. Patricia Ríos', role: 'Coordinadora', specialty: 'Gestión Empresarial' },
-      { name: 'Lic. Fernando Ruiz', role: 'Docente', specialty: 'Marketing Digital' },
-    ]
-  },
-];
+const statIcons = [Users, GraduationCap, Award, Star];
 
-const stats = [
-  { number: '150+', label: 'Docentes Calificados', icon: Users },
-  { number: '40%', label: 'Con Posgrado', icon: GraduationCap },
-  { number: '15+', label: 'Años de Experiencia Promedio', icon: Award },
-  { number: '95%', label: 'Satisfacción Estudiantil', icon: Star },
-];
+const defaultFaculties = [];
 
 export default function PlanaDocente({ t }) {
   const data = t.aboutMenu?.col2?.[3] || {};
+  const faculties = t.aboutPage?.plannDocente?.faculties || defaultFaculties;
 
   return (
     <AboutPageShell
       t={t}
-      title={data.title || 'Plana Docente'}
-      breadcrumb={data.title || 'Plana Docente'}
+      title={data.title}
+      breadcrumb={data.title}
     >
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        {stats.map((stat, idx) => {
-          const Icon = stat.icon;
+        {(t.aboutPage.plannDocente.stats).map((stat, idx) => {
+          const Icon = stat.icon || statIcons[idx];
           return (
             <div key={idx} className="rounded-2xl bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 p-5 text-center shadow-sm hover:shadow-md transition-all">
               <Icon className="w-6 h-6 text-primary dark:text-secondary mx-auto mb-2" />
@@ -75,11 +36,9 @@ export default function PlanaDocente({ t }) {
             <Users className="w-7 h-7 text-primary dark:text-secondary" />
           </div>
           <div>
-            <h2 className="text-xl font-bold text-slate-text dark:text-white mb-2">Nuestro Equipo Docente</h2>
+            <h2 className="text-xl font-bold text-slate-text dark:text-white mb-2">{t.aboutPage.plannDocente.introTitle}</h2>
             <p className="text-sm text-slate-text/70 dark:text-dark-text/70 leading-relaxed">
-              Contamos con una plana docente altamente calificada, con amplia experiencia profesional y 
-              académica. Nuestros docentes están comprometidos con la formación integral de los estudiantes 
-              y la excelencia educativa.
+              {t.aboutPage.plannDocente.introDesc}
             </p>
           </div>
         </div>

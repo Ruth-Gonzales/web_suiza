@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { X, Play, ChevronLeft, ChevronRight } from 'lucide-react';
 
-export default function MediaGallery({ data }) {
+export default function MediaGallery({ data, t }) {
   if (!data || !data.items) return null;
   const items = data.items;
   const [lightboxIdx, setLightboxIdx] = useState(null);
@@ -53,7 +53,7 @@ export default function MediaGallery({ data }) {
 
       <div className="text-center mt-6">
         <button onClick={() => open(0)} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 text-primary dark:text-secondary font-bold text-sm hover:shadow-md hover:-translate-y-0.5 transition-all cursor-pointer">
-          📸 Explorar Galería Completa
+          {t?.news?.exploreGallery}
         </button>
       </div>
 
@@ -94,7 +94,7 @@ export default function MediaGallery({ data }) {
                   <div className="w-16 h-16 rounded-full bg-white/20 dark:bg-white/5 flex items-center justify-center mx-auto mb-3">
                     <Play className="w-8 h-8 text-white fill-white ml-1" />
                   </div>
-                  <p className="text-white/60 text-xs">Vista previa de video</p>
+                  <p className="text-white/60 text-xs">{t?.news?.videoPreview}</p>
                 </div>
               ) : (
                 <span className="text-white/40 text-6xl">🖼️</span>
