@@ -1,13 +1,8 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import LogoSuiza from '../assets/img/logo_suiza_n.png';
-import { GraduationCap, ArrowRight, User, Search, Folder, CheckSquare, BookOpen, Library, CheckCircle2, ChevronRight } from 'lucide-react';
+import { GraduationCap, ArrowRight, ChevronRight } from 'lucide-react';
 import Carousel from '../components/Carousel';
 
 export default function Home({ t }) {
-  const [loginForm, setLoginForm] = useState({ email: '', password: '' });
-  const [isLogged, setIsLogged] = useState(false);
-  const [selectedTaskTab, setSelectedTaskTab] = useState('Recent');
 
   const stats = [
     { number: "1,600+", label: t.hero.stats.students },
@@ -29,7 +24,7 @@ export default function Home({ t }) {
               <div className="lg:col-span-6 flex flex-col items-start text-left gap-6 animate-in fade-in slide-in-from-left-8 duration-500">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/20 text-white font-semibold text-xs tracking-wider uppercase backdrop-blur-sm">
                   <GraduationCap className="w-4 h-4" />
-                  <span>Licenciado por MINEDU</span>
+                  <span>{t.home.licensed}</span>
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight mt-2 drop-shadow-lg">
@@ -87,10 +82,10 @@ export default function Home({ t }) {
       <div className="max-w-7xl mx-auto px-4 md:px-8 mt-16 md:mt-24 border-t border-primary/5 pt-16">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-3xl font-extrabold text-slate-text dark:text-white tracking-tight">
-            Acceso Rápido al Estudiante
+            {t.home.quickAccess.title}
           </h2>
           <p className="text-sm text-slate-text/70 dark:text-dark-text/70 mt-2">
-            Enlaces a portales oficiales y recursos digitales del IESTP Suiza.
+            {t.home.quickAccess.subtitle}
           </p>
         </div>
 
@@ -98,28 +93,28 @@ export default function Home({ t }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
-              title: "¿Por qué IESTP Suiza?",
-              desc: "Conoce nuestra acreditación nacional, educación de calidad 100% gratuita y convenios.",
+              title: t.home.whyUs.title,
+              desc: t.home.whyUs.desc,
               link: "/about",
-              tag: "Institucional"
+              tag: t.home.whyUs.tag
             },
             {
-              title: "Admisión Regular 2026",
-              desc: "Requisitos de postulación, cronograma y vacantes de las 11 especialidades.",
+              title: t.home.admission2026.title,
+              desc: t.home.admission2026.desc,
               link: "/admission",
-              tag: "Admisiones"
+              tag: t.home.admission2026.tag
             },
             {
-              title: "Nuestras Carreras",
-              desc: "Explora la currícula, laboratorios y el campo de acción de cada carrera profesional.",
+              title: t.home.ourCareers.title,
+              desc: t.home.ourCareers.desc,
               link: "/careers",
-              tag: "Especialidades"
+              tag: t.home.ourCareers.tag
             },
             {
-              title: "Últimas Noticias",
-              desc: "Entérate de las actividades institucionales, eventos y publicaciones científicas.",
+              title: t.home.latestNews.title,
+              desc: t.home.latestNews.desc,
               link: "/news",
-              tag: "Eventos"
+              tag: t.home.latestNews.tag
             }
           ].map((item, idx) => (
             <div
@@ -141,7 +136,7 @@ export default function Home({ t }) {
                 to={item.link}
                 className="mt-6 inline-flex items-center gap-1 text-sm font-bold text-primary dark:text-secondary hover:translate-x-1 transition-all"
               >
-                <span>Saber más</span>
+                <span>{t.home.learnMore}</span>
                 <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
