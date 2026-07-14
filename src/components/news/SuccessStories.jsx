@@ -1,6 +1,6 @@
 import { Quote, Briefcase, GraduationCap, Trophy } from 'lucide-react';
 
-export default function SuccessStories({ data, onCardClick, t }) {
+export default function SuccessStories({ data, onCardClick }) {
   if (!data || !data.items) return null;
   const items = data.items;
 
@@ -53,7 +53,7 @@ export default function SuccessStories({ data, onCardClick, t }) {
 
               <button onClick={(e) => { e.stopPropagation(); onCardClick?.(item); }} className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary/10 dark:bg-primary/20 text-primary dark:text-secondary font-bold text-[11px] hover:bg-primary hover:text-white dark:hover:bg-secondary dark:hover:text-dark-bg transition-all cursor-pointer">
                 <Trophy className="w-4 h-4" />
-                {t?.news?.viewStory}
+                Conocer su Historia
               </button>
             </div>
           </div>

@@ -66,7 +66,7 @@ export default function AboutMegaMenu({ t, isMobile, onItemClick, forceClose = f
                 onClick={onItemClick}
                 className="flex items-center gap-2 px-3 py-2 text-xs font-bold text-primary hover:text-primary-dark dark:hover:text-secondary transition-colors duration-300"
               >
-                {col3.cta} <ArrowRight className="w-3.5 h-3.5" />
+                {col3.cta || 'Conócenos'} <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
           </div>
@@ -82,7 +82,7 @@ export default function AboutMegaMenu({ t, isMobile, onItemClick, forceClose = f
           {/* Column 1 */}
           <div className="space-y-2">
             <p className="text-[10px] font-bold text-primary/60 dark:text-secondary/60 uppercase tracking-[0.15em] mb-3 pl-3 transition-colors duration-300">
-              {t.megaMenu.about.institution}
+              INSTITUCIÓN
             </p>
             {col1.map((item, idx) => {
               const Icon = col1Icons[idx];
@@ -111,7 +111,7 @@ export default function AboutMegaMenu({ t, isMobile, onItemClick, forceClose = f
           {/* Column 2 */}
           <div className="space-y-2 border-x border-primary/5 dark:border-white/10 px-5 transition-colors duration-300">
             <p className="text-[10px] font-bold text-primary/60 dark:text-secondary/60 uppercase tracking-[0.15em] mb-3 pl-3 transition-colors duration-300">
-              {t.megaMenu.about.management}
+              GESTIÓN
             </p>
             {col2.map((item, idx) => {
               const Icon = col2Icons[idx];
@@ -151,7 +151,7 @@ export default function AboutMegaMenu({ t, isMobile, onItemClick, forceClose = f
                 <div className="flex-1 flex flex-col justify-center gap-2">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 dark:bg-primary/20 text-primary dark:text-secondary text-[10px] font-bold tracking-wider mx-auto transition-colors duration-300">
                     <Sparkles className="w-3 h-3" />
-                    {col3.tagline}
+                    {col3.tagline || 'Instituto de Excelencia Tecnológica'}
                   </div>
                   
                   <p className="text-[11px] text-slate-text/60 dark:text-dark-text/60 leading-relaxed transition-colors duration-300">
@@ -163,7 +163,7 @@ export default function AboutMegaMenu({ t, isMobile, onItemClick, forceClose = f
                   to="/about"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary hover:bg-primary-dark text-white text-xs font-bold transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 active:scale-95 w-full justify-center group/cta"
                 >
-                  {col3.cta}
+                  {col3.cta || 'Conócenos'}
                   <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
@@ -174,13 +174,13 @@ export default function AboutMegaMenu({ t, isMobile, onItemClick, forceClose = f
         {/* Bottom bar */}
         <div className="mt-4 pt-3 border-t border-primary/5 dark:border-white/10 flex items-center justify-between px-1 transition-colors duration-300">
           <p className="text-[10px] text-slate-text/40 dark:text-dark-text/40 transition-colors duration-300">
-            {t.megaMenu.about.location}
+            IESTP Suiza — Pucallpa, Ucayali
           </p>
           <Link
             to="/about"
             className="text-[10px] font-semibold text-primary hover:text-primary-dark dark:hover:text-secondary transition-colors duration-300"
           >
-            {t.megaMenu.about.viewFull}
+            Ver página completa →
           </Link>
         </div>
       </div>

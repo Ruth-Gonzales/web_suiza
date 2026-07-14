@@ -9,7 +9,7 @@ const typeConfig = {
   cultura: { icon: '🎭', gradient: 'from-pink-500 to-rose-600' },
 };
 
-export default function ExperienceSection({ data, t }) {
+export default function ExperienceSection({ data }) {
   if (!data || !data.items) return null;
   const items = data.items;
   const [modal, setModal] = useState(null);
@@ -96,7 +96,7 @@ export default function ExperienceSection({ data, t }) {
               {/* Gallery */}
               {modal.gallery && (
                 <div className="mb-6">
-                  <h3 className="text-xs font-bold text-slate-text dark:text-white mb-3 uppercase tracking-wider">{t?.news?.photosLabel}</h3>
+                  <h3 className="text-xs font-bold text-slate-text dark:text-white mb-3 uppercase tracking-wider">Fotografías</h3>
                   <div className="grid grid-cols-3 gap-2">
                     {modal.gallery.map((g, i) => (
                       <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden">

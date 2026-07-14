@@ -36,7 +36,7 @@ export default function VisitSection({ t }) {
               <Calendar className="w-8 h-8 text-white" />
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-              {data.title}
+              {data.title || '¿Quieres conocer nuestras instalaciones?'}
             </h2>
             <p className="text-white/80 text-sm md:text-base max-w-lg mx-auto mb-6">
               {data.subtitle}
@@ -46,7 +46,7 @@ export default function VisitSection({ t }) {
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white dark:bg-dark-surface text-primary dark:text-white font-bold text-sm hover:bg-white/90 dark:hover:bg-dark-card transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               <Calendar className="w-4 h-4" />
-              {data.cta}
+              {data.cta || 'Agendar visita'}
             </button>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function VisitSection({ t }) {
           >
             <div className="flex items-center justify-between mb-6">
               <h3 className="font-bold text-lg text-slate-text dark:text-white">
-                {data.modalTitle}
+                {data.modalTitle || 'Solicitar visita'}
               </h3>
               <button onClick={reset} className="p-1.5 rounded-lg hover:bg-slate-light dark:hover:bg-dark-border/50 text-slate-text/50 dark:text-dark-text/50 transition-colors">
                 <X className="w-5 h-5" />
@@ -74,24 +74,24 @@ export default function VisitSection({ t }) {
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <p className="text-sm text-slate-text/80 dark:text-dark-text/80">{data.success}</p>
-                <button onClick={reset} className="mt-4 text-xs text-primary hover:underline">{data.close}</button>
+                <button onClick={reset} className="mt-4 text-xs text-primary hover:underline">Cerrar</button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-text/80 dark:text-dark-text/80 mb-1">{data.nameLabel}</label>
+                  <label className="block text-xs font-semibold text-slate-text/80 dark:text-dark-text/80 mb-1">{data.nameLabel || 'Nombre Completo'}</label>
                   <input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full px-4 py-2.5 rounded-xl bg-slate-light/60 dark:bg-dark-border/30 border border-primary/5 dark:border-white/8 focus:border-primary outline-none text-sm transition-all text-slate-text dark:text-white" />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-text/80 dark:text-dark-text/80 mb-1">{data.phoneLabel}</label>
+                  <label className="block text-xs font-semibold text-slate-text/80 dark:text-dark-text/80 mb-1">{data.phoneLabel || 'Teléfono'}</label>
                   <input type="tel" required value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full px-4 py-2.5 rounded-xl bg-slate-light/60 dark:bg-dark-border/30 border border-primary/5 dark:border-white/8 focus:border-primary outline-none text-sm transition-all text-slate-text dark:text-white" />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-text/80 dark:text-dark-text/80 mb-1">{data.emailLabel}</label>
+                  <label className="block text-xs font-semibold text-slate-text/80 dark:text-dark-text/80 mb-1">{data.emailLabel || 'Correo Electrónico'}</label>
                   <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full px-4 py-2.5 rounded-xl bg-slate-light/60 dark:bg-dark-border/30 border border-primary/5 dark:border-white/8 focus:border-primary outline-none text-sm transition-all text-slate-text dark:text-white" />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-text/80 dark:text-dark-text/80 mb-1">{data.dateLabel}</label>
+                  <label className="block text-xs font-semibold text-slate-text/80 dark:text-dark-text/80 mb-1">{data.dateLabel || 'Fecha de visita'}</label>
                   <input type="date" required value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} className="w-full px-4 py-2.5 rounded-xl bg-slate-light/60 dark:bg-dark-border/30 border border-primary/5 dark:border-white/8 focus:border-primary outline-none text-sm transition-all text-slate-text dark:text-white" />
                 </div>
                 <button
@@ -104,7 +104,7 @@ export default function VisitSection({ t }) {
                   ) : (
                     <>
                       <Send className="w-4 h-4" />
-                      {data.sendButton}
+                      {data.sendButton || 'Enviar solicitud'}
                     </>
                   )}
                 </button>
