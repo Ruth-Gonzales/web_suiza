@@ -1,9 +1,32 @@
 import { Share2, Building2, Users, ChevronRight, GraduationCap, Settings, ClipboardList } from 'lucide-react';
 import AboutPageShell from './AboutPageShell';
 
-const levelIcons = { Building2, Settings, GraduationCap, ClipboardList };
-
-const defaultOrgLevels = [];
+const orgLevels = [
+  {
+    title: 'Dirección General',
+    icon: Building2,
+    level: 0,
+    items: ['Dirección General'],
+  },
+  {
+    title: 'Órganos de Apoyo',
+    icon: Settings,
+    level: 1,
+    items: ['Secretaría Académica', 'Administración y Finanzas', 'Unidad de RR.HH.'],
+  },
+  {
+    title: 'Órganos de Línea',
+    icon: GraduationCap,
+    level: 1,
+    items: ['Jefatura Académica', 'Jefatura de Investigación', 'Jefatura de Bienestar'],
+  },
+  {
+    title: 'Unidades Operativas',
+    icon: ClipboardList,
+    level: 2,
+    items: ['Coordinación de Programas', 'Laboratorios', 'Biblioteca', 'Tutoría'],
+  },
+];
 
 export default function Organigrama({ t }) {
   const data = t.aboutMenu?.col2?.[2] || {};
@@ -11,8 +34,8 @@ export default function Organigrama({ t }) {
   return (
     <AboutPageShell
       t={t}
-      title={data.title}
-      breadcrumb={data.title}
+      title={data.title || 'Organigrama Institucional'}
+      breadcrumb={data.title || 'Organigrama Institucional'}
     >
       {/* Intro */}
       <div className="rounded-[2rem] bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 p-8 shadow-sm mb-8">
@@ -21,9 +44,10 @@ export default function Organigrama({ t }) {
             <Share2 className="w-7 h-7 text-primary dark:text-secondary" />
           </div>
           <div>
-            <h2 className="text-xl font-bold text-slate-text dark:text-white mb-2">{t.aboutPage.organigrama.introTitle}</h2>
+            <h2 className="text-xl font-bold text-slate-text dark:text-white mb-2">Estructura Orgánica</h2>
             <p className="text-sm text-slate-text/70 dark:text-dark-text/70 leading-relaxed">
-              {t.aboutPage.organigrama.introDesc}
+              El IESTP Suiza cuenta con una estructura organizativa moderna y funcional, diseñada para 
+              garantizar una gestión eficiente y una comunicación fluida entre todas las instancias institucionales.
             </p>
           </div>
         </div>
@@ -31,8 +55,8 @@ export default function Organigrama({ t }) {
 
       {/* Organigrama visual */}
       <div className="rounded-[2rem] bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 p-8 md:p-10 shadow-sm mb-8">
-        {defaultOrgLevels.map((level, idx) => {
-          const Icon = levelIcons[level.icon] || Building2;
+        {orgLevels.map((level, idx) => {
+          const Icon = level.icon;
           const isTop = level.level === 0;
           return (
             <div key={idx} className="mb-6 last:mb-0">
@@ -61,7 +85,7 @@ export default function Organigrama({ t }) {
                 ))}
               </div>
               {/* Connector line */}
-              {idx < defaultOrgLevels.length - 1 && (
+              {idx < orgLevels.length - 1 && (
                 <div className="flex justify-center my-3">
                   <div className="w-px h-6 bg-primary/20 dark:bg-primary/30" />
                 </div>
@@ -75,10 +99,14 @@ export default function Organigrama({ t }) {
       <div className="rounded-[2rem] bg-primary/5 dark:bg-primary/10 border border-primary/10 dark:border-white/8 p-8 shadow-sm">
         <h3 className="font-bold text-slate-text dark:text-white mb-3 flex items-center gap-2">
           <Users className="w-5 h-5 text-primary dark:text-secondary" />
-          {t.aboutPage.organigrama.governmentTitle}
+          Órganos de Gobierno
         </h3>
         <div className="space-y-3">
-          {(t.aboutPage.organigrama.government).map((item, idx) => (
+          {[
+            { title: 'Consejo Directivo', desc: 'Máximo órgano de gobierno encargado de aprobar políticas, planes y presupuestos institucionales.' },
+            { title: 'Dirección General', desc: 'Responsable de la conducción y representación legal de la institución.' },
+            { title: 'Comité Académico', desc: 'Órgano consultivo que evalúa y propone mejoras en los procesos formativos.' },
+          ].map((item, idx) => (
             <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-white dark:bg-dark-card border border-primary/5 dark:border-white/5">
               <div className="w-8 h-8 rounded-lg bg-primary/10 dark:bg-primary/20 flex items-center justify-center flex-shrink-0">
                 <span className="text-xs font-bold text-primary dark:text-secondary">{idx + 1}</span>

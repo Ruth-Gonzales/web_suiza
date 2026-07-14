@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { Calendar, Eye, Sparkles, Compass } from 'lucide-react';
 
-export default function HeroHighlight({ item, onAction, t }) {
+export default function HeroHighlight({ item, onAction }) {
   const ref = useRef(null);
   const [offsetY, setOffsetY] = useState(0);
 
@@ -64,21 +64,21 @@ export default function HeroHighlight({ item, onAction, t }) {
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white dark:bg-dark-surface text-primary dark:text-white font-bold text-sm hover:bg-white/90 dark:hover:bg-dark-card hover:-translate-y-0.5 transition-all shadow-lg cursor-pointer"
             >
               <Sparkles className="w-4 h-4" />
-              {t?.news?.discoverStory}
+              Descubrir Historia
             </button>
             <button
               onClick={() => onAction?.('details')}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/15 dark:bg-white/[0.05] backdrop-blur-md border border-white/25 text-white font-bold text-sm hover:bg-white/25 hover:-translate-y-0.5 transition-all cursor-pointer"
             >
               <Eye className="w-4 h-4" />
-              {t?.news?.viewDetails}
+              Ver Detalles
             </button>
             <button
               onClick={() => onAction?.('explore')}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/15 dark:bg-white/[0.05] backdrop-blur-md border border-white/25 text-white font-bold text-sm hover:bg-white/25 hover:-translate-y-0.5 transition-all cursor-pointer"
             >
               <Compass className="w-4 h-4" />
-              {t?.news?.learnMore}
+              Conocer Más
             </button>
           </div>
         </div>

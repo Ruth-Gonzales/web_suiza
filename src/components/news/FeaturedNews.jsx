@@ -1,6 +1,6 @@
 import { Calendar, ArrowRight } from 'lucide-react';
 
-export default function FeaturedNews({ item, onReadMore, t }) {
+export default function FeaturedNews({ item, onReadMore }) {
   if (!item) return null;
 
   return (
@@ -34,7 +34,7 @@ export default function FeaturedNews({ item, onReadMore, t }) {
               onClick={onReadMore}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white dark:bg-dark-surface text-primary dark:text-white font-bold text-sm hover:bg-white/90 dark:hover:bg-dark-card transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer"
             >
-              {t?.news?.readMore}
+              Leer más
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>

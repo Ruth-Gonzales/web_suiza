@@ -15,7 +15,7 @@ export default function TestimonialsCarousel({ t }) {
   return (
     <section className="mb-16">
       <h2 className="text-2xl md:text-3xl font-bold text-slate-text dark:text-white mb-2 text-center">
-        {data.title}
+        {data.title || 'Lo que dicen nuestros estudiantes'}
       </h2>
       <p className="text-sm text-slate-text/60 dark:text-dark-text/60 text-center mb-10 max-w-xl mx-auto">
         {data.subtitle}

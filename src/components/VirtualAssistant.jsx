@@ -1,19 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-<<<<<<< HEAD
 import { X, Send, User, Bot, HelpCircle, PhoneCall, Calendar } from 'lucide-react';
-=======
-import { MessageSquare, X, Send, User, Bot, HelpCircle, PhoneCall, Calendar } from 'lucide-react';
-import { translations } from '../translations';
-
-const t = translations[localStorage.getItem('lang') || 'es'];
->>>>>>> web_suiza/clase2
 
 export default function VirtualAssistant() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
       sender: 'ai',
-      text: t.assistant.welcome,
+      text: "👋 ¡Hola! Soy SuizaAI, el asistente virtual del IESTP Suiza.\n\nEstoy listo para ayudarte con cualquier duda que tengas sobre:\n• 📚 Carreras Profesionales\n• 📅 Cronograma de Admisión 2026-II\n• 💰 Costo de Inscripción\n• 📋 Requisitos de Admisión\n\n¿En qué te puedo asesorar hoy?",
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   ]);
@@ -62,53 +55,53 @@ export default function VirtualAssistant() {
     const query = normalizeText(input);
     
     if (query.includes('hola') || query.includes('buenos dias') || query.includes('buenas tardes') || query.includes('saludos') || query.includes('buen dia')) {
-      return t.assistant.greeting;
+      return "👋 ¡Hola! ¿Cómo estás? Soy SuizaAI, el asistente virtual del IESTP Suiza.\n\nEstoy listo para contestar tus dudas de manera estructurada sobre:\n• 📚 Carreras Profesionales\n• 📅 Cronograma de Admisión 2026-II\n• 💰 Costo de Inscripción\n• 📋 Requisitos de Admisión\n\n¿En qué te puedo ayudar hoy?";
     }
     
     if (query.includes('costo') || query.includes('precio') || query.includes('pagar') || query.includes('pago') || query.includes('tasa') || query.includes('cuesta') || query.includes('postular')) {
-      return t.assistant.costs;
+      return "💰 Tasas de Admisión 2026-II:\n\n• 💵 Examen Ordinario (General): S/ 180.00\n• 💵 Exonerados / Especiales: S/ 300.00\n*(Primeros puestos, titulados, deportistas calificados)*\n• 💵 Convenios Especiales: S/ 180.00\n*(Comunidades nativas y personas con discapacidad)*\n\n📍 El pago es único y se realiza presencialmente en la Oficina de Tesorería del campus principal.";
     }
     
     if (query.includes('requisito') || query.includes('documento') || query.includes('papel') || query.includes('que necesito') || query.includes('carpeta')) {
-      return t.assistant.requirements;
+      return "📋 Requisitos Obligatorios para Postular:\n\n1️⃣ Certificado original de estudios secundarios completos de 1° a 5° grado *(visado por la UGEL si no cuenta con código QR/firma digital)*.\n2️⃣ Copia simple de DNI vigente (ampliada y legible).\n3️⃣ Partida de nacimiento original.\n4️⃣ 4 fotografías actuales tamaño carnet a color con fondo blanco.\n5️⃣ Recibo de pago de inscripción original emitido por tesorería.";
     }
 
     if (query.includes('requisitos fisicos') || query.includes('requisito fisico') || query.includes('salud') || query.includes('fisico') || query.includes('medico') || query.includes('aptitud')) {
-      return t.assistant.physicalRequirements;
+      return "🏥 Requisitos de Aptitud Física y Médica:\n\n1️⃣ Certificado de Salud original expedido por el MINSA o EsSalud.\n2️⃣ Constancia de Aptitud Física y Mental firmada por médico cirujano colegiado.\n3️⃣ Constancia de Grupo Sanguíneo (RH) emitida por laboratorio clínico.\n4️⃣ Declaración Jurada de Aptitud firmada en tu carpeta oficial.";
     }
     
     if (query.includes('carrera') || query.includes('especialidad') || query.includes('estudiar') || query.includes('programas') || query.includes('profesiones')) {
-      return t.assistant.careers;
+      return "📚 Nuestras 11 Carreras Profesionales (3 años / 6 semestres):\n\n💻 Tecnología e Informática:\n• Desarrollo de Sistemas de Información\n• Electricidad Industrial\n\n🏥 Salud:\n• Enfermería Técnica\n\n💼 Gestión y Servicios:\n• Contabilidad\n• Administración de Empresas\n• Asistencia Administrativa\n• Administración de Operaciones Turísticas\n\n🚜 Ingeniería y Campo:\n• Mecatrónica Automotriz\n• Producción Agropecuaria\n• Manejo Forestal\n• Construcción Civil\n\n🎓 Todos los egresados obtienen Título Profesional Técnico a Nombre de la Nación.";
     }
     
     if (query.includes('fecha') || query.includes('cuando es') || query.includes('cronograma') || query.includes('calendario') || query.includes('dia del examen') || query.includes('cuando empieza')) {
-      return t.assistant.calendar;
+      return "📅 Calendario Oficial - Admisión II Semestre 2026:\n\n• 📝 Inscripciones y Carpeta: 08 de Junio al 18 de Agosto de 2026.\n• ✍ Examen Simulacro (CEPRETEC): Domingo 23 de Agosto de 2026.\n• 🏫 Examen de Admisión Ordinario: Domingo 30 de Agosto de 2026 (Ingreso al campus hasta 07:30 AM).\n• 📊 Publicación de Resultados: Lunes 31 de Agosto de 2026.\n• 🚀 Inicio de Clases: Lunes 07 de Septiembre de 2026.";
     }
     
     if (query.includes('donde queda') || query.includes('direccion') || query.includes('ubicacion') || query.includes('donde estan') || query.includes('campus') || query.includes('como llegar')) {
-      return t.assistant.location;
+      return "📍 Ubicación y Horarios de Atención:\n\n• 🏢 Dirección: Carretera Federico Basadre Km 5.700, Callería, Pucallpa (Coronel Portillo, Ucayali).\n• ⏰ Horario de Admisión: Lunes a Viernes de 8:00 AM a 4:30 PM.";
     }
     
     if (query.includes('gratis') || query.includes('mensualidad') || query.includes('pension') || query.includes('pagar mes') || query.includes('cuota')) {
-      return t.assistant.freeEducation;
+      return "✨ ¡Educación Pública 100% Gratuita! ✨\n\nAl ser una institución pública licenciada por el MINEDU:\n• ❌ Cero Mensualidades: No pagas pensión de enseñanza.\n• ❌ Cero Costos Ocultos: Solo cancelas derecho de admisión y matrícula semestral básica.\n• 🎓 Título Oficial: Gradúate con el respaldo del Estado peruano.";
     }
 
     if (query.includes('sistemas') || query.includes('computacion') || query.includes('informatica') || query.includes('desarrollo') || query.includes('software') || query.includes('programacion')) {
-      return t.assistant.careerSystems;
+      return "💻 Carrera: Desarrollo de Sistemas de Información\n\n• ⏳ Duración: 3 Años (6 Semestres).\n• ⏰ Turnos: Diurno y Vespertino.\n• 💼 Campo Laboral: Programación de software, bases de datos relacionales/NoSQL, desarrollo móvil y servidores.\n• 📈 Empleabilidad: 92% (Alta demanda).";
     }
 
     if (query.includes('enfermeria') || query.includes('enfermeria') || query.includes('salud') || query.includes('clinica') || query.includes('medica')) {
-      return t.assistant.careerNursing;
+      return "🏥 Carrera: Enfermería Técnica\n\n• ⏳ Duración: 3 Años (6 Semestres).\n• ⏰ Turnos: Diurno y Vespertino.\n• 💼 Campo Laboral: Hospitales (MINSA, EsSalud), clínicas, postas médicas y asistencia a pacientes.\n• 🤝 Prácticas: Convenios activos con los principales centros médicos de Ucayali.";
     }
 
     if (query.includes('seguridad') || query.includes('cerco') || query.includes('perimetro') || query.includes('invasion') || query.includes('invasiones') || query.includes('terrenos') || query.includes('protesta') || query.includes('defensa')) {
-      return t.assistant.security;
+      return "🛡️ Seguridad y Defensa del Campus:\n\n• 🌲 Antecedente Histórico: En 2011, la comunidad educativa defendió con éxito el campus forestal frente a una invasión ilegal que dañó plantaciones de cedro y copaiba, iniciando la lucha por el cerco perimétrico.\n• 🏗️ Nueva Solución Integral: Gracias a la histórica inversión de S/ 201 millones del GORE Ucayali, se está construyendo un moderno cerco perimetral de concreto y módulos de alta seguridad para blindar los laboratorios, talleres y campos agrícolas de prácticas.";
     }
 
     if (query.includes('humano') || query.includes('asesor') || query.includes('persona') || query.includes('hablar con alguien') || query.includes('atencion') || query.includes('whatsapp') || query.includes('contacto') || query.includes('telefono') || query.includes('telefono')) {
       return "TRANSFER_HUMAN"; 
     }
-    return t.assistant.fallback;
+    return "Lo siento, no tengo una respuesta específica sobre ese tema.\n\nPrueba preguntando sobre:\n👉 'carreras'\n👉 'requisitos'\n👉 'costos'\n👉 'fechas'\n\nSi necesitas ayuda especializada, escribe 'hablar con un asesor' o haz clic en el botón de abajo para transferirte con un asesor humano.";
   };
 
   const getAIResponseFromAPI = async (inputText, chatHistory) => {
@@ -308,28 +301,23 @@ REGLAS CRÍTICAS DE COMPORTAMIENTO:
   const triggerHumanTransfer = () => {
     const isAvailable = checkHumanAvailability();
     if (isAvailable) {
-      const text = t.assistant.connectingHuman;
+      const text = "¡Perfecto! Te estoy conectando con nuestro asesor de admisión humano de guardia vía WhatsApp. Por favor, haz clic en el botón de abajo para iniciar el chat en tiempo real.";
       const action = {
-<<<<<<< HEAD
         label: "Iniciar Chat de WhatsApp",
         link: "https://wa.me/51988452394?text=Hola,%20necesito%20ayuda%20con%20el%20proceso%20de%20admisi%C3%B3n%20del%20IESTP%20Suiza"
-=======
-        label: t.assistant.startWhatsApp,
-        link: "https://wa.me/51961280665?text=Hola,%20necesito%20ayuda%20con%20el%20proceso%20de%20admisi%C3%B3n%20del%20IESTP%20Suiza"
->>>>>>> web_suiza/clase2
       };
       streamAIResponse(text, action);
     } else {
-      const text = t.assistant.offHours;
+      const text = "Lo sentimos. El horario de atención presencial con asesores humanos es únicamente de Lunes a Viernes desde la 1:00 PM hasta las 7:00 PM. Fuera de este horario, puedes seguir interactuando con nuestra Inteligencia Artificial o escribirnos directamente a admision@iestpsuiza.edu.pe y responderemos a primera hora.";
       streamAIResponse(text);
     }
   };
 
   const commonQuestions = [
-    { text: t.assistant.q1, label: t.assistant.q1Label },
-    { text: t.assistant.q2, label: t.assistant.q2Label },
-    { text: t.assistant.q3, label: t.assistant.q3Label },
-    { text: t.assistant.q4, label: t.assistant.q4Label }
+    { text: "¿Qué carreras tienen?", label: "📚 Carreras" },
+    { text: "¿Cuánto cuesta postular?", label: "💰 Costos" },
+    { text: "¿Cuáles son los requisitos de postulación?", label: "📋 Requisitos" },
+    { text: "Quiero hablar con un asesor humano", label: "👤 Hablar con Humano" }
   ];
 
   const isBotBusy = isTyping || messages.some(m => m.isStreaming);
@@ -339,7 +327,6 @@ REGLAS CRÍTICAS DE COMPORTAMIENTO:
       
       {/* 1. CHAT TOGGLE - ROBOT CHARACTER */}
       {!isOpen && (
-<<<<<<< HEAD
         <div className="suiza-robot-scale" data-mood="happy">
           <div
             className="suiza-robot-wrapper"
@@ -375,15 +362,6 @@ REGLAS CRÍTICAS DE COMPORTAMIENTO:
             </div>
           </div>
         </div>
-=======
-        <button
-          onClick={() => setIsOpen(true)}
-          className="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer border border-white/10"
-          title={t.assistant.title}
-        >
-          <MessageSquare className="w-6 h-6 animate-pulse" />
-        </button>
->>>>>>> web_suiza/clase2
       )}
 
       {/* 2. CHAT DRAWER PANEL */}
@@ -397,11 +375,11 @@ REGLAS CRÍTICAS DE COMPORTAMIENTO:
                 <Bot className="w-4.5 h-4.5" />
               </div>
               <div className="text-left">
-                <h4 className="font-extrabold text-sm leading-none">{t.assistant.name}</h4>
+                <h4 className="font-extrabold text-sm leading-none">SuizaAI</h4>
                 <div className="flex items-center gap-1.5 mt-1">
                   <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping"></span>
                   <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full absolute"></span>
-                  <span className="text-[9px] text-white/75 font-semibold">{t.assistant.statusActive}</span>
+                  <span className="text-[9px] text-white/75 font-semibold">Virtual Activo</span>
                 </div>
               </div>
             </div>
@@ -425,7 +403,7 @@ REGLAS CRÍTICAS DE COMPORTAMIENTO:
                   {/* Sender name & time */}
                   <div className="flex items-center gap-1.5 mb-1 px-1 text-[8px] text-slate-400 font-bold uppercase tracking-wider">
                     {isUser ? <User className="w-2.5 h-2.5" /> : <Bot className="w-2.5 h-2.5" />}
-                    <span>{isUser ? t.assistant.you : t.assistant.name}</span>
+                    <span>{isUser ? 'Tú' : 'SuizaAI'}</span>
                     <span>•</span>
                     <span>{m.time}</span>
                   </div>
@@ -470,7 +448,7 @@ REGLAS CRÍTICAS DE COMPORTAMIENTO:
               <div className="flex flex-col items-start max-w-[85%] self-start animate-pulse">
                 <div className="flex items-center gap-1.5 mb-1 px-1 text-[8px] text-slate-400 font-bold uppercase tracking-wider">
                   <Bot className="w-2.5 h-2.5" />
-                  <span>{t.assistant.responding}</span>
+                  <span>SuizaAI está respondiendo...</span>
                 </div>
                 <div className="px-4 py-2.5 rounded-2xl bg-white dark:bg-dark-card border border-slate-100 dark:border-dark-border/40 rounded-tl-none flex gap-1">
                   <span className="w-1.5 h-1.5 bg-primary/60 rounded-full animate-bounce"></span>
@@ -508,7 +486,7 @@ REGLAS CRÍTICAS DE COMPORTAMIENTO:
               onChange={(e) => setInputVal(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
               disabled={isBotBusy}
-              placeholder={isBotBusy ? t.assistant.respondingPlaceholder : t.assistant.inputPlaceholder}
+              placeholder={isBotBusy ? "SuizaAI está respondiendo..." : "Escribe tu consulta aquí..."}
               className={`flex-1 px-4 py-2.5 border border-slate-100 dark:border-dark-border/40 rounded-full text-xs md:text-sm bg-slate-50 dark:bg-dark-bg/20 text-[#1A202C] dark:text-white focus:outline-none focus:border-primary/50 focus:bg-white ${
                 isBotBusy ? 'opacity-65 cursor-not-allowed' : ''
               }`}
@@ -519,7 +497,7 @@ REGLAS CRÍTICAS DE COMPORTAMIENTO:
               className={`w-9.5 h-9.5 rounded-full bg-primary hover:bg-primary-dark text-white flex items-center justify-center transition-all cursor-pointer shadow-md shadow-primary/15 shrink-0 ${
                 isBotBusy ? 'opacity-50 cursor-not-allowed hover:bg-primary' : ''
               }`}
-              aria-label={t.assistant.ariaSend}
+              aria-label="Enviar"
             >
               <Send className="w-4 h-4" />
             </button>

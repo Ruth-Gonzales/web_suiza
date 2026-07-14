@@ -20,7 +20,7 @@ const StatBadge = ({ icon, value, label }) => (
   </div>
 );
 
-export default function EventDetailModal({ item, onClose, allItems, t }) {
+export default function EventDetailModal({ item, onClose, allItems }) {
   const [galleryIdx, setGalleryIdx] = useState(0);
   const [liked, setLiked] = useState(false);
 
@@ -94,7 +94,7 @@ export default function EventDetailModal({ item, onClose, allItems, t }) {
           <div className="flex items-center gap-3 mb-4 flex-wrap">
             <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 dark:bg-primary/20 text-primary dark:text-secondary text-[10px] font-bold uppercase">
               <Tag className="w-3 h-3" />
-              {item.tag || item.categoryId || t?.news?.newsLabel}
+              {item.tag || item.categoryId || 'Noticia'}
             </span>
             <span className="inline-flex items-center gap-1 text-xs text-slate-text/50 dark:text-dark-text/50">
               <Calendar className="w-3.5 h-3.5" />
@@ -110,25 +110,25 @@ export default function EventDetailModal({ item, onClose, allItems, t }) {
           {/* ===== INFO CARDS GRID ===== */}
           {(item.time || item.location || item.organizer || item.audience) && (
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
-              {item.date && <InfoCard icon={<Calendar className="w-4 h-4 text-primary dark:text-secondary" />} label={t?.news?.dateLabel} value={item.date} />}
-              {item.time && <InfoCard icon={<Clock className="w-4 h-4 text-primary dark:text-secondary" />} label={t?.news?.timeLabel} value={item.time} />}
-              {item.location && <InfoCard icon={<MapPin className="w-4 h-4 text-primary dark:text-secondary" />} label={t?.news?.locationLabel} value={item.location} />}
-              {item.organizer && <InfoCard icon={<Briefcase className="w-4 h-4 text-primary dark:text-secondary" />} label={t?.news?.organizerLabel} value={item.organizer} />}
-              {item.audience && <InfoCard icon={<Users className="w-4 h-4 text-primary dark:text-secondary" />} label={t?.news?.audienceLabel} value={item.audience} />}
-              {item.objective && <InfoCard icon={<Target className="w-4 h-4 text-primary dark:text-secondary" />} label={t?.news?.objectiveLabel} value={item.objective} />}
+              {item.date && <InfoCard icon={<Calendar className="w-4 h-4 text-primary dark:text-secondary" />} label="Fecha" value={item.date} />}
+              {item.time && <InfoCard icon={<Clock className="w-4 h-4 text-primary dark:text-secondary" />} label="Hora" value={item.time} />}
+              {item.location && <InfoCard icon={<MapPin className="w-4 h-4 text-primary dark:text-secondary" />} label="Lugar" value={item.location} />}
+              {item.organizer && <InfoCard icon={<Briefcase className="w-4 h-4 text-primary dark:text-secondary" />} label="Organizador" value={item.organizer} />}
+              {item.audience && <InfoCard icon={<Users className="w-4 h-4 text-primary dark:text-secondary" />} label="Público" value={item.audience} />}
+              {item.objective && <InfoCard icon={<Target className="w-4 h-4 text-primary dark:text-secondary" />} label="Objetivo" value={item.objective} />}
             </div>
           )}
 
           {/* ===== DESCRIPTION ===== */}
           <div className="mb-8">
-            <h3 className="text-sm font-bold text-slate-text dark:text-white mb-3 uppercase tracking-wider">{t?.news?.descriptionLabel}</h3>
+            <h3 className="text-sm font-bold text-slate-text dark:text-white mb-3 uppercase tracking-wider">Descripción</h3>
             <p className="text-sm text-slate-text/70 dark:text-dark-text/70 leading-relaxed">{item.desc}</p>
           </div>
 
           {/* ===== BENEFITS ===== */}
           {eventBenefits.length > 0 && (
             <div className="mb-8">
-              <h3 className="text-sm font-bold text-slate-text dark:text-white mb-3 uppercase tracking-wider">{t?.news?.benefitsLabel}</h3>
+              <h3 className="text-sm font-bold text-slate-text dark:text-white mb-3 uppercase tracking-wider">Beneficios de asistir</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {eventBenefits.map((b, i) => (
                   <div key={i} className="flex items-center gap-2.5 p-2.5 rounded-xl bg-emerald-50/50 dark:bg-emerald-500/5 border border-emerald-200/30 dark:border-emerald-500/10">
@@ -143,7 +143,7 @@ export default function EventDetailModal({ item, onClose, allItems, t }) {
           {/* ===== AGENDA TIMELINE ===== */}
           {eventAgenda.length > 0 && (
             <div className="mb-8">
-              <h3 className="text-sm font-bold text-slate-text dark:text-white mb-4 uppercase tracking-wider">{t?.news?.agendaLabel}</h3>
+              <h3 className="text-sm font-bold text-slate-text dark:text-white mb-4 uppercase tracking-wider">Agenda del Evento</h3>
               <div className="relative pl-8 space-y-0">
                 <div className="absolute left-[15px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary via-secondary to-primary/20 rounded-full" />
                 {eventAgenda.map((a, i) => (
@@ -171,7 +171,7 @@ export default function EventDetailModal({ item, onClose, allItems, t }) {
           {/* ===== LOCATION ===== */}
           {eventLoc && (
             <div className="mb-8">
-              <h3 className="text-sm font-bold text-slate-text dark:text-white mb-3 uppercase tracking-wider">{t?.news?.locationDetailLabel}</h3>
+              <h3 className="text-sm font-bold text-slate-text dark:text-white mb-3 uppercase tracking-wider">Ubicación</h3>
               <div className="rounded-2xl bg-slate-light/60 dark:bg-dark-border/20 border border-primary/5 dark:border-white/5 p-5">
                 <div className="flex items-start gap-3 mb-3">
                   <MapPin className="w-5 h-5 text-primary dark:text-secondary shrink-0 mt-0.5" />
@@ -183,17 +183,17 @@ export default function EventDetailModal({ item, onClose, allItems, t }) {
                 <div className="h-32 md:h-36 rounded-xl bg-gradient-to-br from-sky-100 to-primary/10 dark:from-dark-border dark:to-primary/5 flex items-center justify-center border border-primary/5 dark:border-white/5">
                   <div className="text-center">
                     <MapPin className="w-8 h-8 text-primary/40 dark:text-secondary/40 mx-auto mb-1" />
-                    <p className="text-[10px] text-slate-text/40 dark:text-dark-text/40">{t?.news?.interactiveMap}</p>
+                    <p className="text-[10px] text-slate-text/40 dark:text-dark-text/40">Mapa interactivo</p>
                   </div>
                 </div>
                 <div className="flex gap-2 mt-3">
                   <button className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-primary text-white text-[11px] font-bold hover:bg-primary-dark transition-all cursor-pointer">
                     <ExternalLink className="w-3.5 h-3.5" />
-                    {t?.news?.howToGetThere}
+                    Cómo llegar
                   </button>
                   <button className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-slate-light dark:bg-dark-border/40 text-slate-text dark:text-dark-text text-[11px] font-bold hover:bg-primary hover:text-white dark:hover:bg-secondary dark:hover:text-dark-bg transition-all cursor-pointer">
                     <MapPin className="w-3.5 h-3.5" />
-                    {t?.news?.openInMaps}
+                    Abrir en Google Maps
                   </button>
                 </div>
               </div>
@@ -203,7 +203,7 @@ export default function EventDetailModal({ item, onClose, allItems, t }) {
           {/* ===== GALLERY ===== */}
           {eventGallery.length > 0 && (
             <div className="mb-8">
-              <h3 className="text-sm font-bold text-slate-text dark:text-white mb-3 uppercase tracking-wider">{t?.news?.galleryLabel}</h3>
+              <h3 className="text-sm font-bold text-slate-text dark:text-white mb-3 uppercase tracking-wider">Galería</h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                 {eventGallery.map((g, i) => (
                   <button
@@ -226,7 +226,7 @@ export default function EventDetailModal({ item, onClose, allItems, t }) {
           {/* ===== VIDEOS ===== */}
           {eventVideos.length > 0 && (
             <div className="mb-8">
-              <h3 className="text-sm font-bold text-slate-text dark:text-white mb-3 uppercase tracking-wider">{t?.news?.videosLabel}</h3>
+              <h3 className="text-sm font-bold text-slate-text dark:text-white mb-3 uppercase tracking-wider">🎥 Videos del Evento</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {eventVideos.map((v, i) => (
                   <div key={i} className="group rounded-xl overflow-hidden bg-slate-light/60 dark:bg-dark-border/20 border border-primary/5 dark:border-white/5 cursor-pointer">
@@ -249,7 +249,7 @@ export default function EventDetailModal({ item, onClose, allItems, t }) {
           {/* ===== STATISTICS ===== */}
           {eventStats.length > 0 && (
             <div className="mb-8">
-              <h3 className="text-sm font-bold text-slate-text dark:text-white mb-3 uppercase tracking-wider">{t?.news?.statsLabel}</h3>
+              <h3 className="text-sm font-bold text-slate-text dark:text-white mb-3 uppercase tracking-wider">Estadísticas del Evento</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
                 {eventStats.map((s, i) => (
                   <StatBadge key={i} value={s.value} label={s.label} />
@@ -261,7 +261,7 @@ export default function EventDetailModal({ item, onClose, allItems, t }) {
           {/* ===== TESTIMONIALS ===== */}
           {eventTestimonials.length > 0 && (
             <div className="mb-8">
-              <h3 className="text-sm font-bold text-slate-text dark:text-white mb-3 uppercase tracking-wider">{t?.news?.testimonialsLabel}</h3>
+              <h3 className="text-sm font-bold text-slate-text dark:text-white mb-3 uppercase tracking-wider">Testimonios</h3>
               <div className="space-y-3">
                 {eventTestimonials.map((t, i) => (
                   <div key={i} className="p-4 rounded-xl bg-slate-light/60 dark:bg-dark-border/20 border border-primary/5 dark:border-white/5">
@@ -286,7 +286,7 @@ export default function EventDetailModal({ item, onClose, allItems, t }) {
           {/* ===== RELATED EVENTS ===== */}
           {eventRelated.length > 0 && (
             <div className="mb-6">
-              <h3 className="text-sm font-bold text-slate-text dark:text-white mb-3 uppercase tracking-wider">{t?.news?.relatedEventsLabel}</h3>
+              <h3 className="text-sm font-bold text-slate-text dark:text-white mb-3 uppercase tracking-wider">🚀 También te puede interesar</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {eventRelated.map((r, i) => (
                   <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-slate-light/60 dark:bg-dark-border/20 border border-primary/5 dark:border-white/5 hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors cursor-pointer">
@@ -312,11 +312,11 @@ export default function EventDetailModal({ item, onClose, allItems, t }) {
               }`}
             >
               <Heart className={`w-4 h-4 ${liked ? 'fill-rose-500' : ''}`} />
-              {liked ? t?.news?.liked : t?.news?.like}
+              {liked ? 'Te gusta' : 'Me gusta'}
             </button>
             <button className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-light/60 dark:bg-dark-border/30 text-slate-text/60 dark:text-dark-text/60 hover:text-primary dark:hover:text-secondary font-bold text-xs transition-all cursor-pointer">
               <Share2 className="w-4 h-4" />
-              {t?.news?.share}
+              Compartir
             </button>
           </div>
         </div>

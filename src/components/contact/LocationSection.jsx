@@ -27,7 +27,7 @@ export default function LocationSection({ t }) {
   useEffect(() => {
     if (geoStatus === 'detecting') {
       if (!navigator.geolocation) {
-        setGeoError(loc.notSupported);
+        setGeoError('Geolocalización no soportada');
         setGeoStatus('error');
         return;
       }
@@ -50,7 +50,7 @@ export default function LocationSection({ t }) {
   return (
     <section id="map" className="mb-12">
       <h2 className="text-2xl md:text-3xl font-bold text-slate-text dark:text-white mb-2 text-center">
-        {title}
+        {title || '¿Cómo llegar al IESTP Suiza?'}
       </h2>
       <p className="text-sm text-slate-text/60 dark:text-dark-text/60 text-center mb-8 max-w-xl mx-auto">
         {references}
@@ -60,7 +60,7 @@ export default function LocationSection({ t }) {
         {/* Map */}
         <div className="lg:col-span-2 rounded-2xl overflow-hidden border border-primary/10 dark:border-white/8 shadow-sm h-[320px] md:h-[400px] bg-white dark:bg-dark-card relative">
           <iframe
-            title={loc.mapTitle}
+            title="IESTP Suiza Ubicación"
             src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${mapAddress}&zoom=15`}
             className="w-full h-full border-0"
             allowFullScreen
@@ -69,7 +69,7 @@ export default function LocationSection({ t }) {
           />
           <div className="absolute bottom-3 left-3 bg-white/90 dark:bg-dark-card/90 backdrop-blur-sm rounded-xl px-3 py-2 shadow-lg border border-primary/10 flex items-center gap-2">
             <MapPin className="w-4 h-4 text-primary" />
-            <span className="text-[10px] font-medium text-slate-text dark:text-white">{loc.mapLabel}</span>
+            <span className="text-[10px] font-medium text-slate-text dark:text-white">IESTP Suiza</span>
           </div>
         </div>
 
@@ -79,7 +79,7 @@ export default function LocationSection({ t }) {
           <div className="rounded-2xl bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 p-5 shadow-sm">
             <h3 className="font-bold text-sm text-slate-text dark:text-white mb-2 flex items-center gap-2">
               <MapPin className="w-4 h-4 text-primary" />
-              {loc.addressLabel}
+              Dirección
             </h3>
             <p className="text-xs text-slate-text/70 dark:text-dark-text/70 leading-relaxed">{address}</p>
             <p className="text-[10px] text-slate-text/50 dark:text-dark-text/50 mt-2">{references}</p>
@@ -93,46 +93,46 @@ export default function LocationSection({ t }) {
                 className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-primary/10 dark:bg-primary/20 text-primary dark:text-secondary font-semibold text-xs hover:bg-primary hover:text-white dark:hover:bg-secondary dark:hover:text-dark-bg transition-all duration-300"
               >
                 <LocateFixed className="w-4 h-4" />
-                {detectLocation}
+                {detectLocation || 'Detectar mi ubicación'}
               </button>
             )}
 
             {geoStatus === 'detecting' && (
               <div className="flex items-center justify-center gap-2 py-3 text-xs text-slate-text/60 dark:text-dark-text/60">
                 <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-                {calculating}
+                {calculating || 'Calculando distancia...'}
               </div>
             )}
 
             {geoStatus === 'success' && userCoords && (
               <div>
                 <p className="text-[10px] font-bold text-primary/60 dark:text-secondary/60 uppercase tracking-wider mb-3">
-                  {distanceLabel}
+                  {distanceLabel || 'Distancia desde tu ubicación'}
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center justify-between p-2.5 rounded-xl bg-primary/5 dark:bg-primary/10">
                     <div className="flex items-center gap-2">
                       <Navigation className="w-3.5 h-3.5 text-primary" />
-                      <span className="text-[11px] text-slate-text/70 dark:text-dark-text/70">{driving}</span>
+                      <span className="text-[11px] text-slate-text/70 dark:text-dark-text/70">{driving || 'Automóvil'}</span>
                     </div>
                     <span className="text-xs font-bold text-slate-text dark:text-white">{(distance / 40 * 60).toFixed(0)} min</span>
                   </div>
                   <div className="flex items-center justify-between p-2.5 rounded-xl bg-primary/5 dark:bg-primary/10">
                     <div className="flex items-center gap-2">
                       <Footprints className="w-3.5 h-3.5 text-primary" />
-                      <span className="text-[11px] text-slate-text/70 dark:text-dark-text/70">{walking}</span>
+                      <span className="text-[11px] text-slate-text/70 dark:text-dark-text/70">{walking || 'Caminando'}</span>
                     </div>
                     <span className="text-xs font-bold text-slate-text dark:text-white">{(distance / 5 * 60).toFixed(0)} min</span>
                   </div>
                   <div className="flex items-center justify-between p-2.5 rounded-xl bg-primary/5 dark:bg-primary/10">
                     <div className="flex items-center gap-2">
                       <Bus className="w-3.5 h-3.5 text-primary" />
-                      <span className="text-[11px] text-slate-text/70 dark:text-dark-text/70">{transit}</span>
+                      <span className="text-[11px] text-slate-text/70 dark:text-dark-text/70">{transit || 'Transporte público'}</span>
                     </div>
                     <span className="text-xs font-bold text-slate-text dark:text-white">{(distance / 20 * 60).toFixed(0)} min</span>
                   </div>
                   <p className="text-[10px] text-slate-text/40 dark:text-dark-text/40 text-center pt-1">
-                    ~{distance.toFixed(1)} {t?.contact?.location?.distanceText || 'km away'}
+                    ~{distance.toFixed(1)} km de distancia
                   </p>
                 </div>
               </div>
@@ -155,7 +155,7 @@ export default function LocationSection({ t }) {
               className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-primary text-white font-bold text-xs hover:bg-primary-dark transition-all duration-300 hover:shadow-lg hover:shadow-primary/30"
             >
               <MapPin className="w-4 h-4" />
-              {openInMaps}
+              {openInMaps || 'Abrir en Google Maps'}
             </a>
             <a
               href={directionsUrl}
@@ -164,7 +164,7 @@ export default function LocationSection({ t }) {
               className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-primary text-primary font-semibold text-xs hover:bg-primary/10 transition-all duration-300"
             >
               <Navigation className="w-4 h-4" />
-              {getDirections}
+              {getDirections || 'Cómo llegar'}
             </a>
           </div>
         </div>

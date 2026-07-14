@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
-=======
-import { useState } from 'react';
->>>>>>> web_suiza/clase2
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Sun, Moon, Menu, X, Globe, ChevronDown, ArrowRight } from 'lucide-react';
+import { Sun, Moon, Menu, X, Globe, GraduationCap, ChevronDown, ArrowRight } from 'lucide-react';
 import LogoSuiza from '../assets/img/logo_suiza_n.png';
 import AboutMegaMenu from './AboutMegaMenu';
-import CareersMegaMenu from './CareersMegaMenu';
 
 export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,12 +18,8 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
 
   const navLinks = [
     { path: '/', label: t.nav.home },
-<<<<<<< HEAD
     { path: '/about', label: t.nav.about, hasAboutMega: true },
     { path: '/careers', label: t.nav.careers, hasDropdown: true },
-=======
-    { path: '/careers', label: t.nav.careers, hasCareersMega: true },
->>>>>>> web_suiza/clase2
     { path: '/admission', label: t.nav.admission, hasMega: true },
     { path: '/transparency', label: t.nav.transparency, hasSimpleDropdown: true, menuKey: 'transparencyMenu' },
     { path: '/procedures', label: t.nav.procedures, hasSimpleDropdown: true, menuKey: 'proceduresMenu' },
@@ -40,6 +31,8 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
     { code: 'en', label: 'ENG' },
     { code: 'sh', label: 'SHB' }
   ];
+
+  const isActive = (path) => location.pathname === path;
 
   return (
     <nav className="sticky top-0 z-50 w-full px-4 py-4 md:px-8">
@@ -78,11 +71,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
         <div className="hidden lg:flex items-center gap-1.5 relative">
           {navLinks.map((link) => (
             <div key={link.path} className="relative group">
-<<<<<<< HEAD
               {(link.hasDropdown || link.hasMega || link.hasAboutMega || link.hasSimpleDropdown) ? (
-=======
-              {link.hasCareersMega ? (
->>>>>>> web_suiza/clase2
                 <button
                   className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-1.5 ${
                     location.pathname.startsWith(link.path) && link.path !== '/'
@@ -108,7 +97,6 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                 </Link>
               )}
 
-<<<<<<< HEAD
               {/* Dropdown Menu for Careers */}
               {link.hasDropdown && (
                 <div className={`absolute top-full left-0 w-96 opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:w-full before:h-3 ${!forceClose ? 'group-hover:opacity-100 group-hover:visible group-hover:translate-y-0' : ''}`}>
@@ -149,11 +137,6 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                     </Link>
                   </div>
                 </div>
-=======
-              {/* Mega Menu for Careers */}
-              {link.hasCareersMega && (
-                <CareersMegaMenu t={t} />
->>>>>>> web_suiza/clase2
               )}
 
               {/* Mega Menu for About Us */}
@@ -167,21 +150,21 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                   <div className="dropdown-theme p-6">
                     <div className="grid grid-cols-3 gap-6">
                       <div className="col-span-1 border-r border-primary/10 dark:border-white/10 pr-4">
-                        <p className="text-xs font-bold text-primary dark:text-secondary uppercase mb-4 transition-colors duration-300">{t.admissionDropdown.title}</p>
+                        <p className="text-xs font-bold text-primary dark:text-secondary uppercase mb-4 transition-colors duration-300">Modalidades de admisión</p>
                         <ul className="space-y-3">
-                          {(t.admissionDropdown.modalities || []).map((mod, i) => (
-                            <li key={i} className="font-semibold text-sm text-slate-text dark:text-white cursor-pointer hover:text-primary dark:hover:text-secondary transition-colors duration-300">{mod}</li>
-                          ))}
+                          <li className="font-semibold text-sm text-slate-text dark:text-white cursor-pointer hover:text-primary dark:hover:text-secondary transition-colors duration-300">Egresados de colegio</li>
+                          <li className="font-semibold text-sm text-slate-text dark:text-white cursor-pointer hover:text-primary dark:hover:text-secondary transition-colors duration-300">Traslados externos</li>
+                          <li className="font-semibold text-sm text-slate-text dark:text-white cursor-pointer hover:text-primary dark:hover:text-secondary transition-colors duration-300">Experiencia laboral</li>
                         </ul>
                       </div>
                       <div className="col-span-1 space-y-3">
                         <div>
-                          <h4 className="font-bold text-slate-text dark:text-white transition-colors duration-300">{t.admissionDropdown.transfer.title}</h4>
-                          <p className="text-sm text-slate-text/70 dark:text-dark-text/70 transition-colors duration-300">{t.admissionDropdown.transfer.desc}</p>
+                          <h4 className="font-bold text-slate-text dark:text-white transition-colors duration-300">Traslado</h4>
+                          <p className="text-sm text-slate-text/70 dark:text-dark-text/70 transition-colors duration-300">Tienes títulos de institutos o carreras inconclusas. Completa tus estudios en IESTP Suiza con reconocimiento nacional.</p>
                         </div>
                         <div>
-                          <h4 className="font-bold text-slate-text dark:text-white transition-colors duration-300">{t.admissionDropdown.otherPrograms.title}</h4>
-                          <p className="text-sm text-slate-text/70 dark:text-dark-text/70 transition-colors duration-300">{t.admissionDropdown.otherPrograms.desc}</p>
+                          <h4 className="font-bold text-slate-text dark:text-white transition-colors duration-300">Otros programas</h4>
+                          <p className="text-sm text-slate-text/70 dark:text-dark-text/70 transition-colors duration-300">Explora nuestros 11 programas licenciados con alta demanda laboral y prácticas profesionales en la región.</p>
                         </div>
                       </div>
                       <div className="col-span-1 flex flex-col justify-between gap-4">
@@ -189,9 +172,9 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                           <img src={LogoSuiza} alt="Logo" className="w-20 h-20 rounded-md object-contain shrink-0" />
                         </div>
                         <div className="space-y-2">
-                          <button onClick={() => { navigate('/admission'); }} className="w-full inline-flex items-center justify-between gap-2 px-4 py-3 rounded-lg bg-primary text-white font-bold hover:bg-primary-dark transition-all duration-300">{t.admissionDropdown.ctaAdmission} <ArrowRight className="w-4 h-4"/></button>
-                          <button onClick={() => { navigate('/contact'); }} className="w-full inline-flex items-center justify-between gap-2 px-4 py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300">{t.admissionDropdown.ctaContact} <ArrowRight className="w-4 h-4"/></button>
-                          <button onClick={() => { navigate('/careers'); }} className="w-full inline-flex items-center justify-between gap-2 px-4 py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300">{t.admissionDropdown.ctaPrograms} <ArrowRight className="w-4 h-4"/></button>
+                          <button onClick={() => { navigate('/admission'); }} className="w-full inline-flex items-center justify-between gap-2 px-4 py-3 rounded-lg bg-primary text-white font-bold hover:bg-primary-dark transition-all duration-300">Admisión 2026 <ArrowRight className="w-4 h-4"/></button>
+                          <button onClick={() => { navigate('/contact'); }} className="w-full inline-flex items-center justify-between gap-2 px-4 py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300">Contactenos <ArrowRight className="w-4 h-4"/></button>
+                          <button onClick={() => { navigate('/careers'); }} className="w-full inline-flex items-center justify-between gap-2 px-4 py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300">Ver programas <ArrowRight className="w-4 h-4"/></button>
                         </div>
                       </div>
                     </div>
@@ -242,7 +225,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
           <button
             onClick={() => setDarkMode(!darkMode)}
             className="p-2.5 rounded-xl bg-slate-light dark:bg-dark-hover hover:bg-primary/10 dark:hover:bg-primary/20 text-slate-text dark:text-dark-text hover:text-primary dark:hover:text-secondary transition-all duration-300 cursor-pointer"
-            aria-label={t.common.toggleTheme}
+            aria-label="Toggle Theme"
           >
             {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
@@ -261,7 +244,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
         <div className="lg:hidden absolute top-28 left-4 right-4 z-50 dropdown-theme shadow-2xl p-4 flex flex-col gap-2 max-h-[70vh] overflow-y-auto dropdown-enter">
           {navLinks.map((link) => (
             <div key={link.path}>
-              {link.hasCareersMega ? (
+              {link.hasDropdown ? (
                 <div>
                   <button
                     className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block ${
@@ -271,7 +254,6 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                     }`}
                   >
                     {link.label}
-<<<<<<< HEAD
                   </button>
                   <div className="mt-2 space-y-2 pl-4 border-l-2 border-primary/20">
                     {t.careers.items.map((career) => (
@@ -292,10 +274,6 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
                       </button>
                     ))}
                   </div>
-=======
-                  </Link>
-                  <CareersMegaMenu t={t} isMobile onItemClick={() => setIsOpen(false)} />
->>>>>>> web_suiza/clase2
                 </div>
               ) : link.hasAboutMega ? (
                 <AboutMegaMenu t={t} isMobile onItemClick={() => setIsOpen(false)} />
