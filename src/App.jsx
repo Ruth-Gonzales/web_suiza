@@ -17,8 +17,10 @@ import Organigrama from './pages/about/Organigrama';
 import PlanaDocente from './pages/about/PlanaDocente';
 import NewsPage from './pages/NewsPage';
 import ContactPage from './pages/ContactPage';
+import GenericSectionPage from './pages/GenericSectionPage';
 import { translations } from './translations';
 import CursorBubbles from './components/CursorBubbles';
+import VirtualAssistant from './components/VirtualAssistant';
 
 function App(){
   const [lang, setLang] = useState(() => localStorage.getItem('lang') || 'es');
@@ -59,13 +61,12 @@ function App(){
 
   const mainContent = (
     <div className="min-h-screen flex flex-col transition-colors duration-300 bg-bg-general dark:bg-dark-bg text-slate-text dark:text-dark-text pb-6 relative" style={{ animation: 'app-slide-up 1s ease-out' }}>
-      <div className="fixed top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-soft-pulse pointer-events-none" />
-      <div className="fixed bottom-1/3 right-0 w-80 h-80 bg-secondary/8 rounded-full blur-3xl animate-soft-pulse pointer-events-none" style={{ animationDelay: '4s' }} />
-      <div className="fixed top-2/3 left-1/4 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl animate-float-slow pointer-events-none" />
+      <div className="fixed top-1/4 left-0 w-80 h-80 bg-primary/3 rounded-full blur-3xl animate-soft-pulse pointer-events-none" />
+      <div className="fixed bottom-1/3 right-0 w-72 h-72 bg-secondary/5 rounded-full blur-3xl animate-soft-pulse pointer-events-none" style={{ animationDelay: '4s' }} />
 
       <Navbar lang={lang} setLang={setLang} darkMode={darkMode} setDarkMode={setDarkMode} t={t} />
       
-      <main className="flex-1 w-full mt-4">
+      <main className="flex-1 w-full mt-3">
         <Routes>
           <Route path="/" element={<Home t={t} />} />
           <Route path="/careers" element={<Careers t={t} />} />
@@ -82,11 +83,15 @@ function App(){
           <Route path="/about/docentes" element={<PlanaDocente t={t} />} />
           <Route path="/news" element={<NewsPage t={t} />} />
           <Route path="/contact" element={<ContactPage t={t} />} />
+          <Route path="/transparency/*" element={<GenericSectionPage t={t} categoryKey="transparency" menuKey="transparencyMenu" title="Transparencia Institucional" subtitle="Acceso a la información pública y documentos de gestión del IESTP Suiza de acuerdo a las normativas del MINEDU." />} />
+          <Route path="/procedures/*" element={<GenericSectionPage t={t} categoryKey="procedures" menuKey="proceduresMenu" title="Trámites y Servicios" subtitle="Gestión de trámites académicos y administrativos para estudiantes y egresados." />} />
+          <Route path="/services/*" element={<GenericSectionPage t={t} categoryKey="services" menuKey="servicesMenu" title="Servicios Institucionales" subtitle="Plataformas y recursos integrales para potenciar el desarrollo académico y profesional." />} />
         </Routes>
       </main>
 
       <Footer t={t} />
       <CursorBubbles />
+      <VirtualAssistant />
     </div>
   );
 

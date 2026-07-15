@@ -3,131 +3,195 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   ArrowRight, Clock, GraduationCap, Briefcase, ChevronRight,
-  Code, Heart, Cog, Leaf, TreePine, Calculator, Building2,
-  Zap, MapPin, ClipboardCheck, CheckCircle2, Sparkles,
-  BookOpen, Target, Award, Lightbulb
+  Code, Heart, Cog, TreePine, Calculator, Building2,
+  Zap, MapPin, ClipboardCheck, CheckCircle2, Stethoscope,
+  BookOpen, Target, Award, Lightbulb, Users, TrendingUp,
+  FlaskConical, Handshake, Award as Certificate, Layers
 } from 'lucide-react';
+import { careersData } from '../data/careersData';
+
+const LIGHT_COLORS = {
+  primaryDark: '#082B5C',
+  primary: '#0B4DBB',
+  primaryMedium: '#2867C7',
+  primaryLight: '#EAF2FF',
+  surface: '#FFFFFF',
+  background: '#F6F9FE',
+  border: '#DDE7F3',
+  text: '#14233D',
+  muted: '#66758D',
+  gold: '#C99418',
+  goldLight: '#FFF7DC',
+};
+
+const DARK_COLORS = {
+  primaryDark: '#60A5FA',
+  primary: '#3B82F6',
+  primaryMedium: '#60A5FA',
+  primaryLight: '#17253A',
+  surface: '#0F172A',
+  background: '#081326',
+  border: 'rgba(255,255,255,0.08)',
+  text: '#F5F7FB',
+  muted: '#AAB6C8',
+  gold: '#C99418',
+  goldLight: '#2D2410',
+};
+
+function useDarkMode() {
+  const [dark, setDark] = useState(() => document.documentElement.classList.contains('dark'));
+  useEffect(() => {
+    const obs = new MutationObserver(() => {
+      setDark(document.documentElement.classList.contains('dark'));
+    });
+    obs.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    return () => obs.disconnect();
+  }, []);
+  return dark;
+}
+
+function useColors() {
+  const dark = useDarkMode();
+  return dark ? DARK_COLORS : LIGHT_COLORS;
+}
 
 const careerConfig = {
-  sys:   { icon: Code,          accent: '#3B82F6', gradient: 'from-blue-500 to-blue-600' },
-  enfer: { icon: Heart,         accent: '#10B981', gradient: 'from-emerald-500 to-emerald-600' },
-  meca:  { icon: Cog,           accent: '#F97316', gradient: 'from-orange-500 to-orange-600' },
-  agro:  { icon: Leaf,          accent: '#84CC16', gradient: 'from-lime-500 to-lime-600' },
-  forest:{ icon: TreePine,      accent: '#059669', gradient: 'from-green-600 to-green-700' },
-  cont:  { icon: Calculator,    accent: '#8B5CF6', gradient: 'from-violet-500 to-violet-600' },
-  admin: { icon: Briefcase,     accent: '#D97706', gradient: 'from-amber-500 to-amber-600' },
-  civil: { icon: Building2,     accent: '#6366F1', gradient: 'from-indigo-500 to-indigo-600' },
-  elec:  { icon: Zap,           accent: '#EAB308', gradient: 'from-yellow-500 to-yellow-600' },
-  tur:   { icon: MapPin,        accent: '#06B6D4', gradient: 'from-cyan-500 to-cyan-600' },
-  asist: { icon: ClipboardCheck,accent: '#EC4899', gradient: 'from-pink-500 to-pink-600' },
+  sistemas:    { icon: Code,          color: '#2563EB', softColor: '#EAF2FF', darkSoftColor: '#1A2744' },
+  enfermeria:  { icon: Stethoscope,   color: '#E5486D', softColor: '#FDECF1', darkSoftColor: '#2D1520' },
+  mecatronica: { icon: Cog,           color: '#F97316', softColor: '#FFF1E8', darkSoftColor: '#2D2018' },
+  agropecuaria:{ icon: TrendingUp,    color: '#4CAF50', softColor: '#EAF7EB', darkSoftColor: '#1A2D1C' },
+  forestal:    { icon: TreePine,      color: '#168A55', softColor: '#E5F6ED', darkSoftColor: '#162D22' },
+  contabilidad:{ icon: Calculator,    color: '#7C3AED', softColor: '#F1EAFE', darkSoftColor: '#221A35' },
+  admin:       { icon: Briefcase,     color: '#0F7C8D', softColor: '#E5F6F8', darkSoftColor: '#152D30' },
+  civil:       { icon: Building2,     color: '#64748B', softColor: '#EEF2F6', darkSoftColor: '#1E2530' },
+  elec:        { icon: Zap,           color: '#E6A700', softColor: '#FFF8D9', darkSoftColor: '#2D2A18' },
+  turismo:     { icon: MapPin,        color: '#0284C7', softColor: '#E5F5FD', darkSoftColor: '#152530' },
+  asistencia:  { icon: ClipboardCheck,color: '#5B6FD8', softColor: '#EDF0FF', darkSoftColor: '#1C1F35' },
+  gestion:     { icon: Users,         color: '#9C6ADE', softColor: '#F3ECFC', darkSoftColor: '#241D35' },
 };
+
+function getSoftColor(careerId, dark) {
+  const cfg = careerConfig[careerId] || careerConfig.sistemas;
+  return dark ? cfg.darkSoftColor : cfg.softColor;
+}
+
+const catLabel = { tech: 'Tecnología', field: 'Ingeniería', business: 'Gestión' };
 
 const prefersReducedMotion = typeof window !== 'undefined'
   && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const m = prefersReducedMotion ? { duration: 0 } : {};
+const anim = (dur = 0.25, extra = {}) => prefersReducedMotion ? { duration: 0 } : { duration: dur, ...extra };
 
-function TabButton({ active, label, onClick, accent }) {
+function SectionHeading({ label }) {
+  const C = useColors();
   return (
-    <button
-      onClick={onClick}
-      className={`relative px-3 py-2 text-[11px] font-semibold transition-colors duration-200 whitespace-nowrap ${
-        active ? 'text-white' : 'text-white/40 hover:text-white/60'
-      }`}
-    >
-      {label}
-      {active && (
-        <motion.div
-          layoutId="tabIndicator"
-          className="absolute bottom-0 left-0 right-0 h-[2px] rounded-full"
-          style={{ backgroundColor: accent }}
-          transition={{ type: 'spring', stiffness: 400, damping: 30, ...m }}
-        />
-      )}
-    </button>
-  );
-}
-
-function InfoTab({ career, t }) {
-  const mm = t.megaMenu?.careers?.labels || {};
-  return (
-    <div className="space-y-4">
-      <div>
-        <h4 className="text-lg font-extrabold text-white leading-tight tracking-tight">{career.name}</h4>
-        <p className="text-sm text-white/50 mt-1 leading-relaxed line-clamp-2">{career.tagline}</p>
-      </div>
-      <div className="grid grid-cols-2 gap-2">
-        {[
-          { icon: Clock, label: career.duration },
-          { icon: GraduationCap, label: career.modality },
-          { icon: Briefcase, label: `${career.employabilityRate}% ${mm.employability}` },
-          { icon: Sparkles, label: career.degree || mm.degree },
-        ].map((item, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.25, delay: i * 0.05, ...m }}
-            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/8 backdrop-blur-sm border border-white/8"
-          >
-            <item.icon className="w-3.5 h-3.5 text-white/50 flex-shrink-0" />
-            <span className="text-[11px] text-white/70 font-medium leading-tight truncate">{item.label}</span>
-          </motion.div>
-        ))}
-      </div>
-      <p className="text-[12px] text-white/55 leading-relaxed">{career.desc}</p>
-      {career.technologies?.length > 0 && (
-        <div className="space-y-2">
-          <p className="text-[10px] font-bold text-white/35 uppercase tracking-wider">{mm.technologies}</p>
-          <div className="flex flex-wrap gap-1.5">
-            {career.technologies.map((tech, i) => (
-              <span key={i} className="text-[10px] font-semibold text-white/75 bg-white/10 backdrop-blur-sm px-2 py-0.5 rounded-md border border-white/8 hover:bg-white/15 transition-colors duration-200">{tech}</span>
-            ))}
-          </div>
-        </div>
-      )}
+    <div className="flex items-center gap-2.5 mb-1.5">
+      <div className="w-[22px] h-[3px] rounded-full" style={{ background: C.gold }} />
+      <h4 className="text-xs font-bold uppercase tracking-wider" style={{ color: C.primary }}>{label}</h4>
     </div>
   );
 }
 
-function PlanTab({ career, cfg, t }) {
-  const mm = t.megaMenu?.careers?.labels || {};
-  const curriculum = career.curriculum || [];
-  const learningPoints = career.learningPoints || [];
+function InfoTab({ career, cfg }) {
+  const C = useColors();
+  const dark = useDarkMode();
   return (
-    <div className="space-y-4">
-      {curriculum.length > 0 && (
-        <div className="space-y-2">
-          <p className="text-[10px] font-bold text-white/35 uppercase tracking-wider flex items-center gap-1.5">
-            <BookOpen className="w-3 h-3" /> {mm.curriculum}
-          </p>
+    <div className="grid grid-cols-1 lg:grid-cols-[1fr_240px] gap-4">
+      <div className="space-y-4">
+        <div>
+          <SectionHeading label="Descripción" />
+          <p className="text-sm leading-relaxed" style={{ color: C.text }}>{career.description}</p>
+        </div>
+        <div>
+          <SectionHeading label="Perfil del Egresado" />
+          <p className="text-sm leading-relaxed" style={{ color: C.muted }}>{career.graduateProfile}</p>
+        </div>
+        <div>
+          <div className="flex items-center gap-2.5 mb-2">
+            <div className="w-[22px] h-[3px] rounded-full" style={{ background: C.gold }} />
+            <h4 className="text-xs font-bold uppercase tracking-wider" style={{ color: C.primary }}>Competencias Principales</h4>
+          </div>
           <div className="space-y-1.5">
-            {curriculum.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -8 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.2, delay: i * 0.04, ...m }}
-                className="flex items-start gap-2.5"
-              >
-                <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-[9px] font-bold text-white/80" style={{ backgroundColor: `${cfg.accent}25` }}>
-                  {i + 1}
-                </div>
-                <span className="text-[12px] text-white/65 leading-snug">{item}</span>
-              </motion.div>
+            {(career.competencies || []).map((c, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: cfg.accent }} />
+                <span className="text-sm" style={{ color: C.text }}>{c}</span>
+              </div>
             ))}
           </div>
         </div>
-      )}
-      {learningPoints.length > 0 && (
-        <div className="space-y-2">
-          <p className="text-[10px] font-bold text-white/35 uppercase tracking-wider flex items-center gap-1.5">
-            <Lightbulb className="w-3 h-3" /> {mm.learning}
-          </p>
+      </div>
+      <div className="space-y-2">
+        {[
+          { icon: Clock, label: 'Duración', value: career.duration, highlight: false },
+          { icon: GraduationCap, label: 'Modalidad', value: career.modality, highlight: false },
+          { icon: Layers, label: 'Turnos', value: career.shifts || 'Mañana y Tarde', highlight: false },
+          { icon: Award, label: 'Título', value: career.degree, highlight: false },
+          { icon: Certificate, label: 'Certificación', value: career.certifications?.[0] || 'Profesional Técnico', highlight: false },
+          { icon: TrendingUp, label: 'Empleabilidad', value: `${career.employabilityRate}%`, highlight: true },
+          { icon: FlaskConical, label: 'Laboratorios', value: `${career.labs?.length || 0} disponibles`, highlight: false },
+          { icon: Handshake, label: 'Convenios', value: `${career.agreements?.length || 0} instituciones`, highlight: false },
+          { icon: Target, label: 'Nivel', value: 'Técnico Superior', highlight: false },
+        ].map((item, i) => (
+          <div key={i} className="flex items-center gap-2.5 p-2.5 rounded-xl border transition-all duration-200 hover:-translate-y-[1px]" style={{ borderColor: item.highlight ? `${C.gold}30` : C.border, background: C.surface, boxShadow: item.highlight ? (dark ? `0 8px 24px ${C.primaryDark}15` : `0 8px 24px ${C.primaryDark}0A`) : (dark ? '0 8px 24px rgba(0,0,0,0.2)' : '0 8px 24px rgba(8,43,92,0.04)') }}>
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: item.highlight ? `${C.gold}12` : `${C.primary}0A` }}>
+              <item.icon className="w-4 h-4" style={{ color: item.highlight ? C.gold : C.primary }} />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-[10px] font-semibold uppercase tracking-wider" style={{ color: C.muted }}>{item.label}</p>
+              <p className="text-xs font-bold truncate" style={{ color: item.highlight ? C.primaryDark : C.text }}>{item.value}</p>
+            </div>
+            {item.highlight && <div className="w-[3px] h-6 rounded-full flex-shrink-0" style={{ background: C.gold }} />}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function PlanTab({ career, cfg }) {
+  const C = useColors();
+  const dark = useDarkMode();
+  const curriculum = career.curriculum || [];
+  return (
+    <div className="space-y-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+        {curriculum.map((subjects, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={anim(0.2, { delay: i * 0.04 })}
+            className="rounded-xl border overflow-hidden"
+            style={{ borderColor: C.border }}
+          >
+            <div className="px-3 py-2 flex items-center gap-2" style={{ background: `${C.primary}08` }}>
+              <div className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold text-white" style={{ background: C.primary }}>
+                {i + 1}
+              </div>
+              <span className="text-xs font-bold" style={{ color: C.text }}>Semestre {i + 1}</span>
+            </div>
+            <div className="px-3 py-2" style={{ background: C.surface }}>
+              <div className="flex flex-wrap gap-1">
+                {subjects.map((s, j) => (
+                  <span key={j} className="text-[11px] px-2 py-0.5 rounded-md border" style={{ color: C.text, borderColor: `${C.primary}12`, background: C.primaryLight }}>
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+      {career.skills?.length > 0 && (
+        <div className="pt-2 border-t" style={{ borderColor: C.border }}>
+          <div className="flex items-center gap-2.5 mb-2">
+            <div className="w-[22px] h-[3px] rounded-full" style={{ background: C.gold }} />
+            <p className="text-xs font-bold uppercase tracking-wider" style={{ color: C.primary }}>Habilidades Clave</p>
+          </div>
           <div className="flex flex-wrap gap-1.5">
-            {learningPoints.map((p, i) => (
-              <span key={i} className="inline-flex items-center gap-1 text-[11px] text-white/65 bg-white/8 backdrop-blur-sm px-2.5 py-1 rounded-md border border-white/6">
-                <CheckCircle2 className="w-3 h-3 flex-shrink-0" style={{ color: cfg.accent }} />
-                {p}
+            {career.skills.map((s, i) => (
+              <span key={i} className="text-[11px] font-medium px-2.5 py-1 rounded-lg border" style={{ color: C.primary, borderColor: `${C.primary}20`, background: `${C.primary}06` }}>
+                {s}
               </span>
             ))}
           </div>
@@ -137,289 +201,384 @@ function PlanTab({ career, cfg, t }) {
   );
 }
 
-function FieldTab({ career, cfg, t }) {
-  const mm = t.megaMenu?.careers?.labels || {};
-  const skills = career.skills || [];
-  const opportunities = career.opportunities || [];
+function FieldTab({ career, cfg }) {
+  const C = useColors();
+  const dark = useDarkMode();
+  const fieldIcons = [Briefcase, Building2, Users, TrendingUp, Handshake, Target];
   return (
     <div className="space-y-4">
-      {opportunities.length > 0 && (
-        <div className="space-y-2">
-          <p className="text-[10px] font-bold text-white/35 uppercase tracking-wider flex items-center gap-1.5">
-            <Briefcase className="w-3 h-3" /> {mm.fieldWork}
-          </p>
-          <div className="space-y-1.5">
-            {opportunities.map((item, i) => (
+      <div>
+        <div className="flex items-center gap-2.5 mb-2">
+          <div className="w-[22px] h-[3px] rounded-full" style={{ background: C.gold }} />
+          <h4 className="text-xs font-bold uppercase tracking-wider" style={{ color: C.primary }}>Oportunidades Laborales</h4>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          {(career.opportunities || []).map((opp, i) => {
+            const Ico = fieldIcons[i % fieldIcons.length];
+            return (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: -8 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.2, delay: i * 0.04, ...m }}
-                className="flex items-start gap-2"
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={anim(0.2, { delay: i * 0.03 })}
+                className="flex items-start gap-2.5 p-2.5 rounded-xl border"
+                style={{ borderColor: C.border, background: C.surface }}
               >
-                <ChevronRight className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: cfg.accent }} />
-                <span className="text-[12px] text-white/65 leading-snug">{item}</span>
+                <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${cfg.accent}10` }}>
+                  <Ico className="w-3.5 h-3.5" style={{ color: cfg.accent }} />
+                </div>
+                <span className="text-sm leading-snug" style={{ color: C.text }}>{opp}</span>
               </motion.div>
-            ))}
-          </div>
+            );
+          })}
         </div>
-      )}
-      {skills.length > 0 && (
-        <div className="space-y-2">
-          <p className="text-[10px] font-bold text-white/35 uppercase tracking-wider flex items-center gap-1.5">
-            <Award className="w-3 h-3" /> {mm.skills}
-          </p>
-          <div className="flex flex-wrap gap-1.5">
-            {skills.map((s, i) => (
-              <span key={i} className="text-[11px] font-medium text-white/60 bg-white/8 backdrop-blur-sm px-2.5 py-1 rounded-md border border-white/6">{s}</span>
-            ))}
-          </div>
-        </div>
-      )}
+      </div>
       {career.whyYou && (
-        <div className="p-3 rounded-xl bg-white/5 border border-white/8">
-          <p className="text-[10px] font-bold text-white/35 uppercase tracking-wider flex items-center gap-1.5 mb-1.5">
-            <Target className="w-3 h-3" /> {mm.whyCareer}
-          </p>
-          <p className="text-[12px] text-white/55 leading-relaxed">{career.whyYou}</p>
+        <div className="p-3 rounded-xl border-l-4" style={{ borderColor: C.gold, background: dark ? `${C.gold}10` : `${C.goldLight}40` }}>
+          <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: C.gold }}>¿Por qué esta carrera?</p>
+          <p className="text-sm leading-relaxed" style={{ color: C.muted }}>{career.whyYou}</p>
         </div>
       )}
     </div>
   );
 }
 
-function RightPanelInner({ career, t }) {
-  const cfg = careerConfig[career.id] || careerConfig.sys;
-  const [activeTab, setActiveTab] = useState('info');
-  const mm = t.megaMenu?.careers || {};
-  const tabLabels = mm.tabs || {};
-  const categories = mm.categories || {};
+const COLLAPSE_THRESHOLD = 60;
+const EXPAND_THRESHOLD = 20;
 
-  const tabContent = useMemo(() => {
-    switch (activeTab) {
-      case 'plan': return <PlanTab career={career} cfg={cfg} t={t} />;
-      case 'field': return <FieldTab career={career} cfg={cfg} t={t} />;
-      default: return <InfoTab career={career} t={t} />;
+function RightPanel({ career, t, onItemClick }) {
+  const C = useColors();
+  const dark = useDarkMode();
+  const cfg = careerConfig[career.id] || careerConfig.sistemas;
+  const navigate = useNavigate();
+  const [tab, setTab] = useState('info');
+  const [headerCollapsed, setHeaderCollapsed] = useState(false);
+  const scrollContainerRef = useRef(null);
+  const previousScrollTop = useRef(0);
+  const headerCollapsedRef = useRef(false);
+  const mm = t.megaMenu?.careers || {};
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    headerCollapsedRef.current = false;
+    setTab('info');
+    setHeaderCollapsed(false);
+    previousScrollTop.current = 0;
+    if (scrollContainerRef.current) scrollContainerRef.current.scrollTop = 0;
+  }, [career.id]);
+
+  const handleContentScroll = useCallback(() => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    const st = el.scrollTop;
+    const isScrollingDown = st > previousScrollTop.current;
+    previousScrollTop.current = st;
+    const collapsed = headerCollapsedRef.current;
+
+    if (!collapsed && isScrollingDown && st > COLLAPSE_THRESHOLD) {
+      headerCollapsedRef.current = true;
+      setHeaderCollapsed(true);
+    } else if (collapsed && st < EXPAND_THRESHOLD) {
+      headerCollapsedRef.current = false;
+      setHeaderCollapsed(false);
     }
-  }, [activeTab, career, cfg, t]);
+  }, []);
+
+  const handleTabChange = useCallback((newTab) => {
+    setTab(newTab);
+    headerCollapsedRef.current = false;
+    setHeaderCollapsed(false);
+    previousScrollTop.current = 0;
+    if (scrollContainerRef.current) scrollContainerRef.current.scrollTop = 0;
+  }, []);
 
   return (
     <AnimatePresence mode="wait">
       <motion.div
         key={career.id}
-        initial={{ opacity: 0, scale: 1.02, filter: 'blur(6px)' }}
-        animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-        exit={{ opacity: 0, scale: 0.98, filter: 'blur(4px)' }}
-        transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1], ...m }}
-        className="absolute inset-0 flex flex-col"
+        initial={{ opacity: 0, x: 16 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -16 }}
+        transition={anim(0.22)}
+        className="flex flex-col h-full"
       >
-        <div className="absolute inset-0">
-          <img src={career.image} alt={career.name} className="w-full h-full object-cover" loading="lazy" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
-        </div>
-
-        <div className="relative z-10 h-full flex flex-col">
-          <div className="px-5 pt-4 pb-2 flex items-center justify-between">
-            <motion.span
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.1, ...m }}
-              className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-white/10 text-white/80 backdrop-blur-sm border border-white/10"
-            >
-              <cfg.icon className="w-3 h-3" />
-              {categories[career.category] || career.category}
-            </motion.span>
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.3, delay: 0.15, ...m }}
-              className="text-xs font-extrabold text-white"
-            >
-              {career.employabilityRate}%
-            </motion.span>
-          </div>
-
-          <div className="px-5 flex items-center gap-1 border-b border-white/10">
-            {Object.entries(tabLabels).map(([key, label]) => (
-              <TabButton
-                key={key}
-                active={activeTab === key}
-                label={label}
-                onClick={() => setActiveTab(key)}
-                accent={cfg.accent}
-              />
-            ))}
-          </div>
-
-          <div className="px-5 py-2">
-            <div className="h-1 bg-white/10 rounded-full overflow-hidden">
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: `${career.employabilityRate}%` }}
-                transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut', ...m }}
-                className="h-full rounded-full"
-                style={{ background: `linear-gradient(90deg, ${cfg.accent}, ${cfg.accent}CC)` }}
-              />
+        {/* A. Collapsible Header */}
+        <div
+          ref={heroRef}
+          className="relative overflow-hidden shrink-0"
+          style={{
+            height: headerCollapsed ? '0px' : '220px',
+            opacity: headerCollapsed ? 0 : 1,
+            transform: headerCollapsed ? 'translateY(-30px)' : 'translateY(0)',
+            pointerEvents: headerCollapsed ? 'none' : 'auto',
+            transition: 'height 380ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms ease, transform 380ms cubic-bezier(0.4, 0, 0.2, 1)',
+          }}
+        >
+          <img
+            src={career.image}
+            alt={career.name}
+            className="w-full h-full object-cover"
+            style={{
+              objectPosition: career.objectPosition || 'center 40%',
+              transform: headerCollapsed ? 'translateY(-24px) scale(1.015)' : 'translateY(0) scale(1)',
+              opacity: headerCollapsed ? 0 : 1,
+              transition: 'transform 380ms cubic-bezier(0.4, 0, 0.2, 1), opacity 300ms ease',
+            }}
+            loading="lazy"
+          />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(90deg, rgba(4,35,82,0.98) 0%, rgba(8,73,155,0.84) 46%, rgba(8,73,155,0.18) 100%)` }} />
+          <div className="absolute inset-0 flex flex-col justify-between p-5">
+            <div className="flex justify-between items-start">
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.13)', color: 'rgba(255,255,255,0.9)', border: '1px solid rgba(255,255,255,0.24)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)' }}>
+                <cfg.icon className="w-3 h-3" />
+                {catLabel[career.category]}
+              </span>
+              <div className="text-right" style={{ background: 'rgba(8,43,92,0.82)', border: '1px solid rgba(255,255,255,0.22)', borderRadius: '12px', padding: '8px 12px' }}>
+                <div className="text-2xl font-extrabold text-white leading-none">{career.employabilityRate}%</div>
+                <div className="text-[9px] font-bold uppercase tracking-wider mt-0.5" style={{ color: 'rgba(255,255,255,0.7)' }}>Empleabilidad</div>
+                <div className="w-full h-[2px] rounded-full mt-1.5" style={{ background: cfg.color }} />
+              </div>
+            </div>
+            <div>
+              <h3 className="text-2xl lg:text-3xl font-extrabold text-white leading-tight mb-1">{career.name}</h3>
+              <p className="text-sm text-white/70 max-w-md leading-relaxed">{career.tagline}</p>
             </div>
           </div>
+        </div>
 
-          <div className="relative z-10 flex-1 px-5 pb-3 flex flex-col min-h-0">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeTab + career.id}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -4 }}
-                transition={{ duration: 0.2, ...m }}
-                className="flex-1 overflow-hidden"
+        {/* B. Sticky Tabs + Compact Header */}
+        <div
+          className="shrink-0"
+          style={{
+            position: 'sticky',
+            top: 0,
+            zIndex: 20,
+            background: C.surface,
+            borderBottom: `1px solid ${C.border}`,
+            boxShadow: headerCollapsed ? (dark ? '0 5px 16px rgba(0,0,0,0.3)' : '0 5px 16px rgba(15,23,42,0.06)') : 'none',
+            transition: 'box-shadow 280ms ease',
+          }}
+        >
+          {/* Compact mini-header when collapsed */}
+          <div
+            className="flex items-center gap-3 px-5 overflow-hidden"
+            style={{
+              height: headerCollapsed ? '48px' : '0px',
+              opacity: headerCollapsed ? 1 : 0,
+              transition: 'height 300ms cubic-bezier(0.4, 0, 0.2, 1), opacity 200ms ease',
+            }}
+          >
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: getSoftColor(career.id, dark) }}>
+              <cfg.icon className="w-4 h-4" style={{ color: cfg.color }} />
+            </div>
+            <span className="font-bold text-sm truncate" style={{ color: C.text }}>{career.name}</span>
+            <span className="ml-auto text-xs font-bold px-2.5 py-1 rounded-full" style={{ background: getSoftColor(career.id, dark), color: cfg.color }}>{career.employabilityRate}%</span>
+          </div>
+
+          {/* Tab bar */}
+          <div className="flex items-center gap-0 px-5">
+            {[
+              { key: 'info', label: 'Información' },
+              { key: 'plan', label: 'Plan de Estudios' },
+              { key: 'field', label: 'Campo Laboral' },
+            ].map((t) => (
+              <button
+                key={t.key}
+                onClick={() => handleTabChange(t.key)}
+                className="relative px-4 py-3 text-sm font-semibold transition-colors duration-200 whitespace-nowrap"
+                style={{ color: tab === t.key ? C.primary : C.muted }}
+                role="tab"
+                aria-selected={tab === t.key}
               >
-                {tabContent}
+                {t.label}
+                {tab === t.key && (
+                  <motion.div layoutId="tabLine" className="absolute bottom-0 left-0 right-0 h-[3px] rounded-t-full" style={{ background: C.gold }} transition={anim(0.2)} />
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* C. Scrollable Content */}
+        <div
+          ref={scrollContainerRef}
+          className="flex-1 min-h-0 overflow-y-auto cm-scroll"
+          style={{ background: C.background, overscrollBehavior: 'contain', scrollbarGutter: 'stable', position: 'relative' }}
+          onScroll={handleContentScroll}
+        >
+          {/* Subtle Shipibo watermark */}
+          <svg className="pointer-events-none select-none absolute top-3 right-3 opacity-[0.018]" width="120" height="120" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+            <path d="M60 10 L110 35 L110 85 L60 110 L10 85 L10 35 Z" stroke={C.primary} strokeWidth="1.2" fill="none" />
+            <path d="M60 25 L95 42 L95 78 L60 95 L25 78 L25 42 Z" stroke={C.primary} strokeWidth="0.8" fill="none" />
+            <path d="M60 40 L80 50 L80 70 L60 80 L40 70 L40 50 Z" stroke={C.primary} strokeWidth="0.6" fill="none" />
+            <line x1="60" y1="10" x2="60" y2="25" stroke={C.primary} strokeWidth="0.5" />
+            <line x1="110" y1="35" x2="95" y2="42" stroke={C.primary} strokeWidth="0.5" />
+            <line x1="110" y1="85" x2="95" y2="78" stroke={C.primary} strokeWidth="0.5" />
+            <line x1="60" y1="110" x2="60" y2="95" stroke={C.primary} strokeWidth="0.5" />
+            <line x1="10" y1="85" x2="25" y2="78" stroke={C.primary} strokeWidth="0.5" />
+            <line x1="10" y1="35" x2="25" y2="42" stroke={C.primary} strokeWidth="0.5" />
+          </svg>
+          <div className="p-5">
+            <AnimatePresence mode="wait">
+              <motion.div key={tab + career.id} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={anim(0.18)}>
+                {tab === 'info' && <InfoTab career={career} cfg={cfg} />}
+                {tab === 'plan' && <PlanTab career={career} cfg={cfg} />}
+                {tab === 'field' && <FieldTab career={career} cfg={cfg} />}
               </motion.div>
             </AnimatePresence>
           </div>
+        </div>
 
-          <div className="px-5 py-3 border-t border-white/8">
-            <button
-              onClick={() => {}}
-              className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-2xl text-white font-bold text-sm transition-all duration-300 hover:shadow-xl active:scale-[0.98] group/cta relative overflow-hidden"
-              style={{
-                background: `linear-gradient(135deg, ${cfg.accent}, ${cfg.accent}DD)`,
-                boxShadow: `0 8px 25px -5px ${cfg.accent}50`
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.boxShadow = `0 12px 35px -5px ${cfg.accent}70`; e.currentTarget.style.transform = 'translateY(-1px)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.boxShadow = `0 8px 25px -5px ${cfg.accent}50`; e.currentTarget.style.transform = 'translateY(0)'; }}
-            >
-              <span className="relative z-10">{mm.labels.viewComplete}</span>
-              <ArrowRight className="w-4 h-4 relative z-10 group-hover/cta:translate-x-1 transition-transform duration-200" />
-              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover/cta:translate-x-[100%] transition-transform duration-700" />
-            </button>
-          </div>
+        {/* D. Fixed Footer CTA */}
+        <div className="px-5 py-3 border-t shrink-0" style={{ borderColor: C.border, background: C.surface }}>
+          <button
+            onClick={() => {
+              if (!career?.id) return;
+              navigate(`/careers/${career.id}`);
+              onItemClick?.();
+            }}
+            className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-white font-bold text-sm transition-all duration-250 hover:shadow-lg hover:-translate-y-[1px] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+            style={{ background: `linear-gradient(90deg, ${C.primary} 0%, ${C.primaryMedium} 100%)`, boxShadow: `0 4px 14px -3px ${C.primary}40`, borderTop: '1px solid rgba(255,255,255,0.12)', minHeight: '48px', focusVisibleRingColor: C.primary }}
+            aria-label={`Ver información completa de ${career.name}`}
+          >
+            <span>{mm.labels?.viewComplete || 'Ver información completa'}</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+          </button>
         </div>
       </motion.div>
     </AnimatePresence>
   );
 }
 
-function CareerListItem({ career, isActive, onHover, onClick, index, t }) {
-  const cfg = careerConfig[career.id] || careerConfig.sys;
+function CareerItem({ career, isActive, onHover, onClick, index }) {
+  const C = useColors();
+  const dark = useDarkMode();
+  const cfg = careerConfig[career.id] || careerConfig.sistemas;
   const Icon = cfg.icon;
-  const mm = t.megaMenu?.careers?.labels || {};
+  const softBg = getSoftColor(career.id, dark);
   return (
     <motion.button
-      initial={{ opacity: 0, x: -10 }}
+      initial={{ opacity: 0, x: -6 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.25, delay: index * 0.03, ...m }}
+      transition={anim(0.2, { delay: index * 0.02 })}
       onMouseEnter={onHover}
       onClick={onClick}
-      className={`w-full text-left rounded-xl transition-all duration-300 group/item relative flex items-center gap-3 px-3 py-3 ${
-        isActive ? 'bg-white dark:bg-white/5 shadow-md shadow-black/5 dark:shadow-black/20' : 'hover:bg-white/60 dark:hover:bg-white/[0.03]'
-      }`}
+      className="w-full text-left rounded-xl transition-all duration-200 group relative flex items-center gap-3 px-3 py-3 cm-career-item"
+      style={{
+        '--program-color': cfg.color,
+        '--program-soft-color': softBg,
+        borderLeft: isActive ? `3px solid ${cfg.color}` : '3px solid transparent',
+        background: isActive
+          ? (dark
+            ? `linear-gradient(90deg, ${softBg}E6, ${C.surface})`
+            : `linear-gradient(90deg, ${softBg}B3, ${C.surface})`)
+          : 'transparent',
+        border: isActive ? `1px solid ${cfg.color}30` : '1px solid transparent',
+        borderLeftWidth: '3px',
+        borderLeftColor: isActive ? cfg.color : 'transparent',
+        boxShadow: isActive ? (dark ? `0 4px 14px ${cfg.color}15` : `0 4px 14px ${cfg.color}10`) : 'none',
+        transform: isActive ? 'none' : undefined,
+      }}
       role="option"
       aria-selected={isActive}
       tabIndex={0}
       onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(); } }}
     >
-      <div className={`absolute left-0 top-2 bottom-2 w-[3px] rounded-full transition-all duration-300 ease-out ${isActive ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0'}`} style={{ backgroundColor: cfg.accent }} />
-      <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isActive ? `bg-gradient-to-br ${cfg.gradient} text-white shadow-md` : 'bg-slate-100 dark:bg-white/5 text-slate-400 dark:text-white/30 group-hover/item:text-slate-600 dark:group-hover/item:text-white/50'}`} style={isActive ? { boxShadow: `0 4px 14px -3px ${cfg.accent}40` } : {}}>
-        <Icon className="w-4 h-4" strokeWidth={2} />
+      <div
+        className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-200 cm-career-icon"
+        style={{
+          background: softBg,
+          color: cfg.color,
+          border: `1px solid ${cfg.color}1D`,
+        }}
+      >
+        <Icon className="w-5 h-5" strokeWidth={1.8} />
       </div>
       <div className="flex-1 min-w-0">
-        <span className={`block font-semibold text-[13px] leading-tight transition-colors duration-200 truncate ${isActive ? 'text-slate-800 dark:text-white' : 'text-slate-600 dark:text-white/70 group-hover/item:text-slate-800 dark:group-hover/item:text-white/90'}`}>{career.name}</span>
-        <span className={`block text-[10px] mt-0.5 transition-colors duration-200 ${isActive ? 'text-slate-500 dark:text-white/50' : 'text-slate-400 dark:text-white/30'}`}>{career.employabilityRate}% {mm.employability}</span>
+        <span className="block font-semibold text-[13px] leading-tight truncate" style={{ color: isActive ? C.text : C.muted }}>{career.name}</span>
+        <span className="block text-[11px] mt-0.5" style={{ color: C.muted }}>{career.employabilityRate}% empleabilidad</span>
       </div>
-      <ChevronRight className={`w-4 h-4 flex-shrink-0 transition-all duration-300 ${isActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-1 group-hover/item:opacity-50 group-hover/item:translate-x-0'}`} style={{ color: isActive ? cfg.accent : undefined }} />
+      <ChevronRight className="w-4 h-4 flex-shrink-0 transition-all duration-200 cm-career-arrow" style={{ color: isActive ? cfg.color : 'transparent' }} />
     </motion.button>
   );
 }
 
-function RightPanel({ career, t }) {
-  return <RightPanelInner key={career.id} career={career} t={t} />;
-}
-
 export default function CareersMegaMenu({ t, isMobile, onItemClick }) {
+  const C = useColors();
+  const dark = useDarkMode();
   const [activeId, setActiveId] = useState(null);
   const navigate = useNavigate();
-  const careers = useMemo(() => t.careers?.items || [], [t]);
+  const careers = useMemo(() => careersData, []);
   const activeCareer = useMemo(() => careers.find(c => c.id === activeId) || careers[0], [careers, activeId]);
   const handleCareerClick = useCallback((id) => { navigate(`/careers/${id}`); onItemClick?.(); }, [navigate, onItemClick]);
   const mm = t.megaMenu?.careers || {};
 
-  const listScrollRef = useRef(null);
+  const scrollRef = useRef(null);
   const fadeTopRef = useRef(null);
   const fadeBottomRef = useRef(null);
 
-  const handleListScroll = useCallback(() => {
-    const el = listScrollRef.current;
+  const handleScroll = useCallback(() => {
+    const el = scrollRef.current;
     if (!el) return;
-    const atTop = el.scrollTop < 5;
-    const atBottom = el.scrollHeight - el.scrollTop - el.clientHeight < 5;
-    if (fadeTopRef.current) fadeTopRef.current.style.opacity = atTop ? '0' : '1';
-    if (fadeBottomRef.current) fadeBottomRef.current.style.opacity = atBottom ? '0' : '1';
+    if (fadeTopRef.current) fadeTopRef.current.style.opacity = el.scrollTop < 5 ? '0' : '1';
+    if (fadeBottomRef.current) fadeBottomRef.current.style.opacity = el.scrollHeight - el.scrollTop - el.clientHeight < 5 ? '0' : '1';
   }, []);
 
-  useEffect(() => { handleListScroll(); }, [handleListScroll, activeId]);
+  useEffect(() => { handleScroll(); }, [handleScroll, activeId]);
 
   if (isMobile) {
     return (
-      <div className="mt-2 space-y-1 pl-4 border-l-2 border-primary/20">
+      <div className="mt-2 space-y-1 pl-4 border-l-2" style={{ borderColor: `${C.primary}20` }}>
         {careers.map((career, index) => {
-          const cfg = careerConfig[career.id] || careerConfig.sys;
+          const cfg = careerConfig[career.id] || careerConfig.sistemas;
           const Icon = cfg.icon;
           return (
-            <motion.button key={career.id} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.25, delay: index * 0.03 }} onClick={() => handleCareerClick(career.id)} className="w-full text-left px-3 py-3 rounded-xl hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-200 group flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-slate-100 dark:bg-white/5 text-slate-400 dark:text-white/30"><Icon className="w-4 h-4" /></div>
+            <motion.button key={career.id} initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} transition={anim(0.2, { delay: index * 0.025 })} onClick={() => handleCareerClick(career.id)} className={`w-full text-left px-3 py-3 rounded-xl transition-all duration-200 group flex items-center gap-3 ${dark ? 'hover:bg-white/5' : 'hover:bg-blue-50'}`}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: getSoftColor(career.id, dark) }}><Icon className="w-4 h-4" style={{ color: cfg.color }} /></div>
               <div className="flex-1 min-w-0">
-                <div className="font-semibold text-xs text-slate-text dark:text-white group-hover:text-primary dark:group-hover:text-secondary transition-colors duration-300 truncate">{career.name}</div>
-                <div className="text-[10px] text-slate-text/60 dark:text-dark-text/60 mt-0.5">{career.employabilityRate}% {mm.labels.employability}</div>
+                <div className="font-semibold text-xs truncate" style={{ color: C.text }}>{career.name}</div>
+                <div className="text-[10px] mt-0.5" style={{ color: C.muted }}>{career.employabilityRate}% empleabilidad</div>
               </div>
-              <ChevronRight className="w-3.5 h-3.5 text-slate-text/40 dark:text-dark-text/40 group-hover:text-primary dark:group-hover:text-secondary group-hover:translate-x-0.5 transition-all duration-200 flex-shrink-0" />
+              <ChevronRight className="w-3.5 h-3.5 flex-shrink-0" style={{ color: C.muted }} />
             </motion.button>
           );
         })}
-        <button onClick={() => { navigate('/careers'); onItemClick?.(); }} className="mt-2 pt-2 border-t border-primary/10 dark:border-white/10 block px-3 py-2 text-center text-xs font-bold text-primary hover:text-primary-dark dark:hover:text-secondary transition-colors duration-300">{mm.viewAll} →</button>
+        <button onClick={() => { navigate('/careers'); onItemClick?.(); }} className="mt-2 pt-2 border-t block px-3 py-2 text-center text-xs font-bold transition-colors duration-200" style={{ borderColor: `${C.primary}0D`, color: C.primary }}>
+          {mm.viewAll || 'Ver todos los programas'} →
+        </button>
       </div>
     );
   }
 
   return (
-    <div className="absolute top-full left-1/2 -translate-x-1/2 w-[920px] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 translate-y-2 transition-all duration-300 ease-out z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:w-full before:h-3">
-      <div className="rounded-2xl overflow-hidden bg-white/95 dark:bg-dark-card/95 backdrop-blur-xl border border-slate-200/60 dark:border-white/[0.06] shadow-2xl shadow-black/10 dark:shadow-black/40">
-        <div className="flex h-[415px]">
-          <div className="w-[400px] flex-shrink-0 border-r border-slate-100 dark:border-white/6 flex flex-col">
-            <div className="px-5 pt-4 pb-2.5 flex-shrink-0">
+    <div className="absolute top-full left-1/2 -translate-x-1/2 w-[960px] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 translate-y-2 transition-all duration-300 ease-out z-50">
+      <div style={{ background: C.surface, border: `1px solid ${dark ? 'rgba(255,255,255,0.08)' : 'rgba(11,77,187,0.10)'}`, borderRadius: '24px', boxShadow: dark ? '0 24px 65px rgba(0,0,0,0.4)' : '0 24px 65px rgba(8,43,92,0.18)', overflow: 'hidden' }}>
+        <div className="flex" style={{ height: '440px' }}>
+          <div className="flex flex-col" style={{ width: '320px', flexShrink: 0, borderRight: `1px solid ${C.border}` }}>
+            <div className="px-4 pt-4 pb-2 shrink-0">
               <div className="flex items-center justify-between">
-                <p className="text-[10px] font-bold text-slate-400 dark:text-white/30 uppercase tracking-[0.15em]">{mm.header || t.nav.careers}</p>
-                <span className="text-[10px] text-slate-300 dark:text-white/20 font-medium">{careers.length} {mm.programs}</span>
+                <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: C.muted }}>{mm.header || 'Programas de Estudio'}</p>
+                <span className="text-[10px] font-medium" style={{ color: `${C.muted}80` }}>{careers.length} programas</span>
               </div>
             </div>
-
             <div className="flex-1 relative min-h-0">
-              <div className="absolute top-0 left-0 right-0 h-4 bg-gradient-to-b from-white/95 dark:from-dark-card/95 to-transparent z-10 pointer-events-none opacity-0 transition-opacity duration-300" style={{ opacity: 'var(--fade-top, 0)' }} ref={fadeTopRef} />
-              <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-white/95 dark:from-dark-card/95 to-transparent z-10 pointer-events-none opacity-0 transition-opacity duration-300" style={{ opacity: 'var(--fade-bottom, 0)' }} ref={fadeBottomRef} />
-
-              <div
-                ref={listScrollRef}
-                className="h-full overflow-y-auto px-3 pb-3 space-y-0.5 scrollbar-thin scroll-smooth"
-                role="listbox"
-                aria-label={mm.header}
-                onScroll={handleListScroll}
-              >
+              <div className="absolute top-0 left-0 right-0 h-4 z-10 pointer-events-none opacity-0 transition-opacity" ref={fadeTopRef} style={{ background: `linear-gradient(to bottom, ${C.surface}, transparent)` }} />
+              <div className="absolute bottom-0 left-0 right-0 h-5 z-10 pointer-events-none opacity-0 transition-opacity" ref={fadeBottomRef} style={{ background: `linear-gradient(to top, ${C.surface}, transparent)` }} />
+              <div ref={scrollRef} className="h-full overflow-y-auto px-2.5 pb-2 space-y-0.5 cm-scroll scroll-smooth" role="listbox" aria-label="Programas de Estudio" onScroll={handleScroll}>
                 {careers.map((career, index) => (
-                  <CareerListItem key={career.id} career={career} isActive={activeCareer?.id === career.id} onHover={() => setActiveId(career.id)} onClick={() => handleCareerClick(career.id)} index={index} t={t} />
+                  <CareerItem key={career.id} career={career} isActive={activeCareer?.id === career.id} onHover={() => setActiveId(career.id)} onClick={() => handleCareerClick(career.id)} index={index} />
                 ))}
               </div>
             </div>
-
-            <div className="px-5 py-2.5 border-t border-slate-100 dark:border-white/6 flex-shrink-0">
-              <button onClick={() => { navigate('/careers'); onItemClick?.(); }} className="w-full flex items-center justify-center gap-2 px-3 py-2 text-xs font-bold text-primary hover:text-primary-dark dark:hover:text-secondary transition-colors duration-300 rounded-lg hover:bg-primary/5 dark:hover:bg-primary/10">
-                {mm.viewAll}
+            <div className="px-4 py-2.5 shrink-0 border-t" style={{ borderColor: C.border }}>
+              <button onClick={() => { navigate('/careers'); onItemClick?.(); }} className="w-full flex items-center justify-center gap-2 px-3 py-2 text-xs font-bold rounded-lg transition-all duration-200" style={{ color: C.primary }}>
+                {mm.viewAll || 'Ver todos los programas'}
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
-          <div className="flex-1 relative overflow-hidden">
-            <RightPanel career={activeCareer} t={t} />
+          <div className="flex-1 min-w-0 overflow-hidden" style={{ background: C.surface }}>
+            <RightPanel career={activeCareer} t={t} onItemClick={onItemClick} />
           </div>
         </div>
       </div>

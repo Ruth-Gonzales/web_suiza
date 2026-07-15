@@ -1,13 +1,51 @@
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { X, BookOpen, Target, Sparkles, ChevronRight, GraduationCap, Briefcase, Clock, Award } from 'lucide-react';
+import { careersData } from '../data/careersData';
 
 export default function Careers({ t }) {
-  const careersData = t?.careers?.items || [];
-  const [selected, setSelected] = useState(null);
-  const [activePreview, setActivePreview] = useState(careersData[0]);
+  const { careerId } = useParams();
+  const navigate = useNavigate();
+  const translationsItems = t?.careers?.items || [];
 
-  const openCareer = (career) => setSelected(career);
-  const closeCareer = () => setSelected(null);
+  const mergedCareers = useMemo(() => {
+    return translationsItems.map((item) => {
+      const full = careersData.find((c) => c.id === item.id);
+      return full ? { ...item, ...full } : item;
+    });
+  }, [translationsItems]);
+
+  const [selected, setSelected] = useState(null);
+  const [activePreview, setActivePreview] = useState(mergedCareers[0]);
+
+  useEffect(() => {
+    if (careerId && mergedCareers.length > 0) {
+      const found = mergedCareers.find((c) => c.id === careerId);
+      if (found) {
+        setSelected(found);
+        setActivePreview(found);
+      }
+    }
+  }, [careerId, mergedCareers]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [careerId]);
+
+  const openCareer = (career) => {
+    setSelected(career);
+    navigate(`/careers/${career.id}`, { replace: true });
+  };
+
+  const closeCareer = () => {
+    setSelected(null);
+    navigate('/careers', { replace: true });
+  };
+
+  const handleListClick = (career) => {
+    setActivePreview(career);
+    openCareer(career);
+  };
 
   return (
     <div>
@@ -37,10 +75,10 @@ export default function Careers({ t }) {
               {t.careersPage.sectionTitle}
             </h2>
             <div className="inline-block">
-              {careersData.map((career) => (
+              {mergedCareers.map((career) => (
                 <button
                   key={career.id}
-                  onClick={() => openCareer(career)}
+                  onClick={() => handleListClick(career)}
                   onMouseEnter={() => setActivePreview(career)}
                   className={`block w-full text-left text-xl md:text-2xl font-medium py-3 pl-4 transition-colors cursor-pointer border-b-2 border-primary/40 dark:border-primary/60 ${
                     activePreview?.id === career.id
@@ -71,7 +109,7 @@ export default function Careers({ t }) {
                     {activePreview.tagline}
                   </p>
                   <button
-                    onClick={() => openCareer(activePreview)}
+                    onClick={() => handleListClick(activePreview)}
                     className="mt-4 inline-block text-xs font-bold text-white bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-full hover:bg-white/30 transition-all cursor-pointer"
                   >
                     {t.careersPage.viewMore}
@@ -129,89 +167,186 @@ export default function Careers({ t }) {
               <div className="flex flex-wrap gap-3">
                 <div className="flex items-center gap-1.5 text-sm font-semibold text-primary bg-primary/10 px-4 py-2 rounded-full">
                   <Clock className="w-4 h-4" />
-                  <span>{t.careersPage.durationBadge}</span>
+                  <span>{selected.duration || t.careersPage.durationBadge}</span>
                 </div>
                 <div className="flex items-center gap-1.5 text-sm font-semibold text-emerald-600 bg-emerald-50 dark:bg-emerald-500/10 px-4 py-2 rounded-full">
                   <GraduationCap className="w-4 h-4" />
                   <span>{selected.degree}</span>
                 </div>
+                {selected.employabilityRate && (
+                  <div className="flex items-center gap-1.5 text-sm font-semibold text-amber-600 bg-amber-50 px-4 py-2 rounded-full">
+                    <Target className="w-4 h-4" />
+                    <span>{selected.employabilityRate}% empleabilidad</span>
+                  </div>
+                )}
               </div>
 
               <p className="text-base md:text-lg text-slate-text/80 dark:text-dark-text/80 leading-relaxed">
-                {selected.desc}
+                {selected.description || selected.desc}
               </p>
 
-              <div>
-                <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-4">
-                  <BookOpen className="w-5 h-5 text-primary" />
-                  {t.careersPage.planTitle}
-                </h4>
-                <div className="space-y-3">
-                  {selected.curriculum.map((item, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <div className="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5 text-sm font-bold">
-                        {i + 1}
+              {selected.curriculum && selected.curriculum.length > 0 && (
+                <div>
+                  <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-4">
+                    <BookOpen className="w-5 h-5 text-primary" />
+                    {t.careersPage.planTitle}
+                  </h4>
+                  <div className="space-y-3">
+                    {selected.curriculum.map((semester, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <div className="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5 text-sm font-bold">
+                          {i + 1}
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-slate-text dark:text-white mb-1">Semestre {i + 1}</p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {Array.isArray(semester) ? semester.map((subj, j) => (
+                              <span key={j} className="text-xs text-slate-text/70 bg-slate-light dark:bg-dark-border px-2 py-1 rounded border border-primary/10">
+                                {subj}
+                              </span>
+                            )) : (
+                              <span className="text-sm text-slate-text/80">{semester}</span>
+                            )}
+                          </div>
+                        </div>
                       </div>
-                      <span className="text-base md:text-lg text-slate-text/80 dark:text-dark-text/80">
-                        {item}
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {selected.skills && selected.skills.length > 0 && (
+                <div>
+                  <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-4">
+                    <Award className="w-5 h-5 text-primary" />
+                    {t.careersPage.skillsTitle}
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selected.skills.map((skill, i) => (
+                      <span
+                        key={i}
+                        className="text-sm font-medium text-slate-text bg-slate-light dark:bg-dark-border dark:text-dark-text px-4 py-2 rounded-full border border-primary/10 dark:border-dark-border"
+                      >
+                        {skill}
                       </span>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
-              <div>
-                <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-4">
-                  <Award className="w-5 h-5 text-primary" />
-                  {t.careersPage.skillsTitle}
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {selected.skills.map((skill, i) => (
-                    <span
-                      key={i}
-                      className="text-sm font-medium text-slate-text bg-slate-light dark:bg-dark-border dark:text-dark-text px-4 py-2 rounded-full border border-primary/10 dark:border-dark-border"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+              {selected.opportunities && selected.opportunities.length > 0 && (
+                <div>
+                  <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-4">
+                    <Briefcase className="w-5 h-5 text-primary" />
+                    {t.careersPage.opportunitiesTitle}
+                  </h4>
+                  <div className="space-y-3">
+                    {selected.opportunities.map((item, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <ChevronRight className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                        <span className="text-base md:text-lg text-slate-text/80 dark:text-dark-text/80">
+                          {item}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
-              <div>
-                <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-4">
-                  <Briefcase className="w-5 h-5 text-primary" />
-                  {t.careersPage.opportunitiesTitle}
-                </h4>
-                <div className="space-y-3">
-                  {selected.opportunities.map((item, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <ChevronRight className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span className="text-base md:text-lg text-slate-text/80 dark:text-dark-text/80">
-                        {item}
+              {selected.competencies && selected.competencies.length > 0 && (
+                <div>
+                  <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-4">
+                    <Target className="w-5 h-5 text-primary" />
+                    Competencias Principales
+                  </h4>
+                  <div className="space-y-2">
+                    {selected.competencies.map((comp, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
+                        <span className="text-base text-slate-text/80 dark:text-dark-text/80">{comp}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {selected.whyYou && (
+                <div className="bg-gradient-to-r from-primary/5 to-transparent p-6 rounded-2xl border border-primary/10">
+                  <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-3">
+                    <Target className="w-5 h-5 text-primary" />
+                    {t.careersPage.whyTitle}
+                  </h4>
+                  <p className="text-base md:text-lg text-slate-text/75 dark:text-dark-text/75 leading-relaxed">
+                    {selected.whyYou}
+                  </p>
+                </div>
+              )}
+
+              {selected.whyChoose && (
+                <div className="bg-gradient-to-r from-amber-500/5 to-transparent p-6 rounded-2xl border border-amber-500/10">
+                  <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-3">
+                    <Sparkles className="w-5 h-5 text-amber-500" />
+                    {t.careersPage.whyStudyTitle}
+                  </h4>
+                  <p className="text-base md:text-lg text-slate-text/75 dark:text-dark-text/75 leading-relaxed">
+                    {selected.whyChoose}
+                  </p>
+                </div>
+              )}
+
+              {selected.graduateProfile && (
+                <div>
+                  <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-4">
+                    <GraduationCap className="w-5 h-5 text-primary" />
+                    Perfil del Egresado
+                  </h4>
+                  <p className="text-base md:text-lg text-slate-text/80 dark:text-dark-text/80 leading-relaxed">
+                    {selected.graduateProfile}
+                  </p>
+                </div>
+              )}
+
+              {selected.labs && selected.labs.length > 0 && (
+                <div>
+                  <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-4">
+                    <BookOpen className="w-5 h-5 text-primary" />
+                    Laboratorios
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selected.labs.map((lab, i) => (
+                      <span key={i} className="text-sm font-medium text-slate-text bg-slate-light px-4 py-2 rounded-full border border-primary/10">
+                        {lab}
                       </span>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
-              <div className="bg-gradient-to-r from-primary/5 to-transparent p-6 rounded-2xl border border-primary/10">
-                <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-3">
-                  <Target className="w-5 h-5 text-primary" />
-                  {t.careersPage.whyTitle}
-                </h4>
-                <p className="text-base md:text-lg text-slate-text/75 dark:text-dark-text/75 leading-relaxed">
-                  {selected.whyYou}
-                </p>
-              </div>
+              {selected.agreements && selected.agreements.length > 0 && (
+                <div>
+                  <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-4">
+                    <Briefcase className="w-5 h-5 text-primary" />
+                    Convenios
+                  </h4>
+                  <div className="space-y-2">
+                    {selected.agreements.map((agr, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <ChevronRight className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                        <span className="text-base text-slate-text/80">{agr}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
-              <div className="bg-gradient-to-r from-amber-500/5 to-transparent p-6 rounded-2xl border border-amber-500/10">
-                <h4 className="text-xl font-bold text-slate-text dark:text-white flex items-center gap-2 mb-3">
-                  <Sparkles className="w-5 h-5 text-amber-500" />
-                  {t.careersPage.whyStudyTitle}
-                </h4>
-                <p className="text-base md:text-lg text-slate-text/75 dark:text-dark-text/75 leading-relaxed">
-                  {selected.whyChoose}
-                </p>
+              <div className="pt-4 border-t border-primary/10">
+                <a
+                  href="/admission"
+                  className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.98]"
+                >
+                  Postular Ahora
+                  <ChevronRight className="w-5 h-5" />
+                </a>
               </div>
             </div>
           </div>
