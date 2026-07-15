@@ -59,7 +59,7 @@ export default function SocialLinks({ t }) {
   return (
     <section className="mb-12">
       <h2 className="text-2xl md:text-3xl font-bold text-slate-text dark:text-white mb-2 text-center">
-        {social.title || 'Síguenos en Redes Sociales'}
+        {social.title}
       </h2>
       <p className="text-sm text-slate-text/60 dark:text-dark-text/60 text-center mb-8">
         {social.subtitle}

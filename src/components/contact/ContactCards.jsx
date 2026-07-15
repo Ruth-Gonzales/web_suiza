@@ -1,10 +1,10 @@
 import { Phone, Mail, Clock, MapPin } from 'lucide-react';
 
 const cardData = (info) => [
-  { icon: Phone, label: info.phone?.label || 'Teléfono', value: info.phone?.value || '061-280665', href: 'tel:+51061280665' },
-  { icon: Mail, label: info.email?.label || 'Correo', value: info.email?.value || 'suiza@iestpsuiza.edu.pe', href: 'mailto:suiza@iestpsuiza.edu.pe' },
-  { icon: Clock, label: info.hours?.label || 'Horario', value: info.hours?.value || 'Lun - Vie 8:00 am - 5:00 pm' },
-  { icon: MapPin, label: info.address?.label || 'Dirección', value: info.address?.value || 'Carretera Federico Basadre Km 5.700' },
+  { icon: Phone, label: info.phone?.label, value: info.phone?.value, href: 'tel:+51061280665' },
+  { icon: Mail, label: info.email?.label, value: info.email?.value, href: 'mailto:suiza@iestpsuiza.edu.pe' },
+  { icon: Clock, label: info.hours?.label, value: info.hours?.value },
+  { icon: MapPin, label: info.address?.label, value: info.address?.value },
 ];
 
 export default function ContactCards({ t }) {
@@ -14,7 +14,7 @@ export default function ContactCards({ t }) {
   return (
     <section className="mb-12">
       <h2 className="text-2xl md:text-3xl font-bold text-slate-text dark:text-white mb-8 text-center">
-        {info.title || 'Información de Contacto'}
+        {info.title}
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {cards.map((card, idx) => {

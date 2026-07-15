@@ -1,6 +1,6 @@
 import { Award } from 'lucide-react';
 
-export default function AchievementSection({ data }) {
+export default function AchievementSection({ data, t }) {
   if (!data || !data.items) return null;
   const items = data.items;
 
@@ -33,7 +33,7 @@ export default function AchievementSection({ data }) {
                 {item.desc}
               </p>
               <button className="mt-3 inline-flex items-center gap-1.5 text-[10px] font-bold text-primary dark:text-secondary bg-primary/5 dark:bg-primary/10 px-3 py-1.5 rounded-lg hover:bg-primary hover:text-white dark:hover:bg-secondary dark:hover:text-dark-bg transition-all opacity-0 group-hover:opacity-100 cursor-pointer">
-                🏆 Ver Historia Completa
+                {t?.news?.achievements?.viewFull}
               </button>
             </div>
           </div>

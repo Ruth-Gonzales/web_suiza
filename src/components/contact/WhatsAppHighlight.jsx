@@ -5,7 +5,7 @@ const PHONE_NUMBER = '51999999999';
 export default function WhatsAppHighlight({ t }) {
   const data = t.contact?.whatsappHighlight || {};
   const wa = t.contact?.whatsapp || {};
-  const waUrl = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(wa.message || '¡Hola! Quiero información sobre el IESTP Suiza')}`;
+  const waUrl = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(wa.message)}`;
 
   return (
     <section className="mb-16">
@@ -20,7 +20,7 @@ export default function WhatsAppHighlight({ t }) {
             </svg>
           </div>
           <h2 className="text-xl md:text-2xl font-bold text-white mb-3">
-            {data.title || '¿Tienes dudas sobre admisión o nuestras carreras?'}
+            {data.title}
           </h2>
           <p className="text-white/80 text-sm max-w-lg mx-auto mb-6">
             {data.subtitle}
@@ -32,7 +32,7 @@ export default function WhatsAppHighlight({ t }) {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white dark:bg-dark-surface text-green-600 dark:text-green-400 font-bold text-sm hover:bg-green-50 dark:hover:bg-dark-card transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
             <MessageCircle className="w-4 h-4" />
-            {data.cta || 'Hablar con un asesor'}
+            {data.cta}
           </a>
         </div>
       </div>

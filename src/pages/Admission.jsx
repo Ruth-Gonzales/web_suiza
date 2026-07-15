@@ -1,65 +1,34 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ContactForm from '../components/ContactForm';
 import { ChevronDown, ChevronUp, FileText, CalendarRange, HandshakeIcon, HeadphonesIcon, Layers, GraduationCap, BookOpen, Building2, Clock } from 'lucide-react';
 
 const INST_STATS = [
-  { icon: GraduationCap, value: "1,600+", label: "Estudiantes formados" },
-  { icon: Clock, value: "57+", label: "Años de experiencia" },
-  { icon: BookOpen, value: "11", label: "Carreras profesionales" },
-  { icon: Building2, value: "30+", label: "Convenios institucionales" },
+  { icon: GraduationCap, value: "1,600+", labelKey: "students" },
+  { icon: Clock, value: "57+", labelKey: "years" },
+  { icon: BookOpen, value: "11", labelKey: "careers" },
+  { icon: Building2, value: "30+", labelKey: "agreements" },
 ];
 
 const INFO_SECTIONS = [
   {
     icon: Layers,
-    title: "Modalidades de Admisión",
-    items: [
-      "Examen de Admisión General (febrero y agosto)",
-      "Ingreso Directo para Primeros Puestos",
-      "Egresados de Colegio",
-      "Traslados Externos",
-      "Experiencia Laboral",
-      "Ingreso por Convenio",
-      "Deportistas Calificados",
-    ],
+    titleKey: "modalities",
   },
   {
     icon: CalendarRange,
-    title: "Cronograma",
-    items: [
-      "Inscripciones: Enero – Marzo / Julio – Agosto",
-      "Examen de Admisión: Marzo y Agosto",
-      "Matrícula Regulares: Abril y Setiembre",
-    ],
+    titleKey: "schedule",
   },
   {
     icon: FileText,
-    title: "Requisitos",
-    items: [
-      "Certificado oficial de estudios secundarios",
-      "DNI vigente (copia simple)",
-      "Partida de nacimiento original",
-      "2 fotografías tamaño carnet fondo blanco",
-      "Recibo de pago por derecho de inscripción",
-    ],
+    titleKey: "requirements",
   },
   {
     icon: HandshakeIcon,
-    title: "Becas y Convenios",
-    items: [
-      "Beca Permanencia PRONABEC",
-      "Convenios para prácticas en entidades públicas y privadas",
-      "Bolsas de trabajo activas",
-    ],
+    titleKey: "scholarships",
   },
   {
     icon: HeadphonesIcon,
-    title: "Asesoría",
-    items: [
-      "Orientación vocacional personalizada",
-      "Información sobre carreras y campo laboral",
-      "Asistencia en el proceso de inscripción",
-    ],
+    titleKey: "advisory",
   },
 ];
 
@@ -91,18 +60,15 @@ export default function Admission({ t }) {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 dark:bg-primary/20 text-primary dark:text-secondary font-bold text-xs tracking-wider uppercase mb-6">
               <GraduationCap className="w-4 h-4" />
-              <span>ADMISIÓN 2026</span>
+              <span>{t.admissionPage.badge}</span>
             </div>
 
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-slate-text dark:text-white leading-tight tracking-tight">
-              Tu futuro profesional{" "}
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                comienza aquí
-              </span>
+              {t.admissionPage.title}
             </h1>
 
             <p className="text-base md:text-lg text-slate-text/70 dark:text-dark-text/70 mt-4 max-w-2xl leading-relaxed">
-              Da el primer paso hacia una carrera con futuro. Estudia en el IESTP Suiza, una institución licenciada por el MINEDU con formación técnica de calidad, docentes especializados y modernos laboratorios.
+              {t.admissionPage.subtitle}
             </p>
           </div>
 
@@ -121,7 +87,7 @@ export default function Admission({ t }) {
                     {stat.value}
                   </div>
                   <div className="text-[10px] text-slate-text/60 dark:text-dark-text/60 font-medium uppercase tracking-wider mt-0.5">
-                    {stat.label}
+                    {t.admissionPage.stats[stat.labelKey] || stat.label}
                   </div>
                 </div>
               </div>
@@ -134,16 +100,16 @@ export default function Admission({ t }) {
               href="/#/contact"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white dark:bg-dark-card border border-primary/20 dark:border-white/8 text-slate-text dark:text-white font-bold text-sm hover:shadow-lg hover:-translate-y-0.5 transition-all shadow-sm"
             >
-              Contáctanos
+              {t.admissionPage.ctaContact}
             </a>
             <a
               href="/#/careers"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white dark:bg-dark-card border border-primary/20 dark:border-white/8 text-slate-text dark:text-white font-bold text-sm hover:shadow-lg hover:-translate-y-0.5 transition-all shadow-sm"
             >
-              Ver Programas
+              {t.admissionPage.ctaPrograms}
             </a>
             <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold text-sm hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 transition-all shadow-md cursor-pointer">
-              📥 Descargar Prospecto
+              📥 {t.admissionPage.download}
             </button>
           </div>
         </div>
@@ -160,10 +126,10 @@ export default function Admission({ t }) {
               <section.icon className="w-5 h-5 text-primary dark:text-secondary" />
             </div>
             <h3 className="text-base font-bold text-slate-text dark:text-white mb-3">
-              {section.title}
+              {t.admissionPage[section.titleKey].title || section.title}
             </h3>
             <ul className="flex flex-col gap-2">
-              {section.items.map((item, i) => (
+              {(t.admissionPage[section.titleKey].items || []).map((item, i) => (
                 <li key={i}>
                   {idx === 0 ? (
                     <a
