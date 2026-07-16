@@ -361,7 +361,7 @@ function DocenteModal({ docente, programa, allDocentes, currentIndex, onNavigate
           </div>
 
           <div className="w-full md:w-[370px] lg:w-[400px] shrink-0">
-            <div key={`card-${docente.nombre}`} className="rounded-3xl p-6 md:p-7 border-[3px]" style={{ background: 'linear-gradient(145deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%)', borderColor: programa.color, boxShadow: `0 0 15px ${programa.color}80, 0 0 30px ${programa.color}60, 0 0 60px ${programa.color}40, 0 0 100px ${programa.color}20, inset 0 0 15px ${programa.color}30, 0 25px 60px -12px rgba(0,0,0,0.5)`, animation: 'cardSlideFromFar 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both' }}>
+            <div key={`card-${docente.nombre}`} onClick={(e) => e.stopPropagation()} className="rounded-3xl p-6 md:p-7 border-[3px]" style={{ background: 'linear-gradient(145deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%)', borderColor: programa.color, boxShadow: `0 0 15px ${programa.color}80, 0 0 30px ${programa.color}60, 0 0 60px ${programa.color}40, 0 0 100px ${programa.color}20, inset 0 0 15px ${programa.color}30, 0 25px 60px -12px rgba(0,0,0,0.5)`, animation: 'cardSlideFromFar 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both' }}>
               <div className="mb-3" style={{ animation: 'fadeSlideUp 0.5s ease-out 0.2s both' }}>
                 <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-white" style={{ backgroundColor: programa.color, boxShadow: `0 4px 15px ${programa.color}50` }}>{programa.nombre}</span>
               </div>
@@ -464,7 +464,7 @@ export default function PlanaDocente({ t }) {
     if (!modalData) return;
     const { allDocentes, programa } = modalData;
     const idx = ((newIndex % allDocentes.length) + allDocentes.length) % allDocentes.length;
-    setModalData({ docente: allDocs[idx], programa, allDocentes, currentIndex: idx });
+    setModalData({ docente: allDocentes[idx], programa, allDocentes, currentIndex: idx });
   };
 
   return (
