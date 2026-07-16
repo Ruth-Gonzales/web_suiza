@@ -1,7 +1,9 @@
 import React from 'react';
 import { Target, Eye, ShieldAlert, Award, Landmark, CheckCircle } from 'lucide-react';
+import useInstitutionalTexture from '../hooks/useInstitutionalTexture';
 
 export default function AboutUs({ t }) {
+  useInstitutionalTexture();
   const values = [
     { title: "Excelencia", desc: "Buscamos el más alto estándar en la formación técnica y humana." },
     { title: "Innovación", desc: "Impulsamos la investigación aplicada y el uso de tecnologías de vanguardia." },

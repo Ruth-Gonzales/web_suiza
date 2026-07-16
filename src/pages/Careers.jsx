@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { X, BookOpen, Target, Sparkles, ChevronRight, GraduationCap, Briefcase, Clock, Award } from 'lucide-react';
+import useInstitutionalTexture from '../hooks/useInstitutionalTexture';
 
 const careersData = [
   {
@@ -280,6 +281,7 @@ const careersData = [
 ];
 
 export default function Careers() {
+  useInstitutionalTexture();
   const [selected, setSelected] = useState(null);
   const [activePreview, setActivePreview] = useState(careersData[0]);
 

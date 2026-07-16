@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import LogoSuiza from '../assets/img/logo_suiza_n.png';
 import { GraduationCap, ArrowRight, User, Search, Folder, CheckSquare, BookOpen, Library, CheckCircle2, ChevronRight } from 'lucide-react';
 import Carousel from '../components/Carousel';
+import useInstitutionalTexture from '../hooks/useInstitutionalTexture';
 
 export default function Home({ t }) {
   const [loginForm, setLoginForm] = useState({ email: '', password: '' });
@@ -16,12 +17,7 @@ export default function Home({ t }) {
     { number: "1,000+", label: t.hero.stats.graduates },
   ];
 
-  useEffect(() => {
-    document.body.classList.add('home-route-active');
-    return () => {
-      document.body.classList.remove('home-route-active');
-    };
-  }, []);
+  useInstitutionalTexture();
 
   return (
     <div className="relative overflow-hidden w-full">

@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { ChevronRight, Home, ArrowLeft } from 'lucide-react';
+import useInstitutionalTexture from '../../hooks/useInstitutionalTexture';
 
 export default function AboutPageShell({ title, breadcrumb, image, children }) {
+  useInstitutionalTexture();
   return (
     <div className="max-w-7xl mx-auto px-4 md:px-8 py-6 relative">
       {/* Banner */}

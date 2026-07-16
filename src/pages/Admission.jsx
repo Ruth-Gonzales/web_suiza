@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ContactForm from '../components/ContactForm';
 import { ChevronDown, ChevronUp, FileText, CalendarRange, HandshakeIcon, HeadphonesIcon, Layers, GraduationCap, BookOpen, Building2, Clock } from 'lucide-react';
+import useInstitutionalTexture from '../hooks/useInstitutionalTexture';
 
 const INST_STATS = [
   { icon: GraduationCap, value: "1,600+", label: "Estudiantes formados" },
@@ -64,6 +65,7 @@ const INFO_SECTIONS = [
 ];
 
 export default function Admission({ t }) {
+  useInstitutionalTexture();
   const [activeFaq, setActiveFaq] = useState(null);
 
   const faqItems = [
