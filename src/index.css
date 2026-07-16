@@ -1815,3 +1815,31 @@ body {
     transform: none !important;
   }
 }
+
+/* Fullscreen modal entrance animations */
+@keyframes fs-slide-left {
+  from { opacity: 0; transform: translateX(-100%); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fs-slide-right {
+  from { opacity: 0; transform: translateX(100%); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fs-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-fs-slide-left {
+  animation: fs-slide-left 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fs-slide-right {
+  animation: fs-slide-right 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.animate-fs-fade {
+  animation: fs-fade-in 0.3s ease-out both;
+}
