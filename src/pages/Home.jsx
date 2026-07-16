@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import LogoSuiza from '../assets/img/logo_suiza_n.png';
 import { GraduationCap, ArrowRight, User, Search, Folder, CheckSquare, BookOpen, Library, CheckCircle2, ChevronRight } from 'lucide-react';
@@ -15,6 +15,13 @@ export default function Home({ t }) {
     { number: "150+", label: t.hero.stats.newStudents },
     { number: "1,000+", label: t.hero.stats.graduates },
   ];
+
+  useEffect(() => {
+    document.body.classList.add('home-route-active');
+    return () => {
+      document.body.classList.remove('home-route-active');
+    };
+  }, []);
 
   return (
     <div className="relative overflow-hidden w-full">
@@ -83,69 +90,80 @@ export default function Home({ t }) {
         </Carousel>
       </section>
 
-      {/* Info & Call-To-Action Sections */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 mt-16 md:mt-24 border-t border-primary/5 pt-16">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-3xl font-extrabold text-slate-text dark:text-white tracking-tight">
-            Acceso Rápido al Estudiante
-          </h2>
-          <p className="text-sm text-slate-text/70 dark:text-dark-text/70 mt-2">
-            Enlaces a portales oficiales y recursos digitales del IESTP Suiza.
-          </p>
-        </div>
+      {/* Contenedor principal de todo el contenido posterior al Hero */}
+      <div className="home-content-background relative overflow-hidden w-full z-10">
 
-        {/* 4 Cards quick actions (from original website elements) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            {
-              title: "¿Por qué IESTP Suiza?",
-              desc: "Conoce nuestra acreditación nacional, educación de calidad 100% gratuita y convenios.",
-              link: "/about",
-              tag: "Institucional"
-            },
-            {
-              title: "Admisión Regular 2026",
-              desc: "Requisitos de postulación, cronograma y vacantes de las 11 especialidades.",
-              link: "/admission",
-              tag: "Admisiones"
-            },
-            {
-              title: "Nuestras Carreras",
-              desc: "Explora la currícula, laboratorios y el campo de acción de cada carrera profesional.",
-              link: "/careers",
-              tag: "Especialidades"
-            },
-            {
-              title: "Últimas Noticias",
-              desc: "Entérate de las actividades institucionales, eventos y publicaciones científicas.",
-              link: "/news",
-              tag: "Eventos"
-            }
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className="group p-6 rounded-3xl bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 hover:border-primary/30 hover:shadow-[0_15px_35px_rgba(75,122,244,0.06)] dark:hover:shadow-[0_15px_35px_rgba(0,0,0,0.25)] transition-all duration-300 flex flex-col justify-between text-left"
-            >
-              <div className="flex flex-col gap-2">
-                <span className="text-[10px] font-bold text-primary dark:text-secondary tracking-widest uppercase">
-                  {item.tag}
-                </span>
-                <h3 className="text-lg font-bold text-slate-text dark:text-white group-hover:text-primary dark:group-hover:text-secondary transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-slate-text/70 dark:text-dark-text/70 leading-relaxed mt-1">
-                  {item.desc}
+        {/* Capa superior para el contenido real */}
+        <div className="relative z-10">
+          {/* Info & Call-To-Action Sections */}
+          <div className="max-w-6xl mx-auto px-6 md:px-10 pt-20 md:pt-32 pb-16 md:pb-24 relative z-20">
+            <div className="relative rounded-[2rem] bg-white dark:bg-dark-card border border-slate-200/30 dark:border-white/8 overflow-hidden shadow-sm">
+              <div className="relative z-10 px-6 md:px-10 pt-12 pb-16">
+              <div className="text-center max-w-2xl mx-auto mb-12">
+                <h2 className="text-3xl font-extrabold text-slate-text dark:text-white tracking-tight">
+                  Acceso Rápido al Estudiante
+                </h2>
+                <p className="text-sm text-slate-text/70 dark:text-dark-text/70 mt-2">
+                  Enlaces a portales oficiales y recursos digitales del IESTP Suiza.
                 </p>
               </div>
-              <Link
-                to={item.link}
-                className="mt-6 inline-flex items-center gap-1 text-sm font-bold text-primary dark:text-secondary hover:translate-x-1 transition-all"
-              >
-                <span>Saber más</span>
-                <ChevronRight className="w-4 h-4" />
-              </Link>
+
+              {/* 4 Cards quick actions (from original website elements) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  {
+                    title: "¿Por qué IESTP Suiza?",
+                    desc: "Conoce nuestra acreditación nacional, educación de calidad 100% gratuita y convenios.",
+                    link: "/about",
+                    tag: "Institucional"
+                  },
+                  {
+                    title: "Admisión Regular 2026",
+                    desc: "Requisitos de postulación, cronograma y vacantes de las 11 especialidades.",
+                    link: "/admission",
+                    tag: "Admisiones"
+                  },
+                  {
+                    title: "Nuestras Carreras",
+                    desc: "Explora la currícula, laboratorios y el campo de acción de cada carrera profesional.",
+                    link: "/careers",
+                    tag: "Especialidades"
+                  },
+                  {
+                    title: "Últimas Noticias",
+                    desc: "Entérate de las actividades institucionales, eventos y publicaciones científicas.",
+                    link: "/news",
+                    tag: "Eventos"
+                  }
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="group p-6 rounded-3xl bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 hover:border-primary/30 hover:shadow-[0_15px_35px_rgba(75,122,244,0.06)] dark:hover:shadow-[0_15px_35px_rgba(0,0,0,0.25)] transition-all duration-300 flex flex-col justify-between text-left"
+                  >
+                    <div className="flex flex-col gap-2">
+                      <span className="text-[10px] font-bold text-primary dark:text-secondary tracking-widest uppercase">
+                        {item.tag}
+                      </span>
+                      <h3 className="text-lg font-bold text-slate-text dark:text-white group-hover:text-primary dark:group-hover:text-secondary transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-slate-text/70 dark:text-dark-text/70 leading-relaxed mt-1">
+                        {item.desc}
+                      </p>
+                    </div>
+                    <Link
+                      to={item.link}
+                      className="mt-6 inline-flex items-center gap-1 text-sm font-bold text-primary dark:text-secondary hover:translate-x-1 transition-all"
+                    >
+                      <span>Saber más</span>
+                      <ChevronRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+          </div>
+        </div>
         </div>
       </div>
     </div>

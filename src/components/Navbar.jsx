@@ -52,65 +52,6 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
       {/* Main nav bar — Identidad Amazónica Contemporánea */}
       <div className="max-w-[1440px] w-full mx-auto rounded-2xl navbar-amazon-identity shadow-[0_2px_12px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.40),0_1px_4px_rgba(0,0,0,0.30)] px-4 py-3 md:px-6 flex justify-between items-center transition-all duration-300 gap-4 relative">
         
-        {/* Kené SVG — Patrón Shipibo-Konibo de fondo */}
-        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden rounded-2xl">
-          <svg viewBox="0 0 1440 68" preserveAspectRatio="xMidYMid slice" className="w-full h-full" aria-hidden="true">
-            <defs>
-              <linearGradient id="kene-edge-fade" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stopColor="white" stopOpacity="0" />
-                <stop offset="8%" stopColor="white" stopOpacity="1" />
-                <stop offset="92%" stopColor="white" stopOpacity="1" />
-                <stop offset="100%" stopColor="white" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient id="kene-vertical-fade" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="white" stopOpacity="0.4" />
-                <stop offset="20%" stopColor="white" stopOpacity="1" />
-                <stop offset="80%" stopColor="white" stopOpacity="1" />
-                <stop offset="100%" stopColor="white" stopOpacity="0.4" />
-              </linearGradient>
-              <mask id="kene-mask">
-                <rect width="1440" height="68" fill="url(#kene-edge-fade)" />
-              </mask>
-              <mask id="kene-mask-v">
-                <rect width="1440" height="68" fill="url(#kene-vertical-fade)" />
-              </mask>
-            </defs>
-            <g mask="url(#kene-mask)" stroke="var(--kene-stroke)" strokeWidth="0.9" fill="none">
-              <g mask="url(#kene-mask-v)">
-                {/* Líneas horizontales guía */}
-                <line x1="0" y1="12" x2="1440" y2="12" strokeWidth="0.5" />
-                <line x1="0" y1="34" x2="1440" y2="34" strokeWidth="0.6" />
-                <line x1="0" y1="56" x2="1440" y2="56" strokeWidth="0.5" />
-                
-                {/* Cadena de rombos Kené */}
-                {[0, 96, 192, 288, 384, 480, 576, 672, 768, 864, 960, 1056, 1152, 1248, 1344].map((x, i) => (
-                  <g key={`d1-${i}`}>
-                    <path d={`M${x+48} 8 L${x+72} 34 L${x+48} 60 L${x+24} 34 Z`} strokeWidth="0.8" />
-                    <path d={`M${x+48} 16 L${x+64} 34 L${x+48} 52 L${x+32} 34 Z`} strokeWidth="0.5" />
-                    <circle cx={x+48} cy={34} r="1.8" strokeWidth="0.5" />
-                  </g>
-                ))}
-                
-                {/* Conectores zigzag entre rombos */}
-                {[0, 96, 192, 288, 384, 480, 576, 672, 768, 864, 960, 1056, 1152, 1248, 1344].map((x, i) => (
-                  <g key={`z1-${i}`} strokeWidth="0.55">
-                    <path d={`M${x+72} 20 L${x+84} 28 L${x+72} 34`} />
-                    <path d={`M${x+72} 48 L${x+84} 40 L${x+72} 34`} />
-                    <path d={`M${x+24} 20 L${x+12} 28 L${x+24} 34`} />
-                    <path d={`M${x+24} 48 L${x+12} 40 L${x+24} 34`} />
-                  </g>
-                ))}
-
-                {/* Líneas verticales de acento */}
-                {[48, 144, 240, 336, 432, 528, 624, 720, 816, 912, 1008, 1104, 1200, 1296, 1392].map((x, i) => (
-                  <g key={`a1-${i}`} strokeWidth="0.35">
-                    <line x1={x} y1="0" x2={x} y2="68" />
-                  </g>
-                ))}
-              </g>
-            </g>
-          </svg>
-        </div>
         
         <Link to="/" className="flex items-center gap-2.5 group shrink-0 relative z-10">
           <div className="relative flex items-center justify-center w-20 h-20 rounded-xl ring-1 ring-primary/10 dark:ring-white/15 group-hover:ring-primary/20 dark:group-hover:ring-white/25 group-hover:scale-[1.02] transition-all duration-300 shrink-0 overflow-hidden">

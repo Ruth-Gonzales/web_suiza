@@ -1,22 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function FooterParticles() {
   const canvasRef = useRef(null);
-  const [isDark, setIsDark] = useState(document.documentElement.classList.contains('dark'));
-
-  useEffect(() => {
-    // Watch for dark mode changes in the document root classList
-    const observer = new MutationObserver(() => {
-      setIsDark(document.documentElement.classList.contains('dark'));
-    });
-    
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
-
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -25,159 +10,106 @@ export default function FooterParticles() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    let animationFrameId;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let frameId;
     let particles = [];
-    
-    // Theme-based particle color prefixes
-    const getParticleColors = () => {
-      if (isDark) {
-        // Glowing colors for dark mode matching the palette
-        return [
-          'rgba(75, 122, 244, ',   // Primary Blue
-          'rgba(160, 193, 247, ',  // Secondary Blue
-          'rgba(229, 238, 254, ',  // Light blue-white
-          'rgba(0, 194, 255, ',    // Bright neon-ish blue/cyan
-        ];
-      } else {
-        // Soft blue and slate tones for light mode
-        return [
-          'rgba(75, 122, 244, ',   // Primary Blue
-          'rgba(160, 193, 247, ',  // Secondary Blue
-          'rgba(58, 75, 116, ',    // Slate Slate-text representation
-          'rgba(110, 150, 250, ',  // Soft sky blue
-        ];
-      }
-    };
 
-    const resizeCanvas = () => {
-      const rect = canvas.parentElement.getBoundingClientRect();
-      canvas.width = rect.width * window.devicePixelRatio;
-      canvas.height = rect.height * window.devicePixelRatio;
-      canvas.style.width = `${rect.width}px`;
-      canvas.style.height = `${rect.height}px`;
-      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    const resize = () => {
+      const r = canvas.parentElement.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = r.width * dpr;
+      canvas.height = r.height * dpr;
+      canvas.style.width = `${r.width}px`;
+      canvas.style.height = `${r.height}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
 
     class Particle {
-      constructor(width, height) {
-        this.reset(width, height, true);
+      constructor(w, h) {
+        this.init(w, h, true);
       }
 
-      reset(width, height, isInitial = false) {
-        this.width = width;
-        this.height = height;
-        this.x = Math.random() * width;
-        // Scatter vertically if starting for the first time, otherwise spawn at bottom
-        this.y = isInitial ? Math.random() * height : height + Math.random() * 20;
-        this.radius = 1 + Math.random() * 3;
-        this.speedY = 0.12 + Math.random() * 0.38; // Slow floating velocity
-        this.speedX = (Math.random() - 0.5) * 0.1; // Gentle horizontal drift
-        this.waveFreq = 0.01 + Math.random() * 0.015;
-        this.waveAmp = 0.1 + Math.random() * 0.3;
-        
-        const colors = getParticleColors();
-        this.color = colors[Math.floor(Math.random() * colors.length)];
-        
-        // Alpha controls for fade in/out
-        this.maxAlpha = 0.15 + Math.random() * 0.45;
+      init(w, h, scattered) {
+        this.x = Math.random() * w;
+        this.y = scattered
+          ? h * 0.4 + Math.random() * h * 0.6
+          : h + Math.random() * 20;
+        this.r = 3 + Math.random() * 5;
+        this.vy = -(0.04 + Math.random() * 0.1);
+        this.vx = (Math.random() - 0.5) * 0.06;
+        this.wave = Math.random() * Math.PI * 2;
+        this.waveSpeed = 0.003 + Math.random() * 0.006;
+        this.waveAmp = 0.15 + Math.random() * 0.25;
         this.alpha = 0;
+        this.maxAlpha = 0.15 + Math.random() * 0.2;
+        this.w = w;
+        this.h = h;
       }
 
       update() {
-        this.y -= this.speedY;
-        this.x += this.speedX + Math.sin(this.y * this.waveFreq) * this.waveAmp;
+        if (!prefersReduced) {
+          this.y += this.vy;
+          this.wave += this.waveSpeed;
+          this.x += this.vx + Math.sin(this.wave) * this.waveAmp;
+        }
 
-        // Calculate progress from bottom (y=height) to top (y=0)
-        const progress = this.y / this.height; // 1 at bottom, 0 at top
-        
-        if (progress > 0.9) {
-          // Fade in as it enters from the bottom
-          this.alpha = ((1 - progress) / 0.2) * this.maxAlpha;
-        } else if (progress < 0.4) {
-          // Fade out as it nears the top edge
-          this.alpha = (progress / 0.4) * this.maxAlpha;
+        const ratio = this.y / this.h;
+        if (ratio > 0.85) {
+          this.alpha = ((1 - ratio) / 0.15) * this.maxAlpha;
+        } else if (ratio < 0.3) {
+          this.alpha = (ratio / 0.3) * this.maxAlpha;
         } else {
           this.alpha = this.maxAlpha;
         }
 
-        // Reset particle if it leaves the boundaries
-        if (this.y < -5 || this.x < -5 || this.x > this.width + 5) {
-          this.reset(this.width, this.height);
+        if (this.y < -10 || this.x < -10 || this.x > this.w + 10) {
+          this.init(this.w, this.h, false);
         }
       }
 
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        
-        // Construct rgba string
-        ctx.fillStyle = `${this.color}${this.alpha})`;
-        
-        // Draw soft glowing shadows in dark mode for premium look
-        if (isDark && this.radius > 1.2) {
-          ctx.shadowBlur = 4;
-          ctx.shadowColor = `${this.color}0.5)`;
-        } else {
-          ctx.shadowBlur = 0;
-        }
-        
-        ctx.fill();
+      draw(c) {
+        c.beginPath();
+        c.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        c.fillStyle = `rgba(200,220,255,${this.alpha})`;
+        c.fill();
       }
     }
 
-    const init = () => {
-      const rect = canvas.parentElement.getBoundingClientRect();
-      // Adjust density based on screen width
-      const particleCount = Math.min(Math.floor(rect.width / 35), 45);
-      particles = [];
-      for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle(rect.width, rect.height));
-      }
+    const create = () => {
+      const r = canvas.parentElement.getBoundingClientRect();
+      const count = Math.min(Math.floor(r.width / 40), 35);
+      particles = Array.from({ length: count }, () => new Particle(r.width, r.height));
     };
 
-    init();
+    resize();
+    create();
 
-    // Re-initialize only if width changes significantly (e.g. orientation swap / resize)
-    let lastWidth = canvas.parentElement.getBoundingClientRect().width;
-    const checkResize = () => {
-      const currentWidth = canvas.parentElement.getBoundingClientRect().width;
-      if (Math.abs(currentWidth - lastWidth) > 50) {
-        lastWidth = currentWidth;
-        init();
-      }
+    const loop = () => {
+      const w = canvas.parentElement.getBoundingClientRect().width;
+      const h = canvas.parentElement.getBoundingClientRect().height;
+      ctx.clearRect(0, 0, w, h);
+      particles.forEach((p) => { p.update(); p.draw(ctx); });
+      frameId = requestAnimationFrame(loop);
     };
 
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      particles.forEach((p) => {
-        p.update();
-        p.draw();
-      });
+    if (!prefersReduced) loop();
+    else particles.forEach((p) => { p.alpha = p.maxAlpha; p.draw(ctx); });
 
-      animationFrameId = requestAnimationFrame(animate);
+    let lastW = canvas.parentElement.getBoundingClientRect().width;
+    const onResize = () => {
+      resize();
+      const cur = canvas.parentElement.getBoundingClientRect().width;
+      if (Math.abs(cur - lastW) > 60) { lastW = cur; create(); }
     };
 
-    animate();
-
-    const resizeObserver = new ResizeObserver(() => {
-      resizeCanvas();
-      checkResize();
-    });
-    
-    if (canvas.parentElement) {
-      resizeObserver.observe(canvas.parentElement);
-    }
+    const ro = new ResizeObserver(onResize);
+    ro.observe(canvas.parentElement);
 
     return () => {
-      cancelAnimationFrame(animationFrameId);
-      window.removeEventListener('resize', resizeCanvas);
-      resizeObserver.disconnect();
+      cancelAnimationFrame(frameId);
+      ro.disconnect();
     };
-  }, [isDark]);
+  }, []);
 
   return (
     <canvas
