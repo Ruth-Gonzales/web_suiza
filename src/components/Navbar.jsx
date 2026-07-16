@@ -34,7 +34,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full px-4 py-4 md:px-8 overflow-hidden">
+    <nav className="sticky top-0 z-50 w-full px-4 py-4 md:px-8">
       {/* Contact info bar above Navbar */}
       <div className="max-w-[1440px] w-full mx-auto mb-2 px-4 py-1.5 flex flex-wrap justify-between items-center text-xs bg-slate-100/80 dark:bg-dark-surface/80 backdrop-blur-sm rounded-lg shadow-sm border border-slate-200/60 dark:border-dark-border/60 text-slate-text/70 dark:text-dark-text/70 transition-colors duration-300">
         <div className="flex gap-5 items-center flex-wrap">
@@ -58,7 +58,7 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
       </div>
 
       {/* Main nav bar */}
-      <div className="max-w-[1440px] w-full mx-auto rounded-2xl bg-white/95 dark:bg-dark-surface/95 backdrop-blur-md shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-slate-200/70 dark:border-dark-border/70 px-4 py-2 md:px-6 flex justify-between items-center transition-all duration-300 gap-3 overflow-hidden">
+      <div className="max-w-[1440px] w-full mx-auto rounded-2xl bg-white/95 dark:bg-dark-surface/95 backdrop-blur-md shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-slate-200/70 dark:border-dark-border/70 px-4 py-2 md:px-6 flex justify-between items-center transition-all duration-300 gap-3">
         
         <Link to="/" className="flex items-center gap-2.5 group shrink-0">
           <div className="relative flex items-center justify-center w-10 h-10 md:w-11 md:h-11 rounded-xl shadow-md shadow-primary/10 group-hover:shadow-lg group-hover:shadow-primary/20 group-hover:scale-105 transition-all duration-300 shrink-0">
