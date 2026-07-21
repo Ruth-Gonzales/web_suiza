@@ -5,10 +5,10 @@ import useInstitutionalTexture from '../hooks/useInstitutionalTexture';
 export default function AboutUs({ t }) {
   useInstitutionalTexture();
   const values = [
-    { title: "Excelencia", desc: "Buscamos el más alto estándar en la formación técnica y humana." },
-    { title: "Innovación", desc: "Impulsamos la investigación aplicada y el uso de tecnologías de vanguardia." },
-    { title: "Inclusión", desc: "Respetamos y valoramos la diversidad sociocultural de nuestra Amazonía." },
-    { title: "Integridad", desc: "Actuamos con ética, honestidad, transparencia y responsabilidad social." }
+    { title: t.aboutPage.values.excellence.title, desc: t.aboutPage.values.excellence.desc },
+    { title: t.aboutPage.values.innovation.title, desc: t.aboutPage.values.innovation.desc },
+    { title: t.aboutPage.values.inclusion.title, desc: t.aboutPage.values.inclusion.desc },
+    { title: t.aboutPage.values.integrity.title, desc: t.aboutPage.values.integrity.desc }
   ];
 
   return (
@@ -19,10 +19,10 @@ export default function AboutUs({ t }) {
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto mb-16">
         <h2 className="text-3xl md:text-5xl font-extrabold text-slate-text dark:text-white tracking-tight">
-          Nuestra Institución
+          {t.aboutPage.header.title}
         </h2>
         <p className="text-sm md:text-base text-slate-text/70 dark:text-dark-text/70 mt-3 leading-relaxed">
-          Conoce la trayectoria, misión, visión y los valores que guían al IESTP Suiza de Pucallpa.
+          {t.aboutPage.header.subtitle}
         </p>
       </div>
 
@@ -33,9 +33,9 @@ export default function AboutUs({ t }) {
           <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary dark:bg-primary/20 dark:text-secondary flex items-center justify-center mb-5">
             <Target className="w-6 h-6" />
           </div>
-          <h3 className="text-xl font-bold text-slate-text dark:text-white mb-3">Misión</h3>
+          <h3 className="text-xl font-bold text-slate-text dark:text-white mb-3">{t.aboutPage.mission.title}</h3>
           <p className="text-sm md:text-base text-slate-text/80 dark:text-dark-text/80 leading-relaxed">
-            Somos una institución de educación superior tecnológica pública licenciada, dedicada a formar profesionales técnicos competentes, creativos, innovadores y con sólidos valores éticos, capaces de contribuir activamente al desarrollo socioeconómico sostenible de la región Ucayali y el país.
+            {t.aboutPage.mission.description}
           </p>
         </div>
 
@@ -44,16 +44,16 @@ export default function AboutUs({ t }) {
           <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary dark:bg-primary/20 dark:text-secondary flex items-center justify-center mb-5">
             <Eye className="w-6 h-6" />
           </div>
-          <h3 className="text-xl font-bold text-slate-text dark:text-white mb-3">Visión</h3>
+          <h3 className="text-xl font-bold text-slate-text dark:text-white mb-3">{t.aboutPage.vision.title}</h3>
           <p className="text-sm md:text-base text-slate-text/80 dark:text-dark-text/80 leading-relaxed">
-            Al 2030, ser un instituto tecnológico líder en la Amazonía peruana y referente nacional por su excelencia académica, infraestructura moderna, procesos automatizados, convenios internacionales y egresados de alta empleabilidad comprometidos con la innovación y el cuidado ambiental.
+            {t.aboutPage.vision.description}
           </p>
         </div>
       </div>
 
       {/* Values Grid */}
       <div className="bg-white/40 dark:bg-dark-card/25 border border-primary/5 dark:border-white/5 rounded-[2.5rem] p-8 md:p-12 mb-16 text-left backdrop-blur-sm shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-text dark:text-white mb-8 border-b border-primary/5 pb-3">Nuestros Valores</h3>
+        <h3 className="text-2xl font-bold text-slate-text dark:text-white mb-8 border-b border-primary/5 pb-3">{t.aboutPage.values.title}</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {values.map((v, idx) => (
             <div key={idx} className="flex flex-col gap-2">
@@ -71,7 +71,7 @@ export default function AboutUs({ t }) {
       <div className="text-left bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 p-8 md:p-10 rounded-[2.5rem] shadow-sm">
         <h3 className="text-2xl font-bold text-slate-text dark:text-white mb-8 flex items-center gap-2.5 border-b border-primary/5 pb-3">
           <Landmark className="w-6 h-6 text-primary" />
-          <span>Reseña Histórica</span>
+          <span>{t.aboutPage.history.title}</span>
         </h3>
         
         {/* Timeline representation */}
@@ -79,23 +79,23 @@ export default function AboutUs({ t }) {
           {[
             {
               year: "1976",
-              title: "Fundación y Primeros Pasos",
-              desc: "Nace como respuesta a la creciente demanda de formación técnica calificada en la provincia de Coronel Portillo, Ucayali, ofreciendo los primeros programas en áreas agropecuarias y de mecánica."
+              title: t.aboutPage.history.timeline.founding.title,
+              desc: t.aboutPage.history.timeline.founding.desc
             },
             {
               year: "1995",
-              title: "Consolidación y Nuevos Programas",
-              desc: "Se inaugura el campus actual en la Carretera Federico Basadre y se incorporan especialidades como Contabilidad, Computación y Enfermería Técnica, adaptándose al crecimiento digital de la época."
+              title: t.aboutPage.history.timeline.consolidation.title,
+              desc: t.aboutPage.history.timeline.consolidation.desc
             },
             {
               year: "2018",
-              title: "Modernización Tecnológica",
-              desc: "Se equipan nuevos laboratorios con tecnología de mecatrónica y desarrollo de software, y se consolidan convenios estratégicos con empresas nacionales y regionales."
+              title: t.aboutPage.history.timeline.modernization.title,
+              desc: t.aboutPage.history.timeline.modernization.desc
             },
             {
               year: "2024",
-              title: "Licenciamiento Institucional",
-              desc: "El IESTP Suiza logra exitosamente su licenciamiento institucional ante el Ministerio de Educación, validando sus condiciones básicas de calidad académica e infraestructura."
+              title: t.aboutPage.history.timeline.licensing.title,
+              desc: t.aboutPage.history.timeline.licensing.desc
             }
           ].map((item, idx) => (
             <div key={idx} className="relative group">

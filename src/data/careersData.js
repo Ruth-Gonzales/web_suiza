@@ -1,0 +1,552 @@
+// Careers Data - IESTP Suiza Pucallpa
+// Each career contains all information needed for the mega menu and careers page
+
+export const careersData = [
+  {
+    id: 'sistemas',
+    name: 'Desarrollo de Sistemas de Información',
+    shortName: 'Sistemas',
+    category: 'tech',
+    employabilityRate: 92,
+    duration: '3 años (6 semestres)',
+    modality: 'Presencial',
+    degree: 'Profesional Técnico en Desarrollo de Sistemas de Información',
+    image: '/careers/sys.jpg',
+    tagline: 'Crea soluciones tecnológicas que transforman empresas y comunidades.',
+    description: 'Forma profesionales capaces de diseñar, desarrollar e implementar sistemas de información que optimicen procesos empresariales. Aprenderás programación, bases de datos, desarrollo web y móvil, y metodologías ágiles de desarrollo.',
+    graduateProfile: 'Egresados con capacidad para analizar necesidades tecnológicas, diseñar arquitecturas de software, desarrollar aplicaciones full-stack y gestionar proyectos de tecnología de información.',
+    competencies: [
+      'Programación en múltiples lenguajes (Python, Java, JavaScript)',
+      'Diseño y administración de bases de datos',
+      'Desarrollo de aplicaciones web y móviles',
+      'Análisis y diseño de sistemas de información',
+      'Gestión de proyectos con metodologías ágiles',
+      'Redes y seguridad informática',
+      'Inteligencia artificial y ciencia de datos'
+    ],
+    curriculum: [
+      ['Matemática Aplicada', 'Comunicación', 'Inglés I', 'Fundamentos de Informática', 'Lógica de Programación'],
+      ['Estadística', 'Base de Datos I', 'Programación Orientada a Objetos', 'Inglés II', 'Contabilidad General'],
+      ['Base de Datos II', 'Desarrollo Web I', 'Redes de Computadoras', 'Inglés III', 'Análisis de Sistemas'],
+      ['Desarrollo Web II', 'Desarrollo Móvil', 'Ingeniería de Software', 'Seguridad Informática', 'Emprendimiento'],
+      ['Proyecto de Desarrollo Web', 'Inteligencia Artificial', 'Cloud Computing', 'Gestión de Proyectos', 'Prácticas Preprofesionales'],
+      ['Proyecto Final de Grado', 'Auditoría de Sistemas', 'Blockchain', 'Gerencia de TI', 'Prácticas Preprofesionales II']
+    ],
+    skills: ['Python', 'JavaScript', 'React', 'Node.js', 'SQL', 'MongoDB', 'Git', 'Docker', 'AWS', 'TypeScript'],
+    opportunities: [
+      'Empresas privadas de tecnología y consultoría',
+      'Sector público en áreas de modernización',
+      'Desarrollo de software freelance',
+      'Emprendimiento de startups tecnológicas',
+      'Consultoría en transformación digital',
+      'Trabajo remoto para empresas internacionales'
+    ],
+    labs: ['Laboratorio de Programación', 'Laboratorio de Redes', 'Laboratorio de Desarrollo Web'],
+    certifications: ['Profesional Técnico - MINEDU', 'Certificaciones en tecnologías específicas'],
+    agreements: ['Empresas de desarrollo de software', 'Compañías de telecomunicaciones', 'Startups tecnológicas'],
+    whyYou: 'Si te apasiona la tecnología, la innovación y resolver problemas mediante el código, esta carrera te permitirá crear el futuro digital del Perú.',
+    technologies: ['Python', 'JavaScript', 'React', 'Node.js', 'SQL', 'MongoDB', 'Docker', 'AWS']
+  },
+  {
+    id: 'enfermeria',
+    name: 'Enfermería Técnica',
+    shortName: 'Enfermería',
+    category: 'field',
+    employabilityRate: 89,
+    duration: '3 años (6 semestres)',
+    modality: 'Presencial',
+    degree: 'Técnico en Enfermería',
+    image: '/careers/enfer.jpg',
+    tagline: 'Cuida la salud con profesionalismo y humanidad.',
+    description: 'Forma técnicos en enfermería capaces de brindar atención integral al paciente en instituciones de salud públicas y privadas. Incluye simulaciones clínicas, prácticas hospitalarias y promoción de la salud comunitaria.',
+    graduateProfile: 'Profesionales con habilidades para asistir en procedimientos médicos, administrar tratamientos, cuidar pacientes y promover la salud preventiva en la comunidad.',
+    competencies: [
+      'Atención de enfermería básica y avanzada',
+      'Administración de medicamentos y tratamientos',
+      'Cuidados paliativos y de emergencia',
+      'Promoción de la salud y prevención de enfermedades',
+      'Manejo de equipos médicos especializados',
+      'Documentación clínica y registros de salud',
+      'Trabajo en equipo multidisciplinario'
+    ],
+    curriculum: [
+      ['Anatomía y Fisiología', 'Fundamentos de Enfermería', 'Comunicación', 'Química General', 'Educación para la Salud'],
+      ['Farmacología', 'Enfermería Médico-Quirúrgica', 'Microbiología', 'Nutrición', 'Psicología de la Salud'],
+      ['Enfermería Pediátrica', 'Enfermería Obstétrica', 'Cuidados Intensivos', 'Salud Comunitaria', 'Ética y Deontología'],
+      ['Enfermería de Emergencias', 'Enfermería Psiquiátrica', 'Administración en Salud', ' Investigación en Salud', 'Prácticas Clínicas I'],
+      ['Enfermería Geriátrica', 'Rehabilitación', 'Gestión Hospitalaria', 'Legislación en Salud', 'Prácticas Clínicas II'],
+      ['Proyecto de Grado', 'Salud Pública', 'Gestión de Riesgos', 'Prácticas Preprofesionales', 'Examen Profesional']
+    ],
+    skills: ['Curación de heridas', 'Toma de signos vitales', 'Administración de inyecciones', 'Reanimación cardiopulmonar', 'Cuidados postoperatorios', 'Primeros auxilios avanzados'],
+    opportunities: [
+      'Hospitales públicos y clínicas privadas',
+      'Centros de salud comunitarios',
+      'Empresas de servicios médicos',
+      'Programas de salud pública',
+      'Atención domiciliaria',
+      'ONG de salud internacional'
+    ],
+    labs: ['Laboratorio de Simulación Clínica', 'Laboratorio de Anatomía', 'Hospital Escuela'],
+    certifications: ['Técnico en Enfermería - MINEDU', 'Certificación en RCP y Primeros Auxilios'],
+    agreements: ['Hospital Regional de Pucallpa', 'Clínicas privadas de Ucayali', 'Centros de salud del MINSA'],
+    whyYou: 'Si deseas ayudar a los demás y tienes vocación de servicio, esta carrera te permitirá salvar vidas y mejorar la calidad de vida de tu comunidad.',
+    technologies: [' Equipos de monitoreo', 'Tecnología de información en salud', 'Simuladores clínicos', 'Sistemas de registro electrónico']
+  },
+  {
+    id: 'mecatronica',
+    name: 'Mecatrónica Automotriz',
+    shortName: 'Mecatrónica',
+    category: 'field',
+    employabilityRate: 87,
+    duration: '3 años (6 semestres)',
+    modality: 'Presencial',
+    degree: 'Profesional Técnico en Mecatrónica Automotriz',
+    image: '/careers/meca.jpg',
+    tagline: 'Diagnostica, repara y innova en sistemas automotrices.',
+    description: 'Forma técnicos especializados en el diagnóstico, mantenimiento y reparación de sistemas mecánicos, eléctricos y electrónicos automotrices. Incluye taller práctico con vehículos reales.',
+    graduateProfile: 'Profesionales capaces de diagnosticar fallas complejas, reparar sistemas automotrices, gestionar talleres mecánicos y emprender negocios de servicio automotriz.',
+    competencies: [
+      'Diagnóstico computarizado de vehículos',
+      'Mecánica automotriz general y especializada',
+      'Sistemas eléctricos y electrónicos automotrices',
+      'Inyección electrónica y sistemas de排放',
+      'Transmisiones automáticas y manuales',
+      'Administración de talleres mecánicos',
+      'Nuevas tecnologías automotrices (híbridos, eléctricos)'
+    ],
+    curriculum: [
+      ['Dibujo Técnico', 'Fundamentos de Mecánica', 'Matemática', 'Física Aplicada', 'Comunicación'],
+      ['Mecánica de Motores', 'Electricidad Automotriz', 'Electrónica Básica', 'Inglés Técnico', 'Herramientas y Taller'],
+      ['Sistemas de Inyección', 'Transmisiones', 'Suspensión y Frenos', 'Diagnóstico Computarizado', 'Administración de Taller'],
+      ['Motores Diésel', 'Sistemas de Aire Acondicionado', 'Carrocería y Pintura', 'Soldería Especializada', 'Prácticas I'],
+      ['Vehículos Híbridos y Eléctricos', 'Emisiones y Contaminación', 'Gestión de Inventarios', 'Normativa Vehicular', 'Prácticas II'],
+      ['Proyecto Final', 'Emprendimiento Automotriz', 'Certificaciones', 'Prácticas Preprofesionales', 'Examen Profesional']
+    ],
+    skills: ['Diagnóstico OBD-II', 'Reparación de motores', 'Electricidad automotriz', 'Electrónica', 'Soldería', 'Mantenimiento preventivo', 'Gestión de taller'],
+    opportunities: [
+      'Concesionarios automotrices',
+      'Talleres mecánicos independientes',
+      'Empresas de transporte',
+      'Agencias de vehículos',
+      'Emprendimiento de talleres propios',
+      'Empresas mineras y de construcción'
+    ],
+    labs: ['Taller de Mecánica General', 'Laboratorio de Electrónica', 'Taller de Diagnóstico Computarizado'],
+    certifications: ['Profesional Técnico - MINEDU', 'Certificaciones de marcas automotrices'],
+    agreements: ['Concesionarios de Pucallpa', 'Empresas de transporte', 'Talleres mecánicos certificados'],
+    whyYou: 'Si te gusta resolver problemas mecánicos y trabajar con tus manos, esta carrera te permitirá trabajar en un sector en constante crecimiento.',
+    technologies: ['Escáner OBD-II', 'Herramientas neumáticas', 'Equipos de soldadura', 'Simuladores de motor']
+  },
+  {
+    id: 'agropecuaria',
+    name: 'Producción Agropecuaria',
+    shortName: 'Agropecuaria',
+    category: 'field',
+    employabilityRate: 81,
+    duration: '3 años (6 semestres)',
+    modality: 'Presencial',
+    degree: 'Profesional Técnico en Producción Agropecuaria',
+    image: '/careers/agro.jpg',
+    tagline: 'Alimenta al Perú con tecnología y responsabilidad ambiental.',
+    description: 'Forma técnicos capaces de gestionar producción agrícola y pecuaria de manera sostenible. Incluye trabajo de campo, manejo de cultivos, ganadería y técnicas de producción sustentable.',
+    graduateProfile: 'Profesionales con capacidad para planificar, ejecutar y controlar procesos productivos agropecuarios, implementando tecnologías sustentables.',
+    competencies: [
+      'Manejo agronómico de cultivos tropicales',
+      'Producción pecuaria sostenible',
+      'Sistemas de riego y manejo de agua',
+      'Manejo integrado de plagas',
+      'Agroindustria básica',
+      'Gestión de fincas y unidades productivas',
+      'Tecnologías de precisión agrícola'
+    ],
+    curriculum: [
+      ['Botánica General', 'Suelos y Fertilidad', 'Matemática', 'Comunicación', 'Química Agrícola'],
+      ['Agronomía de Cultivos', 'Zootecnia Básica', 'Mecanización Agrícola', 'Hidráulica', 'Emprendimiento'],
+      ['Manejo Integrado de Plagas', 'Producción Pecuaria', 'Agroindustria', 'Riego y Drenaje', 'Legislación Agraria'],
+      ['Producción Orgánica', 'Ganadería Lechera', 'Avicultura', 'Acuicultura', 'Prácticas de Campo I'],
+      ['Agroecología', 'Comercialización Agropecuaria', 'Control de Calidad', 'Certificación Orgánica', 'Prácticas de Campo II'],
+      ['Proyecto Productivo', 'Gestión de Riesgos', 'Cadenas de Valor', 'Prácticas Preprofesionales', 'Examen Profesional']
+    ],
+    skills: ['Agronomía', 'Zootecnia', 'Mecanización', 'Riego', 'Manejo de plagas', 'Comercialización', 'Agroindustria'],
+    opportunities: [
+      'Empresas agroindustriales',
+      'Cooperativas agrarias',
+      'Sector público agrario',
+      'Emprendimiento propio',
+      'Consultoría agrícola',
+      'Organizaciones de desarrollo rural'
+    ],
+    labs: ['Laboratorio de Agronomía', 'Granja Experimental', 'Laboratorio de Suelos'],
+    certifications: ['Profesional Técnico - MINEDU', 'Certificación en Manejo Integrado de Plagas'],
+    agreements: ['Empresas agroindustriales de Ucayali', 'Cooperativas agrarias', 'Organizaciones de desarrollo'],
+    whyYou: 'Si te interesa la agricultura, la ganadería y el campo, esta carrera te permitirá contribuir a la seguridad alimentaria del Perú.',
+    technologies: ['Sistemas de riego por goteo', 'Drones agrícolas', 'Software de gestión agrícola', 'Equipos de análisis de suelos']
+  },
+  {
+    id: 'forestal',
+    name: 'Manejo Forestal',
+    shortName: 'Forestal',
+    category: 'field',
+    employabilityRate: 80,
+    duration: '3 años (6 semestres)',
+    modality: 'Presencial',
+    degree: 'Profesional Técnico en Manejo Forestal',
+    image: '/careers/forest.jpg',
+    tagline: 'Protege y administra los bosques de la Amazonía.',
+    description: 'Forma técnicos capaces de administrar, conservar y aprovechar sosteniblemente los recursos forestales. Incluye trabajo de campo en la Amazonía, manejo de fauna silvestre y conservación.',
+    graduateProfile: 'Profesionales con habilidades para gestionar proyectos forestales sostenibles, conservar la biodiversidad y manejar recursos naturales de manera responsable.',
+    competencies: [
+      'Manejo forestal sostenible',
+      'Conservación de biodiversidad',
+      'Taxonomía de especies amazónicas',
+      'Manejo de fauna silvestre',
+      'Tecnología de procesamiento de madera',
+      'Control forestal y ambiental',
+      'Georreferenciación y SIG'
+    ],
+    curriculum: [
+      ['Botánica Tropical', 'Ecología General', 'Matemática', 'Comunicación', 'Dibujo Técnico Forestal'],
+      ['Silvicultura', 'Fauna Silvestre', 'Topografía', 'Suelos Forestales', 'Manejo de Equipos'],
+      ['Proyectos Forestales', 'Legislación Ambiental', 'Tecnología de la Madera', 'Certificación Forestal', 'Emprendimiento'],
+      ['Manejo de Cuencas', 'Reforestación', 'Fauna en Cautiverio', 'Control Ambiental', 'Prácticas de Campo I'],
+      ['Planificación Forestal', 'Emprendimiento Forestal', 'Turismo de Naturaleza', 'Cambio Climático', 'Prácticas de Campo II'],
+      ['Proyecto Final', 'Gestión de Áreas Naturales', 'Comercialización', 'Prácticas Preprofesionales', 'Examen Profesional']
+    ],
+    skills: ['Manejo forestal', 'Conservación', 'Topografía', 'SIG', 'Taxonomía', 'Certificación forestal', 'Manejo de fauna'],
+    opportunities: [
+      'Empresas forestales certificadas',
+      'Áreas Naturales Protegidas',
+      'Organizaciones ambientales',
+      'Sector público ambiental',
+      'Emprendimiento forestal',
+      'Consultoría ambiental'
+    ],
+    labs: ['Laboratorio de Ecología', 'Vivero Forestal', 'Estación Biológica'],
+    certifications: ['Profesional Técnico - MINEDU', 'Certificación en Manejo Forestal Sostenible'],
+    agreements: ['Empresas forestales de Ucayali', 'SERNANP', 'Organizaciones ambientales'],
+    whyYou: 'Si te apasiona la naturaleza y la Amazonía, esta carrera te permitirá proteger uno de los ecosistemas más importantes del mundo.',
+    technologies: ['GPS y SIG', 'Drones de monitoreo', 'Software de planificación forestal', 'Equipos de medición']
+  },
+  {
+    id: 'contabilidad',
+    name: 'Contabilidad',
+    shortName: 'Contabilidad',
+    category: 'business',
+    employabilityRate: 88,
+    duration: '3 años (6 semestres)',
+    modality: 'Presencial',
+    degree: 'Profesional Técnico en Contabilidad',
+    image: '/careers/cont.jpg',
+    tagline: 'Gestiona las finanzas con precisión y ética profesional.',
+    description: 'Forma contadores técnicos capaces de registrar, analizar y reportar información financiera. Incluye dominio de software contable, tributación y auditoría.',
+    graduateProfile: 'Profesionales con capacidad para llevar la contabilidad completa de una empresa, declarar impuestos, realizar auditorías y asesorar financieramente.',
+    competencies: [
+      'Contabilidad general y de costos',
+      'Declaraciones tributarias (SUNAT)',
+      'Auditoría contable y financiera',
+      'Software contable (Excel, sistemas especializados)',
+      'Análisis financiero',
+      'Nomina y remuneraciones',
+      'Legislación laboral y tributaria'
+    ],
+    curriculum: [
+      ['Contabilidad General', 'Matemática Financiera', 'Comunicación', 'Economía', 'Fundamentos de Derecho'],
+      ['Contabilidad de Costos', 'Tributación I', 'Estadística', 'Inglés', 'Emprendimiento'],
+      ['Contabilidad Empresarial', 'Tributación II', 'Auditoría I', 'Finanzas', 'Legislación Laboral'],
+      ['Contabilidad Avanzada', 'Auditoría II', 'Análisis Financiero', 'Nomina', 'Prácticas I'],
+      ['Contabilidad Gerencial', 'Fiscalización', 'Software Contable', 'Peritaje Contable', 'Prácticas II'],
+      ['Proyecto Final', 'Ética Profesional', 'Certificación', 'Prácticas Preprofesionales', 'Examen Profesional']
+    ],
+    skills: ['Contabilidad', 'Tributación', 'Auditoría', 'Excel avanzado', 'Software contable', 'Análisis financiero', 'Nomina'],
+    opportunities: [
+      'Empresas privadas de todos los sectores',
+      'Despachos contables y tributarios',
+      'Sector público (Municipalidades, Ministerios)',
+      'Emprendimiento de consultoría contable',
+      'Auditorías externas',
+      'Asesoría financiera independiente'
+    ],
+    labs: ['Laboratorio de Contabilidad', 'Sala de Computación Contable', 'Centro de Documentación Tributaria'],
+    certifications: ['Profesional Técnico - MINEDU', 'Certificación en Tributación'],
+    agreements: ['Despachos contables de Pucallpa', 'Empresas de la región', 'Colegio de Contadores'],
+    whyYou: 'Si te gustan los números, el orden y la precisión, esta carrera te permitirá ser indispensable para cualquier empresa.',
+    technologies: ['Excel avanzado', 'Software contable SAP', 'Sistemas de SUNAT en línea', 'Hojas de cálculo']
+  },
+  {
+    id: 'admin',
+    name: 'Administración de Empresas',
+    shortName: 'Administración',
+    category: 'business',
+    employabilityRate: 84,
+    duration: '3 años (6 semestres)',
+    modality: 'Presencial',
+    degree: 'Profesional Técnico en Administración de Empresas',
+    image: '/careers/admin.jpg',
+    tagline: 'Lidera empresas con visión estratégica y eficiencia.',
+    description: 'Forma técnicos administrativos capaces de gestionar procesos, recursos humanos y operaciones empresariales. Incluye proyectos de emprendimiento y gestión estratégica.',
+    graduateProfile: 'Profesionales con capacidad para planificar, organizar y dirigir actividades administrativas, liderar equipos y tomar decisiones estratégicas.',
+    competencies: [
+      'Gestión administrativa y de operaciones',
+      'Recursos humanos y talento humano',
+      'Planeamiento estratégico',
+      'Logística y cadena de suministro',
+      'Marketing y ventas',
+      'Emprendimiento e innovación',
+      'Herramientas ofimáticas avanzadas'
+    ],
+    curriculum: [
+      ['Fundamentos de Administración', 'Contabilidad General', 'Comunicación', 'Economía', 'Matemática'],
+      ['Recursos Humanos', 'Marketing', 'Costos', 'Inglés', 'Emprendimiento'],
+      ['Gestión Estratégica', 'Logística', 'Finanzas', 'Legislación Empresarial', 'Herramientas Digitales'],
+      ['Gestión de Proyectos', 'Planeamiento', 'Control de Gestión', 'Negociación', 'Prácticas I'],
+      ['Calidad y Productividad', 'Innovación', 'Responsabilidad Social', 'Consultoría', 'Prácticas II'],
+      ['Proyecto Empresarial', 'Plan de Negocios', 'Certificación', 'Prácticas Preprofesionales', 'Examen Profesional']
+    ],
+    skills: ['Administración', 'Recursos Humanos', 'Marketing', 'Logística', 'Emprendimiento', 'Gestión de proyectos', 'Liderazgo'],
+    opportunities: [
+      'Empresas de todos los sectores económicos',
+      'Organizaciones del tercer sector',
+      'Sector público administrativo',
+      'Emprendimiento propio',
+      'Consultoría empresarial',
+      'Cooperativas y asociaciones'
+    ],
+    labs: ['Sala de Emprendimiento', 'Laboratorio de Ofimática', 'Centro de Negocios'],
+    certifications: ['Profesional Técnico - MINEDU', 'Certificación en Gestión de Proyectos'],
+    agreements: ['Cámaras de comercio', 'Empresas de la región', 'Organizaciones de desarrollo empresarial'],
+    whyYou: 'Si te gusta liderar, organizar y hacer que las cosas funcionen, esta carrera te prepara para dirigir cualquier tipo de organización.',
+    technologies: ['Microsoft Office', 'Software ERP', 'Herramientas de gestión', 'Plataformas digitales']
+  },
+  {
+    id: 'civil',
+    name: 'Construcción Civil',
+    shortName: 'Construcción',
+    category: 'field',
+    employabilityRate: 90,
+    duration: '3 años (6 semestres)',
+    modality: 'Presencial',
+    degree: 'Profesional Técnico en Construcción Civil',
+    image: '/careers/civil.jpg',
+    tagline: 'Construye el futuro con diseño, cálculo y ejecución.',
+    description: 'Forma técnicos capaces de planificar, dirigir y ejecutar obras de infraestructura civil. Incluye diseño estructural, topografía, materiales de construcción y gestión de proyectos.',
+    graduateProfile: 'Profesionales con capacidad para supervisar obras, elaborar presupuestos, dirigir cuadrillas y garantizar la calidad constructiva.',
+    competencies: [
+      'Diseño y cálculo estructural',
+      'Topografía y georreferenciación',
+      'Presupuesto y valorización de obras',
+      'Materiales y resistencia de materiales',
+      'Gestión de proyectos de construcción',
+      'Seguridad e higiene en construcción',
+      'Lectura e interpretación de planos'
+    ],
+    curriculum: [
+      ['Dibujo Técnico', 'Matemática', 'Física', 'Comunicación', 'Resistencia de Materiales'],
+      ['Topografía', 'Materiales de Construcción', 'Estática', 'Inglés', 'Seguridad Industrial'],
+      ['Diseño Estructural', 'Hidráulica', 'Suelos', 'Emprendimiento', 'Legislación de Construcción'],
+      ['Presupuesto', 'Concreto Armado', 'Metalística', 'Mecánica de Suelos', 'Prácticas I'],
+      ['Gerencia de Obras', 'Urbanismo', 'Instalaciones', 'Control de Calidad', 'Prácticas II'],
+      ['Proyecto Final', 'Peritaje', 'Certificación', 'Prácticas Preprofesionales', 'Examen Profesional']
+    ],
+    skills: ['AutoCAD', 'Topografía', 'Cálculo estructural', 'Presupuesto', 'Concreto armado', 'Materiales', 'Gestión de obras'],
+    opportunities: [
+      'Empresas constructoras',
+      'Sector público de infraestructura',
+      'Emprendimiento de construcción',
+      'Consultoría e ingeniería',
+      'Peritaje y avalúos',
+      'Industria minera'
+    ],
+    labs: ['Laboratorio de Materiales', 'Taller de Topografía', 'Laboratorio de Concretos'],
+    certifications: ['Profesional Técnico - MINEDU', 'Certificación en Seguridad Industrial'],
+    agreements: ['Constructoras de Pucallpa', 'Empresa de Infraestructura del Estado', 'Ministerio de Vivienda'],
+    whyYou: 'Si te gusta construir, diseñar y ver resultados tangibles, esta carrera te permitirá erigir las obras que transforman ciudades.',
+    technologies: ['AutoCAD', 'Software de cálculo', 'Instrumentos topográficos', 'Equipos de construcción']
+  },
+  {
+    id: 'elec',
+    name: 'Electricidad Industrial',
+    shortName: 'Electricidad',
+    category: 'tech',
+    employabilityRate: 86,
+    duration: '3 años (6 semestres)',
+    modality: 'Presencial',
+    degree: 'Profesional Técnico en Electricidad Industrial',
+    image: '/careers/elec.jpg',
+    tagline: 'Domina la energía que impulsa la industria.',
+    description: 'Forma técnicos electricistas capaces de instalar, mantener y reparar sistemas eléctricos industriales. Incluye automatización, energías renovables y control industrial.',
+    graduateProfile: 'Profesionales con capacidad para diseñar instalaciones eléctricas, mantener equipos industriales y gestionar sistemas de energía.',
+    competencies: [
+      'Instalaciones eléctricas industriales',
+      'Automatización y control industrial',
+      'Mantenimiento preventivo y correctivo',
+      'Energías renovables (solar, eólica)',
+      'Electrónica de potencia',
+      'Seguridad eléctrica normativa',
+      'Lectura de planos eléctricos'
+    ],
+    curriculum: [
+      ['Circuitos Eléctricos', 'Física', 'Matemática', 'Comunicación', 'Seguridad Eléctrica'],
+      ['Electrotecnia', 'Máquinas Eléctricas', 'Electrónica', 'Inglés Técnico', 'Dibujo Eléctrico'],
+      ['Automatización', 'Control Industrial', 'Potencia', 'Energías Renovables', 'Emprendimiento'],
+      ['Mantenimiento Industrial', 'PLC y SCADA', 'Instalaciones Especiales', 'Normativa Eléctrica', 'Prácticas I'],
+      ['Generación Distribuida', 'Eficiencia Energética', 'Medición y Ensayos', 'Gestión de Proyectos', 'Prácticas II'],
+      ['Proyecto Final', 'Emprendimiento Eléctrico', 'Certificación', 'Prácticas Preprofesionales', 'Examen Profesional']
+    ],
+    skills: ['Circuitos eléctricos', 'PLC', 'Automatización', 'Mantenimiento', 'Energías renovables', 'Electrónica', 'Seguridad'],
+    opportunities: [
+      'Empresas industriales',
+      'Compañías eléctricas',
+      'Sector minero',
+      'Constructoras',
+      'Emprendimiento de servicios eléctricos',
+      'Consultoría energética'
+    ],
+    labs: ['Laboratorio de Circuitos', 'Taller de Automatización', 'Banco de Energías Renovables'],
+    certifications: ['Profesional Técnico - MINEDU', 'Certificación en Seguridad Eléctrica'],
+    agreements: ['Empresas eléctricas de Ucayali', 'Industrias de la región', 'Compañías de energía'],
+    whyYou: 'Si te interesa la electricidad, la energía y la automatización, esta carrera te permitirá trabajar en un sector esencial para la industria.',
+    technologies: ['PLC', 'Multímetros digitales', 'Software de simulación eléctrica', 'Paneles solares']
+  },
+  {
+    id: 'turismo',
+    name: 'Administración de Operaciones Turísticas',
+    shortName: 'Turismo',
+    category: 'business',
+    employabilityRate: 85,
+    duration: '3 años (6 semestres)',
+    modality: 'Presencial',
+    degree: 'Profesional Técnico en Administración de Operaciones Turísticas',
+    image: '/careers/tur.jpg',
+    tagline: 'Promueve el turismo sostenible en la Amazonía.',
+    description: 'Forma técnicos capaces de planificar, organizar y gestionar servicios turísticos. Incluye turismo de naturaleza, hotelería, guianza y emprendimiento turístico.',
+    graduateProfile: 'Profesionales con capacidad para diseñar paquetes turísticos, gestionar alojamientos, guiar turistas y promover destinos sostenibles.',
+    competencies: [
+      'Gestión de operaciones turísticas',
+      'Hotelería y alojamiento',
+      'Guianza turística especializada',
+      'Turismo de naturaleza y aventura',
+      'Marketing turístico digital',
+      'Patrimonio cultural y natural',
+      'Emprendimiento turístico'
+    ],
+    curriculum: [
+      ['Introducción al Turismo', 'Geografía Turística', 'Comunicación', 'Inglés I', 'Cultura General'],
+      ['Hotelería', 'Guianza Turística', 'Inglés II', 'Atención al Cliente', 'Emprendimiento'],
+      ['Gestión Turística', 'Turismo de Naturaleza', 'Marketing Digital', 'Patrimonio', 'Legislación Turística'],
+      ['Operaciones Turísticas', 'Ecoturismo', 'Gastronomía', 'Agencias de Viaje', 'Prácticas I'],
+      ['Turismo Comunitario', 'Emprendimiento Turístico', 'Sostenibilidad', 'Gestión de Eventos', 'Prácticas II'],
+      ['Proyecto Final', 'Plan de Negocios Turístico', 'Certificación', 'Prácticas Preprofesionales', 'Examen Profesional']
+    ],
+    skills: ['Hotelería', 'Guianza', 'Marketing turístico', 'Gestión de eventos', 'Ecoturismo', 'Inglés', 'Atención al cliente'],
+    opportunities: [
+      'Hoteles y alojamientos turísticos',
+      'Agencias de viaje',
+      'Operadores turísticos',
+      'Áreas Naturales Protegidas',
+      'Emprendimiento turístico',
+      'Organizaciones de turismo comunitario'
+    ],
+    labs: ['Sala de Turismo', 'Laboratorio de Hotelería', 'Centro de Documentación Turística'],
+    certifications: ['Profesional Técnico - MINEDU', 'Certificación en Guianza Turística'],
+    agreements: ['Hoteles de Pucallpa', 'Operadores turísticos de Ucayali', 'SERNANP'],
+    whyYou: 'Si te gusta viajar, conocer culturas y la naturaleza, esta carrera te permitirá promover el turismo en una de las regiones más biodiversas del mundo.',
+    technologies: ['Sistemas de reservas', 'Plataformas digitales de turismo', 'Software de gestión hotelera', 'Herramientas de marketing']
+  },
+  {
+    id: 'asistencia',
+    name: 'Asistencia Administrativa',
+    shortName: 'Asistencia',
+    category: 'business',
+    employabilityRate: 82,
+    duration: '3 años (6 semestres)',
+    modality: 'Presencial',
+    degree: 'Profesional Técnico en Asistencia Administrativa',
+    image: '/careers/asist.jpg',
+    tagline: 'Soporte administrativo eficiente para cualquier organización.',
+    description: 'Forma técnicos capaces de brindar soporte administrativo integral, gestionar documentos, coordinar reuniones y manejar herramientas ofimáticas con profesionalismo.',
+    graduateProfile: 'Profesionales con capacidad para organizar oficinas, gestionar correspondencia, coordinar agendas y apoyar la toma de decisiones administrativas.',
+    competencies: [
+      'Gestión documental y archivo',
+      'Atención al cliente y servicios generales',
+      'Herramientas ofimáticas avanzadas',
+      'Coordinación de reuniones y eventos',
+      'Elaboración de informes y correspondencia',
+      'Teleasistencia y recepción',
+      'Protocolo y etiqueta corporativa'
+    ],
+    curriculum: [
+      ['Fundamentos de Administración', 'Comunicación', 'Inglés I', 'Ofimática I', 'Atención al Cliente'],
+      ['Gestión Documental', 'Protocolo', 'Inglés II', 'Ofimática II', 'Contabilidad Básica'],
+      ['Teleasistencia', 'Coordinación de Eventos', 'Inglés III', 'Ofimática III', 'Emprendimiento'],
+      ['Recepción y Conserjería', 'Archivología', 'Calidad de Servicio', 'Legislación Laboral', 'Prácticas I'],
+      ['Gestión de Oficinas', 'Secretariado Ejecutivo', 'Turismo Administrativo', 'Compras y Almacenes', 'Prácticas II'],
+      ['Proyecto Final', 'Ética Profesional', 'Certificación', 'Prácticas Preprofesionales', 'Examen Profesional']
+    ],
+    skills: ['Office avanzado', 'Gestión documental', 'Protocolo', 'Atención al cliente', 'Coordinación', 'Comunicación', 'Organización'],
+    opportunities: [
+      'Empresas privadas de todos los sectores',
+      'Instituciones públicas',
+      'Organizaciones internacionales',
+      'Emprendimiento de servicios',
+      'Despachos profesionales',
+      'ONG y organizaciones sociales'
+    ],
+    labs: ['Sala de Ofimática', 'Laboratorio de Comunicaciones', 'Centro de Documentación'],
+    certifications: ['Profesional Técnico - MINEDU', 'Certificación MOS (Microsoft Office Specialist)'],
+    agreements: ['Empresas de Pucallpa', 'Instituciones públicas', 'Organizaciones internacionales'],
+    whyYou: 'Si eres organizado, detallista y te gusta el orden, esta carrera te permitirá ser el corazón operativo de cualquier empresa.',
+    technologies: ['Microsoft Office', 'Google Workspace', 'Software de gestión documental', 'Plataformas de videoconferencia']
+  },
+  {
+    id: 'gestion',
+    name: 'Gestión Administrativa',
+    shortName: 'Gestión',
+    category: 'business',
+    employabilityRate: 84,
+    duration: '3 años (6 semestres)',
+    modality: 'Presencial',
+    degree: 'Profesional Técnico en Gestión Administrativa',
+    image: '/careers/gestion.jpg',
+    tagline: 'Optimiza procesos y recursos para una gestión efectiva.',
+    description: 'Forma técnicos capaces de gestionar procesos administrativos, financieros y de talento humano. Incluye control de gestión, planeamiento estratégico y herramientas tecnológicas.',
+    graduateProfile: 'Profesionales con capacidad para mejorar la eficiencia organizacional, implementar sistemas de gestión y liderar la transformación administrativa.',
+    competencies: [
+      'Gestión de procesos administrativos',
+      'Control de gestión y indicadores',
+      'Planeamiento estratégico',
+      'Gestión del talento humano',
+      'Administración financiera',
+      'Mejora continua y calidad',
+      'Herramientas tecnológicas de gestión'
+    ],
+    curriculum: [
+      ['Fundamentos de Administración', 'Contabilidad General', 'Comunicación', 'Economía', 'Matemática'],
+      ['Control de Gestión', 'Recursos Humanos', 'Costos', 'Inglés', 'Emprendimiento'],
+      ['Planeamiento', 'Calidad', 'Finanzas', 'Legislación', 'Herramientas Digitales'],
+      ['Gestión por Procesos', 'Indicadores', 'Logística', 'Negociación', 'Prácticas I'],
+      ['Mejora Continua', 'Transformación Digital', 'Innovación', 'Responsabilidad Social', 'Prácticas II'],
+      ['Proyecto Final', 'Plan de Negocios', 'Certificación', 'Prácticas Preprofesionales', 'Examen Profesional']
+    ],
+    skills: ['Gestión de procesos', 'Control de gestión', 'Planeamiento', 'Calidad', 'Herramientas digitales', 'Liderazgo', 'Negociación'],
+    opportunities: [
+      'Empresas de todos los sectores',
+      'Organizaciones públicas y privadas',
+      'Emprendimiento propio',
+      'Consultoría administrativa',
+      'Cooperativas y asociaciones',
+      'Organizaciones sin fines de lucro'
+    ],
+    labs: ['Sala de Gestión', 'Laboratorio de Ofimática', 'Centro de Innovación'],
+    certifications: ['Profesional Técnico - MINEDU', 'Certificación en Gestión de Proyectos'],
+    agreements: ['Empresas de la región', 'Organizaciones públicas', 'Cámaras empresariales'],
+    whyYou: 'Si te gusta mejorar las cosas, encontrar formas más eficientes de trabajar y liderar cambios, esta carrera es para ti.',
+    technologies: ['Microsoft Office', 'Software ERP', 'Herramientas BPM', 'Plataformas de gestión']
+  }
+];
+
+// Helper to get career by ID
+export const getCareerById = (id) => careersData.find(c => c.id === id);
+
+// Helper to get careers by category
+export const getCareersByCategory = (category) =>
+  category === 'all' ? careersData : careersData.filter(c => c.category === category);

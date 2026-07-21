@@ -1,13 +1,15 @@
 import { Target, Eye, CheckCircle, Star, Heart, Lightbulb, Shield } from 'lucide-react';
 import AboutPageShell from './AboutPageShell';
 
+const valueIcons = [Star, Lightbulb, Heart, Shield];
+
 export default function VisionMision({ t }) {
   const data = t.aboutMenu?.col1?.[2] || {};
-  const values = [
-    { icon: Star, title: 'Excelencia', desc: 'Buscamos el más alto estándar en la formación técnica y humana.' },
-    { icon: Lightbulb, title: 'Innovación', desc: 'Impulsamos la investigación aplicada y el uso de tecnologías de vanguardia.' },
-    { icon: Heart, title: 'Inclusión', desc: 'Respetamos y valoramos la diversidad sociocultural de nuestra Amazonía.' },
-    { icon: Shield, title: 'Integridad', desc: 'Actuamos con ética, honestidad, transparencia y responsabilidad social.' },
+  const values = t?.aboutPage?.visionMision?.values || [
+    { title: 'Excelencia', desc: 'Buscamos el más alto estándar en la formación técnica y humana.' },
+    { title: 'Innovación', desc: 'Impulsamos la investigación aplicada y el uso de tecnologías de vanguardia.' },
+    { title: 'Inclusión', desc: 'Respetamos y valoramos la diversidad sociocultural de nuestra Amazonía.' },
+    { title: 'Integridad', desc: 'Actuamos con ética, honestidad, transparencia y responsabilidad social.' }
   ];
 
   return (
@@ -22,9 +24,9 @@ export default function VisionMision({ t }) {
           <div className="w-14 h-14 rounded-2xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center mb-5">
             <Target className="w-7 h-7 text-primary dark:text-secondary" />
           </div>
-          <h2 className="text-2xl font-bold text-slate-text dark:text-white mb-4">Nuestra Misión</h2>
+          <h2 className="text-2xl font-bold text-slate-text dark:text-white mb-4">{t?.aboutPage?.visionMision?.missionTitle || 'Nuestra Misión'}</h2>
           <p className="text-slate-text/80 dark:text-dark-text/80 leading-relaxed text-sm md:text-base text-justify">
-            Formar profesionales técnicos con valores, emprendedores, proactivos, creativos, productivos; comprometidos con la conservación de la biodiversidad para el desarrollo sostenible de la región y del país.
+            {t?.aboutPage?.visionMision?.missionDesc || 'Formar profesionales técnicos con valores, emprendedores, proactivos, creativos, productivos; comprometidos con la conservación de la biodiversidad para el desarrollo sostenible de la región y del país.'}
           </p>
         </div>
 
@@ -35,9 +37,9 @@ export default function VisionMision({ t }) {
             <div className="w-14 h-14 rounded-2xl bg-secondary/10 dark:bg-secondary/20 flex items-center justify-center mb-6">
               <Eye className="w-7 h-7 text-secondary" />
             </div>
-            <h2 className="text-2xl font-bold text-slate-text dark:text-white mb-4">Nuestra Visión</h2>
+            <h2 className="text-2xl font-bold text-slate-text dark:text-white mb-4">{t?.aboutPage?.visionMision?.visionTitle || 'Nuestra Visión'}</h2>
             <p className="text-slate-text/80 dark:text-dark-text/80 leading-relaxed text-sm md:text-base text-justify">
-              Institución líder con excelente servicio educativo en la formación de profesionales técnicos competitivos, capacidad empresarial, creativa para generar autoempleo, desarrollar proyectos que transformen la realidad socio económico-cultural y preservar el medio ambiente para el desarrollo sostenible de la región y del país.
+              {t?.aboutPage?.visionMision?.visionDesc || 'Institución líder con excelente servicio educativo en la formación de profesionales técnicos competitivos, capacidad empresarial, creativa para generar autoempleo, desarrollar proyectos que transformen la realidad socio económico-cultural y preservar el medio ambiente para el desarrollo sostenible de la región y del país.'}
             </p>
           </div>
         </div>
@@ -47,11 +49,11 @@ export default function VisionMision({ t }) {
       <div className="rounded-[2rem] bg-white/50 dark:bg-dark-card/50 border border-primary/10 dark:border-white/8 p-8 md:p-10 shadow-sm mb-8">
         <h3 className="text-xl font-bold text-slate-text dark:text-white mb-6 flex items-center gap-2">
           <CheckCircle className="w-6 h-6 text-primary dark:text-secondary" />
-          Nuestros Valores Institucionales
+          {t?.aboutPage?.visionMision?.valuesTitle || 'Nuestros Valores Institucionales'}
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {values.map((v, idx) => {
-            const Icon = v.icon;
+            const Icon = valueIcons[idx];
             return (
               <div key={idx} className="flex items-start gap-4 p-4 rounded-xl bg-white dark:bg-dark-card border border-primary/5 dark:border-white/5">
                 <div className="w-11 h-11 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center flex-shrink-0">
@@ -69,15 +71,15 @@ export default function VisionMision({ t }) {
 
       {/* Objetivos */}
       <div className="rounded-[2rem] bg-white dark:bg-dark-card border border-primary/10 dark:border-white/8 p-8 shadow-sm">
-        <h3 className="text-xl font-bold text-slate-text dark:text-white mb-6">Objetivos Estratégicos</h3>
+        <h3 className="text-xl font-bold text-slate-text dark:text-white mb-6">{t?.aboutPage?.visionMision?.objectivesTitle || 'Objetivos Estratégicos'}</h3>
         <div className="space-y-4">
-          {[
+          {(t?.aboutPage?.visionMision?.objectives || [
             'Fortalecer la calidad académica mediante la actualización curricular y la capacitación docente continua.',
             'Modernizar la infraestructura tecnológica y los laboratorios especializados de todos los programas.',
             'Incrementar los convenios institucionales para prácticas pre-profesionales y colaboración internacional.',
             'Implementar un sistema de gestión de calidad con procesos automatizados y transparencia administrativa.',
-            'Promover la investigación aplicada y la innovación tecnológica en las líneas de cada programa de estudio.',
-          ].map((obj, idx) => (
+            'Promover la investigación aplicada y la innovación tecnológica en las líneas de cada programa de estudio.'
+          ]).map((obj, idx) => (
             <div key={idx} className="flex items-start gap-3">
               <div className="w-6 h-6 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                 <span className="text-[10px] font-bold text-primary dark:text-secondary">{idx + 1}</span>

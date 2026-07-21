@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ChevronRight, Home, ArrowLeft } from 'lucide-react';
 import useInstitutionalTexture from '../../hooks/useInstitutionalTexture';
 
-export default function AboutPageShell({ title, breadcrumb, image, children }) {
+export default function AboutPageShell({ t, title, breadcrumb, image, children }) {
   useInstitutionalTexture();
   return (
     <div className="max-w-7xl mx-auto px-4 md:px-8 py-6 relative">
@@ -25,7 +25,7 @@ export default function AboutPageShell({ title, breadcrumb, image, children }) {
             {title}
           </h1>
           <p className="text-white/80 text-sm md:text-base mt-2 max-w-2xl font-medium">
-            IESTP Suiza — Pucallpa, Ucayali
+            {t?.aboutPage?.location || 'IESTP Suiza — Pucallpa, Ucayali'}
           </p>
         </div>
       </div>
@@ -34,11 +34,11 @@ export default function AboutPageShell({ title, breadcrumb, image, children }) {
       <nav className="flex items-center gap-1.5 text-xs md:text-sm text-slate-text/60 dark:text-dark-text/60 mb-8 flex-wrap">
         <Link to="/" className="hover:text-primary dark:hover:text-secondary transition-colors flex items-center gap-1">
           <Home className="w-3.5 h-3.5" />
-          <span className="hidden sm:inline">Inicio</span>
+          <span className="hidden sm:inline">{t?.aboutPage?.breadcrumb?.home || 'Inicio'}</span>
         </Link>
         <ChevronRight className="w-3.5 h-3.5" />
         <Link to="/about" className="hover:text-primary dark:hover:text-secondary transition-colors">
-          Nosotros
+          {t?.aboutPage?.breadcrumb?.about || 'Nosotros'}
         </Link>
         <ChevronRight className="w-3.5 h-3.5" />
         <span className="text-primary dark:text-secondary font-semibold">{breadcrumb}</span>
@@ -56,7 +56,7 @@ export default function AboutPageShell({ title, breadcrumb, image, children }) {
           className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary/10 dark:bg-primary/20 text-primary dark:text-secondary font-semibold text-sm hover:bg-primary hover:text-white dark:hover:bg-secondary dark:hover:text-dark-bg transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 group"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          Volver a Nosotros
+          {t?.aboutPage?.breadcrumb?.backToAbout || 'Volver a Nosotros'}
         </Link>
       </div>
     </div>

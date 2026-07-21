@@ -1,5 +1,386 @@
 export const translations = {
   es: {
+    common: {
+      toggleTheme: "Cambiar tema"
+    },
+    splash: {
+      offline: "Sin conexión — esperando red...",
+      loading: "Cargando sistemas... ",
+      welcomeLine1: "Bienvenido a la página de",
+      institutionName: "IESTP SUIZA",
+      welcomeLine2: "Instituto de Excelencia",
+      logoAlt: "IESTP Suiza"
+    },
+    assistant: {
+      welcome: "¡Hola! Soy SuizaAI, tu asistente virtual del IESTP Suiza. ¿En qué puedo ayudarte hoy?",
+      greeting: "¡Hola! ¿Cómo estás? Puedo ayudarte con información sobre admisión, carreras, requisitos y más.",
+      costs: "Tasas de Admisión 2026-II:\n\n• Egresados de colegio: S/ 150.00\n• Traslados externos: S/ 100.00\n• Experiencia laboral: S/ 150.00\n\nEl pago se realiza en el Banco de la Nación.",
+      requirements: "Requisitos Obligatorios para Postular:\n\n1. Certificado de estudios secundarios\n2. DNI vigente\n3. Partida de nacimiento original\n4. Foto tamaño carnet (fondo blanco)\n5. Recibo de pago por derecho de inscripción",
+      physicalRequirements: "Requisitos de Aptitud Física y Médica:\n\n• Certificado de aptitud médica\n• No tener enfermedades contagiosas\n• Estar en buenas condiciones físicas\n• Para Enfermería: examen psicológico adicional",
+      careers: "Nuestras 11 Carreras Profesionales:\n\n1. Desarrollo de Sistemas de Información\n2. Enfermería Técnica\n3. Mecatrónica Automotriz\n4. Producción Agropecuaria\n5. Manejo Forestal\n6. Contabilidad\n7. Administración de Empresas\n8. Construcción Civil\n9. Electricidad Industrial\n10. Administración de Operaciones Turísticas\n11. Asistencia Administrativa",
+      calendar: "Calendario Oficial de Admisión 2026-II:\n\n• Inscripciones: 1 al 31 de julio\n• Examen de Admisión: 16 y 17 de agosto\n• Resultados: 1 de septiembre\n• Inicio de clases: 8 de septiembre",
+      location: "Ubicación y Horarios de Atención:\n\n• Dirección: Carretera Federico Basadre Km 5.700\n• Horario: Lunes a Viernes de 8:00 am a 5:00 pm\n• Teléfono: 061-280665\n• Email: suiza@iestpsuiza.edu.pe",
+      freeEducation: "¡Educación Pública 100% Gratuita!\n\nEl IESTP Suiza es una institución pública. No se pagan pensiones ni mensualidades. Solo el derecho de inscripción al examen de admisión.",
+      careerSystems: "Carrera: Desarrollo de Sistemas de Información\n\nDuración: 3 años\nEmpleabilidad: 92%\n\nAprenderás a programar, diseñar bases de datos y desarrollar aplicaciones web y móviles.",
+      careerNursing: "Carrera: Enfermería Técnica\n\nDuración: 3 años\nEmpleabilidad: 88%\n\nFormación en cuidados de enfermería, primeros auxilios y promoción de la salud.",
+      security: "Seguridad y Defensa del Campus:\n\nEl IESTP Suiza cuenta con personal de seguridad las 24 horas, cámaras de vigilancia y acceso controlado para garantizar la seguridad de toda la comunidad educativa.",
+      fallback: "Lo siento, no tengo una respuesta específica para esa pregunta. ¿Puedo ayudarte con información sobre admisión, carreras, requisitos o ubicación?",
+      connectingHuman: "¡Perfecto! Te estoy conectando con un asesor humano...",
+      startWhatsApp: "Iniciar Chat de WhatsApp",
+      offHours: "Lo sentimos. El horario de atención presencial es de lunes a viernes de 8:00 am a 5:00 pm. Puedes dejarnos un mensaje por WhatsApp.",
+      q1: "¿Qué carreras tienen?",
+      q2: "¿Cuánto cuesta postular?",
+      q3: "¿Cuáles son los requisitos de postulación?",
+      q4: "Quiero hablar con un asesor humano",
+      q1Label: "Carreras",
+      q2Label: "Costos",
+      q3Label: "Requisitos",
+      q4Label: "Hablar con Humano",
+      title: "Asistente Virtual",
+      name: "SuizaAI",
+      statusActive: "Virtual Activo",
+      you: "Tú",
+      botName: "SuizaAI",
+      responding: "SuizaAI está respondiendo...",
+      respondingPlaceholder: "SuizaAI está respondiendo...",
+      inputPlaceholder: "Escribe tu consulta aquí...",
+      ariaSend: "Enviar"
+    },
+
+    admissionDropdown: {
+      title: "Modalidades de admisión",
+      modalities: ["Egresados de colegio", "Traslados externos", "Experiencia laboral"],
+      transfer: {
+        title: "Traslado",
+        desc: "Tienes títulos de institutos o carreras inconclusas. Completa tus estudios en IESTP Suiza con reconocimiento nacional."
+      },
+      otherPrograms: {
+        title: "Otros programas",
+        desc: "Explora nuestros 11 programas licenciados con alta demanda laboral y prácticas profesionales en la región."
+      },
+      ctaAdmission: "Admisión 2026",
+      ctaContact: "Contáctenos",
+      ctaPrograms: "Ver programas"
+    },
+
+    footer: {
+      academicExcellence: "EXCELENCIA ACADÉMICA",
+      missionVision: "Misión y Visión",
+      admissionExam: "Examen de Admisión",
+      locationContact: "Ubicación y Contacto",
+      rights: "Todos los derechos reservados. Licenciado por MINEDU.",
+      privacy: "Política de Privacidad",
+      transparency: "Transparencia Pública",
+      virtualClassroom: "Aula Virtual"
+    },
+
+    aboutPage: {
+      header: {
+        title: "Nuestra Institución",
+        subtitle: "Conoce la trayectoria, misión, visión y valores del IESTP Suiza"
+      },
+      mission: {
+        title: "Misión",
+        description: "Somos una institución de educación superior tecnológica pública licenciada, dedicada a formar profesionales técnicos competentes, creativos, innovadores y con sólidos valores éticos."
+      },
+      vision: {
+        title: "Visión",
+        description: "Al 2030, ser un instituto tecnológico líder en la Amazonía peruana y referente nacional por su excelencia académica."
+      },
+      values: {
+        sectionTitle: "Nuestros Valores",
+        excellence: { title: "Excelencia", desc: "Buscamos el más alto estándar en la formación técnica y humana." },
+        innovation: { title: "Innovación", desc: "Impulsamos la investigación aplicada y el uso de tecnologías de vanguardia." },
+        inclusion: { title: "Inclusión", desc: "Respetamos y valoramos la diversidad sociocultural de nuestra Amazonía." },
+        integrity: { title: "Integridad", desc: "Actuamos con ética, honestidad, transparencia y responsabilidad social." }
+      },
+      history: {
+        title: "Reseña Histórica",
+        timeline: {
+          founding: { title: "Fundación y Primeros Pasos", desc: "Nace como respuesta a la creciente demanda de formación técnica calificada en la provincia de Coronel Portillo, Ucayali." },
+          consolidation: { title: "Consolidación y Nuevos Programas", desc: "Se inaugura el campus actual en la Carretera Federico Basadre y se incorporan nuevas especialidades." },
+          modernization: { title: "Modernización Tecnológica", desc: "Se equipan nuevos laboratorios con tecnología de punta en mecatrónica automotriz y desarrollo de software." },
+          licensing: { title: "Licenciamiento Institucional", desc: "El IESTP Suiza logra exitosamente su licenciamiento institucional ante el Ministerio de Educación." }
+        }
+      },
+      presentacion: {
+        title: "Presentación",
+        introTitle: "Instituto de Educación Superior Tecnológico Público Suiza",
+        introSubtitle: "Formando profesionales técnicos de excelencia desde 1976",
+        introP1: "El IESTP Suiza es una institución educativa pública ubicada en la ciudad de Pucallpa, capital de la región Ucayali. Fundada en 1976, nuestra institución ha sido un pilar fundamental en la formación técnica de miles de jóvenes amazónicos, contribuyendo activamente al desarrollo socioeconómico de la región y del país.",
+        introP2: "Contamos con 11 programas de estudio licenciados, laboratorios especializados modernos, una plana docente altamente calificada y convenios estratégicos con empresas e instituciones del sector público y privado. Nuestro compromiso es formar profesionales competentes, creativos, innovadores y con sólidos valores éticos.",
+        features: [
+          { title: "Licenciamiento", desc: "Institución licenciada por el MINEDU con condiciones básicas de calidad." },
+          { title: "Alta Empleabilidad", desc: "Más del 85% de nuestros egresados se insertan laboralmente en el primer año." },
+          { title: "Comunidad", desc: "Más de 2000 estudiantes y 150 docentes comprometidos con la excelencia." },
+          { title: "Ubicación", desc: "Carretera Federico Basadre Km 5.700, Pucallpa — Ucayali." }
+        ],
+        stats: [
+          { number: "1976", label: "Año de Fundación" },
+          { number: "11", label: "Programas Licenciados" },
+          { number: "2000+", label: "Estudiantes" },
+          { number: "85%", label: "Empleabilidad" }
+        ]
+      },
+      palabrasDirector: {
+        quote: "Es un honor y una gran responsabilidad dirigir esta casa superior de estudios, que por más de cuatro décadas ha sido el faro de conocimiento y progreso para nuestra querida región Ucayali. Nuestro compromiso es inquebrantable: formar profesionales técnicos competentes, con valores éticos sólidos y con la capacidad de transformar su realidad y contribuir al desarrollo sostenible de nuestra Amazonía y del Perú.",
+        directorName: "Mg. Juan Carlos Ramirez Torres",
+        directorRole: "Director General",
+        directorInstitution: "IESTP Suiza — Pucallpa",
+        futureVisionTitle: "Nuestra Visión de Futuro",
+        futureVisionDesc: "Trabajamos incansablemente para que al 2030 seamos reconocidos como el instituto tecnológico líder de la Amazonía peruana, con estándares de calidad internacional, infraestructura moderna y egresados altamente empleables.",
+        qualityTitle: "Compromiso con la Calidad",
+        qualityDesc: "Cada día renovamos nuestro compromiso con la excelencia académica, la innovación tecnológica y la formación integral de nuestros estudiantes, preparándolos para los desafíos del mundo laboral.",
+        contactTitle: "Contacto de Dirección",
+        contact: [
+          { label: "Email", value: "direccion@iestpsuiza.edu.pe" },
+          { label: "Teléfono", value: "(061) 280665" },
+          { label: "Dirección", value: "Carretera Federico Basadre Km 5.700" }
+        ]
+      },
+      visionMision: {
+        missionTitle: "Misión",
+        missionDesc: "Somos una institución de educación superior tecnológica pública licenciada, dedicada a formar profesionales técnicos competentes, creativos, innovadores y con sólidos valores éticos, capaces de contribuir activamente al desarrollo socioeconómico sostenible de la región Ucayali y el país.",
+        visionTitle: "Visión",
+        visionDesc: "Al 2030, ser un instituto tecnológico líder en la Amazonía peruana y referente nacional por su excelencia académica, infraestructura moderna, procesos automatizados, convenios internacionales y egresados de alta empleabilidad comprometidos con la innovación y el cuidado ambiental.",
+        valuesTitle: "Nuestros Valores Institucionales",
+        values: [
+          { title: "Excelencia", desc: "Buscamos el más alto estándar en la formación técnica y humana." },
+          { title: "Innovación", desc: "Impulsamos la investigación aplicada y el uso de tecnologías de vanguardia." },
+          { title: "Inclusión", desc: "Respetamos y valoramos la diversidad sociocultural de nuestra Amazonía." },
+          { title: "Integridad", desc: "Actuamos con ética, honestidad, transparencia y responsabilidad social." }
+        ],
+        objectivesTitle: "Objetivos Estratégicos",
+        objectives: [
+          "Fortalecer la calidad académica mediante la actualización curricular y la capacitación docente continua.",
+          "Modernizar la infraestructura tecnológica y los laboratorios especializados de todos los programas.",
+          "Incrementar los convenios institucionales para prácticas pre-profesionales y colaboración internacional.",
+          "Implementar un sistema de gestión de calidad con procesos automatizados y transparencia administrativa.",
+          "Promover la investigación aplicada y la innovación tecnológica en las líneas de cada programa de estudio."
+        ]
+      },
+      historia: {
+        introTitle: "Nuestra Trayectoria",
+        introDesc: "Desde nuestra fundación en 1976, el IESTP Suiza ha sido testigo y protagonista del desarrollo educativo y tecnológico de la región Ucayali. A lo largo de más de cuatro décadas, hemos evolucionado para ofrecer una educación técnica de calidad, adaptándonos a los cambios y necesidades del mercado laboral.",
+        galleryTitle: "Galería Histórica",
+        timeline: [
+          { year: "1976", title: "Fundación", desc: "Nace como respuesta a la creciente demanda de formación técnica calificada en la provincia de Coronel Portillo, Ucayali, ofreciendo los primeros programas en áreas agropecuarias y de mecánica." },
+          { year: "1995", title: "Consolidación y Nuevos Programas", desc: "Se inaugura el campus actual en la Carretera Federico Basadre y se incorporan especialidades como Contabilidad, Computación e Informática y Enfermería Técnica, adaptándose al crecimiento tecnológico de la época." },
+          { year: "2018", title: "Modernización Tecnológica", desc: "Se equipan nuevos laboratorios con tecnología de punta en mecatrónica automotriz y desarrollo de software. Se consolidan convenios estratégicos con empresas nacionales y regionales." },
+          { year: "2024", title: "Licenciamiento Institucional", desc: "El IESTP Suiza logra exitosamente su licenciamiento institucional ante el Ministerio de Educación, validando sus condiciones básicas de calidad académica, infraestructura y gestión." }
+        ],
+        gallery: [
+          { label: "Primera Promoción", year: "1979" },
+          { label: "Nuevo Campus", year: "1995" },
+          { label: "Laboratorios", year: "2018" },
+          { label: "Licenciamiento", year: "2024" }
+        ]
+      },
+      gestionAcademica: {
+        introTitle: "Organización Académica",
+        introDesc: "La gestión académica del IESTP Suiza está orientada a garantizar la calidad educativa mediante procesos planificados, ejecutados y evaluados con rigurosidad. Contamos con una estructura organizativa que asegura el cumplimiento de nuestros objetivos formativos.",
+        areas: [
+          { title: "Currículo", desc: "Diseño, actualización y evaluación de planes de estudio alineados a las demandas del mercado laboral." },
+          { title: "Evaluación Académica", desc: "Sistema de evaluación continua con indicadores de logro y seguimiento al desempeño estudiantil." },
+          { title: "Calendarización", desc: "Planificación académica semestral con cronogramas de actividades lectivas y evaluaciones." },
+          { title: "Tutoría", desc: "Programa de acompañamiento y orientación estudiantil para asegurar la permanencia y el éxito académico." },
+          { title: "Certificación", desc: "Proceso de certificación y titulación con estándares de calidad y reconocimiento oficial." }
+        ],
+        calendarTitle: "Calendario Académico 2026",
+        calendar: [
+          { period: "I Semestre", date: "Marzo — Julio 2026", status: "En curso" },
+          { period: "Vacaciones", date: "Agosto 2026", status: "Próximo" },
+          { period: "II Semestre", date: "Setiembre — Diciembre 2026", status: "Próximo" }
+        ]
+      },
+      gestionAdministrativa: {
+        introTitle: "Estructura Administrativa",
+        introDesc: "La gestión administrativa del IESTP Suiza se rige por principios de transparencia, eficiencia y eficacia. Nuestra estructura organizativa permite una administración óptima de los recursos institucionales al servicio de la comunidad educativa.",
+        departments: [
+          { title: "Dirección General", desc: "Máxima instancia ejecutiva que lidera la planificación estratégica y la toma de decisiones institucionales." },
+          { title: "Administración y Finanzas", desc: "Gestión de recursos económicos, presupuesto anual, contabilidad y tesorería institucional." },
+          { title: "Secretaría Académica", desc: "Registro y certificación de logros académicos, archivo documentario y trámites administrativos." },
+          { title: "Recursos Humanos", desc: "Gestión del talento humano: selección, capacitación, evaluación y bienestar del personal." },
+          { title: "Bienestar Institucional", desc: "Programas de bienestar estudiantil, servicios de salud, asistencia social y actividades culturales." }
+        ],
+        documentsTitle: "Documentos de Gestión",
+        documents: [
+          { title: "Plan Anual de Trabajo", desc: "Documento de gestión operativa institucional 2026", color: "from-primary/10 to-primary/5" },
+          { title: "Reglamento Interno", desc: "Normas y disposiciones que rigen la vida institucional", color: "from-secondary/10 to-secondary/5" },
+          { title: "Manual de Organización", desc: "Estructura orgánica y funciones de cada unidad", color: "from-amber-500/10 to-amber-500/5" }
+        ]
+      },
+      organigrama: {
+        introTitle: "Estructura Orgánica",
+        introDesc: "El IESTP Suiza cuenta con una estructura organizativa moderna y funcional, diseñada para garantizar una gestión eficiente y una comunicación fluida entre todas las instancias institucionales.",
+        governmentTitle: "Órganos de Gobierno",
+        government: [
+          { title: "Consejo Directivo", desc: "Máximo órgano de gobierno encargado de aprobar políticas, planes y presupuestos institucionales." },
+          { title: "Dirección General", desc: "Responsable de la conducción y representación legal de la institución." },
+          { title: "Comité Académico", desc: "Órgano consultivo que evalúa y propone mejoras en los procesos formativos." }
+        ]
+      },
+      plannDocente: {
+        introTitle: "Nuestro Equipo Docente",
+        introDesc: "Contamos con una plana docente altamente calificada, con amplia experiencia profesional y académica. Nuestros docentes están comprometidos con la formación integral de los estudiantes y la excelencia educativa.",
+        stats: [
+          { number: "150+", label: "Docentes Calificados" },
+          { number: "40%", label: "Con Posgrado" },
+          { number: "15+", label: "Años de Experiencia Promedio" },
+          { number: "95%", label: "Satisfacción Estudiantil" }
+        ],
+        faculties: [
+          {
+            area: "Desarrollo de Sistemas",
+            color: "from-blue-500/10 to-cyan-500/10",
+            members: [
+              { name: "Ing. Carlos Mendoza", role: "Coordinador", specialty: "Ingeniería de Software" },
+              { name: "Mg. Rosa Huamán", role: "Docente", specialty: "Bases de Datos" },
+              { name: "Lic. Pedro García", role: "Docente", specialty: "Programación Web" }
+            ]
+          },
+          {
+            area: "Enfermería Técnica",
+            color: "from-green-500/10 to-emerald-500/10",
+            members: [
+              { name: "Lic. María Torres", role: "Coordinadora", specialty: "Cuidados Intensivos" },
+              { name: "Mg. José López", role: "Docente", specialty: "Salud Pública" },
+              { name: "Lic. Ana Silva", role: "Docente", specialty: "Enfermería Comunitaria" }
+            ]
+          },
+          {
+            area: "Mecatrónica Automotriz",
+            color: "from-orange-500/10 to-amber-500/10",
+            members: [
+              { name: "Ing. Luis Vargas", role: "Coordinador", specialty: "Sistemas Electrónicos" },
+              { name: "Téc. Marco Díaz", role: "Docente", specialty: "Mecánica Automotriz" }
+            ]
+          },
+          {
+            area: "Administración de Empresas",
+            color: "from-purple-500/10 to-pink-500/10",
+            members: [
+              { name: "Mg. Patricia Ríos", role: "Coordinadora", specialty: "Gestión Empresarial" },
+              { name: "Lic. Fernando Ruiz", role: "Docente", specialty: "Marketing Digital" }
+            ]
+          }
+        ]
+      }
+    },
+    megaMenu: {
+      careers: {
+        header: "PROGRAMAS DE ESTUDIO",
+        programs: "programas",
+        viewAll: "Ver todos los programas",
+        categories: { tech: "Tecnología", business: "Gestión", field: "Ingeniería" },
+        tabs: { info: "Información", plan: "Plan de Estudios", field: "Campo Laboral" },
+        labels: {
+          employability: "empleabilidad",
+          degree: "Técnico",
+          technologies: "Tecnologías",
+          curriculum: "Plan Curricular",
+          learning: "Lo que aprenderás",
+          fieldWork: "Campo Laboral",
+          skills: "Habilidades",
+          whyCareer: "¿Por qué esta carrera?",
+          viewComplete: "Ver información completa"
+        }
+      },
+      about: {
+        institution: "INSTITUCIÓN",
+        management: "GESTIÓN",
+        location: "IESTP Suiza — Pucallpa, Ucayali",
+        viewFull: "Ver página completa →"
+      }
+    },
+    home: {
+      licensed: "Licenciado por MINEDU",
+      quickAccess: {
+        title: "Acceso Rápido al Estudiante",
+        subtitle: "Enlaces a portales oficiales y recursos digitales del IESTP Suiza."
+      },
+      whyUs: {
+        title: "¿Por qué IESTP Suiza?",
+        desc: "Conoce nuestra acreditación nacional, educación de calidad 100% gratuita y convenios.",
+        tag: "Institucional"
+      },
+      admission2026: {
+        title: "Admisión Regular 2026",
+        desc: "Requisitos de postulación, cronograma y vacantes de las 11 especialidades.",
+        tag: "Admisiones"
+      },
+      ourCareers: {
+        title: "Nuestras Carreras",
+        desc: "Explora la currícula, laboratorios y el campo de acción de cada carrera profesional.",
+        tag: "Especialidades"
+      },
+      latestNews: {
+        title: "Últimas Noticias",
+        desc: "Entérate de las actividades institucionales, eventos y publicaciones científicas.",
+        tag: "Eventos"
+      },
+      learnMore: "Saber más"
+    },
+    careersPage: {
+      title: "Programas de Estudio",
+      subtitle: "Ofrecemos 11 carreras profesionales técnicas con alta demanda laboral, formación de calidad y certificación nacional.",
+      sectionTitle: "CARRERAS",
+      viewMore: "Ver más detalles",
+      programLabel: "PROGRAMA DE ESTUDIO",
+      durationBadge: "3 Años / 6 Ciclos",
+      planTitle: "Plan de Estudios",
+      skillsTitle: "Habilidades a Desarrollar",
+      opportunitiesTitle: "Oportunidades Laborales",
+      whyTitle: "¿Por qué esta carrera es para ti?",
+      whyStudyTitle: "¿Por qué estudiar esta carrera?",
+      alt: "Carreras IESTP Suiza"
+    },
+    admissionPage: {
+      badge: "ADMISIÓN 2026",
+      title: "Tu futuro profesional comienza aquí",
+      subtitle: "Da el primer paso hacia una carrera con futuro. El IESTP Suiza te ofrece formación técnica de calidad, 100% gratuita con reconocimiento nacional.",
+      ctaContact: "Contáctanos",
+      ctaPrograms: "Ver Programas",
+      download: "Descargar Prospecto",
+      stats: {
+        students: "Estudiantes formados",
+        years: "Años de experiencia",
+        careers: "Carreras profesionales",
+        agreements: "Convenios institucionales"
+      },
+      modalities: {
+        title: "Modalidades de Admisión",
+        items: ["Egresados de colegiosecundario", "Traslados de otras instituciones", "Experiencia laboral comprobada"]
+      },
+      schedule: {
+        title: "Cronograma",
+        items: ["Inscripción: Julio 2026", "Examen de Admisión: Agosto 2026", "Resultados: Septiembre 2026"]
+      },
+      requirements: {
+        title: "Requisitos",
+        items: ["Certificado de estudios secundarios", "DNI vigente", "Partida de nacimiento", "Foto carnet fondo blanco", "Recibo de pago inscripción"]
+      },
+      scholarships: {
+        title: "Becas y Convenios",
+        items: ["Beca PRONABEC", "Convenios con empresas", "Prácticas pre-profesionales"]
+      },
+      advisory: {
+        title: "Asesoría",
+        items: ["Orientación vocacional", "Información de carreras", "Proceso de admisión"]
+      }
+    },
+    carousel: {
+      img1Alt: "Fondo IESTP Suiza 1",
+      img2Alt: "Fondo IESTP Suiza 2",
+      img3Alt: "Fondo IESTP Suiza 3"
+    },
+    newsPage: {
+      searchPlaceholder: "Buscar noticias..."
+    },
+    common: {
+      toggleTheme: "Cambiar tema"
+    },
+
     nav: {
       home: "Inicio",
       careers: "Programas de Estudio",
@@ -991,17 +1372,395 @@ export const translations = {
     }
   },
   en: {
+    common: {
+      toggleTheme: "Toggle Theme"
+    },
+    splash: {
+      offline: "No connection — waiting for network...",
+      loading: "Loading systems... ",
+      welcomeLine1: "Welcome to the page of",
+      institutionName: "IESTP SUIZA",
+      welcomeLine2: "Institute of Excellence",
+      logoAlt: "IESTP Suiza"
+    },
+    assistant: {
+      welcome: "Hello! I'm SuizaAI, your virtual assistant from IESTP Suiza. How can I help you today?",
+      greeting: "Hi! How are you? I can help you with information about admission, programs, requirements and more.",
+      costs: "Admission Fees 2026-II:\n\n• High school graduates: S/ 150.00\n• External transfers: S/ 100.00\n• Work experience: S/ 150.00\n\nPayment is made at Banco de la Nación.",
+      requirements: "Mandatory Requirements to Apply:\n\n1. Secondary school certificate\n2. Valid ID (DNI)\n3. Original birth certificate\n4. Passport-sized photo (white background)\n5. Registration payment receipt",
+      physicalRequirements: "Physical and Medical Fitness Requirements:\n\n• Medical fitness certificate\n• No contagious diseases\n• Good physical condition\n• For Nursing: additional psychological exam",
+      careers: "Our 11 Professional Programs:\n\n1. Information Systems Development\n2. Technical Nursing\n3. Automotive Mechatronics\n4. Agricultural Production\n5. Forest Management\n6. Accounting\n7. Business Administration\n8. Civil Construction\n9. Industrial Electricity\n10. Tourism Operations Administration\n11. Administrative Assistance",
+      calendar: "Official Admission Calendar 2026-II:\n\n• Registration: July 1-31\n• Admission Exam: August 16-17\n• Results: September 1\n• Classes begin: September 8",
+      location: "Location and Office Hours:\n\n• Address: Carretera Federico Basadre Km 5.700\n• Hours: Monday to Friday 8:00 am to 5:00 pm\n• Phone: 061-280665\n• Email: suiza@iestpsuiza.edu.pe",
+      freeEducation: "100% Free Public Education!\n\nIESTP Suiza is a public institution. No tuition fees are charged. Only the admission exam registration fee.",
+      careerSystems: "Program: Information Systems Development\n\nDuration: 3 years\nEmployability: 92%\n\nYou'll learn to program, design databases and develop web and mobile applications.",
+      careerNursing: "Program: Technical Nursing\n\nDuration: 3 years\nEmployability: 88%\n\nTraining in nursing care, first aid and health promotion.",
+      security: "Campus Security:\n\nIESTP Suiza has 24-hour security personnel, surveillance cameras and controlled access to ensure the safety of the entire educational community.",
+      fallback: "I'm sorry, I don't have a specific answer for that question. Can I help you with information about admission, programs, requirements or location?",
+      connectingHuman: "Great! I'm connecting you with a human advisor...",
+      startWhatsApp: "Start WhatsApp Chat",
+      offHours: "We're sorry. In-person office hours are Monday to Friday from 8:00 am to 5:00 pm. You can leave us a message on WhatsApp.",
+      q1: "What programs do you have?",
+      q2: "How much does it cost to apply?",
+      q3: "What are the admission requirements?",
+      q4: "I want to talk to a human advisor",
+      q1Label: "Programs",
+      q2Label: "Costs",
+      q3Label: "Requirements",
+      q4Label: "Talk to Human",
+      title: "Virtual Assistant",
+      name: "SuizaAI",
+      statusActive: "Virtual Active",
+      you: "You",
+      botName: "SuizaAI",
+      responding: "SuizaAI is responding...",
+      respondingPlaceholder: "SuizaAI is responding...",
+      inputPlaceholder: "Type your question here...",
+      ariaSend: "Send"
+    },
+
+    admissionDropdown: {
+      title: "Admission modalities",
+      modalities: ["High school graduates", "External transfers", "Work experience"],
+      transfer: {
+        title: "Transfer",
+        desc: "You have degrees from other institutes or incomplete programs. Complete your studies at IESTP Suiza with national recognition."
+      },
+      otherPrograms: {
+        title: "Other programs",
+        desc: "Explore our 11 accredited programs with high job demand and professional internships in the region."
+      },
+      ctaAdmission: "Admission 2026",
+      ctaContact: "Contact Us",
+      ctaPrograms: "View programs"
+    },
+
+    footer: {
+      academicExcellence: "ACADEMIC EXCELLENCE",
+      missionVision: "Mission and Vision",
+      admissionExam: "Admission Exam",
+      locationContact: "Location and Contact",
+      rights: "All rights reserved. Licensed by MINEDU.",
+      privacy: "Privacy Policy",
+      transparency: "Public Transparency",
+      virtualClassroom: "Virtual Classroom"
+    },
+
+    aboutPage: {
+      header: {
+        title: "Our Institution",
+        subtitle: "Learn about the trajectory, mission, vision and values of IESTP Suiza"
+      },
+      mission: {
+        title: "Mission",
+        description: "We are a licensed public higher technological education institution, dedicated to training competent, creative, innovative technical professionals with strong ethical values."
+      },
+      vision: {
+        title: "Vision",
+        description: "By 2030, to be a leading technological institute in the Peruvian Amazon and a national reference for academic excellence."
+      },
+      values: {
+        sectionTitle: "Our Values",
+        excellence: { title: "Excellence", desc: "We seek the highest standard in technical and human training." },
+        innovation: { title: "Innovation", desc: "We drive applied research and cutting-edge technologies." },
+        inclusion: { title: "Inclusion", desc: "We respect and value the sociocultural diversity of our Amazon." },
+        integrity: { title: "Integrity", desc: "We act with ethics, honesty, transparency and social responsibility." }
+      },
+      history: {
+        title: "Our History",
+        timeline: {
+          founding: { title: "Foundation and Early Steps", desc: "Born in response to the growing demand for qualified technical training in the province of Coronel Portillo, Ucayali." },
+          consolidation: { title: "Consolidation and New Programs", desc: "The current campus on Carretera Federico Basadre is inaugurated and new specialties are incorporated." },
+          modernization: { title: "Technological Modernization", desc: "New laboratories are equipped with cutting-edge technology in automotive mechatronics and software development." },
+          licensing: { title: "Institutional Licensing", desc: "IESTP Suiza successfully achieves its institutional licensing from the Ministry of Education." }
+        }
+      },
+      presentacion: {
+        title: "Presentation",
+        introTitle: "Switzerland Public Higher Technological Education Institute",
+        introSubtitle: "Training technical professionals of excellence since 1976",
+        introP1: "IESTP Suiza is a public educational institution located in the city of Pucallpa, capital of the Ucayali region. Founded in 1976, our institution has been a fundamental pillar in the technical training of thousands of young people from the Amazon, actively contributing to the socioeconomic development of the region and the country.",
+        introP2: "We have 11 licensed study programs, modern specialized laboratories, a highly qualified faculty, and strategic agreements with public and private sector companies and institutions. Our commitment is to train competent, creative, innovative professionals with strong ethical values.",
+        features: [
+          { title: "Licensing", desc: "Institution licensed by MINEDU with basic quality conditions." },
+          { title: "High Employability", desc: "More than 85% of our graduates enter the workforce in the first year." },
+          { title: "Community", desc: "More than 2000 students and 150 teachers committed to excellence." },
+          { title: "Location", desc: "Carretera Federico Basadre Km 5.700, Pucallpa — Ucayali." }
+        ],
+        stats: [
+          { number: "1976", label: "Year Founded" },
+          { number: "11", label: "Licensed Programs" },
+          { number: "2000+", label: "Students" },
+          { number: "85%", label: "Employability" }
+        ]
+      },
+      palabrasDirector: {
+        quote: "It is an honor and a great responsibility to lead this higher education institution, which for more than four decades has been the beacon of knowledge and progress for our beloved Ucayali region. Our commitment is unwavering: to train competent technical professionals with solid ethical values and the ability to transform their reality and contribute to the sustainable development of our Amazon and Peru.",
+        directorName: "Mg. Juan Carlos Ramirez Torres",
+        directorRole: "General Director",
+        directorInstitution: "IESTP Suiza — Pucallpa",
+        futureVisionTitle: "Our Future Vision",
+        futureVisionDesc: "We work tirelessly so that by 2030 we are recognized as the leading technological institute in the Peruvian Amazon, with international quality standards, modern infrastructure, and highly employable graduates.",
+        qualityTitle: "Commitment to Quality",
+        qualityDesc: "Every day we renew our commitment to academic excellence, technological innovation, and the comprehensive training of our students, preparing them for the challenges of the working world.",
+        contactTitle: "Director's Office Contact",
+        contact: [
+          { label: "Email", value: "direccion@iestpsuiza.edu.pe" },
+          { label: "Phone", value: "(061) 280665" },
+          { label: "Address", value: "Carretera Federico Basadre Km 5.700" }
+        ]
+      },
+      visionMision: {
+        missionTitle: "Mission",
+        missionDesc: "We are a licensed public higher technological education institution, dedicated to training competent, creative, innovative technical professionals with strong ethical values, capable of actively contributing to the sustainable socioeconomic development of the Ucayali region and the country.",
+        visionTitle: "Vision",
+        visionDesc: "By 2030, to be a leading technological institute in the Peruvian Amazon and a national reference for academic excellence, modern infrastructure, automated processes, international agreements, and highly employable graduates committed to innovation and environmental care.",
+        valuesTitle: "Our Institutional Values",
+        values: [
+          { title: "Excellence", desc: "We seek the highest standard in technical and human training." },
+          { title: "Innovation", desc: "We drive applied research and the use cutting-edge technologies." },
+          { title: "Inclusion", desc: "We respect and value the sociocultural diversity of our Amazon." },
+          { title: "Integrity", desc: "We act with ethics, honesty, transparency, and social responsibility." }
+        ],
+        objectivesTitle: "Strategic Objectives",
+        objectives: [
+          "Strengthen academic quality through curriculum updates and continuous teacher training.",
+          "Modernize technological infrastructure and specialized laboratories across all programs.",
+          "Increase institutional agreements for pre-professional internships and international collaboration.",
+          "Implement a quality management system with automated processes and administrative transparency.",
+          "Promote applied research and technological innovation in each study program."
+        ]
+      },
+      historia: {
+        introTitle: "Our Trajectory",
+        introDesc: "Since our founding in 1976, IESTP Suiza has been a witness and protagonist of the educational and technological development of the Ucayali region. Over more than four decades, we have evolved to offer quality technical education, adapting to the changes and needs of the labor market.",
+        galleryTitle: "Historical Gallery",
+        timeline: [
+          { year: "1976", title: "Foundation", desc: "Born in response to the growing demand for qualified technical training in the province of Coronel Portillo, Ucayali, offering the first programs in agricultural and mechanical areas." },
+          { year: "1995", title: "Consolidation and New Programs", desc: "The current campus on Carretera Federico Basadre is inaugurated and specialties such as Accounting, Computing and Informatics, and Technical Nursing are incorporated, adapting to the technological growth of the era." },
+          { year: "2018", title: "Technological Modernization", desc: "New laboratories are equipped with cutting-edge technology in automotive mechatronics and software development. Strategic agreements with national and regional companies are consolidated." },
+          { year: "2024", title: "Institutional Licensing", desc: "IESTP Suiza successfully achieves its institutional licensing from the Ministry of Education, validating its basic quality conditions in academics, infrastructure, and management." }
+        ],
+        gallery: [
+          { label: "First Graduating Class", year: "1979" },
+          { label: "New Campus", year: "1995" },
+          { label: "Laboratories", year: "2018" },
+          { label: "Licensing", year: "2024" }
+        ]
+      },
+      gestionAcademica: {
+        introTitle: "Academic Organization",
+        introDesc: "IESTP Suiza's academic management is oriented to guarantee educational quality through planned, executed, and rigorously evaluated processes. We have an organizational structure that ensures the fulfillment of our training objectives.",
+        areas: [
+          { title: "Curriculum", desc: "Design, updating, and evaluation of study plans aligned with labor market demands." },
+          { title: "Academic Evaluation", desc: "Continuous evaluation system with achievement indicators and student performance tracking." },
+          { title: "Scheduling", desc: "Semester academic planning with schedules for teaching activities and evaluations." },
+          { title: "Tutoring", desc: "Student accompaniment and guidance program to ensure persistence and academic success." },
+          { title: "Certification", desc: "Certification and degree process with quality standards and official recognition." }
+        ],
+        calendarTitle: "Academic Calendar 2026",
+        calendar: [
+          { period: "1st Semester", date: "March — July 2026", status: "In progress" },
+          { period: "Vacation", date: "August 2026", status: "Upcoming" },
+          { period: "2nd Semester", date: "September — December 2026", status: "Upcoming" }
+        ]
+      },
+      gestionAdministrativa: {
+        introTitle: "Administrative Structure",
+        introDesc: "IESTP Suiza's administrative management is guided by principles of transparency, efficiency, and effectiveness. Our organizational structure allows for optimal management of institutional resources in service of the educational community.",
+        departments: [
+          { title: "General Directorate", desc: "Maximum executive body that leads strategic planning and institutional decision-making." },
+          { title: "Administration and Finance", desc: "Management of economic resources, annual budget, accounting, and institutional treasury." },
+          { title: "Academic Secretariat", desc: "Registration and certification of academic achievements, document archiving, and administrative procedures." },
+          { title: "Human Resources", desc: "Human talent management: selection, training, evaluation, and staff well-being." },
+          { title: "Institutional Welfare", desc: "Student welfare programs, health services, social assistance, and cultural activities." }
+        ],
+        documentsTitle: "Management Documents",
+        documents: [
+          { title: "Annual Work Plan", desc: "Institutional operational management document 2026", color: "from-primary/10 to-primary/5" },
+          { title: "Internal Regulations", desc: "Rules and provisions governing institutional life", color: "from-secondary/10 to-secondary/5" },
+          { title: "Organization Manual", desc: "Organizational structure and functions of each unit", color: "from-amber-500/10 to-amber-500/5" }
+        ]
+      },
+      organigrama: {
+        introTitle: "Organizational Structure",
+        introDesc: "IESTP Suiza has a modern and functional organizational structure designed to ensure efficient management and fluid communication among all institutional instances.",
+        governmentTitle: "Governing Bodies",
+        government: [
+          { title: "Board of Directors", desc: "Maximum governing body responsible for approving policies, plans, and institutional budgets." },
+          { title: "General Directorate", desc: "Responsible for the leadership and legal representation of the institution." },
+          { title: "Academic Committee", desc: "Advisory body that evaluates and proposes improvements in training processes." }
+        ]
+      },
+      plannDocente: {
+        introTitle: "Our Faculty",
+        introDesc: "We have a highly qualified faculty with extensive professional and academic experience. Our teachers are committed to the comprehensive training of students and educational excellence.",
+        stats: [
+          { number: "150+", label: "Qualified Teachers" },
+          { number: "40%", label: "With Postgraduate" },
+          { number: "15+", label: "Average Years of Experience" },
+          { number: "95%", label: "Student Satisfaction" }
+        ],
+        faculties: [
+          {
+            area: "Systems Development",
+            color: "from-blue-500/10 to-cyan-500/10",
+            members: [
+              { name: "Ing. Carlos Mendoza", role: "Coordinator", specialty: "Software Engineering" },
+              { name: "Mg. Rosa Huamán", role: "Teacher", specialty: "Databases" },
+              { name: "Lic. Pedro García", role: "Teacher", specialty: "Web Programming" }
+            ]
+          },
+          {
+            area: "Technical Nursing",
+            color: "from-green-500/10 to-emerald-500/10",
+            members: [
+              { name: "Lic. María Torres", role: "Coordinator", specialty: "Intensive Care" },
+              { name: "Mg. José López", role: "Teacher", specialty: "Public Health" },
+              { name: "Lic. Ana Silva", role: "Teacher", specialty: "Community Nursing" }
+            ]
+          },
+          {
+            area: "Automotive Mechatronics",
+            color: "from-orange-500/10 to-amber-500/10",
+            members: [
+              { name: "Ing. Luis Vargas", role: "Coordinator", specialty: "Electronic Systems" },
+              { name: "Téc. Marco Díaz", role: "Teacher", specialty: "Automotive Mechanics" }
+            ]
+          },
+          {
+            area: "Business Administration",
+            color: "from-purple-500/10 to-pink-500/10",
+            members: [
+              { name: "Mg. Patricia Ríos", role: "Coordinator", specialty: "Business Management" },
+              { name: "Lic. Fernando Ruiz", role: "Teacher", specialty: "Digital Marketing" }
+            ]
+          }
+        ]
+      }
+    },
+    megaMenu: {
+      careers: {
+        header: "STUDY PROGRAMS",
+        programs: "programs",
+        viewAll: "View all programs",
+        categories: { tech: "Technology", business: "Management", field: "Engineering" },
+        tabs: { info: "Information", plan: "Study Plan", field: "Career Field" },
+        labels: {
+          employability: "employability",
+          degree: "Technician",
+          technologies: "Technologies",
+          curriculum: "Curriculum Plan",
+          learning: "What you will learn",
+          fieldWork: "Career Field",
+          skills: "Skills",
+          whyCareer: "Why this career?",
+          viewComplete: "View full information"
+        }
+      },
+      about: {
+        institution: "INSTITUTION",
+        management: "MANAGEMENT",
+        location: "IESTP Suiza — Pucallpa, Ucayali",
+        viewFull: "View full page →"
+      }
+    },
+    home: {
+      licensed: "Licensed by MINEDU",
+      quickAccess: {
+        title: "Quick Access for Students",
+        subtitle: "Links to official portals and digital resources of IESTP Suiza."
+      },
+      whyUs: {
+        title: "Why IESTP Suiza?",
+        desc: "Learn about our national accreditation, 100% free quality education and partnerships.",
+        tag: "Institutional"
+      },
+      admission2026: {
+        title: "Regular Admission 2026",
+        desc: "Application requirements, schedule and vacancies for all 11 programs.",
+        tag: "Admissions"
+      },
+      ourCareers: {
+        title: "Our Programs",
+        desc: "Explore the curriculum, laboratories and field of action of each professional program.",
+        tag: "Programs"
+      },
+      latestNews: {
+        title: "Latest News",
+        desc: "Learn about institutional activities, events and scientific publications.",
+        tag: "Events"
+      },
+      learnMore: "Learn more"
+    },
+    careersPage: {
+      title: "Study Programs",
+      subtitle: "We offer 11 technical professional programs with high job demand, quality training and national certification.",
+      sectionTitle: "PROGRAMS",
+      viewMore: "View more details",
+      programLabel: "STUDY PROGRAM",
+      durationBadge: "3 Years / 6 Semesters",
+      planTitle: "Study Plan",
+      skillsTitle: "Skills to Develop",
+      opportunitiesTitle: "Career Opportunities",
+      whyTitle: "Why is this career for you?",
+      whyStudyTitle: "Why study this career?",
+      alt: "IESTP Suiza Programs"
+    },
+    admissionPage: {
+      badge: "ADMISSION 2026",
+      title: "Your professional future starts here",
+      subtitle: "Take the first step toward a career with a future. IESTP Suiza offers you quality technical education, 100% free with national recognition.",
+      ctaContact: "Contact Us",
+      ctaPrograms: "View Programs",
+      download: "Download Prospectus",
+      stats: {
+        students: "Students trained",
+        years: "Years of experience",
+        careers: "Professional programs",
+        agreements: "Institutional partnerships"
+      },
+      modalities: {
+        title: "Admission Modalities",
+        items: ["High school graduates", "Transfers from other institutions", "Verified work experience"]
+      },
+      schedule: {
+        title: "Schedule",
+        items: ["Registration: July 2026", "Admission Exam: August 2026", "Results: September 2026"]
+      },
+      requirements: {
+        title: "Requirements",
+        items: ["High school certificate", "Valid ID", "Birth certificate", "White background photo", "Registration payment receipt"]
+      },
+      scholarships: {
+        title: "Scholarships and Agreements",
+        items: ["PRONABEC Scholarship", "Company partnerships", "Professional internships"]
+      },
+      advisory: {
+        title: "Advisory",
+        items: ["Vocational guidance", "Program information", "Admission process"]
+      }
+    },
+    carousel: {
+      img1Alt: "IESTP Suiza Background 1",
+      img2Alt: "IESTP Suiza Background 2",
+      img3Alt: "IESTP Suiza Background 3"
+    },
+    newsPage: {
+      searchPlaceholder: "Search news..."
+    },
+    common: {
+      toggleTheme: "Toggle theme"
+    },
+
     nav: {
       home: "Home",
       careers: "Study Programs",
-      admission: "Admission 2026",
+      admission: "Admission and Enrollment",
       about: "About Us",
-      news: "News",
-      contact: "Contact Us",
-      institute: "Institute",
-      research: "Research",
-      library: "Library",
-      transparency: "Transparency"
+      transparency: "Transparency",
+      procedures: "Procedures",
+      services: "Services"
     },
     instituteMenu: {
       title: "Our Institute",
@@ -1737,20 +2496,363 @@ export const translations = {
         description: "Training technical professionals of excellence in the Peruvian Amazon with national and international recognition.",
         cta: "About Us"
       }
-    }
+    },
+    transparencyMenu: [
+      { name: "Management Documents", path: "/transparency/documentos" },
+      { name: "Agreements", path: "/transparency/convenios" },
+      { name: "Calls", path: "/transparency/convocatorias" },
+      { name: "Academic Calendar", path: "/transparency/calendario" },
+      { name: "Statistics", path: "/transparency/estadisticas" },
+      { name: "Investments and Donations", path: "/transparency/inversiones" }
+    ],
+    proceduresMenu: [
+      { name: "Professional Application Papers", path: "/procedures/trabajos" },
+      { name: "Contact Us", path: "/procedures/contactanos" },
+      { name: "Titration Process", path: "/procedures/titulacion" }
+    ],
+    servicesMenu: [
+      { name: "Virtual Campus", path: "/services/campus" },
+      { name: "Academic Management System", path: "/services/sga" },
+      { name: "Job Bank", path: "/services/bolsa" },
+      { name: "Language Center", path: "/services/idiomas" },
+      { name: "Virtual Library", path: "/services/biblioteca" },
+      { name: "Publications", path: "/services/publicaciones" },
+      { name: "Institutional Links", path: "/services/enlaces" },
+      { name: "Database", path: "/services/bd" }
+    ]
   },
   sh: {
+    common: {
+      toggleTheme: "Tema jendarterati"
+    },
+    splash: {
+      offline: "Red connectionshinma — red bia jitechati...",
+      loading: "Sistemas yonkati... ",
+      welcomeLine1: "Jakon yatan noa página",
+      institutionName: "IESTP SUIZA",
+      welcomeLine2: "Instituto Jakon Excelencia",
+      logoAlt: "IESTP Suiza"
+    },
+    assistant: {
+      welcome: "Jakon! Non SuizaAI bican, IESTP Suiza asistente virtual. Bia shinanti yoyoiti?",
+      greeting: "Jakon! Bia bia? Admisión, axontibo, requisitos y bia shinanti yoyoiti.",
+      costs: "Ikanti Coriqui 2026-II:\n\n• Egresados colegio: S/ 150.00\n• Traslados externos: S/ 100.00\n• Experiencia laboral: S/ 150.00\n\nBanco de la Nación quin pagati.",
+      requirements: "Requisitos Jakon Postular:\n\n1. Certificado secundaria seneti\n2. DNI vigente\n3. Partida nacimiento original\n4. Foto carnet fondo blanco\n5. Recibo pago inscripción",
+      physicalRequirements: "Aptitud Física y Médica Requisitos:\n\n• Certificado aptitud médica\n• Enfermedades contagiosas shinma\n• Condiciones físicas jakon\n• Enfermería: examen psicológico bia",
+      careers: "Non 11 Carreras Profesionales:\n\n1. Desarrollo de Sistemas de Información\n2. Enfermería Técnica\n3. Mecatrónica Automotriz\n4. Producción Agropecuaria\n5. Manejo Forestal\n6. Contabilidad\n7. Administración de Empresas\n8. Construcción Civil\n9. Electricidad Industrial\n10. Administración de Operaciones Turísticas\n11. Asistencia Administrativa",
+      calendar: "Ikanti Calendario Oficial 2026-II:\n\n• Inscripción: Julio 1-31\n• Examen Ikanti: Agosto 16-17\n• Resultados: Septiembre 1\n• Clase inicio: Septiembre 8",
+      location: "Jeme y Atencion Tiempo:\n\n• Jeme: Carretera Federico Basadre Km 5.700\n• Tiempo: Lunes a Viernes 8:00 am 5:00 pm\n• Teléfono: 061-280665\n• Email: suiza@iestpsuiza.edu.pe",
+      freeEducation: "¡Educación Pública 100% Gratuita!\n\nIESTP Suiza non instituto público. Pensiones y mensualidades shinma. Solo ikanti examen inscripción coriqui.",
+      careerSystems: "Carrera: Desarrollo de Sistemas de Información\n\nBaritia: 3 años\nEmpleabilidad: 92%\n\nComputadoras quirica axonti, software y apps wishati jomeax teti.",
+      careerNursing: "Carrera: Enfermería Técnica\n\nBaritia: 3 años\nEmpleabilidad: 88%\n\nYoyo iquibo isinbo coinox, jakon shinanmobi joinox.",
+      security: "Campus Seguridad:\n\nIESTP Suiza seguridad personal 24 horas, cámaras vigilancia y acceso controlado bican, comunidad educativa seguridad garantizar.",
+      fallback: "Sentiti, yocati específico shinma. Admisión, axontibo, requisitos o jeme shinanti yoyoiti?",
+      connectingHuman: "Jakon! Asesor humano betan yoyoiti conectorati...",
+      startWhatsApp: "WhatsApp Chat Ointi",
+      offHours: "Sentiti. Atencion tiempo lunes a viernes 8:00 am 5:00 pm. WhatsApp po joi wishati.",
+      q1: "¿Jawe axontibo non bican?",
+      q2: "¿Jawecopa coriqui postular?",
+      q3: "¿Jawe requisitos postulación?",
+      q4: "Asesor humano betan yoyoiti",
+      q1Label: "Axontibo",
+      q2Label: "Coriqui",
+      q3Label: "Requisitos",
+      q4Label: "Humano Yoyoiti",
+      title: "Asistente Virtual",
+      name: "SuizaAI",
+      statusActive: "Virtual Activo",
+      you: "Mia",
+      botName: "SuizaAI",
+      responding: "SuizaAI yoyoiti...",
+      respondingPlaceholder: "SuizaAI yoyoiti...",
+      inputPlaceholder: "Nono yocati wishahué...",
+      ariaSend: "Wishati"
+    },
+
+    admissionDropdown: {
+      title: "Admisión modalidades",
+      modalities: ["Egresados de colegio", "Traslados externos", "Experiencia laboral"],
+      transfer: {
+        title: "Traslado",
+        desc: "Títulos institutos bican o carreras inconclusas. IESTP Suiza estudiobo completar nacional reconocimiento."
+      },
+      otherPrograms: {
+        title: "Otros programas",
+        desc: "11 programas licenciados ointi alta demanda laboral prácticas profesionales región."
+      },
+      ctaAdmission: "Ikanti 2026",
+      ctaContact: "Wishati",
+      ctaPrograms: "Axontibo ointi"
+    },
+
+    footer: {
+      academicExcellence: "EXCELENCIA ACADÉMICA",
+      missionVision: "Misión y Visión",
+      admissionExam: "Examen de Admisión",
+      locationContact: "Ubicación y Contacto",
+      rights: "Derechos reservados. Licenciado por MINEDU.",
+      privacy: "Política de Privacidad",
+      transparency: "Transparencia Pública",
+      virtualClassroom: "Aula Virtual"
+    },
+
+    aboutPage: {
+      header: {
+        title: "Noa Instituto",
+        subtitle: "Noa instituto jomeax ointi, misión, visión y valores"
+      },
+      mission: {
+        title: "Misión",
+        description: "Non institución educación superior tecnológica pública licenciada bican, formar profesionales técnicos competentes, creativos, innovadores y valores éticos sólidos dedicada."
+      },
+      vision: {
+        title: "Visión",
+        description: "2030 betan, instituto tecnológico líder Amazonía peruana ser y referente nacional excelencia académica."
+      },
+      values: {
+        sectionTitle: "Noa Valores",
+        excellence: { title: "Excelencia", desc: "Estándar más alto formación técnica y humana busca." },
+        innovation: { title: "Innovación", desc: "Investigación aplicada y tecnología vanguardia uso impulsa." },
+        inclusion: { title: "Inclusión", desc: "Diversidad sociocultural Amazonía respeta y valora." },
+        integrity: { title: "Integridad", desc: "Ética, honestidad, transparencia y responsabilidad social actúa." }
+      },
+      history: {
+        title: "Noa Bena",
+        timeline: {
+          founding: { title: "Fundación y Primeros Pasos", desc: "Nace como respuesta a la creciente demanda de formación técnica calificada en la provincia de Coronel Portillo, Ucayali." },
+          consolidation: { title: "Consolidación y Nuevos Programas", desc: "Se inaugura el campus actual en la Carretera Federico Basadre y se incorporan nuevas especialidades." },
+          modernization: { title: "Modernización Tecnológica", desc: "Se equipan nuevos laboratorios con tecnología de punta en mecatrónica automotriz y desarrollo de software." },
+          licensing: { title: "Licenciamiento Institucional", desc: "El IESTP Suiza logra exitosamente su licenciamiento institucional ante el Ministerio de Educación." }
+        }
+      },
+      presentacion: {
+        title: "Joi Jato",
+        introTitle: "IESTP Suiza Instituto",
+        introSubtitle: "Jakon mestrotibo formando 1976 betan",
+        introP1: "IESTP Suiza non instituto público Pucallpa po jeme, Ucayali región capital. 1976po fundada, non instituto axonibo jakon formación técnica jomeax betan pillar bican, Ucayali región y país desarrollo socioeconómico contribute.",
+        introP2: "Non 11 programa estudio licenciado bican, laboratorio moderno especializado, mestrotibo jakon calificado y convenio estratégico empresa e instituciones público y privado. Non compromiso formar profesionales competentes, creativos, innovadores y valores éticos sólidos."
+      },
+      palabrasDirector: {
+        quote: "Non honor y responsabilidad grande bican noa estudios superior dirigir, cuatro décadas betan conocimiento y progreso faro bican Ucayali región. Non compromiso inquebrantable: profesionales técnicos competentes formar, valores éticos sólidos y transformar realidad contribute capacidad.",
+        directorName: "Mg. Juan Carlos Ramirez Torres",
+        directorRole: "Director General",
+        directorInstitution: "IESTP Suiza — Pucallpa",
+        futureVisionTitle: "Noa Futuro Visión",
+        futureVisionDesc: "Trabajati incansablemente 2030 betan instituto tecnológico líder Amazonía peruana reconocida, calidad internacional estándares, infraestructura moderna y egresados altamente empleables.",
+        qualityTitle: "Calidad Compromiso",
+        qualityDesc: "Cada día noa compromiso excelencia académica, innovación tecnológica y formación integral axoni jonibo renueva, mundo laboral desafíos preparando.",
+        contactTitle: "Dirección Contacto"
+      },
+      visionMision: {
+        missionTitle: "Misión",
+        missionDesc: "Non instituto educación superior tecnológica pública licenciada bican, formar profesionales técnicos competentes, creativos, innovadores y valores éticos sólidos dedicada, Ucayali región y país desarrollo socioeconómico sostenible contribute.",
+        visionTitle: "Visión",
+        visionDesc: "2030 betan, instituto tecnológico líder Amazonía peruana ser y referente nacional excelencia académica, infraestructura moderna, procesos automatizados, convenios internacionales y egresados alta empleabilidad innovación y cuidado ambiental comprometidos.",
+        valuesTitle: "Noa Valores Institucionales",
+        values: [
+          { title: "Excelencia", desc: "Estándar más alto formación técnica y humana busca." },
+          { title: "Innovación", desc: "Investigación aplicada y tecnología vanguardia uso impulsa." },
+          { title: "Inclusión", desc: "Diversidad sociocultural Amazonía respeta y valora." },
+          { title: "Integridad", desc: "Ética, honestidad, transparencia y responsabilidad social actúa." }
+        ],
+        objectivesTitle: "Objetivos Estratégicos",
+        objectives: [
+          "Calidad académica fortalece actualización curricular y capacitación docente continua.",
+          "Infraestructura tecnológica y laboratorios especializados moderniza.",
+          "Convenios institucionales prácticas pre-profesionales incrementa.",
+          "Sistema gestión calidad implementa procesos automatizados y transparencia administrativa.",
+          "Investigación aplicada e innovación tecnológica promueve."
+        ]
+      },
+      historia: {
+        introTitle: "Noa Trayectoria",
+        introDesc: "1976 fundación betan, IESTP Suiza testigo y protagonista Ucayali región desarrollo educativo y tecnológico bican. Cuatro décadas betan más, educación técnica calidad ofrecer evoluciona, mercado laboral cambios y necesidades adaptando.",
+        galleryTitle: "Galería Histórica",
+        timeline: [
+          { year: "1976", title: "Fundación", desc: "Coronel Portillo provincia formación técnica calificada demanda creciente respuesta nace, agropecuarias y mecánica áreas primeros programas ofreciendo." },
+          { year: "1995", title: "Consolidación y Nuevos Programas", desc: "Carretera Federico Basadre campus actual inaugura y Contabilidad, Computación e Informática y Enfermería Técnica especialidades incorpora, época crecimiento tecnológico adaptándose." },
+          { year: "2018", title: "Modernización Tecnológica", desc: "Mecatrónica automotriz y desarrollo software tecnología punta laboratorios equipa. Convenios estratégicos empresas nacionales y regionales consolida." },
+          { year: "2024", title: "Licenciamiento Institucional", desc: "IESTP Suiza licenciamiento institucional Ministerio Educación ante exitosamente logra, calidad académica, infraestructura y gestión condiciones básicas valida." }
+        ],
+        gallery: [
+          { label: "Primera Promoción", year: "1979" },
+          { label: "Nuevo Campus", year: "1995" },
+          { label: "Laboratorios", year: "2018" },
+          { label: "Licenciamiento", year: "2024" }
+        ]
+      },
+      gestionAcademica: {
+        introTitle: "Organización Académica",
+        introDesc: "IESTP Suiza gestión académica calidad educativa garantizar orientada procesos planificados, ejecutados y evaluados rigurosidad. Estructura organizativa objetivo formativos cumplimiento asegura.",
+        areas: [
+          { title: "Currículo", desc: "Planes estudio diseño, actualización y evaluación mercado laboral demandas alineados." },
+          { title: "Evaluación Académica", desc: "Evaluación continua sistema logro indicadores y desempeño estudiantil seguimiento." },
+          { title: "Calendarización", desc: "Planificación académica semestral cronogramas actividades lectivas y evaluaciones." },
+          { title: "Tutoría", desc: "Acompañamiento y orientación estudiantil programa permanencia y éxito académico asegurar." },
+          { title: "Certificación", desc: "Certificación y titulación proceso calidad estándares y reconocimiento oficial." }
+        ],
+        calendarTitle: "Calendario Académico 2026",
+        calendar: [
+          { period: "I Semestre", date: "Marzo — Julio 2026", status: "Axonona" },
+          { period: "Vacaciones", date: "Agosto 2026", status: "Bia" },
+          { period: "II Semestre", date: "Setiembre — Diciembre 2026", status: "Bia" }
+        ]
+      },
+      gestionAdministrativa: {
+        introTitle: "Estructura Administrativa",
+        introDesc: "IESTP Suiza gestión administrativa transparencia, eficiencia y eficacia principios rige. Estructura organizativa recursos institucionales administración óptima permite comunidad educativa servicio.",
+        departments: [
+          { title: "Dirección General", desc: "Instancia ejecutiva máxima planificación estratégica y decisiones institucionales lidera." },
+          { title: "Administración y Finanzas", desc: "Recursos económicos gestión, presupuesto anual, contabilidad y tesorería institucional." },
+          { title: "Secretaría Académica", desc: "Logros académicos registro y certificación, archivo documentario y trámites administrativos." },
+          { title: "Recursos Humanos", desc: "Talento humano gestión: selección, capacitación, evaluación y bienestar personal." },
+          { title: "Bienestar Institucional", desc: "Bienestar estudiantil programas, servicios salud, asistencia social y actividades culturales." }
+        ],
+        documentsTitle: "Documentos de Gestión"
+      },
+      organigrama: {
+        introTitle: "Estructura Orgánica",
+        introDesc: "IESTP Suiza estructura organizativa moderna y funcional bican, gestión eficiente y comunicación fluida todas instancias institucionales garantizar diseñada.",
+        governmentTitle: "Órganos de Gobierno",
+        government: [
+          { title: "Consejo Directivo", desc: "Gobierno órgano máximo políticas, planes y presupuestos institucionales aprobar responsable." },
+          { title: "Dirección General", desc: "Institución conducción y representación legal responsable." },
+          { title: "Comité Académico", desc: "Procesos formativos evalúa y mejoras propone órgano consultivo." }
+        ]
+      },
+      plannDocente: {
+        introTitle: "Noa Mestrotibo Equipo",
+        introDesc: "Mestrotibo jakon calificado, experiencia profesional y académica amplia bican. Mestrotibo axoni jonibo formación integral y excelencia educativa comprometidos.",
+        stats: [
+          { number: "150+", label: "Mestrotibo Calificados" },
+          { number: "40%", label: "Posgrado Bican" },
+          { number: "15+", label: "Baritia Experiencia Promedio" },
+          { number: "95%", label: "Satisfacción Estudiantil" }
+        ]
+      }
+    },
+    megaMenu: {
+      careers: {
+        header: "AXONTIBO JAKON",
+        programs: "axontibo",
+        viewAll: "Axontibo jakon ointi",
+        categories: { tech: "Axonti", business: "Gestión", field: "Ingeniería" },
+        tabs: { info: "Información", plan: "Plan de Estudios", field: "Campo Laboral" },
+        labels: {
+          employability: "empleabilidad",
+          degree: "Técnico",
+          technologies: "Tecnologías",
+          curriculum: "Plan Curricular",
+          learning: "Bia ononero",
+          fieldWork: "Campo Laboral",
+          skills: "Habilidades",
+          whyCareer: "¿Bia carrerabin jakon?",
+          viewComplete: "Información jakon ointi"
+        }
+      },
+      about: {
+        institution: "INSTITUCIÓN",
+        management: "GESTIÓN",
+        location: "IESTP Suiza — Pucallpa, Ucayali",
+        viewFull: "Página jakon ointi →"
+      }
+    },
+    home: {
+      licensed: "MINEDU licenciado",
+      quickAccess: {
+        title: "Axonibo Acceso Rápido",
+        subtitle: "IESTP Suiza portales recursos digitales enlaces."
+      },
+      whyUs: {
+        title: "¿Bia IESTP Suiza?",
+        desc: "Acreditación nacional educación calidad 100% gratuita convenios.",
+        tag: "Institucional"
+      },
+      admission2026: {
+        title: "Ikanti Regular 2026",
+        desc: "Requisitos postulación cronograma vacantes 11 especialidades.",
+        tag: "Ikanti"
+      },
+      ourCareers: {
+        title: "Non Axontibo",
+        desc: "Currícula laboratorios campo acción carrera profesional ointi.",
+        tag: "Especialidades"
+      },
+      latestNews: {
+        title: "Joibo Jakon",
+        desc: "Actividades institucionales eventos publicaciones.",
+        tag: "Eventos"
+      },
+      learnMore: "Ointi bia"
+    },
+    careersPage: {
+      title: "Axontibo Jakon",
+      subtitle: "11 carreras profesionales técnicas alta demanda laboral formación calidad certificación nacional.",
+      sectionTitle: "CARRERAS",
+      viewMore: "Ointi bia detalles",
+      programLabel: "AXONTIBO JAKON",
+      durationBadge: "3 Baritia / 6 Ciclos",
+      planTitle: "Plan de Estudios",
+      skillsTitle: "Habilidades Bia Ononero",
+      opportunitiesTitle: "Campo Laboral",
+      whyTitle: "¿Bia carrera bican jakon?",
+      whyStudyTitle: "¿Bia carrerabin axonero?",
+      alt: "Axontibo IESTP Suiza"
+    },
+    admissionPage: {
+      badge: "IKANTI 2026",
+      title: "Carrera profesional futuro bican",
+      subtitle: "Primer paso carrera futuro. IESTP Suiza formación técnica calidad 100% gratuita nacional reconocimiento.",
+      ctaContact: "Wishati",
+      ctaPrograms: "Axontibo Ointi",
+      download: "Prospecto Descargar",
+      stats: {
+        students: "Axonibo formados",
+        years: "Baritia experiencia",
+        careers: "Carreras profesionales",
+        agreements: "Convenios institucionales"
+      },
+      modalities: {
+        title: "Ikanti Modalidades",
+        items: ["Egresados colegio", "Traslados instituciones", "Experiencia laboral comprobada"]
+      },
+      schedule: {
+        title: "Cronograma",
+        items: ["Inscripción: Julio 2026", "Examen Ikanti: Agosto 2026", "Resultados: Septiembre 2026"]
+      },
+      requirements: {
+        title: "Requisitos",
+        items: ["Certificado estudios secundarios", "DNI vigente", "Partida nacimiento", "Foto carnet fondo blanco", "Recibo pago inscripción"]
+      },
+      scholarships: {
+        title: "Becas y Convenios",
+        items: ["Beca PRONABEC", "Convenios empresas", "Prácticas pre-profesionales"]
+      },
+      advisory: {
+        title: "Asesoría",
+        items: ["Orientación vocacional", "Información carreras", "Proceso admisión"]
+      }
+    },
+    carousel: {
+      img1Alt: "IESTP Suiza Fondo 1",
+      img2Alt: "IESTP Suiza Fondo 2",
+      img3Alt: "IESTP Suiza Fondo 3"
+    },
+    newsPage: {
+      searchPlaceholder: "Joibo beneti..."
+    },
+    common: {
+      toggleTheme: "Tema cambia"
+    },
+
     nav: {
       home: "Jowé",
       careers: "Axontibo",
       admission: "Ikanti 2026",
       about: "Noa",
-      news: "Joibo",
-      contact: "Wishati",
-      institute: "Instituto",
-      research: "Investigación",
-      library: "Biblioteca",
-      transparency: "Transparencia"
+      transparency: "Transparencia",
+      procedures: "Trámites",
+      services: "Servicios"
     },
     instituteMenu: {
       title: "Non Instituto",
@@ -2326,6 +3428,29 @@ export const translations = {
         cta: "Noa Ointi"
       }
     },
+    transparencyMenu: [
+      { name: "Documentos de Gestión", path: "/transparency/documentos" },
+      { name: "Convenios", path: "/transparency/convenios" },
+      { name: "Convocatorias", path: "/transparency/convocatorias" },
+      { name: "Calendario Académico", path: "/transparency/calendario" },
+      { name: "Estadísticas", path: "/transparency/estadisticas" },
+      { name: "Inversiones y Donaciones", path: "/transparency/inversiones" }
+    ],
+    proceduresMenu: [
+      { name: "Trabajos de Aplicación Profesional", path: "/procedures/trabajos" },
+      { name: "Contáctanos", path: "/procedures/contactanos" },
+      { name: "Proceso de Titulación", path: "/procedures/titulacion" }
+    ],
+    servicesMenu: [
+      { name: "Campus Virtual", path: "/services/campus" },
+      { name: "Sistema de Gestión Académica", path: "/services/sga" },
+      { name: "Bolsa Laboral", path: "/services/bolsa" },
+      { name: "Centro de Idiomas", path: "/services/idiomas" },
+      { name: "Biblioteca Virtual", path: "/services/biblioteca" },
+      { name: "Publicaciones", path: "/services/publicaciones" },
+      { name: "Enlaces Institucionales", path: "/services/enlaces" },
+      { name: "Base de Datos", path: "/services/bd" }
+    ],
     contact: {
       hero: {
         title: "Noa joshin betan yoyoiti",

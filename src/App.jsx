@@ -67,7 +67,7 @@ function App(){
 
       <Navbar lang={lang} setLang={setLang} darkMode={darkMode} setDarkMode={setDarkMode} t={t} />
       
-      <main className="flex-1 w-full mt-4">
+      <main className="flex-1 w-full mt-3">
         <Routes>
           <Route path="/" element={<Home t={t} />} />
           <Route path="/careers" element={<Careers t={t} />} />
