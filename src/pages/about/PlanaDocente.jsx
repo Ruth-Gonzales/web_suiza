@@ -4,77 +4,77 @@ import AboutPageShell from './AboutPageShell';
 
 const programas = [
   {
-    id: 'admin', nombre: 'Administraci├│n de Empresas', color: '#3B82F6',
+    id: 'admin', nombre: 'Administración de Empresas', color: '#3B82F6',
     docentes: [
-      { nombre: 'Lic. Adm. Roli Antenor Ram├¡rez Vivas', rol: 'COORDINADOR', telefono: '916 085 580', email: 'roliramirez2020@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/1.-Roli-Ramirez.jpg' },
+      { nombre: 'Lic. Adm. Roli Antenor Ramírez Vivas', rol: 'COORDINADOR', telefono: '916 085 580', email: 'roliramirez2020@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/1.-Roli-Ramirez.jpg' },
       { nombre: 'Sec. Ejec. Maura Chanella Villanueva Inuma', rol: 'SECRETARIA', telefono: '963 549 117', email: 'villanuevamaurach@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/2.-Maura-Villanueva.jpg' },
       { nombre: 'Econ. Carlos Henry Bardales Pezo', rol: 'DOCENTE', telefono: '941 373 261', email: 'carbarpezo@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/3.-Carlos-Bardales.jpg' },
       { nombre: 'Mg. Clay Nixon Saavedra Saavedra', rol: 'DOCENTE', telefono: '992 586 475', email: 'claynixon.ss72@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/7.-Clay-Saavedra.jpg' },
-      { nombre: 'Jos├® Tejada Ojeda', rol: 'DOCENTE', telefono: '961 904 753', email: 'jtejada8854@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/4.-Jose-Tejada.jpg' },
+      { nombre: 'José Tejada Ojeda', rol: 'DOCENTE', telefono: '961 904 753', email: 'jtejada8854@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/4.-Jose-Tejada.jpg' },
       { nombre: 'Dra. Alejandrina Tuesta Gonzales', rol: 'DOCENTE', telefono: '988 491 162', email: 'alejandra.tuesta.gonzales@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/8.-Alejandrina-Tuesta.jpg' },
-      { nombre: 'Mg. Segundo Regner C├írdenas del ├üguila', rol: 'DOCENTE', telefono: '961 070 620', email: 'tecsuiza2019@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/5.-Segundo-Cardenas.jpg' },
-      { nombre: 'Mg. Jos├® Luis Meza Salinas', rol: 'DOCENTE', telefono: '961 023 288', email: 'admjms0412@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/9.-Jose-Meza.jpg' },
-      { nombre: 'Lic. Pedro Jes├║s D├¡az Pic├│n', rol: 'DOCENTE', telefono: '968 919 205', email: 'pedrodiaz777@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/6.-Pedro-Diaz.jpg' },
-      { nombre: 'Mg. Zelita Tejada Rodr├¡guez', rol: 'DOCENTE', telefono: '951 560 963', email: 'zelitatejadarodriguez@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/10.-Zelita-Tejada.jpg' },
-      { nombre: 'Mg. Anna Pegguibeth Rodr├¡guez G├│mez', rol: 'DOCENTE', telefono: '913 008 264', email: 'rodriguezanna697@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/11.-Anna-Rodriguez.jpg' },
+      { nombre: 'Mg. Segundo Regner Cárdenas del Águila', rol: 'DOCENTE', telefono: '961 070 620', email: 'tecsuiza2019@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/5.-Segundo-Cardenas.jpg' },
+      { nombre: 'Mg. José Luis Meza Salinas', rol: 'DOCENTE', telefono: '961 023 288', email: 'admjms0412@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/9.-Jose-Meza.jpg' },
+      { nombre: 'Lic. Pedro Jesús Díaz Picón', rol: 'DOCENTE', telefono: '968 919 205', email: 'pedrodiaz777@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/6.-Pedro-Diaz.jpg' },
+      { nombre: 'Mg. Zelita Tejada Rodríguez', rol: 'DOCENTE', telefono: '951 560 963', email: 'zelitatejadarodriguez@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/10.-Zelita-Tejada.jpg' },
+      { nombre: 'Mg. Anna Pegguibeth Rodríguez Gómez', rol: 'DOCENTE', telefono: '913 008 264', email: 'rodriguezanna697@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/11.-Anna-Rodriguez.jpg' },
       { nombre: 'Tec. G.T. Diana Carolina Hidalgo Gonzales', rol: 'DOCENTE', telefono: '969 888 423', email: 'carolinahidalgo.got@live.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/12.-Diana-Hidalgo.jpg' },
       { nombre: 'Ursula Norgelina Panduro Rocha', rol: 'DOCENTE', telefono: '942 462 554', email: 'uchi2113@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/13.-Ursula-Hidalgo.jpg' },
     ]
   },
   {
-    id: 'turismo', nombre: 'Administraci├│n de Operaciones Tur├¡sticas', color: '#8B5CF6',
+    id: 'turismo', nombre: 'Administración de Operaciones Turísticas', color: '#8B5CF6',
     docentes: [
       { nombre: 'Lic. Edu. Betty Rosario Ruiz Ruiz', rol: 'COORDINADOR', telefono: '971 234 947', email: 'ztorbisco15@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2023/09/DSC_9904-683x1024.jpg' },
-      { nombre: 'Sec. Ejec. Alexandra Mariciela Sigue├▒as Becerra', rol: 'SECRETARIA', telefono: '923 574 718', email: 'alexandrasigue├▒as550@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/6.-Alejandra-Siguenas.jpg' },
-      { nombre: 'Tec. Jos├® Manuel Cartagena Sandoval', rol: 'DOCENTE', telefono: '948 139 562', email: 'josemnauelcarsan@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/2.-Jose-Cartagena.jpg' },
+      { nombre: 'Sec. Ejec. Alexandra Mariciela Sigueñas Becerra', rol: 'SECRETARIA', telefono: '923 574 718', email: 'alexandrasigueñas550@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/6.-Alejandra-Siguenas.jpg' },
+      { nombre: 'Tec. José Manuel Cartagena Sandoval', rol: 'DOCENTE', telefono: '948 139 562', email: 'josemnauelcarsan@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/2.-Jose-Cartagena.jpg' },
       { nombre: 'Mg. Pedro Berrospi Almeida', rol: 'DOCENTE', telefono: '960 697 710', email: 'berrospi22as@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/3.-Pedro-Berrospi.jpg' },
-      { nombre: 'Teolinda Torres Garc├¡a', rol: 'DOCENTE', telefono: '959 206 202', email: 'torres.garcia.teolinda@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/4.-Teolinda-Torres.jpg' },
+      { nombre: 'Teolinda Torres García', rol: 'DOCENTE', telefono: '959 206 202', email: 'torres.garcia.teolinda@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/4.-Teolinda-Torres.jpg' },
     ]
   },
   {
     id: 'asist', nombre: 'Asistencia Administrativa', color: '#10B981',
     docentes: [
-      { nombre: 'Mg. Suselva S├ínchez Huancho', rol: 'COORDINADORA', telefono: '961 086 521', email: 'ssuselva@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/1.-Suselva-Sanchez.jpg' },
+      { nombre: 'Mg. Suselva Sánchez Huancho', rol: 'COORDINADORA', telefono: '961 086 521', email: 'ssuselva@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/1.-Suselva-Sanchez.jpg' },
       { nombre: 'Tec. Patricia Michelle Castagne Villacorta', rol: 'SECRETARIA', telefono: '924 764 147', email: 'castagnevillacortapatriciam@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/2.-Patricia-Castagne.jpg' },
       { nombre: 'Lic. Silvia Aida Alvarado Caballero', rol: 'DOCENTE', telefono: '961 908 572', email: 'silvana0001234@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/3.-Silvia-Alvarado.jpg' },
       { nombre: 'Mg. Escarlet Escobar Pezo', rol: 'DOCENTE', telefono: '924 476 032', email: 'skrlt0704@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/4.-Escarlet-Escobar.jpg' },
-      { nombre: 'Elmer Alez Huaraca Ch├ívez', rol: 'DOCENTE', telefono: '935 089 206', email: 'alex_huaraca24@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/5.-Elmer-Huaraca.jpg' },
-      { nombre: 'Laura C├írdenas P├®rez', rol: 'DOCENTE', telefono: '971 264 154', email: 'cardenaslaura1160@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/6.-Laura-Cardenas.jpg' },
-      { nombre: 'Lucila Elena Soria Ru├¡z', rol: 'DOCENTE', telefono: '947 498 262', email: 'sorialucielena@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/7.-Lucila-Soria.jpg' },
+      { nombre: 'Elmer Alez Huaraca Chávez', rol: 'DOCENTE', telefono: '935 089 206', email: 'alex_huaraca24@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/5.-Elmer-Huaraca.jpg' },
+      { nombre: 'Laura Cárdenas Pérez', rol: 'DOCENTE', telefono: '971 264 154', email: 'cardenaslaura1160@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/6.-Laura-Cardenas.jpg' },
+      { nombre: 'Lucila Elena Soria Ruíz', rol: 'DOCENTE', telefono: '947 498 262', email: 'sorialucielena@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/7.-Lucila-Soria.jpg' },
     ]
   },
   {
     id: 'cont', nombre: 'Contabilidad', color: '#F59E0B',
     docentes: [
       { nombre: 'Mg. Graciela Aleida Roca Cabrera', rol: 'COORDINADORA', telefono: '945 349 457', email: 'graciela.rocacabrera@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/1.-Graciela-Roca.jpg' },
-      { nombre: 'Rosa Mar├¡a Far├¡as Camba', rol: 'SECRETARIA', telefono: '923 574 718', email: 'alexandrasigue├▒as550@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/2.-Rosa-Farias.jpg' },
-      { nombre: 'Dra. Mar├¡a Micaela Castillo de Lima', rol: 'DOCENTE', telefono: '9505 900 946', email: 'marcas0707@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/3.-Maria-Castillo.jpg' },
+      { nombre: 'Rosa María Farías Camba', rol: 'SECRETARIA', telefono: '923 574 718', email: 'alexandrasigueñas550@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/2.-Rosa-Farias.jpg' },
+      { nombre: 'Dra. María Micaela Castillo de Lima', rol: 'DOCENTE', telefono: '9505 900 946', email: 'marcas0707@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/3.-Maria-Castillo.jpg' },
       { nombre: 'Mg. Silvia Virginia Montoya', rol: 'DOCENTE', telefono: '961 609 209', email: 'silviavirginiamontoyatorres@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/4.-Silvia-Virginia.jpg' },
-      { nombre: 'Dr. Marden Odilo V├ísquez Reategui', rol: 'DOCENTE', telefono: '968 156 399', email: 'odilov8@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/5.-Marden-Vasquez.jpg' },
-      { nombre: 'Cpc. Carlos Sa├║l Miguel Velis', rol: 'DOCENTE', telefono: '977 877 426', email: 'asociadosmv@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/6.-Carlos-Miguel.jpg' },
+      { nombre: 'Dr. Marden Odilo Vásquez Reategui', rol: 'DOCENTE', telefono: '968 156 399', email: 'odilov8@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/5.-Marden-Vasquez.jpg' },
+      { nombre: 'Cpc. Carlos Saúl Miguel Velis', rol: 'DOCENTE', telefono: '977 877 426', email: 'asociadosmv@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/6.-Carlos-Miguel.jpg' },
       { nombre: 'Mg. Jimmy Edinson Silva May', rol: 'DOCENTE', telefono: '952 500 382', email: 'jesm_27@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/7.-Jimmy-Silva.jpg' },
-      { nombre: 'Cpc. Lud Mi Flor Andr├®s Maylle', rol: 'DOCENTE', telefono: '935 777 239', email: 'florandres081195@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/8.-Lud-Andres.jpg' },
-      { nombre: 'Lic. Adm. Jos├® Luis Bardales Bocanegra', rol: 'DOCENTE', telefono: '954 748 177', email: 'joseluisbardalez25@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/9.-Jose-Bardales.jpg' },
+      { nombre: 'Cpc. Lud Mi Flor Andrés Maylle', rol: 'DOCENTE', telefono: '935 777 239', email: 'florandres081195@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/8.-Lud-Andres.jpg' },
+      { nombre: 'Lic. Adm. José Luis Bardales Bocanegra', rol: 'DOCENTE', telefono: '954 748 177', email: 'joseluisbardalez25@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/9.-Jose-Bardales.jpg' },
     ]
   },
   {
-    id: 'civil', nombre: 'Construcci├│n Civil', color: '#EF4444',
+    id: 'civil', nombre: 'Construcción Civil', color: '#EF4444',
     docentes: [
       { nombre: 'Ing. Estuardo Alonso Lizarzaburu Velarde', rol: 'COORDINADOR', telefono: '961 020 256', email: 'estuardo209a@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/1.-Estuardo-Lizarzaburu.jpg' },
       { nombre: 'Charo Vela Sifuentes', rol: 'SECRETARIA', telefono: '962 218 003', email: 'sharosifu29@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/2.-Charo-Vela.jpg' },
       { nombre: 'Ing. Vemny Eusebio Granda Kio', rol: 'DOCENTE', telefono: '929 608 734', email: 'venidamieu@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/3.-Vemny-Granda.jpg' },
-      { nombre: 'Tec. C.C. Harrinzon R├¡os Rivera', rol: 'DOCENTE', telefono: '930 910 995', email: 'harririvera91@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/4.-Harrizon-Rios.jpg' },
+      { nombre: 'Tec. C.C. Harrinzon Ríos Rivera', rol: 'DOCENTE', telefono: '930 910 995', email: 'harririvera91@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/4.-Harrizon-Rios.jpg' },
       { nombre: 'Daniel Alcides Ramos Olivera', rol: 'DOCENTE', telefono: '929 619 600', email: 'danielramosolivera@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/5.-Daniel-Ramos.jpg' },
       { nombre: 'Tussi Quio Apuela', rol: 'DOCENTE', telefono: '939 255 156', email: 'tussi2013@hotmail.es', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/6.-Tussi-Quio.jpg' },
       { nombre: 'Ing. Pablo Angelo Ortiz Andrade', rol: 'DOCENTE', telefono: '966 020 957', email: 'pabloangello@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/7.-Pablo-Ortiz.jpg' },
     ]
   },
   {
-    id: 'sistemas', nombre: 'Desarrollo de Sistemas de Informaci├│n', color: '#06B6D4',
+    id: 'sistemas', nombre: 'Desarrollo de Sistemas de Información', color: '#06B6D4',
     docentes: [
-      { nombre: 'Dr. Gil Torres Ar├®valo', rol: 'COORDINADOR', telefono: '976 681 426', email: 'giltorresarevalo@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/1.-Gil-Torres.jpg' },
+      { nombre: 'Dr. Gil Torres Arévalo', rol: 'COORDINADOR', telefono: '976 681 426', email: 'giltorresarevalo@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/1.-Gil-Torres.jpg' },
       { nombre: 'Sec. Ejec. Lisniari Tuanama Seberiano', rol: 'SECRETARIA', telefono: '960 717 265', email: 'lisnairit@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/2.-Lisnairi-Tuanama.jpg' },
-      { nombre: 'Dr. Ruber Torres Ar├®valo', rol: 'DOCENTE', telefono: '982 574 167', email: 'rutoar2015@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/Ruber-Torres.jpg' },
+      { nombre: 'Dr. Ruber Torres Arévalo', rol: 'DOCENTE', telefono: '982 574 167', email: 'rutoar2015@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/Ruber-Torres.jpg' },
       { nombre: 'Mg. Christian Dustin Puyo Torres', rol: 'DOCENTE', telefono: '918 282 361', email: 'christianpuyotorres@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/4.-Christian-Puyo.jpg' },
       { nombre: 'Tec. John Saboya Fulca', rol: 'DOCENTE', telefono: '988 452 394', email: 'afheryita@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/5.-John-Saboya.jpg' },
     ]
@@ -83,9 +83,9 @@ const programas = [
     id: 'electrica', nombre: 'Electricidad Industrial', color: '#EAB308',
     docentes: [
       { nombre: 'Luis Alberto Lecca Alva', rol: 'COORDINADOR', telefono: '968 371 524', email: 'luisalbertoleccaalva@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/1.-Luis-Lecca.jpg' },
-      { nombre: 'Criz Leydy D├¡az Vega', rol: 'SECRETARIA', telefono: '999 645 306', email: 'leydymaildiazvega@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/2.-Criz-Diaz.jpg' },
+      { nombre: 'Criz Leydy Díaz Vega', rol: 'SECRETARIA', telefono: '999 645 306', email: 'leydymaildiazvega@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/2.-Criz-Diaz.jpg' },
       { nombre: 'Cristhian Pichiule Tovar', rol: 'DOCENTE', telefono: '975 353 323', email: 'crisstovar95@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/3.-Cristhian-Pichiule.jpg' },
-      { nombre: 'Julio C├®sar Cuentas Rodr├¡guez', rol: 'DOCENTE', telefono: '961 509 321', email: 'jucuentas@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/4.-Julio-Cuentas.jpg' },
+      { nombre: 'Julio César Cuentas Rodríguez', rol: 'DOCENTE', telefono: '961 509 321', email: 'jucuentas@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/4.-Julio-Cuentas.jpg' },
       { nombre: 'Jeperson Nicocin Vela Ramirez', rol: 'DOCENTE', telefono: '951 840 092', email: 'jepersonvelaramirez@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/5.-Jeperson-Vela.jpg' },
       { nombre: 'Joel Jaime Amaro Cosme', rol: 'DOCENTE', telefono: '975 770 340', email: 'amarofie@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/6.-Joel-Amaro.jpg' },
       { nombre: 'Jose Luis Aranda Vergara', rol: 'DOCENTE', telefono: '982 861 336', email: 'jhosep09091987@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/7.-Jose-Aranda.jpg' },
@@ -93,13 +93,13 @@ const programas = [
     ]
   },
   {
-    id: 'enfermeria', nombre: 'Enfermer├¡a T├®cnica', color: '#EC4899',
+    id: 'enfermeria', nombre: 'Enfermería Técnica', color: '#EC4899',
     docentes: [
       { nombre: 'Mg. Orfilia Navarro Zumaeta', rol: 'COORDINADORA', telefono: '965 809 087', email: 'orfinava@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/1.-Orfilia-Navarro.jpg' },
       { nombre: 'Sec. Ejec. Kristell Laly Diaz Calampa', rol: 'SECRETARIA', telefono: '977 534 443', email: 'kristelldiaz30@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/2.-Kristell-Diaz.jpg' },
       { nombre: 'Lic. Gladys Leonor Prada Gonzales', rol: 'DOCENTE', telefono: '961 946 593', email: 'gpradag10@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/3.-Gladys-Prada.jpg' },
       { nombre: 'M. Sc. Oscar Amado Ruiz Torres', rol: 'DOCENTE', telefono: '961 938 224', email: 'osamruiztorres@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/7.-Oscar-Ruiz.jpg' },
-      { nombre: 'Lic. Sadith Aspajo V├ísquez', rol: 'DOCENTE', telefono: '944 975 795', email: 'sadith588@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/11.-Sadith-Aspajo.jpg' },
+      { nombre: 'Lic. Sadith Aspajo Vásquez', rol: 'DOCENTE', telefono: '944 975 795', email: 'sadith588@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/11.-Sadith-Aspajo.jpg' },
       { nombre: 'Mg. Cayo Eduardo Leveau Bartra', rol: 'DOCENTE', telefono: '939 388 856', email: 'edurardo43leveau@yahoo.es', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/4.-Cayo-Leveau.jpg' },
       { nombre: 'Lic. Eulalia Condor Taipe', rol: 'DOCENTE', telefono: '959 567 612', email: 'iestpjua27@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/8.-Eulalia-Condor.jpg' },
       { nombre: 'Lic. Carlos Alberto Ramos Bardales', rol: 'DOCENTE', telefono: '949 239 125', email: 'crbbardales@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/12.-Carlos-Ramos.jpg' },
@@ -107,8 +107,8 @@ const programas = [
       { nombre: 'Lic. Kathleen Valeria Solis Vela', rol: 'DOCENTE', telefono: '935 964 693', email: 'valeriasolisvela92@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/9.-Kathleen-Solis.jpg' },
       { nombre: 'Lic. Norma Vela Silvano', rol: 'DOCENTE', telefono: '976 684 012', email: 'normavel2008@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/13.-Norma-Vela.jpg' },
       { nombre: 'Mg. Roxana Lizbeth Montoya Tejada', rol: 'DOCENTE', telefono: '961 675 909', email: 'roximo51@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/6.-Roxana-Montoya.jpg' },
-      { nombre: 'Mg. Karla Rosario Vela R├¡os', rol: 'DOCENTE', telefono: '991 857 347', email: 'velakarla31@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/10.-Karla-Vela.jpg' },
-      { nombre: 'Marvin Te├│filo Amasifu├ín Carri├│n', rol: 'DOCENTE', telefono: '961 980 383', email: 'marvincito16@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/14.-Marvin-Amasifuen.jpg' },
+      { nombre: 'Mg. Karla Rosario Vela Ríos', rol: 'DOCENTE', telefono: '991 857 347', email: 'velakarla31@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/10.-Karla-Vela.jpg' },
+      { nombre: 'Marvin Teófilo Amasifuán Carrión', rol: 'DOCENTE', telefono: '961 980 383', email: 'marvincito16@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/14.-Marvin-Amasifuen.jpg' },
       { nombre: 'Pedro Tarazona Valle', rol: 'DOCENTE', telefono: '986 970 868', email: 'huanuco29@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/15.-Pedro-Tarazona.jpg' },
       { nombre: 'Lic. Diana Isabel Romero Salazar', rol: 'DOCENTE', telefono: '963 090 727', email: 'dianaromerosal@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/16.-Diana-Romero.jpg' },
     ]
@@ -117,38 +117,38 @@ const programas = [
     id: 'forestal', nombre: 'Manejo Forestal', color: '#22C55E',
     docentes: [
       { nombre: 'Ing. Merly Cabanillas Lomas', rol: 'COORDINADORA', telefono: '943 925 546', email: 'merlycl_14@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/1.-Merly-Cabanillas.jpg' },
-      { nombre: 'Sec. Ej. Anita G├│mez Sinarahua', rol: 'SECRETARIA', telefono: '903 167 408', email: 'anita.gomez.s1960gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/2.-Anita-Gomez-711x1024.jpg' },
+      { nombre: 'Sec. Ej. Anita Gómez Sinarahua', rol: 'SECRETARIA', telefono: '903 167 408', email: 'anita.gomez.s1960gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/2.-Anita-Gomez-711x1024.jpg' },
       { nombre: 'Tec. William Ernesto Bar Torres', rol: 'DOCENTE', telefono: '920 794 930', email: 'billibar@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/3.-William-Bar.jpg' },
-      { nombre: 'Ing. ├üngel Ra├║l Egoavil Recuay', rol: 'DOCENTE', telefono: '961 019 616', email: 'angel12pe@yahoo.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/4.-Angel-Egoavil.jpg' },
-      { nombre: 'Tec. Horatio C├│rdova V├ísquez', rol: 'DOCENTE', telefono: '984 629 605', email: 'horatio1973.1@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/5.-Horatio-Cordova.jpg' },
-      { nombre: 'Tec. Shoyleer R├¡os V├ísquez', rol: 'DOCENTE', telefono: '903 167 408', email: 'sleerhoy@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/6.-Shoyleer-Rios.jpg' },
+      { nombre: 'Ing. Ángel Raúl Egoavil Recuay', rol: 'DOCENTE', telefono: '961 019 616', email: 'angel12pe@yahoo.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/4.-Angel-Egoavil.jpg' },
+      { nombre: 'Tec. Horatio Córdova Vásquez', rol: 'DOCENTE', telefono: '984 629 605', email: 'horatio1973.1@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/5.-Horatio-Cordova.jpg' },
+      { nombre: 'Tec. Shoyleer Ríos Vásquez', rol: 'DOCENTE', telefono: '903 167 408', email: 'sleerhoy@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/6.-Shoyleer-Rios.jpg' },
     ]
   },
   {
-    id: 'mecatronica', nombre: 'Mecatr├│nica Automotriz', color: '#F97316',
+    id: 'mecatronica', nombre: 'Mecatrónica Automotriz', color: '#F97316',
     docentes: [
-      { nombre: 'P.T. C├®sar Antonio Cauper C├írdenas', rol: 'COORDINADOR', telefono: '972 908 453', email: 'cesarcauper23@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/1.-Cesar-Cauper.jpg' },
+      { nombre: 'P.T. César Antonio Cauper Cárdenas', rol: 'COORDINADOR', telefono: '972 908 453', email: 'cesarcauper23@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/1.-Cesar-Cauper.jpg' },
       { nombre: 'P.T. Lucita Soplin Carbajal', rol: 'SECRETARIA', telefono: '961 912 762', email: 'LSCLariza@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/2.-Lucita-Soplin.jpg' },
-      { nombre: 'Dr. Armando V├ísquez Castro', rol: 'DOCENTE', telefono: '942 992 672', email: 'arvaco20.20@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/3.-Armando-Vasquez.jpg' },
-      { nombre: 'P.T. Juan Miguel ├ülvarez Garc├¡a', rol: 'DOCENTE', telefono: '969 147 630', email: 'juan.miguelag@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/7.-Juan-Alvarez.jpg' },
+      { nombre: 'Dr. Armando Vásquez Castro', rol: 'DOCENTE', telefono: '942 992 672', email: 'arvaco20.20@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/3.-Armando-Vasquez.jpg' },
+      { nombre: 'P.T. Juan Miguel Álvarez García', rol: 'DOCENTE', telefono: '969 147 630', email: 'juan.miguelag@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/7.-Juan-Alvarez.jpg' },
       { nombre: 'Mg. Noe Abraham Albornoz Isidro', rol: 'DOCENTE', telefono: '961 922 286', email: 'Nalbornoz_197@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/4.-Noe-Albornoz.jpg' },
       { nombre: 'P.T. Segundo Hoshikato Katayama Gonzales', rol: 'DOCENTE', telefono: '998 977 668', email: 'katayamasegundo70@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/8.-Segundo-Katayama.jpg' },
       { nombre: 'P.T. Davis Norton Panaifo Plaza', rol: 'DOCENTE', telefono: '928 016 017', email: 'davispanaifo90@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/5.-Davis-Panaifo.jpg' },
-      { nombre: 'Ing. Dennis Eyvind Ch├ívez Ram├¡rez', rol: 'DOCENTE', telefono: '961 587 026', email: 'chavezdennis.5253@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/9.-Dennis-Chavez.jpg' },
-      { nombre: 'P.T. Wagner Lodan R├¡os V├ísquez', rol: 'DOCENTE', telefono: '939 262 477', email: 'wriosvasquez1@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/6.-Wagner-Rios.jpg' },
+      { nombre: 'Ing. Dennis Eyvind Chávez Ramírez', rol: 'DOCENTE', telefono: '961 587 026', email: 'chavezdennis.5253@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/9.-Dennis-Chavez.jpg' },
+      { nombre: 'P.T. Wagner Lodan Ríos Vásquez', rol: 'DOCENTE', telefono: '939 262 477', email: 'wriosvasquez1@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/6.-Wagner-Rios.jpg' },
       { nombre: 'P.T. Jack Darwin Flores Cavero', rol: 'DOCENTE', telefono: '927 052 850', email: 'jackflores021280@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/10.-Jack-Flores.jpg' },
     ]
   },
   {
-    id: 'agro', nombre: 'Producci├│n Agropecuaria', color: '#84CC16',
+    id: 'agro', nombre: 'Producción Agropecuaria', color: '#84CC16',
     docentes: [
-      { nombre: 'Mg. Jos├® Abraham D├¡az Sandoval', rol: 'COORDINADOR', telefono: '985 039 384', email: 'jdisa17542@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/1.-Jose-Diaz.jpg' },
+      { nombre: 'Mg. José Abraham Díaz Sandoval', rol: 'COORDINADOR', telefono: '985 039 384', email: 'jdisa17542@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/1.-Jose-Diaz.jpg' },
       { nombre: 'Sec. Ejec. Gueybi Rosmery Bartra Saenz', rol: 'SECRETARIA', telefono: '923 713 248', email: 'gueybi0329@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/2.-Gueybi-Bartra.jpg' },
       { nombre: 'Prof. Carmen del Pilar Flores Venegas', rol: 'DOCENTE', telefono: '932 623 821', email: 'carmencitafv2015@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/3.-Carmen-Flores.jpg' },
-      { nombre: 'Doc. Nicol├ís Rodr├¡guez C├írdenas', rol: 'DOCENTE', telefono: '937 490 859', email: 'rioucayali_5@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/4.-Nicolas-Rodriguez.jpg' },
-      { nombre: 'Prof. Vicente Artemio Rivera G├│mez', rol: 'DOCENTE', telefono: '990 223 881', email: 'vriveragomez40@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/5.-Vicente-Rivera.jpg' },
-      { nombre: 'Ing. Jorge Luis D├¡az Tangoa', rol: 'DOCENTE', telefono: '961 517 259', email: 'diastangoajorgeluis@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/6.-Jorge-Diaz.jpg' },
-      { nombre: 'Mg. Katherine Erika Nahir Navarro Ram├¡rez', rol: 'DOCENTE', telefono: '931 278 517', email: 'erikanahir_navarro@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/7.-Katherine-Navarro.jpg' },
+      { nombre: 'Doc. Nicolás Rodríguez Cárdenas', rol: 'DOCENTE', telefono: '937 490 859', email: 'rioucayali_5@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/4.-Nicolas-Rodriguez.jpg' },
+      { nombre: 'Prof. Vicente Artemio Rivera Gómez', rol: 'DOCENTE', telefono: '990 223 881', email: 'vriveragomez40@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/5.-Vicente-Rivera.jpg' },
+      { nombre: 'Ing. Jorge Luis Díaz Tangoa', rol: 'DOCENTE', telefono: '961 517 259', email: 'diastangoajorgeluis@gmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/6.-Jorge-Diaz.jpg' },
+      { nombre: 'Mg. Katherine Erika Nahir Navarro Ramírez', rol: 'DOCENTE', telefono: '931 278 517', email: 'erikanahir_navarro@hotmail.com', imagen: 'https://iestpsuiza.edu.pe/wp-content/uploads/2024/06/7.-Katherine-Navarro.jpg' },
     ]
   },
 ];
@@ -378,7 +378,7 @@ function DocenteModal({ docente, programa, allDocentes, currentIndex, onNavigate
                     <Phone className="w-5 h-5" style={{ color: programa.color }} />
                   </div>
                   <div>
-                    <span className="text-[10px] text-white/50 font-bold uppercase tracking-wider block">Tel├®fono</span>
+                    <span className="text-[10px] text-white/50 font-bold uppercase tracking-wider block">Teléfono</span>
                     <span className="text-[16px] text-white font-semibold">{docente.telefono}</span>
                   </div>
                 </div>
