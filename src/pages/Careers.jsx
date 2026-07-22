@@ -1,9 +1,12 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { X, BookOpen, Target, Sparkles, ChevronRight, GraduationCap, Briefcase, Clock, Award } from 'lucide-react';
+import useInstitutionalTexture from '../hooks/useInstitutionalTexture';
 import { careersData } from '../data/careersData';
 
 export default function Careers({ t }) {
+  useInstitutionalTexture();
+
   const { careerId } = useParams();
   const navigate = useNavigate();
   const translationsItems = t?.careers?.items || [];

@@ -1,7 +1,9 @@
 import React from 'react';
 import { Target, Eye, ShieldAlert, Award, Landmark, CheckCircle } from 'lucide-react';
+import useInstitutionalTexture from '../hooks/useInstitutionalTexture';
 
 export default function AboutUs({ t }) {
+  useInstitutionalTexture();
   const values = [
     { title: t.aboutPage.values.excellence.title, desc: t.aboutPage.values.excellence.desc },
     { title: t.aboutPage.values.innovation.title, desc: t.aboutPage.values.innovation.desc },
