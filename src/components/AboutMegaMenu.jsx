@@ -26,16 +26,16 @@ export default function AboutMegaMenu({ t, isMobile, onItemClick, forceClose = f
 
   if (isMobile) {
     return (
-      <div className="mt-2 space-y-1 pl-4 border-l-2 border-primary/20">
+      <div className="mt-2 space-y-1 pl-4 border-l-2 border-primary/[0.12]">
         <button
           onClick={() => setOpen(!open)}
           className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold text-slate-text dark:text-dark-text hover:bg-primary/5 dark:hover:bg-dark-hover transition-all duration-300"
         >
           <span>{t.nav.about}</span>
-          <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
+          <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
         </button>
         {open && (
-          <div className="space-y-1 pb-2 animate-fade-slide-in">
+          <div className="space-y-0.5 pb-2 animate-fade-slide-in">
             {allItems.map((item, idx) => {
               const Icon = item.icon;
               const route = idx < 4 ? col1Routes[idx] : col2Routes[idx - 4];
@@ -50,7 +50,7 @@ export default function AboutMegaMenu({ t, isMobile, onItemClick, forceClose = f
                     <Icon className="w-4 h-4 text-primary dark:text-secondary transition-colors duration-300 group-hover:text-white" />
                   </div>
                   <div>
-                    <div className="font-semibold text-xs text-slate-text dark:text-white group-hover:text-primary dark:group-hover:text-secondary transition-colors duration-300">
+                    <div className="font-semibold text-[12px] text-slate-text dark:text-white group-hover:text-primary dark:group-hover:text-secondary transition-colors duration-200">
                       {item.title}
                     </div>
                     <div className="text-[10px] text-slate-text/60 dark:text-dark-text-secondary/70 mt-0.5 leading-tight transition-colors duration-300">
@@ -60,11 +60,11 @@ export default function AboutMegaMenu({ t, isMobile, onItemClick, forceClose = f
                 </Link>
               );
             })}
-            <div className="mt-3 pt-3 border-t border-primary/10 dark:border-white/10">
+            <div className="mt-3 pt-3 border-t border-primary/[0.06] dark:border-white/[0.06]">
               <Link
                 to="/about"
                 onClick={onItemClick}
-                className="flex items-center gap-2 px-3 py-2 text-xs font-bold text-primary hover:text-primary-dark dark:hover:text-secondary transition-colors duration-300"
+                className="flex items-center gap-2 px-3 py-2 text-[11px] font-bold text-primary hover:text-primary-dark dark:hover:text-secondary transition-colors duration-200"
               >
                 {col3.cta} <ArrowRight className="w-3.5 h-3.5" />
               </Link>
@@ -82,7 +82,7 @@ export default function AboutMegaMenu({ t, isMobile, onItemClick, forceClose = f
           {/* Column 1 */}
           <div className="space-y-1.5 about-mega-col about-mega-col-first">
             <p className="text-[10px] font-bold uppercase tracking-[0.12em] mb-3 pl-3 transition-colors duration-300 about-mega-title-text">
-              {t.megaMenu.about.institution}
+              {t.megaMenu?.about?.institution || 'INSTITUCIÓN'}
             </p>
             {col1.map((item, idx) => {
               const Icon = col1Icons[idx];
@@ -111,7 +111,7 @@ export default function AboutMegaMenu({ t, isMobile, onItemClick, forceClose = f
           {/* Column 2 */}
           <div className="space-y-1.5 about-mega-col about-mega-col-border px-5">
             <p className="text-[10px] font-bold uppercase tracking-[0.12em] mb-3 pl-3 transition-colors duration-300 about-mega-title-text">
-              {t.megaMenu.about.management}
+              {t.megaMenu?.about?.management || 'GESTIÓN'}
             </p>
             {col2.map((item, idx) => {
               const Icon = col2Icons[idx];
@@ -175,13 +175,13 @@ export default function AboutMegaMenu({ t, isMobile, onItemClick, forceClose = f
         <div className="about-mega-divider-line mt-4" />
         <div className="px-1 py-3.5 flex items-center justify-between transition-colors duration-300">
           <p className="text-[10px] transition-colors duration-300 about-mega-text-secondary">
-            {t.megaMenu.about.location}
+            {t.megaMenu?.about?.location || 'IESTP Suiza — Pucallpa, Ucayali'}
           </p>
           <Link
             to="/about"
             className="text-[10px] font-semibold text-primary transition-all duration-250 about-mega-link-bottom"
           >
-            {t.megaMenu.about.viewFull}
+            {t.megaMenu?.about?.viewFull || 'Ver perfil institucional'}
           </Link>
         </div>
       </div>

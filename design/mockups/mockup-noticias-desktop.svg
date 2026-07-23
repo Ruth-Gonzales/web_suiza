@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Mockup: Noticias — Desktop (1440x900) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+  <defs>
+    <style>
+      .label{fill:#0B2A66;font-family:Inter, Arial, Helvetica, sans-serif;font-size:12px}
+      .h1{fill:#07204A;font-family:Inter, Arial, Helvetica, sans-serif;font-weight:700;font-size:32px}
+      .card{fill:#ffffff;stroke:#eef2ff}
+    </style>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff" />
+  <rect x="0" y="0" width="1440" height="72" fill="#ffffff" />
+  <text x="40" y="44" class="label">Logo</text>
+
+  <text x="120" y="140" class="h1">Noticias</text>
+
+  <!-- Two-column layout: content + sidebar -->
+  <g transform="translate(120,180)">
+    <!-- content column (8 cols width approx 760) -->
+    <rect x="0" y="0" width="760" height="560" fill="#ffffff" stroke="#eef2ff"/>
+    <text x="12" y="24" class="label">Artículo 1 (excerpt)</text>
+    <rect x="0" y="80" width="760" height="120" rx="8" class="card"/>
+    <rect x="0" y="216" width="760" height="120" rx="8" class="card"/>
+
+    <!-- sidebar (4 cols approx 320) -->
+    <rect x="780" y="0" width="320" height="560" rx="8" fill="#ffffff" stroke="#eef2ff"/>
+    <text x="788" y="24" class="label">Sidebar (featured)</text>
+  </g>
+
+  <!-- Retícula vertical strip at right of content container -->
+  <g transform="translate(1008,180)" opacity="0.06">
+    <!-- vertical repetition of small modules -->
+    <rect x="0" y="0" width="24" height="72" fill="#0B2A66"/>
+    <rect x="36" y="0" width="24" height="72" fill="#0B2A66"/>
+    <rect x="0" y="88" width="24" height="72" fill="#0B2A66"/>
+    <rect x="36" y="88" width="24" height="72" fill="#0B2A66"/>
+    <rect x="0" y="176" width="24" height="72" fill="#0B2A66"/>
+    <rect x="36" y="176" width="24" height="72" fill="#0B2A66"/>
+    <rect x="0" y="264" width="24" height="72" fill="#0B2A66"/>
+  </g>
+
+  <text x="120" y="860" class="label">Retícula right-strip — width ≈14–18% container, opacity 6%</text>
+
+  <rect x="0" y="870" width="1440" height="30" fill="#ffffff"/>
+</svg>

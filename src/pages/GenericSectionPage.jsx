@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { useLocation, Link, useNavigate, useParams } from 'react-router-dom';
 import { FileText, Download, ExternalLink, ChevronRight, Info, Search } from 'lucide-react';
+import useInstitutionalTexture from '../hooks/useInstitutionalTexture';
 
 export default function GenericSectionPage({ t, categoryKey, menuKey, title, subtitle }) {
+  useInstitutionalTexture();
   const location = useLocation();
   const navigate = useNavigate();
   const menuItems = t[menuKey] || [];

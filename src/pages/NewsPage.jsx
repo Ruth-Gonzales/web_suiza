@@ -3,6 +3,7 @@ import { Search, Sparkles } from 'lucide-react';
 import CategoryFilter from '../components/news/CategoryFilter';
 import HeroHighlight from '../components/news/HeroHighlight';
 import NewsCarousel from '../components/news/NewsCarousel';
+import useInstitutionalTexture from '../hooks/useInstitutionalTexture';
 import NewsCard from '../components/news/NewsCard';
 import EventDetailModal from '../components/news/EventDetailModal';
 import ExperienceSection from '../components/news/ExperienceSection';
@@ -12,6 +13,7 @@ import UpcomingEvents from '../components/news/UpcomingEvents';
 import MediaGallery from '../components/news/MediaGallery';
 
 export default function NewsPage({ t }) {
+  useInstitutionalTexture();
   const data = t.news;
   const [filter, setFilter] = useState('all');
   const [search, setSearch] = useState('');

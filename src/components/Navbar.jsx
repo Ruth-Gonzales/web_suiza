@@ -36,56 +36,56 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
   return (
     <nav className="sticky top-0 z-50 w-full px-4 py-4 md:px-8">
       {/* Contact info bar above Navbar */}
-      <div className="max-w-[1440px] w-full mx-auto mb-2 px-4 py-1.5 flex flex-wrap justify-between items-center text-xs bg-slate-100/80 dark:bg-dark-surface/80 backdrop-blur-sm rounded-lg shadow-sm border border-slate-200/60 dark:border-dark-border/60 text-slate-text/70 dark:text-dark-text/70 transition-colors duration-300">
-        <div className="flex gap-5 items-center flex-wrap">
+      <div className="max-w-[1440px] w-full mx-auto mb-2 px-4 py-1.5 flex flex-wrap justify-between items-center text-xs navbar-amazon-identity-contact rounded-xl transition-colors duration-300">
+        <div className="flex gap-4 items-center">
           <a href="tel:061-280665" className="inline-flex items-center gap-1.5 hover:text-primary dark:hover:text-secondary transition-colors duration-250">
-            <Phone className="w-3 h-3" />
-            <span className="hidden xs:inline">061-280665</span>
+            <Phone className="w-3 h-3 text-primary/50 dark:text-white/40" />
+            <span className="hidden xs:inline text-slate-text/70 dark:text-white/65">061-280665</span>
           </a>
           <a href="mailto:suiza@iestpsuiza.edu.pe" className="hidden sm:inline-flex items-center gap-1.5 hover:text-primary dark:hover:text-secondary transition-colors duration-250">
-            <Mail className="w-3 h-3" />
-            <span>suiza@iestpsuiza.edu.pe</span>
+            <Mail className="w-3 h-3 text-primary/50 dark:text-white/40" />
+            <span className="text-slate-text/70 dark:text-white/65">suiza@iestpsuiza.edu.pe</span>
           </a>
           <span className="hidden md:inline-flex items-center gap-1.5">
-            <MapPin className="w-3 h-3 text-primary/60" />
-            <span>Carretera Federico Basadre Km 5.700, Pucallpa</span>
+            <MapPin className="w-3 h-3 text-primary/50 dark:text-white/40" />
+            <span className="text-slate-text/70 dark:text-white/65">Carretera Federico Basadre Km 5.700, Pucallpa</span>
           </span>
         </div>
         <div className="flex items-center gap-2 mt-1 sm:mt-0">
-          <Globe className="w-3.5 h-3.5 text-primary/50" />
-          <span className="font-medium">IESTP SUIZA - Ucayali</span>
+          <Globe className="w-3.5 h-3.5 text-primary/40 dark:text-white/35" />
+          <span className="text-slate-text/60 dark:text-white/55 font-medium">IESTP SUIZA - Ucayali</span>
         </div>
       </div>
 
-      {/* Main nav bar */}
-      <div className="max-w-[1440px] w-full mx-auto rounded-2xl bg-white/95 dark:bg-dark-surface/95 backdrop-blur-md shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-slate-200/70 dark:border-dark-border/70 px-4 py-2 md:px-6 flex justify-between items-center transition-all duration-300 gap-3">
+      {/* Main nav bar — Identidad Amazónica Contemporánea */}
+      <div className="max-w-[1440px] w-full mx-auto rounded-2xl navbar-amazon-identity shadow-[0_2px_12px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.40),0_1px_4px_rgba(0,0,0,0.30)] px-4 py-3 md:px-6 flex justify-between items-center transition-all duration-300 gap-4 relative">
         
-        <Link to="/" className="flex items-center gap-2.5 group shrink-0">
-          <div className="relative flex items-center justify-center w-10 h-10 md:w-11 md:h-11 rounded-xl shadow-md shadow-primary/10 group-hover:shadow-lg group-hover:shadow-primary/20 group-hover:scale-105 transition-all duration-300 shrink-0">
-            <img src={LogoSuiza} alt="Logo IESTP Suiza" className="w-10 h-10 md:w-11 md:h-11 object-contain shrink-0" />
+        <Link to="/" className="flex items-center gap-2.5 group shrink-0 relative z-10">
+          <div className="relative flex items-center justify-center w-10 h-10 md:w-11 md:h-11 rounded-xl ring-1 ring-primary/10 dark:ring-white/15 group-hover:ring-primary/20 dark:group-hover:ring-white/25 group-hover:scale-[1.02] transition-all duration-300 shrink-0 overflow-hidden">
+            <img src={LogoSuiza} alt="Logo Suiza" className="w-10 h-10 md:w-11 md:h-11 object-contain shrink-0" />
           </div>
-          <div className="hidden sm:block">
-            <div className="font-bold text-sm md:text-base leading-none text-slate-text dark:text-white tracking-tight group-hover:text-primary transition-colors duration-250">
+          <div>
+            <div className="font-extrabold text-[15px] leading-none text-slate-text dark:text-white tracking-tight group-hover:text-primary dark:group-hover:text-secondary transition-colors duration-300">
               IESTP SUIZA
             </div>
-            <div className="text-[9px] md:text-[10px] text-primary/70 dark:text-secondary/70 font-semibold tracking-[0.15em] mt-0.5">
+            <div className="text-[9px] text-primary/60 dark:text-white/50 font-semibold tracking-[0.25em] mt-1 transition-colors duration-300">
               PUCALLPA
             </div>
           </div>
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex nav-menu relative">
+        <div className="hidden lg:flex items-center gap-1.5 relative z-10">
           {navLinks.map((link) => (
             <div key={link.path} className="relative group">
               {(link.hasCareersMega || link.hasMega || link.hasAboutMega || link.hasSimpleDropdown) ? (
                 <button
-                  className={`px-3 py-1.5 rounded-xl nav-link font-medium transition-all duration-250 flex nav-item ${
+                  className={`px-3.5 py-2 rounded-xl text-[13.5px] font-medium transition-all duration-200 flex items-center gap-1.5 ${
                     location.pathname.startsWith(link.path) && link.path !== '/'
-                      ? 'bg-primary text-white shadow-sm shadow-primary/20'
+                      ? 'bg-primary dark:bg-white text-white dark:text-primary shadow-[0_2px_8px_rgba(0,68,178,0.25)] dark:shadow-[0_2px_8px_rgba(255,255,255,0.15)]'
                       : location.pathname === link.path
-                      ? 'bg-primary text-white shadow-sm shadow-primary/20'
-                      : 'text-slate-text/80 dark:text-dark-text/80 hover:bg-slate-100 dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
+                      ? 'bg-primary dark:bg-white text-white dark:text-primary shadow-[0_2px_8px_rgba(0,68,178,0.25)] dark:shadow-[0_2px_8px_rgba(255,255,255,0.15)]'
+                      : 'text-slate-text dark:text-white/85 hover:bg-primary/[0.06] dark:hover:bg-white/[0.10] hover:text-primary dark:hover:text-white'
                   }`}
                 >
                   {link.label}
@@ -94,10 +94,10 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
               ) : (
                 <Link
                   to={link.path}
-                  className={`px-3 py-1.5 rounded-xl nav-link font-medium transition-all duration-250 nav-item ${
+                  className={`px-3.5 py-2 rounded-xl text-[13.5px] font-medium transition-all duration-200 ${
                     location.pathname === link.path
-                      ? 'bg-primary text-white shadow-sm shadow-primary/20'
-                      : 'text-slate-text/80 dark:text-dark-text/80 hover:bg-slate-100 dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
+                      ? 'bg-primary dark:bg-white text-white dark:text-primary shadow-[0_2px_8px_rgba(0,68,178,0.25)] dark:shadow-[0_2px_8px_rgba(255,255,255,0.15)]'
+                      : 'text-slate-text dark:text-white/85 hover:bg-primary/[0.06] dark:hover:bg-white/[0.10] hover:text-primary dark:hover:text-white'
                   }`}
                 >
                   {link.label}
@@ -116,35 +116,35 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
 
               {/* Mega Menu for Admission */}
               {link.hasMega && (
-                <div className={`absolute top-full left-0 w-[820px] opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:w-full before:h-3 ${!forceClose ? 'group-hover:opacity-100 group-hover:visible group-hover:translate-y-0' : ''}`}>
+                <div className={`absolute top-full left-0 w-[820px] opacity-0 invisible translate-y-2 transition-all duration-200 ease-out z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:w-full before:h-3 ${!forceClose ? 'group-hover:opacity-100 group-hover:visible group-hover:translate-y-0' : ''}`}>
                   <div className="dropdown-theme p-6">
                     <div className="grid grid-cols-3 gap-6">
                       <div className="col-span-1 border-r border-primary/10 dark:border-white/10 pr-4">
-                        <p className="text-xs font-bold text-primary dark:text-secondary uppercase mb-4 transition-colors duration-300">{t.admissionDropdown.title}</p>
+                        <p className="text-xs font-bold text-primary dark:text-secondary uppercase mb-4 transition-colors duration-300">{t.admissionDropdown?.title || 'Modalidades de admisión'}</p>
                         <ul className="space-y-3">
-                          {(t.admissionDropdown.modalities || []).map((mod, i) => (
+                          {(t.admissionDropdown?.modalities || ['Egresados de colegio', 'Traslados externos', 'Experiencia laboral']).map((mod, i) => (
                             <li key={i} className="font-semibold text-sm text-slate-text dark:text-white cursor-pointer hover:text-primary dark:hover:text-secondary transition-colors duration-300">{mod}</li>
                           ))}
                         </ul>
                       </div>
                       <div className="col-span-1 space-y-3">
                         <div>
-                          <h4 className="font-bold text-slate-text dark:text-white transition-colors duration-300">{t.admissionDropdown.transfer.title}</h4>
-                          <p className="text-sm text-slate-text/70 dark:text-dark-text/70 transition-colors duration-300">{t.admissionDropdown.transfer.desc}</p>
+                          <h4 className="font-bold text-slate-text dark:text-white transition-colors duration-300">{t.admissionDropdown?.transfer?.title || 'Traslado'}</h4>
+                          <p className="text-sm text-slate-text/70 dark:text-dark-text/70 transition-colors duration-300">{t.admissionDropdown?.transfer?.desc || 'Convalidación y homologación de cursos.'}</p>
                         </div>
                         <div>
-                          <h4 className="font-bold text-slate-text dark:text-white transition-colors duration-300">{t.admissionDropdown.otherPrograms.title}</h4>
-                          <p className="text-sm text-slate-text/70 dark:text-dark-text/70 transition-colors duration-300">{t.admissionDropdown.otherPrograms.desc}</p>
+                          <h4 className="font-bold text-slate-text dark:text-white transition-colors duration-300">{t.admissionDropdown?.otherPrograms?.title || 'Otros programas'}</h4>
+                          <p className="text-sm text-slate-text/70 dark:text-dark-text/70 transition-colors duration-300">{t.admissionDropdown?.otherPrograms?.desc || '11 carreras técnicas de alto nivel.'}</p>
                         </div>
                       </div>
                       <div className="col-span-1 flex flex-col justify-between gap-4">
                         <div className="flex items-start gap-3">
-                          <img src={LogoSuiza} alt="Logo" className="w-20 h-20 rounded-md object-contain shrink-0" />
+                          <img src={LogoSuiza} alt="Logo" className="w-16 h-16 rounded-lg object-contain shrink-0 ring-1 ring-primary/[0.10] dark:ring-white/[0.10]" />
                         </div>
                         <div className="space-y-2">
-                          <button onClick={() => { navigate('/admission'); }} className="w-full inline-flex items-center justify-between gap-2 px-4 py-3 rounded-lg bg-primary text-white font-bold hover:bg-primary-dark transition-all duration-300">{t.admissionDropdown.ctaAdmission} <ArrowRight className="w-4 h-4"/></button>
-                          <button onClick={() => { navigate('/contact'); }} className="w-full inline-flex items-center justify-between gap-2 px-4 py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300">{t.admissionDropdown.ctaContact} <ArrowRight className="w-4 h-4"/></button>
-                          <button onClick={() => { navigate('/careers'); }} className="w-full inline-flex items-center justify-between gap-2 px-4 py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300">{t.admissionDropdown.ctaPrograms} <ArrowRight className="w-4 h-4"/></button>
+                          <button onClick={() => { navigate('/admission'); }} className="w-full inline-flex items-center justify-between gap-2 px-4 py-2.5 rounded-lg bg-primary text-white font-bold text-xs hover:bg-primary-dark transition-all duration-300">{t.admissionDropdown?.ctaAdmission || 'Admisión 2026'} <ArrowRight className="w-4 h-4"/></button>
+                          <button onClick={() => { navigate('/contact'); }} className="w-full inline-flex items-center justify-between gap-2 px-4 py-2.5 rounded-lg border border-primary text-primary font-bold text-xs hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300">{t.admissionDropdown?.ctaContact || 'Contáctanos'} <ArrowRight className="w-4 h-4"/></button>
+                          <button onClick={() => { navigate('/careers'); }} className="w-full inline-flex items-center justify-between gap-2 px-4 py-2.5 rounded-lg border border-primary text-primary font-bold text-xs hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300">{t.admissionDropdown?.ctaPrograms || 'Ver programas'} <ArrowRight className="w-4 h-4"/></button>
                         </div>
                       </div>
                     </div>
@@ -154,14 +154,14 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
 
               {/* Simple Dropdown for Transparency, Procedures, Services */}
               {link.hasSimpleDropdown && (
-                <div className={`absolute top-full left-0 w-64 opacity-0 invisible translate-y-2 transition-all duration-300 ease-out z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:w-full before:h-3 ${!forceClose ? 'group-hover:opacity-100 group-hover:visible group-hover:translate-y-0' : ''}`}>
-                  <div className="dropdown-theme p-3">
-                    <div className="flex flex-col gap-1 max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
+                <div className={`absolute top-full left-0 w-64 opacity-0 invisible translate-y-2 transition-all duration-200 ease-out z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:w-full before:h-3 ${!forceClose ? 'group-hover:opacity-100 group-hover:visible group-hover:translate-y-0' : ''}`}>
+                  <div className="dropdown-theme p-2.5">
+                    <div className="flex flex-col gap-0.5 max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
                       {t[link.menuKey]?.map((item, idx) => (
                         <Link
                           key={idx}
                           to={item.path}
-                          className="px-3 py-2 rounded-lg text-xs font-semibold text-slate-text dark:text-white hover:text-primary dark:hover:text-secondary hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-200"
+                          className="px-3 py-2 rounded-lg text-[12px] font-medium text-slate-text dark:text-white hover:text-primary hover:bg-primary/[0.05] transition-all duration-200"
                         >
                           {item.name}
                         </Link>
@@ -175,16 +175,16 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
         </div>
 
         {/* Action Controls (Lang, Dark Mode, Mobile Menu Button) */}
-        <div className="flex items-center gap-3 shrink-0">
-          <div className="flex bg-slate-100/80 dark:bg-dark-hover/80 p-0.5 rounded-lg transition-colors duration-250">
+        <div className="flex items-center gap-2 relative z-10">
+          <div className="flex bg-primary/[0.06] dark:bg-white/[0.08] p-1 rounded-xl transition-colors duration-200">
             {languages.map((l) => (
               <button
                 key={l.code}
                 onClick={() => setLang(l.code)}
-                className={`px-2 py-1 rounded-md text-[10px] font-semibold tracking-wider transition-all duration-250 ${
+                className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold tracking-wider transition-all duration-200 ${
                   lang === l.code
-                    ? 'bg-primary text-white shadow-sm'
-                    : 'text-slate-text/60 dark:text-dark-text/60 hover:text-primary dark:hover:text-white'
+                    ? 'bg-primary dark:bg-white text-white dark:text-primary shadow-sm shadow-primary/20 dark:shadow-white/15'
+                    : 'text-slate-text/60 dark:text-white/55 hover:text-primary dark:hover:text-white'
                 }`}
               >
                 {l.label}
@@ -194,15 +194,15 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
 
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="p-2 rounded-lg bg-slate-100/80 dark:bg-dark-hover/80 hover:bg-slate-200 dark:hover:bg-dark-hover text-slate-text/70 dark:text-dark-text/70 hover:text-primary dark:hover:text-secondary transition-all duration-250 cursor-pointer"
-            aria-label={t.common.toggleTheme}
+            className="p-2 rounded-xl hover:bg-primary/[0.06] dark:hover:bg-white/[0.10] text-slate-text/50 dark:text-white/50 hover:text-primary dark:hover:text-white transition-all duration-200 cursor-pointer"
+            aria-label="Toggle Theme"
           >
             {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg bg-slate-100/80 dark:bg-dark-hover/80 hover:bg-slate-200 dark:hover:bg-dark-hover text-slate-text/70 dark:text-dark-text/70 transition-all duration-250 cursor-pointer"
+            className="lg:hidden p-2 rounded-xl hover:bg-primary/[0.06] dark:hover:bg-white/[0.10] text-slate-text/50 dark:text-white/50 hover:text-primary dark:hover:text-white transition-all duration-200 cursor-pointer"
             aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -212,42 +212,31 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
 
       {/* Mobile Drawer Menu */}
       {isOpen && (
-        <div className="lg:hidden absolute top-28 left-4 right-4 z-50 dropdown-theme shadow-2xl p-4 flex flex-col gap-2 max-h-[70vh] overflow-y-auto dropdown-enter">
+        <div className="lg:hidden absolute top-28 left-4 right-4 z-50 dropdown-theme shadow-[var(--shadow-navbar-dropdown)] p-4 flex flex-col gap-2 max-h-[70vh] overflow-y-auto dropdown-enter">
           {navLinks.map((link) => (
             <div key={link.path}>
               {link.hasCareersMega ? (
-                <div>
-                  <button
-                    className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block ${
-                      location.pathname.startsWith(link.path)
-                        ? 'bg-primary text-white shadow-md shadow-primary/25'
-                        : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
-                    }`}
-                  >
-                    {link.label}
-                  </button>
-                  <CareersMegaMenu t={t} isMobile onItemClick={() => setIsOpen(false)} />
-                </div>
+                <CareersMegaMenu t={t} isMobile onItemClick={() => setIsOpen(false)} />
               ) : link.hasAboutMega ? (
                 <AboutMegaMenu t={t} isMobile onItemClick={() => setIsOpen(false)} />
               ) : link.hasSimpleDropdown ? (
                 <div>
                   <button
-                    className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block ${
+                    className={`w-full text-left px-4 py-3 rounded-xl text-[13px] font-medium transition-all duration-200 block ${
                       location.pathname.startsWith(link.path)
-                        ? 'bg-primary text-white shadow-md shadow-primary/25'
-                        : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
+                        ? 'bg-primary dark:bg-white text-white dark:text-primary shadow-[0_2px_8px_rgba(0,68,178,0.25)] dark:shadow-[0_2px_8px_rgba(255,255,255,0.15)]'
+                        : 'text-slate-text dark:text-white hover:bg-primary/[0.06] dark:hover:bg-white/[0.10] hover:text-primary dark:hover:text-white'
                     }`}
                   >
                     {link.label}
                   </button>
-                  <div className="mt-2 space-y-1 pl-4 border-l-2 border-primary/20">
+                  <div className="mt-2 space-y-0.5 pl-4 border-l-2 border-primary/20 dark:border-white/15">
                     {t[link.menuKey]?.map((item, idx) => (
                       <Link
                         key={idx}
                         to={item.path}
                         onClick={() => setIsOpen(false)}
-                        className="w-full text-left px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-200 block text-xs font-semibold text-slate-text dark:text-white"
+                        className="w-full text-left px-3 py-2 rounded-lg hover:bg-primary/[0.06] dark:hover:bg-white/[0.08] transition-all duration-200 block text-[12px] font-medium text-slate-text dark:text-white"
                       >
                         {item.name}
                       </Link>
@@ -257,28 +246,28 @@ export default function Navbar({ lang, setLang, darkMode, setDarkMode, t }) {
               ) : link.hasMega ? (
                 <div>
                   <button
-                    className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block ${
+                    className={`w-full text-left px-4 py-3 rounded-xl text-[13px] font-medium transition-all duration-200 block ${
                       location.pathname.startsWith(link.path)
-                        ? 'bg-primary text-white shadow-md shadow-primary/25'
-                        : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
+                        ? 'bg-primary dark:bg-white text-white dark:text-primary shadow-[0_2px_8px_rgba(0,68,178,0.25)] dark:shadow-[0_2px_8px_rgba(255,255,255,0.15)]'
+                        : 'text-slate-text dark:text-white hover:bg-primary/[0.06] dark:hover:bg-white/[0.10] hover:text-primary dark:hover:text-white'
                     }`}
                   >
                     {link.label}
                   </button>
-                  <div className="mt-2 space-y-1 pl-4 border-l-2 border-primary/20">
-                    <Link to="/admission" onClick={() => setIsOpen(false)} className="w-full text-left px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-200 block text-xs font-semibold text-slate-text dark:text-white">Admisión 2026</Link>
-                    <Link to="/contact" onClick={() => setIsOpen(false)} className="w-full text-left px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-200 block text-xs font-semibold text-slate-text dark:text-white">Contactenos</Link>
-                    <Link to="/careers" onClick={() => setIsOpen(false)} className="w-full text-left px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-200 block text-xs font-semibold text-slate-text dark:text-white">Ver programas</Link>
+                  <div className="mt-2 space-y-0.5 pl-4 border-l-2 border-primary/20 dark:border-white/15">
+                    <Link to="/admission" onClick={() => setIsOpen(false)} className="w-full text-left px-3 py-2 rounded-lg hover:bg-primary/[0.06] dark:hover:bg-white/[0.08] transition-all duration-200 block text-[12px] font-medium text-slate-text dark:text-white">Admisión 2026</Link>
+                    <Link to="/contact" onClick={() => setIsOpen(false)} className="w-full text-left px-3 py-2 rounded-lg hover:bg-primary/[0.06] dark:hover:bg-white/[0.08] transition-all duration-200 block text-[12px] font-medium text-slate-text dark:text-white">Contáctanos</Link>
+                    <Link to="/careers" onClick={() => setIsOpen(false)} className="w-full text-left px-3 py-2 rounded-lg hover:bg-primary/[0.06] dark:hover:bg-white/[0.08] transition-all duration-200 block text-[12px] font-medium text-slate-text dark:text-white">Ver programas</Link>
                   </div>
                 </div>
               ) : (
                 <Link
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 block ${
+                  className={`px-4 py-3 rounded-xl text-[13px] font-medium transition-all duration-200 block ${
                     location.pathname === link.path
-                      ? 'bg-primary text-white shadow-md shadow-primary/25'
-                      : 'text-slate-text dark:text-dark-text hover:bg-slate-light dark:hover:bg-dark-hover hover:text-primary dark:hover:text-white'
+                      ? 'bg-primary dark:bg-white text-white dark:text-primary shadow-[0_2px_8px_rgba(0,68,178,0.25)] dark:shadow-[0_2px_8px_rgba(255,255,255,0.15)]'
+                      : 'text-slate-text dark:text-white hover:bg-primary/[0.06] dark:hover:bg-white/[0.10] hover:text-primary dark:hover:text-white'
                   }`}
                 >
                   {link.label}

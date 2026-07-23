@@ -6,6 +6,7 @@ import {
   ArrowRight,
   GraduationCap,
 } from 'lucide-react';
+import useInstitutionalTexture from '../../hooks/useInstitutionalTexture';
 
 export default function AboutPageShell({
   t,
@@ -27,6 +28,7 @@ export default function AboutPageShell({
   showBreadcrumb = true,
   showBackButton = true,
 }) {
+  useInstitutionalTexture();
   const isAcademic = variant === 'academic';
 
   return (

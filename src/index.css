@@ -61,63 +61,81 @@
   --glass-shadow: 0 8px 32px 0 rgba(75, 122, 244, 0.08);
   --glass-blur: 16px;
 
-  --dropdown-bg: rgba(255, 255, 255, 0.97);
-  --dropdown-border: rgba(75, 122, 244, 0.08);
-  --dropdown-shadow: 0 20px 60px -12px rgba(0, 0, 0, 0.12);
+  --dropdown-bg: rgba(255, 255, 255, 0.96);
+  --dropdown-border: rgba(0, 68, 178, 0.06);
+  --dropdown-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.10), 0 4px 12px rgba(0, 0, 0, 0.06);
 
   --nav-text: #3A4B74;
   --nav-text-muted: rgba(58, 75, 116, 0.6);
 
+  /* Kené stroke color — light mode */
+  --kene-stroke: rgba(0, 68, 178, 0.22);
+
+  /* === Navbar Shadow System === */
+  --shadow-navbar-rest: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-navbar-hover: 0 4px 16px rgba(0, 68, 178, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+  --shadow-navbar-dropdown: 0 16px 48px -12px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-pill-active: 0 2px 8px rgba(0, 68, 178, 0.25), 0 1px 3px rgba(0, 68, 178, 0.15);
+
   /* === Premium Navbar Border System === */
   --navbar-border-gradient: linear-gradient(
     135deg,
-    rgba(75, 122, 244, 0.35) 0%,
-    rgba(255, 255, 255, 0.55) 35%,
-    rgba(160, 193, 247, 0.25) 65%,
-    rgba(75, 122, 244, 0.15) 100%
+    rgba(0, 68, 178, 0.12) 0%,
+    rgba(255, 255, 255, 0.40) 30%,
+    rgba(0, 68, 178, 0.06) 60%,
+    rgba(27, 67, 50, 0.04) 80%,
+    rgba(0, 68, 178, 0.08) 100%
   );
-  --navbar-glow-opacity: 0.6;
+  --navbar-glow-opacity: 0.5;
   --navbar-top-shine: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(75, 122, 244, 0.15) 15%,
-    rgba(255, 255, 255, 0.30) 40%,
-    rgba(160, 193, 247, 0.20) 60%,
-    rgba(75, 122, 244, 0.10) 85%,
+    rgba(0, 68, 178, 0.08) 20%,
+    rgba(255, 255, 255, 0.20) 45%,
+    rgba(0, 68, 178, 0.06) 70%,
     transparent 100%
   );
-  --navbar-hover-glow: 0 0 30px -6px rgba(75, 122, 244, 0.12);
+  --navbar-hover-glow: 0 4px 16px rgba(0, 68, 178, 0.06);
 }
 
 .dark {
-  --glass-bg: rgba(2, 6, 23, 0.88);
-  --glass-border: rgba(255, 255, 255, 0.07);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+  --glass-bg: rgba(2, 6, 23, 0.90);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-shadow: 0 1px 3px rgba(0, 0, 0, 0.20), 0 1px 2px rgba(0, 0, 0, 0.30);
   --glass-blur: 20px;
 
   --dropdown-bg: rgba(15, 23, 42, 0.96);
-  --dropdown-border: rgba(255, 255, 255, 0.07);
-  --dropdown-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  --dropdown-border: rgba(255, 255, 255, 0.06);
+  --dropdown-shadow: 0 16px 48px -12px rgba(0, 0, 0, 0.50), 0 4px 16px rgba(0, 0, 0, 0.30);
 
   --nav-text: #F1F5F9;
   --nav-text-muted: rgba(203, 213, 225, 0.6);
 
+  /* Kené stroke color — dark mode */
+  --kene-stroke: rgba(120, 160, 240, 0.12);
+
+  /* === Navbar Shadow System (Dark) === */
+  --shadow-navbar-rest: 0 1px 3px rgba(0, 0, 0, 0.20), 0 1px 2px rgba(0, 0, 0, 0.30);
+  --shadow-navbar-hover: 0 4px 16px rgba(0, 68, 178, 0.12), 0 1px 4px rgba(0, 0, 0, 0.20);
+  --shadow-navbar-dropdown: 0 16px 48px -12px rgba(0, 0, 0, 0.50), 0 4px 16px rgba(0, 0, 0, 0.30);
+  --shadow-pill-active: 0 2px 8px rgba(0, 68, 178, 0.35), 0 1px 3px rgba(0, 0, 0, 0.20);
+
   /* === Premium Navbar Border System (Dark) === */
   --navbar-border-gradient: linear-gradient(
     135deg,
-    rgba(75, 122, 244, 0.25) 0%,
-    rgba(255, 255, 255, 0.08) 35%,
-    rgba(160, 193, 247, 0.12) 65%,
-    rgba(75, 122, 244, 0.10) 100%
+    rgba(0, 68, 178, 0.18) 0%,
+    rgba(255, 255, 255, 0.05) 30%,
+    rgba(0, 68, 178, 0.08) 60%,
+    rgba(27, 67, 50, 0.05) 80%,
+    rgba(0, 68, 178, 0.10) 100%
   );
-  --navbar-glow-opacity: 0.4;
+  --navbar-glow-opacity: 0.35;
   --navbar-top-shine: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(75, 122, 244, 0.08) 15%,
-    rgba(255, 255, 255, 0.12) 40%,
-    rgba(160, 193, 247, 0.08) 60%,
-    rgba(75, 122, 244, 0.06) 85%,
+    rgba(0, 68, 178, 0.06) 20%,
+    rgba(255, 255, 255, 0.08) 45%,
+    rgba(0, 68, 178, 0.04) 70%,
     transparent 100%
   );
   --navbar-hover-glow: 0 0 35px -8px rgba(75, 122, 244, 0.15);
@@ -162,11 +180,103 @@
 
   .dropdown-theme {
     background: var(--dropdown-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     border: 1px solid var(--dropdown-border);
-    border-radius: 24px;
+    border-radius: 16px;
     box-shadow: var(--dropdown-shadow);
+  }
+
+  /* === Kené Pattern — Shipibo-Konibo texture === */
+  .kene-texture {
+    position: relative;
+  }
+
+  .kene-texture::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0.025;
+    pointer-events: none;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cpath d='M28 0 L42 14 L28 28 L14 14 Z' fill='none' stroke='%230044B2' stroke-width='0.5'/%3E%3Cpath d='M0 28 L14 14 L28 28 L14 42 Z' fill='none' stroke='%230044B2' stroke-width='0.5'/%3E%3Cpath d='M28 28 L42 14 L56 28 L42 42 Z' fill='none' stroke='%230044B2' stroke-width='0.5'/%3E%3Cpath d='M28 28 L14 42 L28 56 L42 42 Z' fill='none' stroke='%230044B2' stroke-width='0.5'/%3E%3Cpath d='M28 0 L28 28' fill='none' stroke='%230044B2' stroke-width='0.3'/%3E%3Cpath d='M0 28 L28 28' fill='none' stroke='%230044B2' stroke-width='0.3'/%3E%3Cpath d='M56 28 L28 28' fill='none' stroke='%230044B2' stroke-width='0.3'/%3E%3Cpath d='M28 56 L28 28' fill='none' stroke='%230044B2' stroke-width='0.3'/%3E%3Cpath d='M14 14 L42 42' fill='none' stroke='%230044B2' stroke-width='0.25'/%3E%3Cpath d='M42 14 L14 42' fill='none' stroke='%230044B2' stroke-width='0.25'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 56px 56px;
+  }
+
+  .dark .kene-texture::after {
+    opacity: 0.02;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cpath d='M28 0 L42 14 L28 28 L14 14 Z' fill='none' stroke='%23A0C1F7' stroke-width='0.5'/%3E%3Cpath d='M0 28 L14 14 L28 28 L14 42 Z' fill='none' stroke='%23A0C1F7' stroke-width='0.5'/%3E%3Cpath d='M28 28 L42 14 L56 28 L42 42 Z' fill='none' stroke='%23A0C1F7' stroke-width='0.5'/%3E%3Cpath d='M28 28 L14 42 L28 56 L42 42 Z' fill='none' stroke='%23A0C1F7' stroke-width='0.5'/%3E%3Cpath d='M28 0 L28 28' fill='none' stroke='%23A0C1F7' stroke-width='0.3'/%3E%3Cpath d='M0 28 L28 28' fill='none' stroke='%23A0C1F7' stroke-width='0.3'/%3E%3Cpath d='M56 28 L28 28' fill='none' stroke='%23A0C1F7' stroke-width='0.3'/%3E%3Cpath d='M28 56 L28 28' fill='none' stroke='%23A0C1F7' stroke-width='0.3'/%3E%3Cpath d='M14 14 L42 42' fill='none' stroke='%23A0C1F7' stroke-width='0.25'/%3E%3Cpath d='M42 14 L14 42' fill='none' stroke='%23A0C1F7' stroke-width='0.25'/%3E%3C/svg%3E");
+  }
+
+  /* === Kené Home — full-page background texture (route-conditional) === */
+  body.institutional-texture-active .app-shell {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cdefs%3E%3Cpattern id='k' width='240' height='240' patternUnits='userSpaceOnUse'%3E%3Cpath d='M120 40L200 120L120 200L40 120Z' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M120 70L170 120L120 170L70 120Z' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M0 40L40 0M240 40L200 0M0 200L40 240M240 200L200 240' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M120 105L120 135M105 120L135 120' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='120' cy='120' r='3' fill='rgba(0,68,178,0.22)'/%3E%3Crect x='98' y='98' width='4' height='4' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='1'/%3E%3Crect x='138' y='98' width='4' height='4' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='1'/%3E%3Crect x='98' y='138' width='4' height='4' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='1'/%3E%3Crect x='138' y='138' width='4' height='4' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='1'/%3E%3Cpath d='M0 120L40 120L80 80L80 40L120 0' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M240 120L200 120L160 80L160 40L120 0' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M120 240L80 200L80 160L40 120' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M120 240L160 200L160 160L200 120' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M0 112L36 112L72 76L72 36L108 0' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M240 112L204 112L168 76L168 36L132 0' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M108 240L72 204L72 164L36 128L0 128' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M132 240L168 204L168 164L204 128L240 128' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M120 40L120 52L114 52' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M120 200L120 188L126 188' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M40 120L52 120L52 114' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M200 120L188 120L188 126' fill='none' stroke='rgba(0,68,178,0.22)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23k)' opacity='0.25'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 240px 240px;
+  }
+
+  .dark body.institutional-texture-active .app-shell {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cdefs%3E%3Cpattern id='k' width='240' height='240' patternUnits='userSpaceOnUse'%3E%3Cpath d='M120 40L200 120L120 200L40 120Z' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M120 70L170 120L120 170L70 120Z' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M0 40L40 0M240 40L200 0M0 200L40 240M240 200L200 240' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M120 105L120 135M105 120L135 120' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='120' cy='120' r='3' fill='rgba(120,160,240,0.12)'/%3E%3Crect x='98' y='98' width='4' height='4' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='1'/%3E%3Crect x='138' y='98' width='4' height='4' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='1'/%3E%3Crect x='98' y='138' width='4' height='4' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='1'/%3E%3Crect x='138' y='138' width='4' height='4' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='1'/%3E%3Cpath d='M0 120L40 120L80 80L80 40L120 0' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M240 120L200 120L160 80L160 40L120 0' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M120 240L80 200L80 160L40 120' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M120 240L160 200L160 160L200 120' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M0 112L36 112L72 76L72 36L108 0' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M240 112L204 112L168 76L168 36L132 0' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M108 240L72 204L72 164L36 128L0 128' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M132 240L168 204L168 164L204 128L240 128' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M120 40L120 52L114 52' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M120 200L120 188L126 188' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M40 120L52 120L52 114' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M200 120L188 120L188 126' fill='none' stroke='rgba(120,160,240,0.12)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23k)' opacity='0.25'/%3E%3C/svg%3E");
+  }
+
+  /* === Navbar Amazon Identity — Full-width white gradient + Kené composition === */
+  .navbar-amazon-identity {
+    position: relative;
+    background: linear-gradient(135deg,
+      #FFFFFF 0%,
+      #F8FAFF 25%,
+      #F0F5FF 50%,
+      #F8FAFF 75%,
+      #FFFFFF 100%
+    );
+  }
+
+  .navbar-amazon-identity::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(180deg,
+      rgba(0, 68, 178, 0.03) 0%,
+      rgba(0, 68, 178, 0.01) 50%,
+      rgba(0, 68, 178, 0.04) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Dark mode — navbar identity */
+  .dark .navbar-amazon-identity {
+    background: linear-gradient(135deg,
+      #0A1628 0%,
+      #0D1B30 25%,
+      #0F1D32 50%,
+      #0D1B30 75%,
+      #0A1628 100%
+    );
+  }
+
+  .dark .navbar-amazon-identity::before {
+    background: linear-gradient(180deg,
+      rgba(120, 160, 240, 0.04) 0%,
+      rgba(120, 160, 240, 0.01) 50%,
+      rgba(120, 160, 240, 0.05) 100%
+    );
+  }
+
+  /* Contact bar overlay for amazon identity */
+  .navbar-amazon-identity-contact {
+    background: rgba(0, 40, 120, 0.06);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 68, 178, 0.08);
+  }
+
+  .dark .navbar-amazon-identity-contact {
+    background: rgba(0, 20, 60, 0.50);
+    border: 1px solid rgba(120, 160, 240, 0.08);
   }
 
   /* === Premium Navbar Border Class === */
@@ -193,9 +303,9 @@
     content: '';
     position: absolute;
     top: -1px;
-    left: 8%;
-    right: 8%;
-    height: 2px;
+    left: 10%;
+    right: 10%;
+    height: 1px;
     background: var(--navbar-top-shine);
     opacity: var(--navbar-glow-opacity);
     border-radius: 1px;
@@ -209,7 +319,7 @@
   }
 
   .navbar-premium:hover::after {
-    opacity: calc(var(--navbar-glow-opacity) + 0.2);
+    opacity: calc(var(--navbar-glow-opacity) + 0.15);
   }
 
   /* === Responsive Navbar Menu === */
